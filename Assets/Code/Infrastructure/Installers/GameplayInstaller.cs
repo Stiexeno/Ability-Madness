@@ -1,4 +1,5 @@
-﻿using AbilityMadness.Infrastructure.Services.Instantiator;
+﻿using AbilityMadness.Factory;
+using AbilityMadness.Infrastructure.Services.Instantiator;
 using Zenject;
 using SF = UnityEngine.SerializeField;
 
@@ -13,9 +14,8 @@ namespace AbilityMadness
 		}
 
 		private void BindServices()
-		{
-
-		}
+        {
+        }
 
 		private void BindSetters()
 		{

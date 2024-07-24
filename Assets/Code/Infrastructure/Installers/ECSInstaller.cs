@@ -11,23 +11,20 @@ namespace AbilityMadness
 
         public override void InstallBindings()
         {
-            Container.BindInterfacesTo<ECSFacade>()
-                .AsSingle();
-
             Container.BindInterfacesAndSelfTo<Contexts>()
-                .FromInstance(new Contexts())
+                .FromInstance(Contexts.sharedInstance)
                 .AsSingle();
 
             Container.BindInterfacesTo<SystemFactory>()
                 .AsSingle();
 
-            Container.BindInterfacesAndSelfTo<UpdateSystems>()
+            Container.BindInterfacesAndSelfTo<BattleUpdateFeature>()
                 .AsSingle();
 
-            Container.BindInterfacesAndSelfTo<FixedUpdateSystems>()
+            Container.BindInterfacesAndSelfTo<BattleFixedUpdateFeature>()
                 .AsSingle();
 
-            Container.BindInterfacesAndSelfTo<LateUpdateSystems>()
+            Container.BindInterfacesAndSelfTo<BattleLateUpdateFeature>()
                 .AsSingle();
 
         }

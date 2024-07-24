@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Cysharp.Threading.Tasks;
+using UnityEngine;
 using Zenject;
 
 namespace AbilityMadness.Infrastructure.Services.StateMachine
@@ -12,61 +13,64 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine
 		{
 			_statesFactory = statesFactory;
 		}
-		
+
 		public abstract void Initialize();
 
 		public virtual void Tick() => (_currentState as ITickable)?.Tick();
 		public void FixedTick() => (_currentState as IFixedTickable)?.FixedTick();
 		public void LateTick() => (_currentState as ILateTickable)?.LateTick();
 
-		public void Enter<TState>() where TState : IState
+		public async UniTask Enter<TState>() where TState : IState
 		{
-			var state = ChangeActiveStateTo<TState>();
-			
+			var state = await ChangeActiveStateTo<TState>();
+
 			if (state == null)
 				return;
 
 			(state as IEnter)?.Enter();
 		}
-		
-		public void Enter<TState, TPayload>(TPayload payload) where TState : IState, IPayloadedEnter<TPayload>
+
+		public async UniTask Enter<TState, TPayload>(TPayload payload) where TState : IState, IPayloadedEnter<TPayload>
 		{
-			IState state = ChangeActiveStateTo<TState>();
-			
+			IState state = await ChangeActiveStateTo<TState>();
+
 			if (state == null)
 				return;
 
 			(state as IPayloadedEnter<TPayload>)?.Enter(payload);
 		}
-        
-		public void Enter<TState, TPayload1, TPayload2>(TPayload1 payload1, TPayload2 payload2)
+
+		public async UniTask Enter<TState, TPayload1, TPayload2>(TPayload1 payload1, TPayload2 payload2)
 			where TState : IState, IPayloadedEnter<TPayload1, TPayload2>
 		{
-			IState state = ChangeActiveStateTo<TState>();
-			
+			IState state = await ChangeActiveStateTo<TState>();
+
 			if (state == null)
 				return;
 
 			(state as IPayloadedEnter<TPayload1, TPayload2>)?.Enter(payload1, payload2);
 		}
-        
-		public void Enter<TState, TPayload1, TPayload2, TPayload3>(TPayload1 payload1, TPayload2 payload2, TPayload3 payload3)
+
+		public async UniTask Enter<TState, TPayload1, TPayload2, TPayload3>(TPayload1 payload1, TPayload2 payload2, TPayload3 payload3)
 			where TState : IState, IPayloadedEnter<TPayload1, TPayload2, TPayload3>
 		{
-			IState state = ChangeActiveStateTo<TState>();
+			IState state = await ChangeActiveStateTo<TState>();
 
 			if (state == null)
 				return;
-			
+
 			(state as IPayloadedEnter<TPayload1, TPayload2, TPayload3>)?.Enter(payload1, payload2, payload3);
 		}
 
-		private IState ChangeActiveStateTo<TState>() where TState : IState
+		private async UniTask<IState> ChangeActiveStateTo<TState>() where TState : IState
 		{
 			if (_currentState != null && _currentState is TState)
 				return null;
-			
-			(_currentState as IExit)?.Exit();
+
+            if (_currentState is IExit exit)
+            {
+                await exit.Exit();
+            }
 
 			_currentState = _statesFactory.Create<TState>();
 

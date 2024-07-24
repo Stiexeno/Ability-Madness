@@ -1,3 +1,6 @@
+using AbilityMadness.Code.Infrastructure.Services.Identifiers;
+using AbilityMadness.Code.Infrastructure.Services.View;
+using AbilityMadness.Factory;
 using AbilityMadness.Infrastructure.Factories.UI;
 using AbilityMadness.Infrastructure.Services.Assets;
 using AbilityMadness.Infrastructure.Services.Configs;
@@ -6,6 +9,7 @@ using AbilityMadness.Infrastructure.Services.Instantiator;
 using AbilityMadness.Infrastructure.Services.StateMachine;
 using AbilityMadness.Infrastructure.Services.StateMachine.Implementations;
 using AbilityMadness.Infrastructure.Services.Updatable;
+using Cysharp.Threading.Tasks;
 using Zenject;
 using SF = UnityEngine.SerializeField;
 
@@ -28,6 +32,9 @@ namespace AbilityMadness
 			Container.BindInterfacesTo<CoroutineRunner>()
 				.FromInstance(_coroutineRunner)
 				.AsSingle();
+
+            Container.BindInterfacesTo<IdentifierService>()
+                .AsSingle();
 
 			Container.BindInterfacesAndSelfTo<InstantiatorProvider>()
 				.AsSingle();
@@ -53,6 +60,12 @@ namespace AbilityMadness
 
 			Container.BindInterfacesTo<UpdateService>()
 				.AsSingle();
+
+            Container.BindInterfacesTo<PlayerFactory>()
+                .AsSingle();
+
+            Container.BindInterfacesTo<ViewPool>()
+                .AsSingle();
         }
 
 		private void BindFactories()
@@ -66,7 +79,7 @@ namespace AbilityMadness
 
 		public void Initialize()
 		{
-			Container.Resolve<IApplicationStateMachine>().Enter<BootstrapState>();
+			Container.Resolve<IApplicationStateMachine>().Enter<BootstrapState>().Forget();
 		}
 	}
 }

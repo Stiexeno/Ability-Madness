@@ -1,7 +1,9 @@
-﻿namespace AbilityMadness.Infrastructure.Services.StateMachine
+﻿using Cysharp.Threading.Tasks;
+
+namespace AbilityMadness.Infrastructure.Services.StateMachine
 {
 	public interface IExit
 	{
-		void Exit();
+		UniTask Exit();
 	}
 }

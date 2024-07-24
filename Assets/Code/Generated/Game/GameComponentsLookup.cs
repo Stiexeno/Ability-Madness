@@ -8,18 +8,36 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int Duration = 0;
-    public const int Duration2 = 1;
+    public const int Destructed = 0;
+    public const int Disabled = 1;
+    public const int Enabled = 2;
+    public const int Identifier = 3;
+    public const int View = 4;
+    public const int ViewLoading = 5;
+    public const int ViewPath = 6;
+    public const int Alive = 7;
 
-    public const int TotalComponents = 2;
+    public const int TotalComponents = 8;
 
     public static readonly string[] componentNames = {
-        "Duration",
-        "Duration2"
+        "Destructed",
+        "Disabled",
+        "Enabled",
+        "Identifier",
+        "View",
+        "ViewLoading",
+        "ViewPath",
+        "Alive"
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Duration),
-        typeof(Duration2)
+        typeof(AbilityMadness.Code.Common.Destructed),
+        typeof(AbilityMadness.Code.Common.Disabled),
+        typeof(AbilityMadness.Code.Common.Enabled),
+        typeof(AbilityMadness.Code.Common.Identifier),
+        typeof(AbilityMadness.Code.Common.View),
+        typeof(AbilityMadness.Code.Common.ViewLoading),
+        typeof(AbilityMadness.Code.Common.ViewPath),
+        typeof(AbilityMadness.Code.Gameplay.Lifetime.Alive)
     };
 }

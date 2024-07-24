@@ -1,6 +1,8 @@
 ﻿using AbilityMadness.Code.Infrastructure.Services.ECS;
+using AbilityMadness.Factory;
 using AbilityMadness.Infrastructure.Factories.UI;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
 
@@ -10,8 +12,8 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 	{
 		private ISceneService _sceneService;
 		private IUIFactory _uiFactory;
-        private IECSFacade _ecsFacade;
         private IApplicationStateMachine _applicationStateMachine;
+        private IPlayerFactory _playerFactory;
 
         [Inject]
 		private void Construct(
@@ -19,18 +21,16 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 			IUIFactory uiFactory,
 			IUIService iuiService,
 			IApplicationStateMachine applicationStateMachine,
-            IECSFacade ecsFacade)
+            IPlayerFactory playerFactory)
 		{
+            _playerFactory = playerFactory;
             _applicationStateMachine = applicationStateMachine;
-            _ecsFacade = ecsFacade;
             _uiFactory = uiFactory;
 			_sceneService = sceneService;
 		}
 
 		public void Enter(string sceneName)
 		{
-            _ecsFacade.CleanUp();
-
 			var currentActiveScene = SceneManager.GetActiveScene().name;
 
 			if (currentActiveScene != sceneName)
@@ -46,7 +46,9 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 		private void OnSceneLoaded()
 		{
 			SetupUI().Forget();
-            _applicationStateMachine.Enter<GameLoopState>();
+            CreatePlayer();
+
+            _applicationStateMachine.Enter<BattleLoopState>();
 		}
 
 		private async UniTaskVoid SetupUI()
@@ -59,5 +61,10 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 		{
 			//_iuiService.Open<MenuWindow>();
 		}
+
+        private void CreatePlayer()
+        {
+            _playerFactory.CreatePlayer(Vector3.zero);
+        }
 	}
 }

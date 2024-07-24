@@ -70,13 +70,11 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-space-rpg-source/Temp
-space-rpg-source/Logs
-space-rpg-source/Library
-space-rpg-source/UserSettings
-space-rpg-source/.idea
-space-rpg-source/obj
+Temp
+Logs
+Library
+UserSettings
+.idea
+obj
 
 *.DS_Store
-space-rpg-source/Assets/Resources/MySettings.json
-space-rpg-source/Assets/Resources/MySettings.json.meta
