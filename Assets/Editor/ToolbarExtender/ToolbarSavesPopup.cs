@@ -1,11 +1,11 @@
 using System.IO;
 using AbilityMadness;
-using Framework.Editor;
+using AbilityMadness.Editor;
 using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace Framework
+namespace AbilityMadness
 {
 	public class ToolbarSavesPopup : EditorWindow
 	{

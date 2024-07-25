@@ -1,6 +1,6 @@
 using System;
 using System.Reflection;
-using Framework.Editor;
+using AbilityMadness.Editor;
 using Framwework.Inspector;
 using UnityEditor;
 using UnityEngine;

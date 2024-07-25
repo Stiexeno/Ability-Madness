@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using SF = UnityEngine.SerializeField;
 
-namespace Framework.Editor
+namespace AbilityMadness.Editor
 {
 	public class RequiredData : ScriptableObject
 	{

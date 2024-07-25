@@ -1,4 +1,5 @@
 ﻿using AbilityMadness.Code.Common;
+using AbilityMadness.Code.Extensions;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
 using UnityEngine;
 
@@ -19,7 +20,15 @@ namespace AbilityMadness.Factory
         {
             return CreateEntity.Empty()
                 .AddIdentifier(_identifierService.Next())
-                .AddViewPath(PlayerPath);
+                .With(x => x.isPlayer = true)
+                .AddViewPath(PlayerPath)
+
+                .AddWorldPosition(Vector2.zero)
+                .AddVelocity(Vector2.zero)
+                .AddDirection(Vector2.zero)
+                .AddLookDirection(Vector2.zero)
+                .AddMovementSpeed(50f)
+                .With(x => x.isRigidbodyMovement = true);
         }
     }
 }

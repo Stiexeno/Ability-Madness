@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Framework.Editor
+namespace AbilityMadness.Editor
 {
     public static class EditorRectUtility
     {

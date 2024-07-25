@@ -1,16 +1,14 @@
-using UnityEngine;
-using SF = UnityEngine.SerializeField;
+using AbilityMadness.Code.Infrastructure.Services.ECS;
+using AbilityMadness.Systems;
 
 namespace AbilityMadness
 {
-    public class PlayerFeature : MonoBehaviour
+    public class PlayerFeature : Feature
     {
-        // Serialized fields
-	
-    	// Private fields
-	
-    	// Properties
-	
-    	//PlayerFeature
+        public PlayerFeature(ISystemFactory systemFactory)
+        {
+            Add(systemFactory.Create<SetPlayerDirectionByInputSystem>());
+            Add(systemFactory.Create<SetPlayerLookDirectionByInputSystem>());
+        }
     }
 }

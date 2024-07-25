@@ -13,7 +13,7 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine
 
 		public T Create<T>() where T : IState
 		{
-			return _instantiatorProvider.instantiator.Instantiate<T>();
+			return _instantiatorProvider.Instantiator.Instantiate<T>();
 		}
 	}
 }

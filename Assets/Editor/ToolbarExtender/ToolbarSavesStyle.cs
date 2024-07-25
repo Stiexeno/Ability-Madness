@@ -1,7 +1,7 @@
 using AbilityMadness;
 using UnityEngine;
 
-namespace Framework
+namespace AbilityMadness
 {
 	public static class ToolbarSavesStyle
 	{

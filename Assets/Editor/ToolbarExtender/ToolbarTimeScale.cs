@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Framework.Editor.Timescale
+namespace AbilityMadness.Editor.Timescale
 {
 	[InitializeOnLoad]
 	public class ToolbarTimeScale

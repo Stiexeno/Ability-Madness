@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 using UnityEngine.Experimental.UIElements;
 #endif
 
-namespace Framework.Editor
+namespace AbilityMadness.Editor
 {
     public static class ToolbarCallback
     {

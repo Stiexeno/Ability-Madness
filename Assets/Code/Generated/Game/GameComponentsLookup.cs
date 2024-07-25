@@ -12,22 +12,54 @@ public static class GameComponentsLookup {
     public const int Disabled = 1;
     public const int Enabled = 2;
     public const int Identifier = 3;
-    public const int View = 4;
-    public const int ViewLoading = 5;
-    public const int ViewPath = 6;
-    public const int Alive = 7;
+    public const int Rigidbody2D = 4;
+    public const int Transform = 5;
+    public const int View = 6;
+    public const int ViewLoading = 7;
+    public const int ViewPath = 8;
+    public const int WorldPosition = 9;
+    public const int MovementAnimator = 10;
+    public const int Camera = 11;
+    public const int CameraOffset = 12;
+    public const int FollowTargetId = 13;
+    public const int AxisInput = 14;
+    public const int LookInput = 15;
+    public const int Alive = 16;
+    public const int Direction = 17;
+    public const int LookDirection = 18;
+    public const int MovementSpeed = 19;
+    public const int RigidbodyMovement = 20;
+    public const int TransformMovement = 21;
+    public const int Velocity = 22;
+    public const int Player = 23;
 
-    public const int TotalComponents = 8;
+    public const int TotalComponents = 24;
 
     public static readonly string[] componentNames = {
         "Destructed",
         "Disabled",
         "Enabled",
         "Identifier",
+        "Rigidbody2D",
+        "Transform",
         "View",
         "ViewLoading",
         "ViewPath",
-        "Alive"
+        "WorldPosition",
+        "MovementAnimator",
+        "Camera",
+        "CameraOffset",
+        "FollowTargetId",
+        "AxisInput",
+        "LookInput",
+        "Alive",
+        "Direction",
+        "LookDirection",
+        "MovementSpeed",
+        "RigidbodyMovement",
+        "TransformMovement",
+        "Velocity",
+        "Player"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -35,9 +67,25 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Common.Disabled),
         typeof(AbilityMadness.Code.Common.Enabled),
         typeof(AbilityMadness.Code.Common.Identifier),
+        typeof(AbilityMadness.Code.Common.Rigidbody2D),
+        typeof(AbilityMadness.Code.Common.Transform),
         typeof(AbilityMadness.Code.Common.View),
         typeof(AbilityMadness.Code.Common.ViewLoading),
         typeof(AbilityMadness.Code.Common.ViewPath),
-        typeof(AbilityMadness.Code.Gameplay.Lifetime.Alive)
+        typeof(AbilityMadness.Code.Common.WorldPosition),
+        typeof(AbilityMadness.Code.Gameplay.Animator.MovementAnimator),
+        typeof(AbilityMadness.Code.Gameplay.Camera.Camera),
+        typeof(AbilityMadness.Code.Gameplay.Camera.CameraOffset),
+        typeof(AbilityMadness.Code.Gameplay.Camera.FollowTargetId),
+        typeof(AbilityMadness.Code.Gameplay.Input.AxisInput),
+        typeof(AbilityMadness.Code.Gameplay.Input.LookInput),
+        typeof(AbilityMadness.Code.Gameplay.Lifetime.Alive),
+        typeof(AbilityMadness.Code.Gameplay.Movement.Direction),
+        typeof(AbilityMadness.Code.Gameplay.Movement.LookDirection),
+        typeof(AbilityMadness.Code.Gameplay.Movement.MovementSpeed),
+        typeof(AbilityMadness.Code.Gameplay.Movement.RigidbodyMovement),
+        typeof(AbilityMadness.Code.Gameplay.Movement.TransformMovement),
+        typeof(AbilityMadness.Code.Gameplay.Movement.Velocity),
+        typeof(AbilityMadness.Player)
     };
 }

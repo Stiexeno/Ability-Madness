@@ -1,3 +1,5 @@
+using AbilityMadness.Code.Gameplay.Camera.Factory;
+using AbilityMadness.Code.Infrastructure.Services.Camera;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
 using AbilityMadness.Code.Infrastructure.Services.View;
 using AbilityMadness.Factory;
@@ -10,6 +12,7 @@ using AbilityMadness.Infrastructure.Services.StateMachine;
 using AbilityMadness.Infrastructure.Services.StateMachine.Implementations;
 using AbilityMadness.Infrastructure.Services.Updatable;
 using Cysharp.Threading.Tasks;
+using UnityEngine.InputSystem;
 using Zenject;
 using SF = UnityEngine.SerializeField;
 
@@ -17,12 +20,14 @@ namespace AbilityMadness
 {
 	public class BootstrapInstaller : MonoInstaller, IInitializable
 	{
-		[SF] private CoroutineRunner _coroutineRunner;
+		[SF] private CoroutineRunner coroutineRunner;
+		[SF] private PlayerInput playerInput;
 
 		public override void InstallBindings()
 		{
 			BindServices();
 			BindFactories();
+            BindProviders();
 		}
 
 		private void BindServices()
@@ -30,14 +35,11 @@ namespace AbilityMadness
             new ECSInstaller(Container).InstallBindings();
 
 			Container.BindInterfacesTo<CoroutineRunner>()
-				.FromInstance(_coroutineRunner)
+				.FromInstance(coroutineRunner)
 				.AsSingle();
 
             Container.BindInterfacesTo<IdentifierService>()
                 .AsSingle();
-
-			Container.BindInterfacesAndSelfTo<InstantiatorProvider>()
-				.AsSingle();
 
 			Container.BindInterfacesTo<BootstrapInstaller>()
 				.FromInstance(this)
@@ -66,9 +68,25 @@ namespace AbilityMadness
 
             Container.BindInterfacesTo<ViewPool>()
                 .AsSingle();
+
+            Container.BindInterfacesAndSelfTo<PlayerInput>()
+                .FromInstance(playerInput)
+                .AsSingle();
+
+            Container.BindInterfacesTo<CameraFactory>()
+                .AsSingle();
         }
 
-		private void BindFactories()
+        private void BindProviders()
+        {
+            Container.BindInterfacesAndSelfTo<InstantiatorProvider>()
+                .AsSingle();
+
+            Container.BindInterfacesAndSelfTo<CameraProvider>()
+                .AsSingle();
+        }
+
+        private void BindFactories()
 		{
 			Container.BindInterfacesTo<UIFactory>()
 				.AsSingle();

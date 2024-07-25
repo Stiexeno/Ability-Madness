@@ -4,6 +4,6 @@ namespace AbilityMadness.Infrastructure.Services.Instantiator
 {
 	public class InstantiatorProvider
 	{
-		public IInstantiator instantiator;
+		public IInstantiator Instantiator;
 	}
 }

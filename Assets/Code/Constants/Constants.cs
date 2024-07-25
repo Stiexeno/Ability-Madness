@@ -19,6 +19,7 @@ namespace AbilityMadness
         public static class Input
         {
             public const string Movement = "Movement";
+            public const string Aiming = "Aiming";
         }
 
         public static class Configs

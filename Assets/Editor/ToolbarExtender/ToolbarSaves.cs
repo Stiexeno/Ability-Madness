@@ -2,7 +2,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-namespace Framework.Editor.Saves
+namespace AbilityMadness.Editor.Saves
 {
 	[InitializeOnLoad]
     public class ToolbarSaves

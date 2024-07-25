@@ -1,16 +1,6 @@
-using UnityEngine;
-using SF = UnityEngine.SerializeField;
+using Entitas;
 
 namespace AbilityMadness
 {
-    public class PlayerComponents : MonoBehaviour
-    {
-        // Serialized fields
-	
-    	// Private fields
-	
-    	// Properties
-	
-    	//PlayerComponents
-    }
+    public class Player : IComponent {  }
 }

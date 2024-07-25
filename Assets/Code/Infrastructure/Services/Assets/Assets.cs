@@ -162,7 +162,7 @@ namespace AbilityMadness.Infrastructure.Services.Assets
 
 		public T Instantiate<T>(GameObject prefab, Vector3 at, Transform parent = null) where T : MonoBehaviour
 		{
-			var instantiated = _instantiatorProvider.instantiator.InstantiatePrefabForComponent<T>(prefab, parent);
+			var instantiated = _instantiatorProvider.Instantiator.InstantiatePrefabForComponent<T>(prefab, parent);
 			instantiated.name = instantiated.name.Replace("(Clone)", string.Empty);
 			var transform = instantiated.transform;
 			transform.position = at;
@@ -179,7 +179,7 @@ namespace AbilityMadness.Infrastructure.Services.Assets
 
 		public GameObject Instantiate(GameObject prefab, Vector3 at, Vector3 rotation, Transform parent = null)
 		{
-			var instantiated = _instantiatorProvider.instantiator.InstantiatePrefab(prefab, parent);
+			var instantiated = _instantiatorProvider.Instantiator.InstantiatePrefab(prefab, parent);
 			instantiated.name = instantiated.name.Replace("(Clone)", string.Empty);
 			var transform = instantiated.transform;
 			transform.position = at;
@@ -189,7 +189,7 @@ namespace AbilityMadness.Infrastructure.Services.Assets
 
 		public T Instantiate<T>(GameObject prefab) where T : MonoBehaviour
 		{
-			var instantiated = _instantiatorProvider.instantiator.InstantiatePrefabForComponent<T>(prefab);
+			var instantiated = _instantiatorProvider.Instantiator.InstantiatePrefabForComponent<T>(prefab);
 			instantiated.name = instantiated.name.Replace("(Clone)", string.Empty);
 			var transform = instantiated.transform;
 			transform.rotation = Quaternion.identity;

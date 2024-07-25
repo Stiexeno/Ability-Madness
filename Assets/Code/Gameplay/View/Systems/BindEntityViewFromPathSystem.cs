@@ -28,6 +28,7 @@ namespace AbilityMadness.Code.Common.Systems
                 entity.isViewLoading = true;
 
                 var entityView = await _viewPool.Take(entity.ViewPath);
+                entityView.LinkEntity(entity);
                 entityView.gameObject.SetActive(true);
 
                 entity.AddView(entityView);

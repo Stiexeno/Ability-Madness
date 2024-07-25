@@ -6,9 +6,9 @@ namespace AbilityMadness.Infrastructure.Services.Instantiator
 	{
 		public InstantiatorSetter(IInstantiator instantiator, InstantiatorProvider instantiatorProvider)
 		{
-			instantiatorProvider.instantiator = instantiator;
+			instantiatorProvider.Instantiator = instantiator;
 		}
-        
+
 		public void Initialize()
 		{
 		}

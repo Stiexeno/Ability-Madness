@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-namespace Framework.Editor
+namespace AbilityMadness.Editor
 {
     [InitializeOnLoad]
     public static class ToolbarScene
