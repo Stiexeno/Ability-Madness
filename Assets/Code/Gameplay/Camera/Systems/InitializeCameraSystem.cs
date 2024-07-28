@@ -13,7 +13,9 @@ namespace AbilityMadness.Code.Gameplay.Camera.Systems
             cameraFactory.CreateCamera();
 
             _cameras = contexts.game.GetGroup(GameMatcher
-                .AllOf(GameMatcher.Camera));
+                .AllOf(
+                    GameMatcher.Camera,
+                    GameMatcher.FollowTargetId));
 
             _players = contexts.game.GetGroup(GameMatcher
                 .AllOf(GameMatcher.Player));
@@ -24,7 +26,7 @@ namespace AbilityMadness.Code.Gameplay.Camera.Systems
             foreach (var camera in _cameras)
             foreach (var player in _players)
             {
-                camera.FollowTargetId = player.Identifier;
+                camera.FollowTargetId = player.Id;
             }
         }
     }

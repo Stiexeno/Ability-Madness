@@ -1,6 +1,8 @@
 using AbilityMadness.Code.Gameplay.Camera.Factory;
+using AbilityMadness.Code.Gameplay.Chest.Factory;
 using AbilityMadness.Code.Infrastructure.Services.Camera;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
+using AbilityMadness.Code.Infrastructure.Services.Physics;
 using AbilityMadness.Code.Infrastructure.Services.View;
 using AbilityMadness.Factory;
 using AbilityMadness.Infrastructure.Factories.UI;
@@ -66,6 +68,9 @@ namespace AbilityMadness
             Container.BindInterfacesTo<PlayerFactory>()
                 .AsSingle();
 
+            Container.BindInterfacesTo<ChestFactory>()
+                .AsSingle();
+
             Container.BindInterfacesTo<ViewPool>()
                 .AsSingle();
 
@@ -74,6 +79,12 @@ namespace AbilityMadness
                 .AsSingle();
 
             Container.BindInterfacesTo<CameraFactory>()
+                .AsSingle();
+
+            Container.BindInterfacesTo<CollisionRegistry>()
+                .AsSingle();
+
+            Container.BindInterfacesTo<PhysicsService>()
                 .AsSingle();
         }
 

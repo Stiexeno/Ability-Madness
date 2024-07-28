@@ -9,6 +9,8 @@ namespace AbilityMadness.Code.Gameplay.Movement
         {
             Add(systemFactory.Create<SetVelocityByDirectionSystem>());
             Add(systemFactory.Create<SetWorldPositionByTransformSystem>());
+            Add(systemFactory.Create<SetVelocityToRigidbodySystem>());
+
         }
     }
 }

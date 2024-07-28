@@ -7,16 +7,15 @@ namespace AbilityMadness.Code.Gameplay.Animator.Registrars
     {
         [SF] private Common.Behaviours.MovementAnimator movementAnimator;
 
-        public override void RegisterComponents()
+        public override void RegisterComponents(GameEntity entity)
         {
-            Entity
-                .AddMovementAnimator(movementAnimator);
+            entity.AddMovementAnimator(movementAnimator);
         }
 
-        public override void UnregisterComponents()
+        public override void UnregisterComponents(GameEntity entity)
         {
-            if (Entity.hasRigidbody2D)
-                Entity.RemoveRigidbody2D();
+            if (entity.hasRigidbody2D)
+                entity.RemoveRigidbody2D();
         }
     }
 }

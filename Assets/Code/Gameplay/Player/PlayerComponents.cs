@@ -2,5 +2,6 @@ using Entitas;
 
 namespace AbilityMadness
 {
-    public class Player : IComponent {  }
+    [Game] public class Player : IComponent {  }
+    [Game] public class PlayerTriggered : IComponent {  }
 }

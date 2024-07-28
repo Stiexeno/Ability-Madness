@@ -1,19 +1,16 @@
-﻿using SF = UnityEngine.SerializeField;
-
-namespace AbilityMadness.Code.Common.Behaviours
+﻿namespace AbilityMadness.Code.Common.Behaviours
 {
     public class TransformRegistrar : EntityComponentRegistrar
     {
-        [SF] private UnityEngine.Transform _transform;
-
-        public override void RegisterComponents()
+        public override void RegisterComponents(GameEntity entity)
         {
-            Entity.AddTransform(_transform);
+            entity.AddTransform(transform);
         }
 
-        public override void UnregisterComponents()
+        public override void UnregisterComponents(GameEntity entity)
         {
-            Entity.RemoveTransform();
+            if (entity.hasTransform)
+                entity.RemoveTransform();
         }
     }
 }

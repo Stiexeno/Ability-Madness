@@ -7,18 +7,22 @@ namespace AbilityMadness.Code.Gameplay.Camera.Systems
     {
         private IGroup<GameEntity> _cameras;
         private IGroup<GameEntity> _followTargets;
+        private Contexts _contexts;
 
         public SetCameraOffsetToFollowTargetSystem(Contexts contexts)
         {
+            _contexts = contexts;
             _cameras = contexts.game.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Camera,
                     GameMatcher.CameraOffset,
-                    GameMatcher.FollowTargetId));
+                    GameMatcher.FollowTargetId,
+                    GameMatcher.CameraSmooth,
+                    GameMatcher.CameraVelocity));
 
             _followTargets = contexts.game.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.Identifier,
+                    GameMatcher.Id,
                     GameMatcher.Player,
                     GameMatcher.WorldPosition));
         }
@@ -26,17 +30,22 @@ namespace AbilityMadness.Code.Gameplay.Camera.Systems
         public void Execute()
         {
             foreach (var camera in _cameras)
-            foreach (var followTarget in _followTargets)
             {
-                if (followTarget.Identifier.Equals(camera.FollowTargetId))
-                {
-                    var targetPosition = Vector3.Lerp(
-                        camera.WorldPosition,
-                        followTarget.WorldPosition,
-                        Time.deltaTime);
+                var followTarget = _contexts.game.GetEntityWithId(camera.FollowTargetId);
 
-                    targetPosition = new Vector3(targetPosition.x, targetPosition.y, -10f);
-                    camera.WorldPosition = targetPosition;
+                if (_followTargets.ContainsEntity(followTarget))
+                {
+                    var targetPosition = new Vector3(followTarget.WorldPosition.x, followTarget.WorldPosition.y, -10f);
+
+                    var cameraCameraVelocity = camera.CameraVelocity;
+
+                     camera.WorldPosition = Vector3.SmoothDamp(
+                         camera.WorldPosition,
+                         targetPosition,
+                         ref cameraCameraVelocity,
+                         camera.CameraSmooth);
+
+                     camera.CameraVelocity = cameraCameraVelocity;
                 }
             }
         }

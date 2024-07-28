@@ -19,7 +19,7 @@ namespace AbilityMadness.Factory
         public GameEntity CreatePlayer(Vector3 position)
         {
             return CreateEntity.Empty()
-                .AddIdentifier(_identifierService.Next())
+                .AddId(_identifierService.Next())
                 .With(x => x.isPlayer = true)
                 .AddViewPath(PlayerPath)
 
@@ -27,7 +27,7 @@ namespace AbilityMadness.Factory
                 .AddVelocity(Vector2.zero)
                 .AddDirection(Vector2.zero)
                 .AddLookDirection(Vector2.zero)
-                .AddMovementSpeed(50f)
+                .AddMovementSpeed(300f)
                 .With(x => x.isRigidbodyMovement = true);
         }
     }

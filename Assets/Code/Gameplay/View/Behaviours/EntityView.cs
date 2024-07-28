@@ -1,5 +1,7 @@
 using System;
+using AbilityMadness.Code.Infrastructure.Services.Physics;
 using UnityEngine;
+using Zenject;
 
 namespace AbilityMadness.Code.Common.Behaviours
 {
@@ -7,8 +9,15 @@ namespace AbilityMadness.Code.Common.Behaviours
     {
         private EntityComponentRegistrar[] _registrars = Array.Empty<EntityComponentRegistrar>();
         private GameEntity _entity;
+        private ICollisionRegistry _collisionRegistry;
 
         public string Path { get; set; }
+
+        [Inject]
+        private void Construct(ICollisionRegistry collisionRegistry)
+        {
+            _collisionRegistry = collisionRegistry;
+        }
 
         public void LinkEntity(GameEntity entity)
         {
@@ -21,14 +30,21 @@ namespace AbilityMadness.Code.Common.Behaviours
             UnregisterViewComponents();
         }
 
+        private void OnDestroy()
+        {
+            if (_entity != null)
+            {
+                _entity.Destroy();
+            }
+        }
+
         private void RegisterViewComponents()
         {
             _registrars = GetComponents<EntityComponentRegistrar>();
 
             foreach (var registrar in _registrars)
             {
-                registrar.LinkEntity(_entity);
-                registrar.RegisterComponents();
+                registrar.RegisterComponents(_entity);
             }
         }
 
@@ -36,7 +52,7 @@ namespace AbilityMadness.Code.Common.Behaviours
         {
             foreach (var registrar in _registrars)
             {
-                registrar.UnregisterComponents();
+                registrar.UnregisterComponents(_entity);
             }
         }
     }

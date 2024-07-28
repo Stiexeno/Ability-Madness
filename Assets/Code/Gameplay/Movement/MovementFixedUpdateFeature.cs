@@ -1,4 +1,3 @@
-using AbilityMadness.Code.Gameplay.Movement.Systems;
 using AbilityMadness.Code.Infrastructure.Services.ECS;
 
 namespace AbilityMadness.Code.Gameplay.Movement
@@ -7,7 +6,6 @@ namespace AbilityMadness.Code.Gameplay.Movement
     {
         public MovementFixedUpdateFeature(ISystemFactory systemFactory)
         {
-            Add(systemFactory.Create<SetVelocityToRigidbodySystem>());
         }
     }
 }

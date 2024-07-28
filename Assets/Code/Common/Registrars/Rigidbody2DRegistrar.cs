@@ -6,16 +6,15 @@ namespace AbilityMadness.Code.Common.Behaviours
     {
         [SF] private new UnityEngine.Rigidbody2D rigidbody2D;
 
-        public override void RegisterComponents()
+        public override void RegisterComponents(GameEntity entity)
         {
-            Entity
-                .AddRigidbody2D(rigidbody2D);
+            entity.AddRigidbody2D(rigidbody2D);
         }
 
-        public override void UnregisterComponents()
+        public override void UnregisterComponents(GameEntity entity)
         {
-            if (Entity.hasRigidbody2D)
-                Entity.RemoveRigidbody2D();
+            if (entity.hasRigidbody2D)
+                entity.RemoveRigidbody2D();
         }
     }
 }
