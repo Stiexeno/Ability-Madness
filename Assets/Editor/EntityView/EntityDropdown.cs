@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using AbilityMadness.Code.Common.Behaviours;
+using AbilityMadness.Code.Infrastructure.View;
 using AbilityMadness.Editor.Actors;
 using UnityEditor;
 using UnityEditor.IMGUI.Controls;

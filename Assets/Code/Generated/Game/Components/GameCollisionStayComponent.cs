@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly AbilityMadness.Code.Gameplay.Collision.CollisionStay collisionStayComponent = new AbilityMadness.Code.Gameplay.Collision.CollisionStay();
+    static readonly AbilityMadness.Code.Common.Collision.CollisionStay collisionStayComponent = new AbilityMadness.Code.Common.Collision.CollisionStay();
 
     public bool isCollisionStay {
         get { return HasComponent(GameComponentsLookup.CollisionStay); }

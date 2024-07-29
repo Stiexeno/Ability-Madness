@@ -1,5 +1,5 @@
-﻿using AbilityMadness.Code.Common.Behaviours;
-using AbilityMadness.Code.Gameplay.Interaction.Registrars;
+﻿using AbilityMadness.Code.Gameplay.Interaction.Registrars;
+using AbilityMadness.Code.Infrastructure.View;
 using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Interaction.Behaviours

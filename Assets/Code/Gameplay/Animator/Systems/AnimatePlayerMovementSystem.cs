@@ -10,6 +10,7 @@ namespace AbilityMadness.Code.Gameplay.Animator.Systems
         {
             _entities = contexts.game.GetGroup(GameMatcher
                 .AllOf(
+                    GameMatcher.Player,
                     GameMatcher.MovementAnimator,
                     GameMatcher.LookDirection,
                     GameMatcher.Velocity));
@@ -21,11 +22,11 @@ namespace AbilityMadness.Code.Gameplay.Animator.Systems
             {
                 if (entity.Velocity.magnitude > 0f)
                 {
-                    entity.MovementAnimator.SetWalk(entity.LookDirection);
+                    entity.MovementAnimator.SetWalk(entity.Velocity);
                 }
                 else
                 {
-                    entity.MovementAnimator.SetIdle(entity.LookDirection);
+                    entity.MovementAnimator.SetIdle(entity.Velocity);
                 }
             }
         }

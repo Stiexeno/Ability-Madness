@@ -8,13 +8,13 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    private AbilityMadness.Code.Gameplay.Collision.ColliderOwnerId colliderOwnerId { get { return (AbilityMadness.Code.Gameplay.Collision.ColliderOwnerId)GetComponent(GameComponentsLookup.ColliderOwnerId); } }
+    private AbilityMadness.Code.Common.Collision.ColliderOwnerId colliderOwnerId { get { return (AbilityMadness.Code.Common.Collision.ColliderOwnerId)GetComponent(GameComponentsLookup.ColliderOwnerId); } }
     public int ColliderOwnerId { get { return colliderOwnerId.Value; } set { colliderOwnerId.Value = value; }}
     public bool hasColliderOwnerId { get { return HasComponent(GameComponentsLookup.ColliderOwnerId); } }
 
     public GameEntity AddColliderOwnerId(int newValue) {
         var index = GameComponentsLookup.ColliderOwnerId;
-        var component = (AbilityMadness.Code.Gameplay.Collision.ColliderOwnerId)CreateComponent(index, typeof(AbilityMadness.Code.Gameplay.Collision.ColliderOwnerId));
+        var component = (AbilityMadness.Code.Common.Collision.ColliderOwnerId)CreateComponent(index, typeof(AbilityMadness.Code.Common.Collision.ColliderOwnerId));
         component.Value = newValue;
         AddComponent(index, component);
 
@@ -23,7 +23,7 @@ public partial class GameEntity {
 
     public GameEntity ReactiveReplaceColliderOwnerId(int newValue) {
         var index = GameComponentsLookup.ColliderOwnerId;
-        var component = (AbilityMadness.Code.Gameplay.Collision.ColliderOwnerId)CreateComponent(index, typeof(AbilityMadness.Code.Gameplay.Collision.ColliderOwnerId));
+        var component = (AbilityMadness.Code.Common.Collision.ColliderOwnerId)CreateComponent(index, typeof(AbilityMadness.Code.Common.Collision.ColliderOwnerId));
         component.Value = newValue;
         ReplaceComponent(index, component);
 

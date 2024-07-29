@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using AbilityMadness.Code.Common.Behaviours;
 using AbilityMadness.Code.Infrastructure.Factories;
+using AbilityMadness.Code.Infrastructure.View;
 using AbilityMadness.Infrastructure.Services.Assets;
 using Cysharp.Threading.Tasks;
 
@@ -25,9 +25,9 @@ namespace AbilityMadness.Code.Infrastructure.Services.View
                 {
                     foreach (var view in entityViews)
                     {
-                        if (string.Equals(path, view.Path) && view.gameObject.activeSelf == false)
+                        var viewPath = view.GetViewPath();
+                        if (string.Equals(path, viewPath) && view.gameObject.activeSelf == false)
                         {
-                            view.Path = path;
                             return view;
                         }
                     }
@@ -45,7 +45,6 @@ namespace AbilityMadness.Code.Infrastructure.Services.View
         private async UniTask<EntityView> Create(string path)
         {
             var viewInstance = await _generalFactory.Create<EntityView>(path);
-            viewInstance.Path = path;
 
             if (_pooledViews.ContainsKey(path) == false)
             {

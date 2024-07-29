@@ -1,6 +1,7 @@
 using AbilityMadness.Code.Gameplay.Camera.Factory;
 using AbilityMadness.Code.Gameplay.Chest.Factory;
 using AbilityMadness.Code.Infrastructure.Services.Camera;
+using AbilityMadness.Code.Infrastructure.Services.Cursors;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
 using AbilityMadness.Code.Infrastructure.Services.Physics;
 using AbilityMadness.Code.Infrastructure.Services.View;
@@ -86,6 +87,10 @@ namespace AbilityMadness
 
             Container.BindInterfacesTo<PhysicsService>()
                 .AsSingle();
+
+            Container.BindInterfacesTo<CursorService>()
+                .AsSingle()
+                .NonLazy();
         }
 
         private void BindProviders()

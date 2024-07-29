@@ -1,4 +1,4 @@
-using AbilityMadness.Code.Common.Behaviours;
+using AbilityMadness.Code.Infrastructure.View;
 using Cysharp.Threading.Tasks;
 
 namespace AbilityMadness.Code.Infrastructure.Services.View

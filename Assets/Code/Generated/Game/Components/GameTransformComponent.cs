@@ -8,13 +8,13 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    private AbilityMadness.Code.Common.Transform transform { get { return (AbilityMadness.Code.Common.Transform)GetComponent(GameComponentsLookup.Transform); } }
+    private AbilityMadness.Code.Common.TransformComponent transform { get { return (AbilityMadness.Code.Common.TransformComponent)GetComponent(GameComponentsLookup.Transform); } }
     public UnityEngine.Transform Transform { get { return transform.Value; } set { transform.Value = value; }}
     public bool hasTransform { get { return HasComponent(GameComponentsLookup.Transform); } }
 
     public GameEntity AddTransform(UnityEngine.Transform newValue) {
         var index = GameComponentsLookup.Transform;
-        var component = (AbilityMadness.Code.Common.Transform)CreateComponent(index, typeof(AbilityMadness.Code.Common.Transform));
+        var component = (AbilityMadness.Code.Common.TransformComponent)CreateComponent(index, typeof(AbilityMadness.Code.Common.TransformComponent));
         component.Value = newValue;
         AddComponent(index, component);
 
@@ -23,7 +23,7 @@ public partial class GameEntity {
 
     public GameEntity ReactiveReplaceTransform(UnityEngine.Transform newValue) {
         var index = GameComponentsLookup.Transform;
-        var component = (AbilityMadness.Code.Common.Transform)CreateComponent(index, typeof(AbilityMadness.Code.Common.Transform));
+        var component = (AbilityMadness.Code.Common.TransformComponent)CreateComponent(index, typeof(AbilityMadness.Code.Common.TransformComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
 

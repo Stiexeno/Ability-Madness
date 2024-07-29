@@ -44,14 +44,16 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 		{
 			var sceneToLoad = Constants.Scenes.GameplaySceneName;
 
-			if (Application.isEditor && _currentScene != Constants.Scenes.BootSceneName)
-			{
-				_applicationStateMachine.Enter<LoadLevelState, string>(_currentScene).Forget();
-			}
-			else
-			{
-				_applicationStateMachine.Enter<LoadLevelState, string>(sceneToLoad).Forget();
-			}
+            _applicationStateMachine.Enter<LoadLevelState, string>(sceneToLoad).Forget();
+
+			// if (Application.isEditor && _currentScene != Constants.Scenes.BootSceneName)
+			// {
+			// 	_applicationStateMachine.Enter<LoadLevelState, string>(_currentScene).Forget();
+			// }
+			// else
+			// {
+			//
+			// }
 		}
 	}
 }

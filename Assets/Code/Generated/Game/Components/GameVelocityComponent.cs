@@ -8,29 +8,29 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    private AbilityMadness.Code.Gameplay.Movement.Velocity velocity { get { return (AbilityMadness.Code.Gameplay.Movement.Velocity)GetComponent(GameComponentsLookup.Velocity); } }
-    public UnityEngine.Vector2 Velocity { get { return velocity.Value; } set { velocity.Value = value; }}
+    private AbilityMadness.Code.Common.Velocity velocity { get { return (AbilityMadness.Code.Common.Velocity)GetComponent(GameComponentsLookup.Velocity); } }
+    public UnityEngine.Vector3 Velocity { get { return velocity.Value; } set { velocity.Value = value; }}
     public bool hasVelocity { get { return HasComponent(GameComponentsLookup.Velocity); } }
 
-    public GameEntity AddVelocity(UnityEngine.Vector2 newValue) {
+    public GameEntity AddVelocity(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.Velocity;
-        var component = (AbilityMadness.Code.Gameplay.Movement.Velocity)CreateComponent(index, typeof(AbilityMadness.Code.Gameplay.Movement.Velocity));
+        var component = (AbilityMadness.Code.Common.Velocity)CreateComponent(index, typeof(AbilityMadness.Code.Common.Velocity));
         component.Value = newValue;
         AddComponent(index, component);
 
         return this;
     }
 
-    public GameEntity ReactiveReplaceVelocity(UnityEngine.Vector2 newValue) {
+    public GameEntity ReactiveReplaceVelocity(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.Velocity;
-        var component = (AbilityMadness.Code.Gameplay.Movement.Velocity)CreateComponent(index, typeof(AbilityMadness.Code.Gameplay.Movement.Velocity));
+        var component = (AbilityMadness.Code.Common.Velocity)CreateComponent(index, typeof(AbilityMadness.Code.Common.Velocity));
         component.Value = newValue;
         ReplaceComponent(index, component);
 
         return this;
     }
 
-    public GameEntity ReplaceVelocity(UnityEngine.Vector2 newValue) {
+    public GameEntity ReplaceVelocity(UnityEngine.Vector3 newValue) {
         if (!hasVelocity) 
         {
             AddVelocity(newValue);

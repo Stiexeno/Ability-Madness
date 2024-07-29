@@ -8,67 +8,58 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int Destructed = 0;
-    public const int Disabled = 1;
-    public const int Enabled = 2;
-    public const int Id = 3;
-    public const int Rigidbody2D = 4;
-    public const int Transform = 5;
-    public const int View = 6;
-    public const int ViewLoading = 7;
-    public const int ViewPath = 8;
-    public const int WorldPosition = 9;
-    public const int MovementAnimator = 10;
-    public const int Camera = 11;
-    public const int CameraOffset = 12;
-    public const int CameraSmooth = 13;
-    public const int CameraVelocity = 14;
-    public const int FollowTargetId = 15;
-    public const int Chest = 16;
-    public const int ChestInteracting = 17;
-    public const int CollidedId = 18;
-    public const int ColliderOwnerId = 19;
-    public const int Collision = 20;
-    public const int CollisionEnter = 21;
-    public const int CollisionExit = 22;
-    public const int CollisionStay = 23;
-    public const int TriggerEnter = 24;
-    public const int TriggerExit = 25;
-    public const int TriggerStay = 26;
+    public const int Collider2D = 0;
+    public const int CollidedId = 1;
+    public const int ColliderOwnerId = 2;
+    public const int Collision = 3;
+    public const int CollisionEnter = 4;
+    public const int CollisionExit = 5;
+    public const int CollisionStay = 6;
+    public const int TriggerEnter = 7;
+    public const int TriggerExit = 8;
+    public const int TriggerStay = 9;
+    public const int Destructed = 10;
+    public const int Disabled = 11;
+    public const int Enabled = 12;
+    public const int Id = 13;
+    public const int Rigidbody2D = 14;
+    public const int Transform = 15;
+    public const int Velocity = 16;
+    public const int View = 17;
+    public const int ViewLoading = 18;
+    public const int ViewPath = 19;
+    public const int WorldPosition = 20;
+    public const int MovementAnimator = 21;
+    public const int Camera = 22;
+    public const int CameraOffset = 23;
+    public const int CameraSmooth = 24;
+    public const int FollowTargetId = 25;
+    public const int Chest = 26;
     public const int AxisInput = 27;
     public const int LookInput = 28;
-    public const int InteractBehaviour = 29;
-    public const int Alive = 30;
-    public const int Direction = 31;
-    public const int LookDirection = 32;
-    public const int MovementSpeed = 33;
-    public const int RigidbodyMovement = 34;
-    public const int TransformMovement = 35;
-    public const int Velocity = 36;
-    public const int Player = 37;
-    public const int PlayerTriggered = 38;
+    public const int MouseCollision = 29;
+    public const int MouseInHover = 30;
+    public const int MousePosition = 31;
+    public const int InteractBehaviour = 32;
+    public const int Alive = 33;
+    public const int Direction = 34;
+    public const int LookDirection = 35;
+    public const int MovementSpeed = 36;
+    public const int RigidbodyMovement = 37;
+    public const int TransformMovement = 38;
+    public const int Food = 39;
+    public const int Health = 40;
+    public const int MaxFood = 41;
+    public const int MaxHealth = 42;
+    public const int MaxWater = 43;
+    public const int Water = 44;
+    public const int Player = 45;
+    public const int PlayerInTrigger = 46;
 
-    public const int TotalComponents = 39;
+    public const int TotalComponents = 47;
 
     public static readonly string[] componentNames = {
-        "Destructed",
-        "Disabled",
-        "Enabled",
-        "Id",
-        "Rigidbody2D",
-        "Transform",
-        "View",
-        "ViewLoading",
-        "ViewPath",
-        "WorldPosition",
-        "MovementAnimator",
-        "Camera",
-        "CameraOffset",
-        "CameraSmooth",
-        "CameraVelocity",
-        "FollowTargetId",
-        "Chest",
-        "ChestInteracting",
+        "Collider2D",
         "CollidedId",
         "ColliderOwnerId",
         "Collision",
@@ -78,8 +69,28 @@ public static class GameComponentsLookup {
         "TriggerEnter",
         "TriggerExit",
         "TriggerStay",
+        "Destructed",
+        "Disabled",
+        "Enabled",
+        "Id",
+        "Rigidbody2D",
+        "Transform",
+        "Velocity",
+        "View",
+        "ViewLoading",
+        "ViewPath",
+        "WorldPosition",
+        "MovementAnimator",
+        "Camera",
+        "CameraOffset",
+        "CameraSmooth",
+        "FollowTargetId",
+        "Chest",
         "AxisInput",
         "LookInput",
+        "MouseCollision",
+        "MouseInHover",
+        "MousePosition",
         "InteractBehaviour",
         "Alive",
         "Direction",
@@ -87,18 +98,34 @@ public static class GameComponentsLookup {
         "MovementSpeed",
         "RigidbodyMovement",
         "TransformMovement",
-        "Velocity",
+        "Food",
+        "Health",
+        "MaxFood",
+        "MaxHealth",
+        "MaxWater",
+        "Water",
         "Player",
-        "PlayerTriggered"
+        "PlayerInTrigger"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(AbilityMadness.Code.Common.Collider2DComponent),
+        typeof(AbilityMadness.Code.Common.Collision.CollidedId),
+        typeof(AbilityMadness.Code.Common.Collision.ColliderOwnerId),
+        typeof(AbilityMadness.Code.Common.Collision.Collision),
+        typeof(AbilityMadness.Code.Common.Collision.CollisionEnter),
+        typeof(AbilityMadness.Code.Common.Collision.CollisionExit),
+        typeof(AbilityMadness.Code.Common.Collision.CollisionStay),
+        typeof(AbilityMadness.Code.Common.Collision.TriggerEnter),
+        typeof(AbilityMadness.Code.Common.Collision.TriggerExit),
+        typeof(AbilityMadness.Code.Common.Collision.TriggerStay),
         typeof(AbilityMadness.Code.Common.Destructed),
         typeof(AbilityMadness.Code.Common.Disabled),
         typeof(AbilityMadness.Code.Common.Enabled),
         typeof(AbilityMadness.Code.Common.Id),
-        typeof(AbilityMadness.Code.Common.Rigidbody2D),
-        typeof(AbilityMadness.Code.Common.Transform),
+        typeof(AbilityMadness.Code.Common.Rigidbody2DComponent),
+        typeof(AbilityMadness.Code.Common.TransformComponent),
+        typeof(AbilityMadness.Code.Common.Velocity),
         typeof(AbilityMadness.Code.Common.View),
         typeof(AbilityMadness.Code.Common.ViewLoading),
         typeof(AbilityMadness.Code.Common.ViewPath),
@@ -107,21 +134,13 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Camera.Camera),
         typeof(AbilityMadness.Code.Gameplay.Camera.CameraOffset),
         typeof(AbilityMadness.Code.Gameplay.Camera.CameraSmooth),
-        typeof(AbilityMadness.Code.Gameplay.Camera.CameraVelocity),
         typeof(AbilityMadness.Code.Gameplay.Camera.FollowTargetId),
         typeof(AbilityMadness.Code.Gameplay.Chest.Chest),
-        typeof(AbilityMadness.Code.Gameplay.Chest.ChestInteracting),
-        typeof(AbilityMadness.Code.Gameplay.Collision.CollidedId),
-        typeof(AbilityMadness.Code.Gameplay.Collision.ColliderOwnerId),
-        typeof(AbilityMadness.Code.Gameplay.Collision.Collision),
-        typeof(AbilityMadness.Code.Gameplay.Collision.CollisionEnter),
-        typeof(AbilityMadness.Code.Gameplay.Collision.CollisionExit),
-        typeof(AbilityMadness.Code.Gameplay.Collision.CollisionStay),
-        typeof(AbilityMadness.Code.Gameplay.Collision.TriggerEnter),
-        typeof(AbilityMadness.Code.Gameplay.Collision.TriggerExit),
-        typeof(AbilityMadness.Code.Gameplay.Collision.TriggerStay),
         typeof(AbilityMadness.Code.Gameplay.Input.AxisInput),
         typeof(AbilityMadness.Code.Gameplay.Input.LookInput),
+        typeof(AbilityMadness.Code.Gameplay.Input.MouseCollision),
+        typeof(AbilityMadness.Code.Gameplay.Input.MouseInHover),
+        typeof(AbilityMadness.Code.Gameplay.Input.MousePosition),
         typeof(AbilityMadness.Code.Gameplay.Interaction.InteractBehaviourComponent),
         typeof(AbilityMadness.Code.Gameplay.Lifetime.Alive),
         typeof(AbilityMadness.Code.Gameplay.Movement.Direction),
@@ -129,8 +148,13 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Movement.MovementSpeed),
         typeof(AbilityMadness.Code.Gameplay.Movement.RigidbodyMovement),
         typeof(AbilityMadness.Code.Gameplay.Movement.TransformMovement),
-        typeof(AbilityMadness.Code.Gameplay.Movement.Velocity),
+        typeof(AbilityMadness.Code.Gameplay.Vitals.Food),
+        typeof(AbilityMadness.Code.Gameplay.Vitals.Health),
+        typeof(AbilityMadness.Code.Gameplay.Vitals.MaxFood),
+        typeof(AbilityMadness.Code.Gameplay.Vitals.MaxHealth),
+        typeof(AbilityMadness.Code.Gameplay.Vitals.MaxWater),
+        typeof(AbilityMadness.Code.Gameplay.Vitals.Water),
         typeof(AbilityMadness.Player),
-        typeof(AbilityMadness.PlayerTriggered)
+        typeof(AbilityMadness.PlayerInTrigger)
     };
 }

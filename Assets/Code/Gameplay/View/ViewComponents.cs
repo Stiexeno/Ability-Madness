@@ -1,4 +1,5 @@
 ﻿using AbilityMadness.Code.Common.Behaviours;
+using AbilityMadness.Code.Infrastructure.View;
 using Entitas;
 
 namespace AbilityMadness.Code.Common

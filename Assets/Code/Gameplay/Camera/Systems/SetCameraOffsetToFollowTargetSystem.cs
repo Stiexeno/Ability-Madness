@@ -18,7 +18,7 @@ namespace AbilityMadness.Code.Gameplay.Camera.Systems
                     GameMatcher.CameraOffset,
                     GameMatcher.FollowTargetId,
                     GameMatcher.CameraSmooth,
-                    GameMatcher.CameraVelocity));
+                    GameMatcher.Velocity));
 
             _followTargets = contexts.game.GetGroup(GameMatcher
                 .AllOf(
@@ -37,15 +37,15 @@ namespace AbilityMadness.Code.Gameplay.Camera.Systems
                 {
                     var targetPosition = new Vector3(followTarget.WorldPosition.x, followTarget.WorldPosition.y, -10f);
 
-                    var cameraCameraVelocity = camera.CameraVelocity;
+                    var cameraVelocity = camera.Velocity;
 
                      camera.WorldPosition = Vector3.SmoothDamp(
                          camera.WorldPosition,
                          targetPosition,
-                         ref cameraCameraVelocity,
+                         ref cameraVelocity,
                          camera.CameraSmooth);
 
-                     camera.CameraVelocity = cameraCameraVelocity;
+                     camera.Velocity = cameraVelocity;
                 }
             }
         }

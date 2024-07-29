@@ -1,4 +1,5 @@
 ﻿using AbilityMadness.Code.Common;
+using AbilityMadness.Code.Extensions;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
 
 namespace AbilityMadness.Code.Gameplay.Chest.Factory
@@ -15,7 +16,8 @@ namespace AbilityMadness.Code.Gameplay.Chest.Factory
         public GameEntity Create()
         {
             return CreateEntity.Empty()
-                .AddId(_identifierService.Next());
+                .AddId(_identifierService.Next())
+                .With(x => x.isChest = true);
         }
     }
 }

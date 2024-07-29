@@ -11,8 +11,6 @@ namespace AbilityMadness.Code.Common
 
             Add(systemFactory.Create<DisableGameObjectSystem>());
             Add(systemFactory.Create<EnableGameObjectSystem>());
-
-            Add(systemFactory.Create<CleanupDestructedSystem>());
         }
     }
 }

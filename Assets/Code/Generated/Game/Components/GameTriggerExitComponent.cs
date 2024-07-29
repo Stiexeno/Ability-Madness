@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly AbilityMadness.Code.Gameplay.Collision.TriggerExit triggerExitComponent = new AbilityMadness.Code.Gameplay.Collision.TriggerExit();
+    static readonly AbilityMadness.Code.Common.Collision.TriggerExit triggerExitComponent = new AbilityMadness.Code.Common.Collision.TriggerExit();
 
     public bool isTriggerExit {
         get { return HasComponent(GameComponentsLookup.TriggerExit); }

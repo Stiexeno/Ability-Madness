@@ -27,17 +27,15 @@ namespace AbilityMadness.Code.Gameplay.Input.Systems
         public void Execute()
         {
             foreach (var input in _inputs)
+            foreach (var player in _players)
             {
-                foreach (var player in _players)
-                {
-                    var lookInput = UnityEngine.Camera.main.ScreenToWorldPoint(
-                        _aimingInput.ReadValue<Vector2>());
+                var lookInput = UnityEngine.Camera.main.ScreenToWorldPoint(
+                    _aimingInput.ReadValue<Vector2>());
 
-                    lookInput -= player.WorldPosition;
-                    lookInput = Vector2.ClampMagnitude(lookInput, 1);
+                lookInput -= player.WorldPosition;
+                lookInput = Vector2.ClampMagnitude(lookInput, 1);
 
-                    input.ReplaceLookInput(new Vector2(lookInput.x, lookInput.y));
-                }
+                input.ReplaceLookInput(new Vector2(lookInput.x, lookInput.y));
             }
         }
     }

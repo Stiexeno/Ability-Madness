@@ -9,6 +9,10 @@ namespace AbilityMadness.Factory
     {
         private const string PlayerPath = "Character_Player";
 
+        private const int MaxHealth = 100;
+        private const int MaxFood = 100;
+        private const int MaxWater = 100;
+
         private IIdentifierService _identifierService;
 
         public PlayerFactory(IIdentifierService identifierService)
@@ -28,7 +32,14 @@ namespace AbilityMadness.Factory
                 .AddDirection(Vector2.zero)
                 .AddLookDirection(Vector2.zero)
                 .AddMovementSpeed(300f)
-                .With(x => x.isRigidbodyMovement = true);
+                .With(x => x.isRigidbodyMovement = true)
+
+                .AddWater(MaxWater)
+                .AddMaxWater(MaxWater)
+                .AddFood(MaxFood)
+                .AddMaxFood(MaxFood)
+                .AddHealth(MaxHealth)
+                .AddMaxHealth(MaxHealth);
         }
     }
 }

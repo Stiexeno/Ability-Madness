@@ -20,7 +20,8 @@ MonoBehaviour:
   - m_GUID: 82c7ce612f54ed849b811c2b664d4996
     m_Address: Assets/AddressablesResources/Prefabs/UI/Windows
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - window
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9f75c775787da8a4c8e7e94698c9d5b8, type: 2}
   m_SchemaSet:

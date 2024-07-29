@@ -34,7 +34,7 @@ namespace AbilityMadness.Systems
                 if (colliderOwner == null || !_players.ContainsEntity(player))
                     continue;
 
-                colliderOwner.isPlayerTriggered = false;
+                colliderOwner.isPlayerInTrigger = false;
             }
         }
     }

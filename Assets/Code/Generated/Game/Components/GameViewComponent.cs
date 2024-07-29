@@ -9,10 +9,10 @@
 public partial class GameEntity {
 
     private AbilityMadness.Code.Common.View view { get { return (AbilityMadness.Code.Common.View)GetComponent(GameComponentsLookup.View); } }
-    public AbilityMadness.Code.Common.Behaviours.EntityView View { get { return view.Value; } set { view.Value = value; }}
+    public AbilityMadness.Code.Infrastructure.View.EntityView View { get { return view.Value; } set { view.Value = value; }}
     public bool hasView { get { return HasComponent(GameComponentsLookup.View); } }
 
-    public GameEntity AddView(AbilityMadness.Code.Common.Behaviours.EntityView newValue) {
+    public GameEntity AddView(AbilityMadness.Code.Infrastructure.View.EntityView newValue) {
         var index = GameComponentsLookup.View;
         var component = (AbilityMadness.Code.Common.View)CreateComponent(index, typeof(AbilityMadness.Code.Common.View));
         component.Value = newValue;
@@ -21,7 +21,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReactiveReplaceView(AbilityMadness.Code.Common.Behaviours.EntityView newValue) {
+    public GameEntity ReactiveReplaceView(AbilityMadness.Code.Infrastructure.View.EntityView newValue) {
         var index = GameComponentsLookup.View;
         var component = (AbilityMadness.Code.Common.View)CreateComponent(index, typeof(AbilityMadness.Code.Common.View));
         component.Value = newValue;
@@ -30,7 +30,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceView(AbilityMadness.Code.Common.Behaviours.EntityView newValue) {
+    public GameEntity ReplaceView(AbilityMadness.Code.Infrastructure.View.EntityView newValue) {
         if (!hasView) 
         {
             AddView(newValue);

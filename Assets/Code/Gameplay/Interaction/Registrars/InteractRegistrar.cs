@@ -1,5 +1,5 @@
-using AbilityMadness.Code.Common.Behaviours;
 using AbilityMadness.Code.Gameplay.Interaction.Behaviours;
+using AbilityMadness.Code.Infrastructure.View;
 using SF = UnityEngine.SerializeField;
 
 namespace AbilityMadness.Code.Gameplay.Interaction.Registrars

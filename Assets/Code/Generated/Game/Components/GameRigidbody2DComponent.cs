@@ -8,13 +8,13 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    private AbilityMadness.Code.Common.Rigidbody2D rigidbody2D { get { return (AbilityMadness.Code.Common.Rigidbody2D)GetComponent(GameComponentsLookup.Rigidbody2D); } }
+    private AbilityMadness.Code.Common.Rigidbody2DComponent rigidbody2D { get { return (AbilityMadness.Code.Common.Rigidbody2DComponent)GetComponent(GameComponentsLookup.Rigidbody2D); } }
     public UnityEngine.Rigidbody2D Rigidbody2D { get { return rigidbody2D.Value; } set { rigidbody2D.Value = value; }}
     public bool hasRigidbody2D { get { return HasComponent(GameComponentsLookup.Rigidbody2D); } }
 
     public GameEntity AddRigidbody2D(UnityEngine.Rigidbody2D newValue) {
         var index = GameComponentsLookup.Rigidbody2D;
-        var component = (AbilityMadness.Code.Common.Rigidbody2D)CreateComponent(index, typeof(AbilityMadness.Code.Common.Rigidbody2D));
+        var component = (AbilityMadness.Code.Common.Rigidbody2DComponent)CreateComponent(index, typeof(AbilityMadness.Code.Common.Rigidbody2DComponent));
         component.Value = newValue;
         AddComponent(index, component);
 
@@ -23,7 +23,7 @@ public partial class GameEntity {
 
     public GameEntity ReactiveReplaceRigidbody2D(UnityEngine.Rigidbody2D newValue) {
         var index = GameComponentsLookup.Rigidbody2D;
-        var component = (AbilityMadness.Code.Common.Rigidbody2D)CreateComponent(index, typeof(AbilityMadness.Code.Common.Rigidbody2D));
+        var component = (AbilityMadness.Code.Common.Rigidbody2DComponent)CreateComponent(index, typeof(AbilityMadness.Code.Common.Rigidbody2DComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
 

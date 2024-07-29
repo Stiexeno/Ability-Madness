@@ -7,8 +7,8 @@ namespace AbilityMadness.Code.Gameplay.Chest
     {
         public ChestFreature(ISystemFactory systemFactory)
         {
-            Add(systemFactory.Create<MarkChestInteractPlayerEnterSystem>());
-            Add(systemFactory.Create<RemoveChestInteractPlayerExitSystem>());
+            Add(systemFactory.Create<ShowChestOutlineSystem>());
+            Add(systemFactory.Create<SetChestCursorInteractSystem>());
         }
     }
 }

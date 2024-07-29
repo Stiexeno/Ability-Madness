@@ -1,5 +1,6 @@
 using System;
 using AbilityMadness.Code.Gameplay.Animator.Registrars;
+using AbilityMadness.Code.Infrastructure.View;
 using Animancer;
 using UnityEngine;
 using SF = UnityEngine.SerializeField;
@@ -11,6 +12,8 @@ namespace AbilityMadness.Code.Common.Behaviours
     {
         [SF] private LinearMixerTransition movementTransition;
         [SF] private AnimancerComponent animancer;
+
+        private Vector2 _velocity;
 
         private const float BACK_PARAMETER = 0;
         private const float RIGHT_PARAMETER = 1;
@@ -36,32 +39,71 @@ namespace AbilityMadness.Code.Common.Behaviours
             movementTransition.State.Parameter = Mathf.RoundToInt(parameter);
         }
 
-        private float GetLookParameter(Vector2 lookDirection)
+        private float GetLookParameter(Vector2 velocity)
         {
-            float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            if (velocity.magnitude == 0f)
+            {
+                velocity = _velocity;
+            }
 
-            var rotationAngle = rotation.eulerAngles.z;
+            _velocity = velocity;
+
+
             var parameter = 0f;
 
-            if (rotationAngle >= 315 || rotationAngle <= 45)
+            if (velocity.x > 0)
             {
                 parameter = RIGHT_PARAMETER;
             }
-            else if (rotationAngle >= 45 && rotationAngle <= 135)
+            else if (velocity.x < 0)
+            {
+                parameter = LEFT_PARAMETER;
+            }
+            else if (velocity.y > 0)
             {
                 parameter = BACK_PARAMETER;
             }
-            else if (rotationAngle >= 225 && rotationAngle <= 315)
+            else if (velocity.y < 0)
             {
                 parameter = FRONT_PARAMETER;
-            }
-            else if (rotationAngle >= 135 && rotationAngle <= 225)
-            {
-                parameter = LEFT_PARAMETER;
             }
 
             return parameter;
         }
+
+        // private float GetLookParameter(Vector2 lookDirection)
+        // {
+        //     if (lookDirection.magnitude == 0f)
+        //     {
+        //         lookDirection = _velocity;
+        //     }
+        //
+        //     _velocity = lookDirection;
+        //
+        //     float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
+        //     Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        //
+        //     var rotationAngle = rotation.eulerAngles.z;
+        //     var parameter = 0f;
+        //
+        //     if (rotationAngle >= 315 || rotationAngle <= 45)
+        //     {
+        //         parameter = RIGHT_PARAMETER;
+        //     }
+        //     else if (rotationAngle >= 135 && rotationAngle <= 225)
+        //     {
+        //         parameter = LEFT_PARAMETER;
+        //     }
+        //     else if (rotationAngle >= 45 && rotationAngle <= 135)
+        //     {
+        //         parameter = BACK_PARAMETER;
+        //     }
+        //     else if (rotationAngle >= 225 && rotationAngle <= 315)
+        //     {
+        //         parameter = FRONT_PARAMETER;
+        //     }
+        //
+        //     return parameter;
+        // }
     }
 }

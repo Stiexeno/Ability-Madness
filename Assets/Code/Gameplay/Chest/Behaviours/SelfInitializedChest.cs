@@ -1,5 +1,5 @@
-﻿using AbilityMadness.Code.Common.Behaviours;
-using AbilityMadness.Code.Gameplay.Chest.Factory;
+﻿using AbilityMadness.Code.Gameplay.Chest.Factory;
+using AbilityMadness.Code.Infrastructure.View;
 using Zenject;
 
 namespace AbilityMadness.Code.Gameplay.Chest.Behaviours

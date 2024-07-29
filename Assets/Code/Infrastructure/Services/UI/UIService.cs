@@ -14,21 +14,21 @@ namespace AbilityMadness
 		{
 			_uiFactor = uiFactory;
 		}
-		
-		public T Get<T>() where T :Window
+
+		public T Get<T>() where T : Window
 		{
 			MakeSureWindowIsNotNull();
-			
+
 			Window window;
-			
+
 			if (!windows.ContainsKey(typeof(T)))
 			{
 				window = _uiFactor.CreateWindow<T>();
 				windows.Add(typeof(T), window);
 			}
-			
+
 			window = windows[typeof(T)];
-			
+
 			return window as T;
 		}
 
@@ -43,7 +43,7 @@ namespace AbilityMadness
 			var window = Get<T>();
 			window.Close();
 		}
-		
+
 		private void MakeSureWindowIsNotNull()
 		{
 			for (int i = windows.Count - 1; i >= 0; i--)

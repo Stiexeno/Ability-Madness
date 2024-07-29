@@ -24,6 +24,13 @@ namespace AbilityMadness
 
         public static class Configs
         {
+            public const string CursorConfig = "CursorConfig";
+        }
+
+        public static class Layers
+        {
+            public const int Default = 0;
+            public const int Interactable = 6;
         }
     }
 }

@@ -14,6 +14,7 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 		private IUIFactory _uiFactory;
         private IApplicationStateMachine _applicationStateMachine;
         private IPlayerFactory _playerFactory;
+        private IUIService _iuiService;
 
         [Inject]
 		private void Construct(
@@ -23,6 +24,7 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 			IApplicationStateMachine applicationStateMachine,
             IPlayerFactory playerFactory)
 		{
+            _iuiService = iuiService;
             _playerFactory = playerFactory;
             _applicationStateMachine = applicationStateMachine;
             _uiFactory = uiFactory;
@@ -45,13 +47,18 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 
 		private void OnSceneLoaded()
 		{
-			SetupUI().Forget();
+            SetupScene().Forget();
+		}
+
+        private async UniTask SetupScene()
+        {
+            await SetupUI();
             CreatePlayer();
 
             _applicationStateMachine.Enter<BattleLoopState>();
-		}
+        }
 
-		private async UniTaskVoid SetupUI()
+		private async UniTask SetupUI()
 		{
 			await _uiFactory.CreateUIRoot();
 			SetupWindows();
@@ -59,7 +66,7 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 
 		private void SetupWindows()
 		{
-			//_iuiService.Open<MenuWindow>();
+			_iuiService.Open<HudWindow>();
 		}
 
         private void CreatePlayer()

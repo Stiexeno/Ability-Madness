@@ -10,7 +10,8 @@ namespace AbilityMadness.Code.Gameplay.Input.Systems
         {
             CreateEntity.Empty()
                 .AddAxisInput(Vector2.zero)
-                .AddLookInput(Vector2.zero);
+                .AddLookInput(Vector2.zero)
+                .AddMousePosition(Vector2.zero);
         }
     }
 }

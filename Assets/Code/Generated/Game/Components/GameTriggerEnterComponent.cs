@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly AbilityMadness.Code.Gameplay.Collision.TriggerEnter triggerEnterComponent = new AbilityMadness.Code.Gameplay.Collision.TriggerEnter();
+    static readonly AbilityMadness.Code.Common.Collision.TriggerEnter triggerEnterComponent = new AbilityMadness.Code.Common.Collision.TriggerEnter();
 
     public bool isTriggerEnter {
         get { return HasComponent(GameComponentsLookup.TriggerEnter); }
