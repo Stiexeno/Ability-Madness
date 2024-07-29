@@ -19,6 +19,8 @@ namespace AbilityMadness.Code.Gameplay.Input
             Add(systemFactory.Create<MarkMouseHoverSystem>());
             Add(systemFactory.Create<RemoveMouseHoverSystem>());
             Add(systemFactory.Create<CleanupMouseTriggerSystem>());
+
+            Add(systemFactory.Create<SetAttackInputSystem>());
         }
     }
 }

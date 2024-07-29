@@ -1,4 +1,5 @@
-﻿using AbilityMadness.Code.Infrastructure.Services.ECS;
+﻿using AbilityMadness.Code.Gameplay.Abilities.Factory;
+using AbilityMadness.Code.Infrastructure.Services.ECS;
 using AbilityMadness.Factory;
 using AbilityMadness.Infrastructure.Factories.UI;
 using Cysharp.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
         private IApplicationStateMachine _applicationStateMachine;
         private IPlayerFactory _playerFactory;
         private IUIService _iuiService;
+        private IAbilityFactory _abilityFactory;
 
         [Inject]
 		private void Construct(
@@ -22,8 +24,10 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 			IUIFactory uiFactory,
 			IUIService iuiService,
 			IApplicationStateMachine applicationStateMachine,
-            IPlayerFactory playerFactory)
+            IPlayerFactory playerFactory,
+            IAbilityFactory abilityFactory)
 		{
+            _abilityFactory = abilityFactory;
             _iuiService = iuiService;
             _playerFactory = playerFactory;
             _applicationStateMachine = applicationStateMachine;
@@ -66,12 +70,12 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 
 		private void SetupWindows()
 		{
-			_iuiService.Open<HudWindow>();
 		}
 
         private void CreatePlayer()
         {
-            _playerFactory.CreatePlayer(Vector3.zero);
+            var player = _playerFactory.CreatePlayer(Vector3.zero);
+            _abilityFactory.CreateFireball(player);
         }
 	}
 }

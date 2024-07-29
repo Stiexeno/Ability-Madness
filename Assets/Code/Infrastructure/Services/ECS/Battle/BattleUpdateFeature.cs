@@ -1,12 +1,13 @@
 ﻿using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Common.Collision;
 using AbilityMadness.Code.Common.Destruct;
+using AbilityMadness.Code.Gameplay.Abilities;
 using AbilityMadness.Code.Gameplay.Animator;
 using AbilityMadness.Code.Gameplay.Chest;
 using AbilityMadness.Code.Gameplay.Input;
 using AbilityMadness.Code.Gameplay.Interaction;
 using AbilityMadness.Code.Gameplay.Movement;
-using AbilityMadness.Code.Gameplay.Vitals;
+using AbilityMadness.Code.Gameplay.Projectile;
 
 namespace AbilityMadness.Code.Infrastructure.Services.ECS
 {
@@ -22,7 +23,8 @@ namespace AbilityMadness.Code.Infrastructure.Services.ECS
             Add(systemFactory.Create<AnimatorFeature>());
             Add(systemFactory.Create<InteractionFeature>());
             Add(systemFactory.Create<ChestFreature>());
-            Add(systemFactory.Create<VitalsFeature>());
+            Add(systemFactory.Create<ProjectileFeature>());
+            Add(systemFactory.Create<AbilityFeature>());
 
             Add(systemFactory.Create<CollisionFeature>());
             Add(systemFactory.Create<DestructFeature>());

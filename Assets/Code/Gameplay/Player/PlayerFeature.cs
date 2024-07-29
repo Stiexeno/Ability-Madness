@@ -12,6 +12,8 @@ namespace AbilityMadness
 
             Add(systemFactory.Create<MarkPlayerOnTriggerStaySystem>());
             Add(systemFactory.Create<RemovePlayerOnTriggerExitSystem>());
+
+            Add(systemFactory.Create<PlayerAttackingSystem>());
         }
     }
 }

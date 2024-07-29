@@ -13,13 +13,20 @@ namespace AbilityMadness
         public static class Prefabs
         {
             public const string UIRootPath = "Prefabs/UI/UIRoot";
+
             public const string WindowLabel = "window";
+
+            public static class Projectiles
+            {
+                public const string Fireball = "Prefabs/Projectiles/Projectile_Fireball";
+            }
         }
 
         public static class Input
         {
             public const string Movement = "Movement";
             public const string Aiming = "Aiming";
+            public const string Attack = "Attack";
         }
 
         public static class Configs

@@ -13,5 +13,10 @@ namespace AbilityMadness.Code.Infrastructure.Services.View
             Debug.LogError("Entity is null");
             return string.Empty;
         }
+
+        public static string GetViewPath(this GameEntity entity)
+        {
+            return entity.ViewPath;
+        }
     }
 }

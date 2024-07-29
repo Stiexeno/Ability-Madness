@@ -25,8 +25,7 @@ namespace AbilityMadness.Code.Infrastructure.Services.View
                 {
                     foreach (var view in entityViews)
                     {
-                        var viewPath = view.GetViewPath();
-                        if (string.Equals(path, viewPath) && view.gameObject.activeSelf == false)
+                        if (view.gameObject.activeSelf == false)
                         {
                             return view;
                         }
@@ -39,6 +38,7 @@ namespace AbilityMadness.Code.Infrastructure.Services.View
 
         public void Put(EntityView entityView)
         {
+            entityView.ReleaseEntity();
             entityView.gameObject.SetActive(false);
         }
 
