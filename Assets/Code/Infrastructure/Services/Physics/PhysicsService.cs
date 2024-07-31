@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using AbilityMadness.Code.Editor;
 using UnityEngine;
 
 namespace AbilityMadness.Code.Infrastructure.Services.Physics
@@ -77,7 +78,7 @@ namespace AbilityMadness.Code.Infrastructure.Services.Physics
         {
             int hitCount = OverlapCircle(position, radius, OverlapHits, layerMask);
 
-            DrawDebug(position, radius, 1f, Color.red);
+            DrawDebug(position, radius, Color.red);
 
             for (int i = 0; i < hitCount; i++)
             {
@@ -93,16 +94,19 @@ namespace AbilityMadness.Code.Infrastructure.Services.Physics
         {
             int hitCount = OverlapCircle(position, radius, OverlapHits, layerMask);
 
-            DrawDebug(position, radius, 1f, Color.green);
+            DrawDebug(position, radius, Color.green);
 
             for (int i = 0; i < hitCount; i++)
             {
                 GameEntity entity = _collisionRegistry.Get<GameEntity>(OverlapHits[i].GetInstanceID());
+
                 if (entity == null)
                     continue;
 
                 if (i < hitBuffer.Length)
+                {
                     hitBuffer[i] = entity;
+                }
             }
 
             return hitCount;
@@ -131,13 +135,10 @@ namespace AbilityMadness.Code.Infrastructure.Services.Physics
         public int OverlapCircle(Vector3 worldPos, float radius, Collider2D[] hits, int layerMask) =>
             Physics2D.OverlapCircleNonAlloc(worldPos, radius, hits, layerMask);
 
-        private static void DrawDebug(Vector2 worldPos, float radius, float seconds, Color color)
+        private static void DrawDebug(Vector2 worldPos, float radius, Color color)
         {
 #if UNITY_EDITOR
-            Debug.DrawRay(worldPos, radius * Vector3.up, color, seconds);
-            Debug.DrawRay(worldPos, radius * Vector3.down, color, seconds);
-            Debug.DrawRay(worldPos, radius * Vector3.left, color, seconds);
-            Debug.DrawRay(worldPos, radius * Vector3.right, color, seconds);
+            DebugShapes.DrawCircle(worldPos, Vector3.forward, radius, 10, color);
 #endif
         }
     }
