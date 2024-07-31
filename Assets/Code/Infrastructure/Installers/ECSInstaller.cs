@@ -15,6 +15,10 @@ namespace AbilityMadness
                 .FromInstance(Contexts.sharedInstance)
                 .AsSingle();
 
+            Container.BindInterfacesAndSelfTo<GameContext>()
+                .FromInstance(Contexts.sharedInstance.game)
+                .AsSingle();
+
             Container.BindInterfacesTo<SystemFactory>()
                 .AsSingle();
 
