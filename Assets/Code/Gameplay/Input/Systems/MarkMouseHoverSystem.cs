@@ -17,6 +17,7 @@ namespace AbilityMadness.Code.Gameplay.Input.Systems
                     GameMatcher.CollisionEnter,
                     GameMatcher.CollidedId));
         }
+
         public void Execute()
         {
             foreach (var mouseCollision in _mouseCollisions)

@@ -10,8 +10,8 @@ namespace AbilityMadness
             Add(systemFactory.Create<SetPlayerDirectionByInputSystem>());
             Add(systemFactory.Create<SetPlayerLookDirectionByInputSystem>());
 
-            Add(systemFactory.Create<MarkPlayerOnTriggerStaySystem>());
-            Add(systemFactory.Create<RemovePlayerOnTriggerExitSystem>());
+            Add(systemFactory.Create<MarkPlayerInTriggerSystem>());
+            Add(systemFactory.Create<RemovePlayerInTriggerSystem>());
 
             Add(systemFactory.Create<PlayerAttackingSystem>());
         }

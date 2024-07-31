@@ -41,9 +41,7 @@ namespace AbilityMadness.Code.Gameplay.Input.Systems
 
                     foreach (var hit in hits)
                     {
-                        var collidedEntity = _collisionRegistry.Get<GameEntity>(hit.Collider2D.GetInstanceID());
-
-                        if (collidedEntity == mouseHover)
+                        if (hit == mouseHover)
                         {
                             inHover = true;
                             break;

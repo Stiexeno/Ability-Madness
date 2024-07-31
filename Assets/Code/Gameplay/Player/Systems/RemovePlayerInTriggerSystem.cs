@@ -2,18 +2,18 @@ using Entitas;
 
 namespace AbilityMadness.Systems
 {
-    public class MarkPlayerOnTriggerStaySystem : IExecuteSystem
+    public class RemovePlayerInTriggerSystem : IExecuteSystem
     {
         private IGroup<GameEntity> _collisions;
         private IGroup<GameEntity> _players;
         private Contexts _contexts;
 
-        public MarkPlayerOnTriggerStaySystem(Contexts contexts)
+        public RemovePlayerInTriggerSystem(Contexts contexts)
         {
             _contexts = contexts;
             _collisions = contexts.game.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.TriggerStay,
+                    GameMatcher.TriggerExit,
                     GameMatcher.CollidedId,
                     GameMatcher.ColliderOwnerId));
 
@@ -34,7 +34,7 @@ namespace AbilityMadness.Systems
                 if (colliderOwner == null || !_players.ContainsEntity(player))
                     continue;
 
-                colliderOwner.isPlayerInTrigger = _players.ContainsEntity(player);
+                colliderOwner.isPlayerInTrigger = false;
             }
         }
     }

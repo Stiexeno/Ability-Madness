@@ -29,15 +29,13 @@ namespace AbilityMadness.Code.Gameplay.Input.Systems
                 var hits = _physicsService.RaycastAll(input.MousePosition, Vector3.forward, ~0);
                 foreach (var hit in hits)
                 {
-                    var collidedEntity = _collisionRegistry.Get<GameEntity>(hit.Collider2D.GetInstanceID());
-
                     var mouseTriggerEntity = CreateEntity.Empty()
                         .With(x => x.isMouseCollision = true)
                         .With(x => x.isCollisionEnter = true);
 
-                    if (collidedEntity != null)
+                    if (hit != null)
                     {
-                        mouseTriggerEntity.AddCollidedId(collidedEntity.Id);
+                        mouseTriggerEntity.AddCollidedId(hit.Id);
                     }
                 }
             }

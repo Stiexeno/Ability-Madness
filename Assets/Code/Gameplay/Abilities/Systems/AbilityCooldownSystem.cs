@@ -22,7 +22,7 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Systems
         {
             foreach (var ability in _abilities.GetEntities(_buffer))
             {
-                ability.ReplaceCooldown(0.1f);
+                ability.ReplaceCooldown(0.05f);
             }
         }
     }
