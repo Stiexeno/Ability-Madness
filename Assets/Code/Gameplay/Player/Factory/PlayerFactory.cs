@@ -1,6 +1,8 @@
 ﻿using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Extensions;
 using AbilityMadness.Code.Gameplay.Health;
+using AbilityMadness.Code.Gameplay.Movement;
+using AbilityMadness.Code.Gameplay.Vision;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
 using UnityEngine;
 
@@ -25,14 +27,11 @@ namespace AbilityMadness.Factory
                 .AddViewPath(PlayerPath)
                 .AddTeam(Team.Player)
 
+                .SetRigidbodyMovement(300f)
                 .AddWorldPosition(Vector2.zero)
-                .AddVelocity(Vector2.zero)
-                .AddDirection(Vector2.zero)
                 .AddLookDirection(Vector2.zero)
-                .AddMovementSpeed(300f)
-                .With(x => x.isRigidbodyMovement = true)
 
-                .With(x => x.isRangedAttack = true);
+                .SetVision(10f, 1f, Constants.Layers.Enemy);
         }
     }
 }

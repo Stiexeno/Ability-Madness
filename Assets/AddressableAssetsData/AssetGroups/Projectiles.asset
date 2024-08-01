@@ -21,6 +21,10 @@ MonoBehaviour:
     m_Address: Prefabs/Projectiles/Projectile_Fireball
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 712de92f2bfd30744ae9bc1b924b439d
+    m_Address: Prefabs/Projectiles/Arrow/Projectile_Arrow
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9f75c775787da8a4c8e7e94698c9d5b8, type: 2}
   m_SchemaSet:

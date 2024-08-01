@@ -2,10 +2,9 @@
 {
     public static class CooldownExtensions
     {
-        public static GameEntity SetCooldown(this GameEntity entity, float cooldown)
+        public static GameEntity SetOnCooldown(this GameEntity entity)
         {
             return entity
-                .AddCooldown(cooldown)
                 .AddCooldownLeft(0f);
         }
     }

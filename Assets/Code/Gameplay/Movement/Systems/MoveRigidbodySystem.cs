@@ -2,11 +2,11 @@ using Entitas;
 
 namespace AbilityMadness.Code.Gameplay.Movement.Systems
 {
-    public class SetVelocityToRigidbodySystem : IExecuteSystem
+    public class MoveRigidbodySystem : IExecuteSystem
     {
         private IGroup<GameEntity> _entities;
 
-        public SetVelocityToRigidbodySystem(Contexts contexts)
+        public MoveRigidbodySystem(Contexts contexts)
         {
             _entities = contexts.game.GetGroup(GameMatcher
                 .AllOf(

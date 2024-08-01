@@ -11,7 +11,7 @@ namespace AbilityMadness.Code.Common.Behaviours
         public void PlayDamageAnimation()
         {
             transform.DOKill(true);
-            transform.DOPunchScale(Vector3.one * 0.1f, 0.1f, 10, 1);
+            transform.DOPunchScale(Vector3.one * 0.25f, 0.15f, 10, 1);
         }
     }
 }

@@ -1,12 +1,12 @@
 ﻿using Entitas;
 
-namespace AbilityMadness.Code.Common.Systems
+namespace AbilityMadness.Code.Gameplay.Movement.Systems
 {
-    public class SetWorldPositionToTransformSystem : IExecuteSystem
+    public class MoveTransformSystem : IExecuteSystem
     {
         private IGroup<GameEntity> _entities;
 
-        public SetWorldPositionToTransformSystem(Contexts contexts)
+        public MoveTransformSystem(Contexts contexts)
         {
             _entities = contexts.game.GetGroup(GameMatcher
                 .AllOf(

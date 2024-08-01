@@ -28,7 +28,7 @@ namespace AbilityMadness.Code.Infrastructure.Services.View
                 {
                     foreach (var view in entityViews)
                     {
-                        if (view.gameObject.activeSelf == false)
+                        if (view.gameObject.activeSelf == false && view.Entity == null)
                         {
                             return view;
                         }

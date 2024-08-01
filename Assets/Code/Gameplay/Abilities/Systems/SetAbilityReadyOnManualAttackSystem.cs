@@ -2,13 +2,13 @@ using Entitas;
 
 namespace AbilityMadness.Code.Gameplay.Abilities.Systems
 {
-    public class PrepareManualLaunchAbilitySystem : IExecuteSystem
+    public class SetAbilityReadyOnManualAttackSystem : IExecuteSystem
     {
         private IGroup<GameEntity> _abilities;
         private Contexts _contexts;
         private IGroup<GameEntity> _attackingEntities;
 
-        public PrepareManualLaunchAbilitySystem(Contexts contexts)
+        public SetAbilityReadyOnManualAttackSystem(Contexts contexts)
         {
             _contexts = contexts;
 
@@ -16,7 +16,7 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Systems
                 .AllOf(
                     GameMatcher.Ability,
                     GameMatcher.ManualLaunch,
-                    GameMatcher.OwnerId));
+                    GameMatcher.ProducerId));
 
             _attackingEntities = contexts.game.GetGroup(GameMatcher
                 .AllOf(GameMatcher.Attacking));
@@ -26,8 +26,8 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Systems
         {
             foreach (var ability in _abilities)
             {
-                var owner = _contexts.game.GetEntityWithId(ability.OwnerId);
-                
+                var owner = _contexts.game.GetEntityWithId(ability.ProducerId);
+
                 ability.isReady = _attackingEntities.ContainsEntity(owner) && ability.hasCooldown == false;
             }
         }

@@ -1,4 +1,6 @@
 using AbilityMadness.Code.Gameplay.Abilities.Systems;
+using AbilityMadness.Code.Gameplay.Abilities.Systems.Implementation.Arrow;
+using AbilityMadness.Code.Gameplay.Abilities.Systems.Implementation.Fireball;
 using AbilityMadness.Code.Infrastructure.Services.ECS;
 
 namespace AbilityMadness.Code.Gameplay.Abilities
@@ -7,9 +9,15 @@ namespace AbilityMadness.Code.Gameplay.Abilities
     {
         public AbilityFeature(ISystemFactory systemFactory)
         {
-            Add(systemFactory.Create<PrepareManualLaunchAbilitySystem>());
-            Add(systemFactory.Create<AbilityCooldownSystem>());
-            Add(systemFactory.Create<ProcessAblityCooldownSystem>());
+            Add(systemFactory.Create<SetAbilityReadyOnManualAttackSystem>());
+            Add(systemFactory.Create<SetAbilityReadyOnCooldownUpSystem>());
+
+            Add(systemFactory.Create<FireballManualLaunchAbilitySystem>());
+            Add(systemFactory.Create<FireballAutoLaunchAbilitySystem>());
+
+            Add(systemFactory.Create<ArrowAutoLaunchAbilitySystem>());
+
+            Add(systemFactory.Create<PutAbilityOnCooldownSystem>());
         }
     }
 }

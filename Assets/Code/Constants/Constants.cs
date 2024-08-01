@@ -19,6 +19,7 @@ namespace AbilityMadness
             public static class Projectiles
             {
                 public const string Fireball = "Prefabs/Projectiles/Projectile_Fireball";
+                public const string Arrow = "Prefabs/Projectiles/Arrow/Projectile_Arrow";
             }
 
             public static class Effects
@@ -37,12 +38,15 @@ namespace AbilityMadness
         public static class Configs
         {
             public const string CursorConfig = "CursorConfig";
+
+            public const string AbilityConfigLabel = "config_ability";
         }
 
         public static class Layers
         {
             public const int Default = 0;
             public const int Interactable = 6;
+            public const int Enemy = 7;
         }
     }
 }

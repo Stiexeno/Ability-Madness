@@ -9,5 +9,6 @@ namespace AbilityMadness.Code.Gameplay.Movement
 
     [Game] public class RigidbodyMovement : IComponent {  }
     [Game] public class TransformMovement : IComponent {  }
+    [Game] public class ForwardMovement : IComponent {  }
 
 }

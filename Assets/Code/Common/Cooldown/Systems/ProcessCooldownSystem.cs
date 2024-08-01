@@ -25,7 +25,6 @@ namespace AbilityMadness.Code.Common.Cooldown.Systems
 
                 if (cooldown.CooldownLeft >= cooldown.Cooldown)
                 {
-                    cooldown.RemoveCooldown();
                     cooldown.RemoveCooldownLeft();
                     cooldown.isCooldownUp = true;
                 }

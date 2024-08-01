@@ -3,18 +3,18 @@ using Entitas;
 
 namespace AbilityMadness.Code.Gameplay.Abilities.Systems
 {
-    public class ProcessAblityCooldownSystem : IExecuteSystem
+    public class SetAbilityReadyOnCooldownUpSystem : IExecuteSystem
     {
         private readonly List<GameEntity> _buffer = new(32);
         private IGroup<GameEntity> _abilities;
 
-        public ProcessAblityCooldownSystem(Contexts contexts)
+        public SetAbilityReadyOnCooldownUpSystem(Contexts contexts)
         {
             _abilities = contexts.game.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Ability,
-                    GameMatcher.CooldownUp)
-                .NoneOf(GameMatcher.ManualLaunch));
+                    GameMatcher.CooldownUp,
+                    GameMatcher.AutoLaunch));
         }
 
         public void Execute()

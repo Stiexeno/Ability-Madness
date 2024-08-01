@@ -1,5 +1,9 @@
-﻿using AbilityMadness.Code.Infrastructure.Services.Cursors.Configs;
+﻿using AbilityMadness.Code.Gameplay.Abilities;
+using AbilityMadness.Code.Gameplay.Abilities.Configs;
+using AbilityMadness.Code.Infrastructure.Services.Cursors.Configs;
 using AbilityMadness.Infrastructure.Services.Assets;
+using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace AbilityMadness.Infrastructure.Services.Configs
 {
@@ -8,16 +12,32 @@ namespace AbilityMadness.Infrastructure.Services.Configs
 		private IAssets _assets;
 
         public CursorConfig CursorConfig { get; private set; }
+        public AbilityConfig[] AbilityConfigs { get; private set; }
 
 		public ConfigsService(IAssets assets)
 		{
 			_assets = assets;
-			Load();
+			Load().Forget();
 		}
 
-		private void Load()
+		private async UniTaskVoid Load()
 		{
-            CursorConfig = _assets.Load<CursorConfig>(Constants.Configs.CursorConfig);
+            CursorConfig = await _assets.LoadAsync<CursorConfig>(Constants.Configs.CursorConfig);
+            AbilityConfigs = _assets.GetAssetsByLabel<AbilityConfig>(Constants.Configs.AbilityConfigLabel);
 		}
+
+        public AbilityConfig GetAbilityConfig(AbilityTypeId type)
+        {
+            foreach (var abilityConfig in AbilityConfigs)
+            {
+                if (abilityConfig.type == type)
+                {
+                    return abilityConfig;
+                }
+            }
+
+            Debug.LogError($"AbilityConfig with type {type} not found");
+            return null;
+        }
 	}
 }

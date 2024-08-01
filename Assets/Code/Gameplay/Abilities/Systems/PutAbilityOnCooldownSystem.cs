@@ -1,29 +1,36 @@
 using System.Collections.Generic;
 using AbilityMadness.Code.Common.Cooldown;
 using Entitas;
+using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Abilities.Systems
 {
-    public class AbilityCooldownSystem : ICleanupSystem
+    public class PutAbilityOnCooldownSystem : ICleanupSystem
     {
         private readonly List<GameEntity> _buffer = new(32);
 
         private IGroup<GameEntity> _abilities;
 
-        public AbilityCooldownSystem(Contexts contexts)
+        public PutAbilityOnCooldownSystem(Contexts contexts)
         {
             _abilities = contexts.game.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Ability,
-                    GameMatcher.Ready)
-                .NoneOf(GameMatcher.Cooldown));
+                    GameMatcher.Ready,
+                    GameMatcher.Cooldown));
         }
 
         public void Cleanup()
         {
             foreach (var ability in _abilities.GetEntities(_buffer))
             {
-                ability.SetCooldown(0.15f);
+                ability.SetOnCooldown();
+                Debug.LogError("?!?@#?!@?#");
+
+                if (ability.isAutoLaunch)
+                {
+                    ability.isReady = false;
+                }
             }
         }
     }

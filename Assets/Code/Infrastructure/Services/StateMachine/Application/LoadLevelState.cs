@@ -1,4 +1,5 @@
-﻿using AbilityMadness.Code.Gameplay.Abilities.Factory;
+﻿using AbilityMadness.Code.Gameplay.Abilities;
+using AbilityMadness.Code.Gameplay.Abilities.Factory;
 using AbilityMadness.Code.Infrastructure.Services.ECS;
 using AbilityMadness.Factory;
 using AbilityMadness.Infrastructure.Factories.UI;
@@ -75,7 +76,7 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
         private void CreatePlayer()
         {
             var player = _playerFactory.CreatePlayer(Vector3.zero);
-            _abilityFactory.CreateFireball(player);
+            _abilityFactory.CreateAbility(player, AbilityTypeId.Fireball);
         }
 	}
 }

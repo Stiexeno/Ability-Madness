@@ -8,18 +8,18 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly AbilityMadness.Code.Gameplay.Projectile.RangedAttack rangedAttackComponent = new AbilityMadness.Code.Gameplay.Projectile.RangedAttack();
+    static readonly AbilityMadness.Code.Gameplay.Modifiers.ForwardMovementModifier forwardMovementModifierComponent = new AbilityMadness.Code.Gameplay.Modifiers.ForwardMovementModifier();
 
-    public bool isRangedAttack {
-        get { return HasComponent(GameComponentsLookup.RangedAttack); }
+    public bool isForwardMovementModifier {
+        get { return HasComponent(GameComponentsLookup.ForwardMovementModifier); }
         set {
-            if (value != isRangedAttack) {
-                var index = GameComponentsLookup.RangedAttack;
+            if (value != isForwardMovementModifier) {
+                var index = GameComponentsLookup.ForwardMovementModifier;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : rangedAttackComponent;
+                            : forwardMovementModifierComponent;
 
                     AddComponent(index, component);
                 } else {
@@ -40,17 +40,17 @@ public partial class GameEntity {
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherRangedAttack;
+    static Entitas.IMatcher<GameEntity> _matcherForwardMovementModifier;
 
-    public static Entitas.IMatcher<GameEntity> RangedAttack {
+    public static Entitas.IMatcher<GameEntity> ForwardMovementModifier {
         get {
-            if (_matcherRangedAttack == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.RangedAttack);
+            if (_matcherForwardMovementModifier == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.ForwardMovementModifier);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherRangedAttack = matcher;
+                _matcherForwardMovementModifier = matcher;
             }
 
-            return _matcherRangedAttack;
+            return _matcherForwardMovementModifier;
         }
     }
 }

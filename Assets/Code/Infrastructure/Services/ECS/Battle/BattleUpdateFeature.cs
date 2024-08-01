@@ -9,9 +9,11 @@ using AbilityMadness.Code.Gameplay.DamageApplication;
 using AbilityMadness.Code.Gameplay.Input;
 using AbilityMadness.Code.Gameplay.Interaction;
 using AbilityMadness.Code.Gameplay.Lifetime;
+using AbilityMadness.Code.Gameplay.Modifiers;
 using AbilityMadness.Code.Gameplay.Movement;
 using AbilityMadness.Code.Gameplay.Projectile;
 using AbilityMadness.Code.Gameplay.TargetCollection;
+using AbilityMadness.Code.Gameplay.Vision;
 
 namespace AbilityMadness.Code.Infrastructure.Services.ECS
 {
@@ -27,12 +29,14 @@ namespace AbilityMadness.Code.Infrastructure.Services.ECS
             Add(systemFactory.Create<AnimatorFeature>());
             Add(systemFactory.Create<InteractionFeature>());
             Add(systemFactory.Create<ChestFreature>());
+            Add(systemFactory.Create<VisionFeature>());
             Add(systemFactory.Create<ProjectileFeature>());
+            Add(systemFactory.Create<CooldownFeature>());
             Add(systemFactory.Create<AbilityFeature>());
             Add(systemFactory.Create<TargetCollectionFeature>());
             Add(systemFactory.Create<DamageFeature>());
             Add(systemFactory.Create<LifetimeFeature>());
-            Add(systemFactory.Create<CooldownFeature>());
+            Add(systemFactory.Create<ModifierFeature>());
 
             Add(systemFactory.Create<CollisionFeature>());
             Add(systemFactory.Create<DestructFeature>());
