@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Entitas;
-using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Abilities.Systems
 {
@@ -14,24 +13,15 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Systems
             _abilities = contexts.game.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Ability,
-                    GameMatcher.Cooldown));
+                    GameMatcher.CooldownUp)
+                .NoneOf(GameMatcher.ManualLaunch));
         }
 
         public void Execute()
         {
             foreach (var ability in _abilities.GetEntities(_buffer))
             {
-                ability.Cooldown -= Time.deltaTime;
-
-                if (ability.Cooldown <= 0)
-                {
-                    ability.RemoveCooldown();
-
-                    if (ability.isManualLaunch == false)
-                    {
-                        ability.isReady = true;
-                    }
-                }
+                ability.isReady = true;
             }
         }
     }

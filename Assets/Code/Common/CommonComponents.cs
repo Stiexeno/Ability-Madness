@@ -12,6 +12,8 @@ namespace AbilityMadness.Code.Common
     [Game] public class Velocity : IComponent { public Vector3 Value; }
 
     [Game] public class CooldownComponent : IComponent { public float Value; }
+    [Game] public class CooldownLeft : IComponent { public float Value; }
+    [Game] public class CooldownUp : IComponent {  }
 
     [Game] public class Rigidbody2DComponent : IComponent { public Rigidbody2D Value; }
     [Game] public class Collider2DComponent : IComponent { public Collider2D Value; }

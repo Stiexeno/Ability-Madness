@@ -1,5 +1,6 @@
 ﻿using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Common.Collision;
+using AbilityMadness.Code.Common.Cooldown;
 using AbilityMadness.Code.Common.Destruct;
 using AbilityMadness.Code.Gameplay.Abilities;
 using AbilityMadness.Code.Gameplay.Animator;
@@ -31,6 +32,7 @@ namespace AbilityMadness.Code.Infrastructure.Services.ECS
             Add(systemFactory.Create<TargetCollectionFeature>());
             Add(systemFactory.Create<DamageFeature>());
             Add(systemFactory.Create<LifetimeFeature>());
+            Add(systemFactory.Create<CooldownFeature>());
 
             Add(systemFactory.Create<CollisionFeature>());
             Add(systemFactory.Create<DestructFeature>());

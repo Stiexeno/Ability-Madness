@@ -19,62 +19,64 @@ public static class GameComponentsLookup {
     public const int TriggerExit = 8;
     public const int TriggerStay = 9;
     public const int Cooldown = 10;
-    public const int Destructed = 11;
-    public const int Disabled = 12;
-    public const int Enabled = 13;
-    public const int Id = 14;
-    public const int OwnerId = 15;
-    public const int Rigidbody2D = 16;
-    public const int Transform = 17;
-    public const int Velocity = 18;
-    public const int View = 19;
-    public const int ViewLoading = 20;
-    public const int ViewPath = 21;
-    public const int WorldPosition = 22;
-    public const int Ability = 23;
-    public const int AutoLaunch = 24;
-    public const int ManualLaunch = 25;
-    public const int Ready = 26;
-    public const int DamageAnimator = 27;
-    public const int MovementAnimator = 28;
-    public const int Camera = 29;
-    public const int CameraOffset = 30;
-    public const int CameraSmooth = 31;
-    public const int FollowTargetId = 32;
-    public const int Chest = 33;
-    public const int Attacking = 34;
-    public const int Damage = 35;
-    public const int DamageReceived = 36;
-    public const int EffectViewPath = 37;
-    public const int Health = 38;
-    public const int MaxHealth = 39;
-    public const int Team = 40;
-    public const int AttackPressed = 41;
-    public const int AxisInput = 42;
-    public const int Input = 43;
-    public const int LookInput = 44;
-    public const int MouseCollision = 45;
-    public const int MouseInHover = 46;
-    public const int MousePosition = 47;
-    public const int InteractBehaviour = 48;
-    public const int LifeTime = 49;
-    public const int LifeTimeTimeElapsed = 50;
-    public const int Direction = 51;
-    public const int LookDirection = 52;
-    public const int MovementSpeed = 53;
-    public const int RigidbodyMovement = 54;
-    public const int TransformMovement = 55;
-    public const int Projectile = 56;
-    public const int ProjectileType = 57;
-    public const int RangedAttack = 58;
-    public const int ProccessedTargets = 59;
-    public const int SphereCast = 60;
-    public const int SphereCastRadius = 61;
-    public const int TargetBuffer = 62;
-    public const int Player = 63;
-    public const int PlayerInTrigger = 64;
+    public const int CooldownLeft = 11;
+    public const int CooldownUp = 12;
+    public const int Destructed = 13;
+    public const int Disabled = 14;
+    public const int Enabled = 15;
+    public const int Id = 16;
+    public const int OwnerId = 17;
+    public const int Rigidbody2D = 18;
+    public const int Transform = 19;
+    public const int Velocity = 20;
+    public const int View = 21;
+    public const int ViewLoading = 22;
+    public const int ViewPath = 23;
+    public const int WorldPosition = 24;
+    public const int Ability = 25;
+    public const int AutoLaunch = 26;
+    public const int ManualLaunch = 27;
+    public const int Ready = 28;
+    public const int DamageAnimator = 29;
+    public const int MovementAnimator = 30;
+    public const int Camera = 31;
+    public const int CameraOffset = 32;
+    public const int CameraSmooth = 33;
+    public const int FollowTargetId = 34;
+    public const int Chest = 35;
+    public const int Attacking = 36;
+    public const int Damage = 37;
+    public const int DamageReceived = 38;
+    public const int EffectViewPath = 39;
+    public const int Health = 40;
+    public const int MaxHealth = 41;
+    public const int Team = 42;
+    public const int AttackPressed = 43;
+    public const int AxisInput = 44;
+    public const int Input = 45;
+    public const int LookInput = 46;
+    public const int MouseCollision = 47;
+    public const int MouseInHover = 48;
+    public const int MousePosition = 49;
+    public const int InteractBehaviour = 50;
+    public const int LifeTime = 51;
+    public const int LifeTimeTimeElapsed = 52;
+    public const int Direction = 53;
+    public const int LookDirection = 54;
+    public const int MovementSpeed = 55;
+    public const int RigidbodyMovement = 56;
+    public const int TransformMovement = 57;
+    public const int Projectile = 58;
+    public const int ProjectileType = 59;
+    public const int RangedAttack = 60;
+    public const int ProccessedTargets = 61;
+    public const int SphereCast = 62;
+    public const int SphereCastRadius = 63;
+    public const int TargetBuffer = 64;
+    public const int Player = 65;
+    public const int PlayerInTrigger = 66;
 
-    public const int TotalComponents = 65;
+    public const int TotalComponents = 67;
 
     public static readonly string[] componentNames = {
         "Collider2D",
@@ -88,6 +90,8 @@ public static class GameComponentsLookup {
         "TriggerExit",
         "TriggerStay",
         "Cooldown",
+        "CooldownLeft",
+        "CooldownUp",
         "Destructed",
         "Disabled",
         "Enabled",
@@ -156,6 +160,8 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Common.Collision.TriggerExit),
         typeof(AbilityMadness.Code.Common.Collision.TriggerStay),
         typeof(AbilityMadness.Code.Common.CooldownComponent),
+        typeof(AbilityMadness.Code.Common.CooldownLeft),
+        typeof(AbilityMadness.Code.Common.CooldownUp),
         typeof(AbilityMadness.Code.Common.Destructed),
         typeof(AbilityMadness.Code.Common.Disabled),
         typeof(AbilityMadness.Code.Common.Enabled),
