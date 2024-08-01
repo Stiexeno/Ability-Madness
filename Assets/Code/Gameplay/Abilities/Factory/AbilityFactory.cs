@@ -10,6 +10,8 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Factory
 {
     public class AbilityFactory : IAbilityFactory
     {
+        private static AbilityConfig _config;
+
         private IIdentifierService _identifierService;
         private IModifierFactory _modifierFactory;
         private IConfigsService _configsService;
@@ -26,59 +28,59 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Factory
 
         public GameEntity CreateAbility(GameEntity owner, AbilityTypeId type)
         {
-            var config = _configsService.GetAbilityConfig(type);
+            _config = _configsService.GetAbilityConfig(type);
 
             switch (type)
             {
                 case AbilityTypeId.Fireball:
-                    return CreateFireball(owner, config);
-                case AbilityTypeId.Arrow:
-                    return CreateArrow(owner, config);
+                    return CreateFireball(owner);
+                case AbilityTypeId.Tornado:
+                    return CreateTornado(owner);
                 default:
                     throw new Exception($"AbilityTypeId {type} not supported");
             }
         }
 
-        public GameEntity CreateFireball(GameEntity owner, AbilityConfig abilityConfig)
+        private GameEntity CreateFireball(GameEntity owner)
         {
-            return CreateEmptyAbility(owner, abilityConfig)
+            return CreateEmptyAbility(owner)
                 .With(x => x.isFireballAbility = true)
                 .With(x => x.isAutoLaunch = true)
                 .AddAbilityTypeId(AbilityTypeId.Fireball)
 
-                .AddCooldown(abilityConfig.cooldown);
+                .AddCooldown(_config.cooldown);
         }
 
-        public GameEntity CreateArrow(GameEntity owner, AbilityConfig abilityConfig)
+        private GameEntity CreateTornado(GameEntity owner)
         {
-            return CreateEmptyAbility(owner, abilityConfig)
-                .With(x => x.isArrowAbility = true)
-                .AddAbilityTypeId(AbilityTypeId.Arrow)
+            return CreateEmptyAbility(owner)
+                .With(x => x.isTornadoAbility = true)
                 .With(x => x.isAutoLaunch = true)
+                .AddAbilityTypeId(AbilityTypeId.Tornado)
 
-                .AddCooldown(abilityConfig.cooldown);
+                .AddCooldown(_config.cooldown);
         }
 
-        private GameEntity CreateEmptyAbility(GameEntity owner, AbilityConfig abilityConfig)
+        private GameEntity CreateEmptyAbility(GameEntity owner)
         {
             var abilityId = _identifierService.Next();
 
             var abilityEntity = CreateEntity.Empty()
                 .AddId(abilityId)
                 .With(x => x.isAbility = true)
+                .With(x => x.isReady = true)
                 .AddProducerId(owner.Id)
-                .AddTeam(owner.Team)
-                .With(x => x.isReady = true);
+                .AddTeam(owner.Team);
 
-            CreateModifiersFromConfig(abilityId, abilityConfig);
+            CreateModifiersFromConfig(abilityId);
             return abilityEntity;
         }
 
-        private void CreateModifiersFromConfig(int id, AbilityConfig abilityConfig)
+        private void CreateModifiersFromConfig(int id)
         {
-            foreach (var modifierConfig in abilityConfig.modifiers)
+            foreach (var modifierConfig in _config.modifiers)
             {
-               _modifierFactory.CreateModifier(modifierConfig.type, id);
+               _modifierFactory.CreateModifier(modifierConfig.type, id, modifierConfig.value);
             }
         }
     }

@@ -12,5 +12,5 @@ namespace AbilityMadness.Code.Gameplay.Abilities
     [Game] public class ManualLaunch : IComponent {  }
 
     [Game] public class FireballAbility : IComponent {  }
-    [Game] public class ArrowAbility : IComponent {  }
+    [Game] public class TornadoAbility : IComponent {  }
 }

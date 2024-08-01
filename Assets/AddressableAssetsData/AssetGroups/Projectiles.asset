@@ -25,6 +25,10 @@ MonoBehaviour:
     m_Address: Prefabs/Projectiles/Arrow/Projectile_Arrow
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: cdb610c5365020742aa6607b9682015f
+    m_Address: Prefabs/Projectiles/Tornado/Projectile_Tornado
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9f75c775787da8a4c8e7e94698c9d5b8, type: 2}
   m_SchemaSet:

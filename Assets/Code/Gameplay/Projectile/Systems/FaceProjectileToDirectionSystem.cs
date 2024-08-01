@@ -13,7 +13,8 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Systems
                 .AllOf(
                     GameMatcher.Projectile,
                     GameMatcher.Direction,
-                    GameMatcher.Transform));
+                    GameMatcher.Transform,
+                    GameMatcher.FaceToDirection));
         }
 
         public void Execute()

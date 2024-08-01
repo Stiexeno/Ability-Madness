@@ -1,28 +1,28 @@
 ﻿using System.Collections.Generic;
-using AbilityMadness.Code.Gameplay.Movement;
 using Entitas;
 
 namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation
 {
-    public class ForwardMovementModifierSystem : IExecuteSystem
+    public class SpeedModifierSystem : IExecuteSystem
     {
         private readonly List<GameEntity> _buffer = new(32);
         private IGroup<GameEntity> _modifiers;
         private IGroup<GameEntity> _abilityProducedEntities;
 
-        public ForwardMovementModifierSystem(GameContext gameContext)
+        public SpeedModifierSystem(GameContext gameContext)
         {
             _modifiers = gameContext.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Id,
-                    GameMatcher.ForwardMovementModifier,
-                    GameMatcher.TargetId));
+                    GameMatcher.SpeedModifier,
+                    GameMatcher.TargetId,
+                    GameMatcher.ModifierValue));
 
             _abilityProducedEntities = gameContext.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.AbilityProducerId)
                 .NoneOf(
-                    GameMatcher.ForwardMovement));
+                    GameMatcher.MovementSpeed));
         }
 
         public void Execute()
@@ -32,7 +32,7 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation
             {
                 if (modifier.TargetId == abilityProducedEntity.AbilityProducerId)
                 {
-                    abilityProducedEntity.SetForwardMovement();
+                    abilityProducedEntity.AddMovementSpeed(modifier.ModifierValue);
                 }
             }
         }

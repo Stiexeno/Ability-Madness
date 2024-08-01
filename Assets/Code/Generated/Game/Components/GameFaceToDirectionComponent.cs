@@ -8,18 +8,18 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly AbilityMadness.Code.Gameplay.Abilities.ArrowAbility arrowAbilityComponent = new AbilityMadness.Code.Gameplay.Abilities.ArrowAbility();
+    static readonly AbilityMadness.Code.Gameplay.Movement.FaceToDirection faceToDirectionComponent = new AbilityMadness.Code.Gameplay.Movement.FaceToDirection();
 
-    public bool isArrowAbility {
-        get { return HasComponent(GameComponentsLookup.ArrowAbility); }
+    public bool isFaceToDirection {
+        get { return HasComponent(GameComponentsLookup.FaceToDirection); }
         set {
-            if (value != isArrowAbility) {
-                var index = GameComponentsLookup.ArrowAbility;
+            if (value != isFaceToDirection) {
+                var index = GameComponentsLookup.FaceToDirection;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : arrowAbilityComponent;
+                            : faceToDirectionComponent;
 
                     AddComponent(index, component);
                 } else {
@@ -40,17 +40,17 @@ public partial class GameEntity {
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherArrowAbility;
+    static Entitas.IMatcher<GameEntity> _matcherFaceToDirection;
 
-    public static Entitas.IMatcher<GameEntity> ArrowAbility {
+    public static Entitas.IMatcher<GameEntity> FaceToDirection {
         get {
-            if (_matcherArrowAbility == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.ArrowAbility);
+            if (_matcherFaceToDirection == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.FaceToDirection);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherArrowAbility = matcher;
+                _matcherFaceToDirection = matcher;
             }
 
-            return _matcherArrowAbility;
+            return _matcherFaceToDirection;
         }
     }
 }

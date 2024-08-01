@@ -19,7 +19,7 @@ namespace AbilityMadness
             public static class Projectiles
             {
                 public const string Fireball = "Prefabs/Projectiles/Projectile_Fireball";
-                public const string Arrow = "Prefabs/Projectiles/Arrow/Projectile_Arrow";
+                public const string Tornado = "Prefabs/Projectiles/Tornado/Projectile_Tornado";
             }
 
             public static class Effects

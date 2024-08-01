@@ -1,4 +1,5 @@
 using AbilityMadness.Code.Infrastructure.Services.View;
+using Cysharp.Threading.Tasks;
 using Entitas;
 
 namespace AbilityMadness.Code.Common.Systems
@@ -18,7 +19,7 @@ namespace AbilityMadness.Code.Common.Systems
                 .NoneOf(GameMatcher.ViewLoading, GameMatcher.View));
         }
 
-        public async void Execute()
+        public void Execute()
         {
             foreach (var entity in _entities.GetEntities())
             {
@@ -27,13 +28,20 @@ namespace AbilityMadness.Code.Common.Systems
 
                 entity.isViewLoading = true;
 
-                var entityView = await _viewPool.Take(entity.ViewPath);
-                entityView.LinkEntity(entity);
-                entityView.gameObject.SetActive(true);
 
-                entity.AddView(entityView);
-                entity.isViewLoading = false;
+                LoadView(entity).Forget();
+
             }
+        }
+
+        private async UniTaskVoid LoadView(GameEntity entity)
+        {
+            var entityView = await _viewPool.Take(entity.ViewPath);
+            entityView.LinkEntity(entity);
+            entityView.gameObject.SetActive(true);
+
+            entity.AddView(entityView);
+            entity.isViewLoading = false;
         }
     }
 }

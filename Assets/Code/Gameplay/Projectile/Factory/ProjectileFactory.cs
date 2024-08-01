@@ -30,8 +30,10 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
 
                 .SetLifetime(LifeTime)
 
+                .With(x => x.isTransformMovement = true)
                 .AddDirection(direction)
                 .AddWorldPosition(position)
+                .With(x => x.isFaceToDirection = true)
 
                 .AddDamage(10)
                 .CollectTargetsWithSphereCast(0.3f)
@@ -39,17 +41,18 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
                 .AddEffectViewPath(Constants.Prefabs.Effects.FireballHitEffect);
         }
 
-        public GameEntity CreateArrow(int abilityId, Vector3 position, Vector3 direction, Team team)
+        public GameEntity CreateTornado(int abilityId, Vector3 position, Vector3 direction, Team team)
         {
             return CreateEntity.Empty()
                 .With(x => x.isProjectile = true)
                 .AddId(_identifierService.Next())
                 .AddAbilityProducerId(abilityId)
-                .AddViewPath(Constants.Prefabs.Projectiles.Arrow)
+                .AddViewPath(Constants.Prefabs.Projectiles.Tornado)
                 .AddTeam(team)
 
                 .SetLifetime(LifeTime)
 
+                .With(x => x.isTransformMovement = true)
                 .AddDirection(direction)
                 .AddWorldPosition(position)
 

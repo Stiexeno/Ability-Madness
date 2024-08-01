@@ -38,11 +38,11 @@ public static class GameComponentsLookup {
     public const int Ability = 27;
     public const int AbilityProducerId = 28;
     public const int AbilityTypeId = 29;
-    public const int ArrowAbility = 30;
-    public const int AutoLaunch = 31;
-    public const int FireballAbility = 32;
-    public const int ManualLaunch = 33;
-    public const int Ready = 34;
+    public const int AutoLaunch = 30;
+    public const int FireballAbility = 31;
+    public const int ManualLaunch = 32;
+    public const int Ready = 33;
+    public const int TornadoAbility = 34;
     public const int DamageAnimator = 35;
     public const int MovementAnimator = 36;
     public const int Camera = 37;
@@ -70,28 +70,35 @@ public static class GameComponentsLookup {
     public const int ForwardMovementModifier = 59;
     public const int Modifier = 60;
     public const int ModifierTypeId = 61;
-    public const int Direction = 62;
-    public const int ForwardMovement = 63;
-    public const int LookDirection = 64;
-    public const int MovementSpeed = 65;
-    public const int RigidbodyMovement = 66;
-    public const int TransformMovement = 67;
-    public const int Projectile = 68;
-    public const int ProjectileType = 69;
-    public const int ProccessedTargets = 70;
-    public const int SphereCast = 71;
-    public const int SphereCastRadius = 72;
-    public const int TargetBuffer = 73;
-    public const int TargetsInSight = 74;
-    public const int Vision = 75;
-    public const int VisionInterval = 76;
-    public const int VisionLayer = 77;
-    public const int VisionRadius = 78;
-    public const int VisionTimer = 79;
-    public const int Player = 80;
-    public const int PlayerInTrigger = 81;
+    public const int ModifierValue = 62;
+    public const int SpeedModifier = 63;
+    public const int ZigZagMovementModifier = 64;
+    public const int ZigZagTimeDirection = 65;
+    public const int ZigZagTimeElapsed = 66;
+    public const int Direction = 67;
+    public const int FaceToDirection = 68;
+    public const int ForwardMovement = 69;
+    public const int LookDirection = 70;
+    public const int MovementSpeed = 71;
+    public const int RigidbodyMovement = 72;
+    public const int TransformMovement = 73;
+    public const int ZigZagMovement = 74;
+    public const int Projectile = 75;
+    public const int ProjectileType = 76;
+    public const int ProccessedTargets = 77;
+    public const int SphereCast = 78;
+    public const int SphereCastRadius = 79;
+    public const int TargetBuffer = 80;
+    public const int TargetsInSight = 81;
+    public const int Vision = 82;
+    public const int VisionInterval = 83;
+    public const int VisionLayer = 84;
+    public const int VisionRadius = 85;
+    public const int VisionTimer = 86;
+    public const int Player = 87;
+    public const int PlayerInTrigger = 88;
 
-    public const int TotalComponents = 82;
+    public const int TotalComponents = 89;
 
     public static readonly string[] componentNames = {
         "Collider2D",
@@ -124,11 +131,11 @@ public static class GameComponentsLookup {
         "Ability",
         "AbilityProducerId",
         "AbilityTypeId",
-        "ArrowAbility",
         "AutoLaunch",
         "FireballAbility",
         "ManualLaunch",
         "Ready",
+        "TornadoAbility",
         "DamageAnimator",
         "MovementAnimator",
         "Camera",
@@ -156,12 +163,19 @@ public static class GameComponentsLookup {
         "ForwardMovementModifier",
         "Modifier",
         "ModifierTypeId",
+        "ModifierValue",
+        "SpeedModifier",
+        "ZigZagMovementModifier",
+        "ZigZagTimeDirection",
+        "ZigZagTimeElapsed",
         "Direction",
+        "FaceToDirection",
         "ForwardMovement",
         "LookDirection",
         "MovementSpeed",
         "RigidbodyMovement",
         "TransformMovement",
+        "ZigZagMovement",
         "Projectile",
         "ProjectileType",
         "ProccessedTargets",
@@ -209,11 +223,11 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Abilities.Ability),
         typeof(AbilityMadness.Code.Gameplay.Abilities.AbilityProducerId),
         typeof(AbilityMadness.Code.Gameplay.Abilities.AbilityTypeIdComponent),
-        typeof(AbilityMadness.Code.Gameplay.Abilities.ArrowAbility),
         typeof(AbilityMadness.Code.Gameplay.Abilities.AutoLaunch),
         typeof(AbilityMadness.Code.Gameplay.Abilities.FireballAbility),
         typeof(AbilityMadness.Code.Gameplay.Abilities.ManualLaunch),
         typeof(AbilityMadness.Code.Gameplay.Abilities.Ready),
+        typeof(AbilityMadness.Code.Gameplay.Abilities.TornadoAbility),
         typeof(AbilityMadness.Code.Gameplay.Animator.DamageAnimatorComponent),
         typeof(AbilityMadness.Code.Gameplay.Animator.MovementAnimatorComponent),
         typeof(AbilityMadness.Code.Gameplay.Camera.Camera),
@@ -241,12 +255,19 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Modifiers.ForwardMovementModifier),
         typeof(AbilityMadness.Code.Gameplay.Modifiers.Modifier),
         typeof(AbilityMadness.Code.Gameplay.Modifiers.ModifierTypeIdComponent),
+        typeof(AbilityMadness.Code.Gameplay.Modifiers.ModifierValue),
+        typeof(AbilityMadness.Code.Gameplay.Modifiers.SpeedModifier),
+        typeof(AbilityMadness.Code.Gameplay.Modifiers.ZigZagMovementModifier),
+        typeof(AbilityMadness.Code.Gameplay.Modifiers.ZigZagTimeDirection),
+        typeof(AbilityMadness.Code.Gameplay.Modifiers.ZigZagTimeElapsed),
         typeof(AbilityMadness.Code.Gameplay.Movement.Direction),
+        typeof(AbilityMadness.Code.Gameplay.Movement.FaceToDirection),
         typeof(AbilityMadness.Code.Gameplay.Movement.ForwardMovement),
         typeof(AbilityMadness.Code.Gameplay.Movement.LookDirection),
         typeof(AbilityMadness.Code.Gameplay.Movement.MovementSpeed),
         typeof(AbilityMadness.Code.Gameplay.Movement.RigidbodyMovement),
         typeof(AbilityMadness.Code.Gameplay.Movement.TransformMovement),
+        typeof(AbilityMadness.Code.Gameplay.Movement.ZigZagMovement),
         typeof(AbilityMadness.Code.Gameplay.Projectile.Projectile),
         typeof(AbilityMadness.Code.Gameplay.Projectile.ProjectileTypeComponent),
         typeof(AbilityMadness.Code.Gameplay.TargetCollection.ProccessedTargets),

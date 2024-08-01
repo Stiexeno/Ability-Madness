@@ -14,26 +14,51 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Factory
             _identifierService = identifierService;
         }
 
-        public GameEntity CreateModifier(ModifierTypeId type, int targetId)
+        public GameEntity CreateModifier(ModifierTypeId type, int targetId, float value)
         {
             switch (type)
             {
+                case ModifierTypeId.ForwardMovement:
+                    return CreateForwardMovementModifier(targetId, value);
+                case ModifierTypeId.Speed:
+                    return CreateSpeedModifier(targetId, value);
+                case ModifierTypeId.ZigZagMovement:
+                    return CreateZigZagModifier(targetId, value);
                 case ModifierTypeId.Unknown:
                     throw new Exception($"Modifier not set for {targetId} ID");
-                case ModifierTypeId.ForwardMovement:
-                    return CreateForwardMovementModifier(targetId);
                 default:
-                    throw new Exception($"ModifierTypeId {type} not supported");
+                    return default;
             }
         }
 
-        public GameEntity CreateForwardMovementModifier(int targetId)
+        public GameEntity CreateForwardMovementModifier(int targetId, float value)
+        {
+            return CreateEmptyModifier(targetId)
+                .With(x => x.isForwardMovementModifier = true)
+                .AddModifierTypeId(ModifierTypeId.ForwardMovement);
+        }
+
+        public GameEntity CreateZigZagModifier(int targetId, float value)
+        {
+            return CreateEmptyModifier(targetId)
+                .With(x => x.isZigZagMovementModifier = true)
+                .AddModifierTypeId(ModifierTypeId.ZigZagMovement)
+                .AddModifierValue(value);
+        }
+
+        public GameEntity CreateSpeedModifier(int targetId, float value)
+        {
+            return CreateEmptyModifier(targetId)
+                .With(x => x.isSpeedModifier = true)
+                .AddModifierTypeId(ModifierTypeId.Speed)
+                .AddModifierValue(value);
+        }
+
+        private GameEntity CreateEmptyModifier(int targetId)
         {
             return CreateEntity.Empty()
                 .AddId(_identifierService.Next())
                 .With(x => x.isModifier = true)
-                .With(x => x.isForwardMovementModifier = true)
-                .AddModifierTypeId(ModifierTypeId.ForwardMovement)
                 .AddTargetId(targetId);
         }
     }

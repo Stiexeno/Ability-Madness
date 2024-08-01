@@ -7,7 +7,12 @@ namespace AbilityMadness.Code.Gameplay.Modifiers
     {
         public ModifierFeature(ISystemFactory systemFactory)
         {
+            // Movements
+
             Add(systemFactory.Create<ForwardMovementModifierSystem>());
+            Add(systemFactory.Create<ZigZagMovementModifierSystem>());
+
+            Add(systemFactory.Create<SpeedModifierSystem>());
         }
     }
 }

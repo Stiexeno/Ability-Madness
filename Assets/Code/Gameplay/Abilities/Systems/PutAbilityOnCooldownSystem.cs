@@ -25,12 +25,7 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Systems
             foreach (var ability in _abilities.GetEntities(_buffer))
             {
                 ability.SetOnCooldown();
-                Debug.LogError("?!?@#?!@?#");
-
-                if (ability.isAutoLaunch)
-                {
-                    ability.isReady = false;
-                }
+                ability.isReady = false;
             }
         }
     }

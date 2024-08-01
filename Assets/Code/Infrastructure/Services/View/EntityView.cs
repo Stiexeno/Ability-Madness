@@ -21,6 +21,9 @@ namespace AbilityMadness.Code.Infrastructure.View
 
         public void LinkEntity(GameEntity entity)
         {
+            if (_entity != null && entity == _entity)
+                return;
+
             _entity = entity;
             entity.Retain(this);
 

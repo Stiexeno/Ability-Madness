@@ -2,16 +2,16 @@
 using Entitas;
 using UnityEngine;
 
-namespace AbilityMadness.Code.Gameplay.Abilities.Systems.Implementation.Arrow
+namespace AbilityMadness.Code.Gameplay.Abilities.Systems.Implementation.Tornado
 {
-    public class ArrowAutoLaunchAbilitySystem : IExecuteSystem
+    public class TornadoAutoLaunchAbilitySystem : IExecuteSystem
     {
-         private IGroup<GameEntity> _abilities;
+        private IGroup<GameEntity> _abilities;
         private GameContext _gameContext;
         private IProjectileFactory _projectileFactory;
         private IGroup<GameEntity> _owners;
 
-        public ArrowAutoLaunchAbilitySystem(GameContext gameContext, IProjectileFactory projectileFactory)
+        public TornadoAutoLaunchAbilitySystem(GameContext gameContext, IProjectileFactory projectileFactory)
         {
             _projectileFactory = projectileFactory;
             _gameContext = gameContext;
@@ -19,7 +19,7 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Systems.Implementation.Arrow
             _abilities = gameContext.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Ability,
-                    GameMatcher.ArrowAbility,
+                    GameMatcher.TornadoAbility,
                     GameMatcher.Ready,
                     GameMatcher.ProducerId,
                     GameMatcher.AutoLaunch));
@@ -44,7 +44,7 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Systems.Implementation.Arrow
                         var closestTarget = GetClosestTarget(owner);
                         var direction = (closestTarget.WorldPosition - owner.WorldPosition).normalized;
 
-                        _projectileFactory.CreateArrow(
+                        _projectileFactory.CreateTornado(
                             ability.Id,
                             owner.WorldPosition,
                             direction,

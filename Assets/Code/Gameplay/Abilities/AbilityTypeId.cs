@@ -4,6 +4,6 @@ namespace AbilityMadness.Code.Gameplay.Abilities
     {
         Unknown = 0,
         Fireball = 1,
-        Arrow = 2,
+        Tornado = 2,
     }
 }
