@@ -1,4 +1,5 @@
-﻿using AbilityMadness.Code.Infrastructure.Services.ECS;
+﻿using System;
+using AbilityMadness.Code.Infrastructure.Services.ECS;
 using UnityEngine;
 
 namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
@@ -17,13 +18,21 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 
         protected override void OnEnter()
         {
-            _battleUpdateFeature = _systemFactory.Create<BattleUpdateFeature>();
-            _battleFixedUpdateFeature = _systemFactory.Create<BattleFixedUpdateFeature>();
-            _battleLateUpdateFeature = _systemFactory.Create<BattleLateUpdateFeature>();
+            try
+            {
+                _battleUpdateFeature = _systemFactory.Create<BattleUpdateFeature>();
+                _battleFixedUpdateFeature = _systemFactory.Create<BattleFixedUpdateFeature>();
+                _battleLateUpdateFeature = _systemFactory.Create<BattleLateUpdateFeature>();
 
-            _battleUpdateFeature.Initialize();
-            _battleFixedUpdateFeature.Initialize();
-            _battleLateUpdateFeature.Initialize();
+                _battleUpdateFeature.Initialize();
+                _battleFixedUpdateFeature.Initialize();
+                _battleLateUpdateFeature.Initialize();
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+                throw;
+            }
         }
 
         protected override void OnTick()

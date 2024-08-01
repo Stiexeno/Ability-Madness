@@ -8,13 +8,13 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    private AbilityMadness.Code.Gameplay.Animator.MovementAnimator movementAnimator { get { return (AbilityMadness.Code.Gameplay.Animator.MovementAnimator)GetComponent(GameComponentsLookup.MovementAnimator); } }
+    private AbilityMadness.Code.Gameplay.Animator.MovementAnimatorComponent movementAnimator { get { return (AbilityMadness.Code.Gameplay.Animator.MovementAnimatorComponent)GetComponent(GameComponentsLookup.MovementAnimator); } }
     public AbilityMadness.Code.Common.Behaviours.MovementAnimator MovementAnimator { get { return movementAnimator.Value; } set { movementAnimator.Value = value; }}
     public bool hasMovementAnimator { get { return HasComponent(GameComponentsLookup.MovementAnimator); } }
 
     public GameEntity AddMovementAnimator(AbilityMadness.Code.Common.Behaviours.MovementAnimator newValue) {
         var index = GameComponentsLookup.MovementAnimator;
-        var component = (AbilityMadness.Code.Gameplay.Animator.MovementAnimator)CreateComponent(index, typeof(AbilityMadness.Code.Gameplay.Animator.MovementAnimator));
+        var component = (AbilityMadness.Code.Gameplay.Animator.MovementAnimatorComponent)CreateComponent(index, typeof(AbilityMadness.Code.Gameplay.Animator.MovementAnimatorComponent));
         component.Value = newValue;
         AddComponent(index, component);
 
@@ -23,7 +23,7 @@ public partial class GameEntity {
 
     public GameEntity ReactiveReplaceMovementAnimator(AbilityMadness.Code.Common.Behaviours.MovementAnimator newValue) {
         var index = GameComponentsLookup.MovementAnimator;
-        var component = (AbilityMadness.Code.Gameplay.Animator.MovementAnimator)CreateComponent(index, typeof(AbilityMadness.Code.Gameplay.Animator.MovementAnimator));
+        var component = (AbilityMadness.Code.Gameplay.Animator.MovementAnimatorComponent)CreateComponent(index, typeof(AbilityMadness.Code.Gameplay.Animator.MovementAnimatorComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
 

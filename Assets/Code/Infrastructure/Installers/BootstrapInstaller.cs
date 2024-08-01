@@ -1,6 +1,7 @@
 using AbilityMadness.Code.Gameplay.Abilities.Factory;
 using AbilityMadness.Code.Gameplay.Camera.Factory;
 using AbilityMadness.Code.Gameplay.Chest.Factory;
+using AbilityMadness.Code.Gameplay.EffectApplication.Factory;
 using AbilityMadness.Code.Gameplay.Projectile.Factory;
 using AbilityMadness.Code.Infrastructure.Services.Camera;
 using AbilityMadness.Code.Infrastructure.Services.Cursors;
@@ -68,20 +69,8 @@ namespace AbilityMadness
 			Container.BindInterfacesTo<UpdateService>()
 				.AsSingle();
 
-            Container.BindInterfacesTo<PlayerFactory>()
-                .AsSingle();
-
-            Container.BindInterfacesTo<ChestFactory>()
-                .AsSingle();
-
-            Container.BindInterfacesTo<ViewPool>()
-                .AsSingle();
-
             Container.BindInterfacesAndSelfTo<PlayerInput>()
                 .FromInstance(playerInput)
-                .AsSingle();
-
-            Container.BindInterfacesTo<CameraFactory>()
                 .AsSingle();
 
             Container.BindInterfacesTo<CollisionRegistry>()
@@ -93,12 +82,6 @@ namespace AbilityMadness
             Container.BindInterfacesTo<CursorService>()
                 .AsSingle()
                 .NonLazy();
-
-            Container.BindInterfacesTo<ProjectileFactory>()
-                .AsSingle();
-
-            Container.BindInterfacesTo<AbilityFactory>()
-                .AsSingle();
         }
 
         private void BindProviders()
@@ -117,6 +100,12 @@ namespace AbilityMadness
 
 			Container.BindInterfacesTo<StatesFactory>()
 				.AsSingle();
+
+            Container.BindInterfacesTo<PlayerFactory>()
+                .AsSingle();
+
+            Container.BindInterfacesTo<AbilityFactory>()
+                .AsSingle();
 		}
 
 		public void Initialize()

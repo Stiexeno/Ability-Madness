@@ -14,8 +14,8 @@ namespace AbilityMadness.Code.Gameplay.Animator.Registrars
 
         public override void UnregisterComponents(GameEntity entity)
         {
-            if (entity.hasRigidbody2D)
-                entity.RemoveRigidbody2D();
+            if (entity.hasMovementAnimator)
+                entity.RemoveMovementAnimator();
         }
     }
 }

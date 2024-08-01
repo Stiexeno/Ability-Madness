@@ -8,18 +8,18 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly AbilityMadness.Code.Gameplay.Lifetime.Alive aliveComponent = new AbilityMadness.Code.Gameplay.Lifetime.Alive();
+    static readonly AbilityMadness.Code.Gameplay.TargetCollection.SphereCast sphereCastComponent = new AbilityMadness.Code.Gameplay.TargetCollection.SphereCast();
 
-    public bool isAlive {
-        get { return HasComponent(GameComponentsLookup.Alive); }
+    public bool isSphereCast {
+        get { return HasComponent(GameComponentsLookup.SphereCast); }
         set {
-            if (value != isAlive) {
-                var index = GameComponentsLookup.Alive;
+            if (value != isSphereCast) {
+                var index = GameComponentsLookup.SphereCast;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : aliveComponent;
+                            : sphereCastComponent;
 
                     AddComponent(index, component);
                 } else {
@@ -40,17 +40,17 @@ public partial class GameEntity {
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherAlive;
+    static Entitas.IMatcher<GameEntity> _matcherSphereCast;
 
-    public static Entitas.IMatcher<GameEntity> Alive {
+    public static Entitas.IMatcher<GameEntity> SphereCast {
         get {
-            if (_matcherAlive == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Alive);
+            if (_matcherSphereCast == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.SphereCast);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherAlive = matcher;
+                _matcherSphereCast = matcher;
             }
 
-            return _matcherAlive;
+            return _matcherSphereCast;
         }
     }
 }

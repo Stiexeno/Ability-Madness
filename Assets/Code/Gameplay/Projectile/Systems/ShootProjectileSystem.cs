@@ -18,7 +18,8 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Systems
                 .AllOf(
                     GameMatcher.Ability,
                     GameMatcher.Ready,
-                    GameMatcher.OwnerId));
+                    GameMatcher.OwnerId,
+                    GameMatcher.Team));
         }
 
         public void Execute()
@@ -26,7 +27,8 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Systems
             foreach (var ability in _abilities)
             {
                 var owner = _contexts.game.GetEntityWithId(ability.OwnerId);
-                _projectileFactory.CreateFireball(owner.WorldPosition, owner.LookDirection);
+                var entity = _projectileFactory.CreateFireball(owner.WorldPosition, owner.LookDirection);
+                entity.AddTeam(ability.Team);
             }
         }
     }

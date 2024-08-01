@@ -20,6 +20,11 @@ namespace AbilityMadness
             {
                 public const string Fireball = "Prefabs/Projectiles/Projectile_Fireball";
             }
+
+            public static class Effects
+            {
+                public const string FireballHitEffect = "Prefabs/Effects/Effect_Fireball_Hit";
+            }
         }
 
         public static class Input

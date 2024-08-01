@@ -33,7 +33,7 @@ namespace AbilityMadness.Code.Gameplay.Input.Systems
                         .With(x => x.isMouseCollision = true)
                         .With(x => x.isCollisionEnter = true);
 
-                    if (hit != null)
+                    if (hit != null && hit.hasId)
                     {
                         mouseTriggerEntity.AddCollidedId(hit.Id);
                     }

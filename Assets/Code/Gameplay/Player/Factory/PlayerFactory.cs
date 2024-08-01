@@ -1,5 +1,6 @@
 ﻿using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Extensions;
+using AbilityMadness.Code.Gameplay.Health;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
 using UnityEngine;
 
@@ -22,6 +23,7 @@ namespace AbilityMadness.Factory
                 .AddId(_identifierService.Next())
                 .With(x => x.isPlayer = true)
                 .AddViewPath(PlayerPath)
+                .AddTeam(Team.Player)
 
                 .AddWorldPosition(Vector2.zero)
                 .AddVelocity(Vector2.zero)

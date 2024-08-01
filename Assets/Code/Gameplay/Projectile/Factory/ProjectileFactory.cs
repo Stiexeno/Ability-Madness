@@ -1,5 +1,7 @@
 ﻿using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Extensions;
+using AbilityMadness.Code.Gameplay.Lifetime;
+using AbilityMadness.Code.Gameplay.TargetCollection;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
 using UnityEngine;
 
@@ -23,12 +25,17 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
                 .AddId(_identifierService.Next())
                 .AddViewPath(Constants.Prefabs.Projectiles.Fireball)
 
+                .SetLifetime(LifeTime)
+
                 .With(x => x.isTransformMovement = true)
                 .AddWorldPosition(position)
                 .AddDirection(direction)
                 .AddMovementSpeed(0.05f)
 
-                .AddLifeTime(LifeTime);
+                .AddDamage(10)
+                .CollectTargetsWithSphereCast(0.3f)
+
+                .AddEffectViewPath(Constants.Prefabs.Effects.FireballHitEffect);
         }
     }
 }

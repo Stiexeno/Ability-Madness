@@ -3,18 +3,21 @@ using AbilityMadness.Code.Infrastructure.Factories;
 using AbilityMadness.Code.Infrastructure.View;
 using AbilityMadness.Infrastructure.Services.Assets;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace AbilityMadness.Code.Infrastructure.Services.View
 {
     public class ViewPool : IViewPool
     {
         private Dictionary<string, List<EntityView>> _pooledViews = new();
+        private Transform _viewsParent;
 
         private GeneralFactory _generalFactory;
 
         public ViewPool(IAssets assets)
         {
             _generalFactory = new GeneralFactory(assets);
+            _viewsParent = new GameObject("View").transform;
         }
 
         public async UniTask<EntityView> Take(string path)
@@ -52,6 +55,8 @@ namespace AbilityMadness.Code.Infrastructure.Services.View
             }
 
             _pooledViews[path].Add(viewInstance);
+
+            viewInstance.transform.SetParent(_viewsParent);
 
             return viewInstance;
         }

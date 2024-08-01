@@ -8,13 +8,13 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    private AbilityMadness.Code.Common.LifeTime lifeTime { get { return (AbilityMadness.Code.Common.LifeTime)GetComponent(GameComponentsLookup.LifeTime); } }
+    private AbilityMadness.Code.Gameplay.Lifetime.LifeTime lifeTime { get { return (AbilityMadness.Code.Gameplay.Lifetime.LifeTime)GetComponent(GameComponentsLookup.LifeTime); } }
     public float LifeTime { get { return lifeTime.Value; } set { lifeTime.Value = value; }}
     public bool hasLifeTime { get { return HasComponent(GameComponentsLookup.LifeTime); } }
 
     public GameEntity AddLifeTime(float newValue) {
         var index = GameComponentsLookup.LifeTime;
-        var component = (AbilityMadness.Code.Common.LifeTime)CreateComponent(index, typeof(AbilityMadness.Code.Common.LifeTime));
+        var component = (AbilityMadness.Code.Gameplay.Lifetime.LifeTime)CreateComponent(index, typeof(AbilityMadness.Code.Gameplay.Lifetime.LifeTime));
         component.Value = newValue;
         AddComponent(index, component);
 
@@ -23,7 +23,7 @@ public partial class GameEntity {
 
     public GameEntity ReactiveReplaceLifeTime(float newValue) {
         var index = GameComponentsLookup.LifeTime;
-        var component = (AbilityMadness.Code.Common.LifeTime)CreateComponent(index, typeof(AbilityMadness.Code.Common.LifeTime));
+        var component = (AbilityMadness.Code.Gameplay.Lifetime.LifeTime)CreateComponent(index, typeof(AbilityMadness.Code.Gameplay.Lifetime.LifeTime));
         component.Value = newValue;
         ReplaceComponent(index, component);
 

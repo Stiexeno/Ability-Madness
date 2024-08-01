@@ -23,19 +23,19 @@ public static class GameComponentsLookup {
     public const int Disabled = 12;
     public const int Enabled = 13;
     public const int Id = 14;
-    public const int LifeTime = 15;
-    public const int OwnerId = 16;
-    public const int Rigidbody2D = 17;
-    public const int Transform = 18;
-    public const int Velocity = 19;
-    public const int View = 20;
-    public const int ViewLoading = 21;
-    public const int ViewPath = 22;
-    public const int WorldPosition = 23;
-    public const int Ability = 24;
-    public const int AutoLaunch = 25;
-    public const int ManualLaunch = 26;
-    public const int Ready = 27;
+    public const int OwnerId = 15;
+    public const int Rigidbody2D = 16;
+    public const int Transform = 17;
+    public const int Velocity = 18;
+    public const int View = 19;
+    public const int ViewLoading = 20;
+    public const int ViewPath = 21;
+    public const int WorldPosition = 22;
+    public const int Ability = 23;
+    public const int AutoLaunch = 24;
+    public const int ManualLaunch = 25;
+    public const int Ready = 26;
+    public const int DamageAnimator = 27;
     public const int MovementAnimator = 28;
     public const int Camera = 29;
     public const int CameraOffset = 30;
@@ -43,27 +43,38 @@ public static class GameComponentsLookup {
     public const int FollowTargetId = 32;
     public const int Chest = 33;
     public const int Attacking = 34;
-    public const int AttackPressed = 35;
-    public const int AxisInput = 36;
-    public const int Input = 37;
-    public const int LookInput = 38;
-    public const int MouseCollision = 39;
-    public const int MouseInHover = 40;
-    public const int MousePosition = 41;
-    public const int InteractBehaviour = 42;
-    public const int Alive = 43;
-    public const int Direction = 44;
-    public const int LookDirection = 45;
-    public const int MovementSpeed = 46;
-    public const int RigidbodyMovement = 47;
-    public const int TransformMovement = 48;
-    public const int Projectile = 49;
-    public const int ProjectileType = 50;
-    public const int RangedAttack = 51;
-    public const int Player = 52;
-    public const int PlayerInTrigger = 53;
+    public const int Damage = 35;
+    public const int DamageReceived = 36;
+    public const int EffectViewPath = 37;
+    public const int Health = 38;
+    public const int MaxHealth = 39;
+    public const int Team = 40;
+    public const int AttackPressed = 41;
+    public const int AxisInput = 42;
+    public const int Input = 43;
+    public const int LookInput = 44;
+    public const int MouseCollision = 45;
+    public const int MouseInHover = 46;
+    public const int MousePosition = 47;
+    public const int InteractBehaviour = 48;
+    public const int LifeTime = 49;
+    public const int LifeTimeTimeElapsed = 50;
+    public const int Direction = 51;
+    public const int LookDirection = 52;
+    public const int MovementSpeed = 53;
+    public const int RigidbodyMovement = 54;
+    public const int TransformMovement = 55;
+    public const int Projectile = 56;
+    public const int ProjectileType = 57;
+    public const int RangedAttack = 58;
+    public const int ProccessedTargets = 59;
+    public const int SphereCast = 60;
+    public const int SphereCastRadius = 61;
+    public const int TargetBuffer = 62;
+    public const int Player = 63;
+    public const int PlayerInTrigger = 64;
 
-    public const int TotalComponents = 54;
+    public const int TotalComponents = 65;
 
     public static readonly string[] componentNames = {
         "Collider2D",
@@ -81,7 +92,6 @@ public static class GameComponentsLookup {
         "Disabled",
         "Enabled",
         "Id",
-        "LifeTime",
         "OwnerId",
         "Rigidbody2D",
         "Transform",
@@ -94,6 +104,7 @@ public static class GameComponentsLookup {
         "AutoLaunch",
         "ManualLaunch",
         "Ready",
+        "DamageAnimator",
         "MovementAnimator",
         "Camera",
         "CameraOffset",
@@ -101,6 +112,12 @@ public static class GameComponentsLookup {
         "FollowTargetId",
         "Chest",
         "Attacking",
+        "Damage",
+        "DamageReceived",
+        "EffectViewPath",
+        "Health",
+        "MaxHealth",
+        "Team",
         "AttackPressed",
         "AxisInput",
         "Input",
@@ -109,7 +126,8 @@ public static class GameComponentsLookup {
         "MouseInHover",
         "MousePosition",
         "InteractBehaviour",
-        "Alive",
+        "LifeTime",
+        "LifeTimeTimeElapsed",
         "Direction",
         "LookDirection",
         "MovementSpeed",
@@ -118,6 +136,10 @@ public static class GameComponentsLookup {
         "Projectile",
         "ProjectileType",
         "RangedAttack",
+        "ProccessedTargets",
+        "SphereCast",
+        "SphereCastRadius",
+        "TargetBuffer",
         "Player",
         "PlayerInTrigger"
     };
@@ -138,7 +160,6 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Common.Disabled),
         typeof(AbilityMadness.Code.Common.Enabled),
         typeof(AbilityMadness.Code.Common.Id),
-        typeof(AbilityMadness.Code.Common.LifeTime),
         typeof(AbilityMadness.Code.Common.OwnerId),
         typeof(AbilityMadness.Code.Common.Rigidbody2DComponent),
         typeof(AbilityMadness.Code.Common.TransformComponent),
@@ -151,13 +172,20 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Abilities.AutoLaunch),
         typeof(AbilityMadness.Code.Gameplay.Abilities.ManualLaunch),
         typeof(AbilityMadness.Code.Gameplay.Abilities.Ready),
-        typeof(AbilityMadness.Code.Gameplay.Animator.MovementAnimator),
+        typeof(AbilityMadness.Code.Gameplay.Animator.DamageAnimatorComponent),
+        typeof(AbilityMadness.Code.Gameplay.Animator.MovementAnimatorComponent),
         typeof(AbilityMadness.Code.Gameplay.Camera.Camera),
         typeof(AbilityMadness.Code.Gameplay.Camera.CameraOffset),
         typeof(AbilityMadness.Code.Gameplay.Camera.CameraSmooth),
         typeof(AbilityMadness.Code.Gameplay.Camera.FollowTargetId),
         typeof(AbilityMadness.Code.Gameplay.Chest.Chest),
         typeof(AbilityMadness.Code.Gameplay.Combat.Attacking),
+        typeof(AbilityMadness.Code.Gameplay.DamageApplication.Damage),
+        typeof(AbilityMadness.Code.Gameplay.DamageApplication.DamageReceived),
+        typeof(AbilityMadness.Code.Gameplay.EffectApplication.EffectViewPath),
+        typeof(AbilityMadness.Code.Gameplay.Health.Health),
+        typeof(AbilityMadness.Code.Gameplay.Health.MaxHealth),
+        typeof(AbilityMadness.Code.Gameplay.Health.TeamComponent),
         typeof(AbilityMadness.Code.Gameplay.Input.AttackPressed),
         typeof(AbilityMadness.Code.Gameplay.Input.AxisInput),
         typeof(AbilityMadness.Code.Gameplay.Input.Input),
@@ -166,7 +194,8 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Input.MouseInHover),
         typeof(AbilityMadness.Code.Gameplay.Input.MousePosition),
         typeof(AbilityMadness.Code.Gameplay.Interaction.InteractBehaviourComponent),
-        typeof(AbilityMadness.Code.Gameplay.Lifetime.Alive),
+        typeof(AbilityMadness.Code.Gameplay.Lifetime.LifeTime),
+        typeof(AbilityMadness.Code.Gameplay.Lifetime.LifeTimeTimeElapsed),
         typeof(AbilityMadness.Code.Gameplay.Movement.Direction),
         typeof(AbilityMadness.Code.Gameplay.Movement.LookDirection),
         typeof(AbilityMadness.Code.Gameplay.Movement.MovementSpeed),
@@ -175,6 +204,10 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Projectile.Projectile),
         typeof(AbilityMadness.Code.Gameplay.Projectile.ProjectileTypeComponent),
         typeof(AbilityMadness.Code.Gameplay.Projectile.RangedAttack),
+        typeof(AbilityMadness.Code.Gameplay.TargetCollection.ProccessedTargets),
+        typeof(AbilityMadness.Code.Gameplay.TargetCollection.SphereCast),
+        typeof(AbilityMadness.Code.Gameplay.TargetCollection.SphereCastRadius),
+        typeof(AbilityMadness.Code.Gameplay.TargetCollection.TargetBuffer),
         typeof(AbilityMadness.Player),
         typeof(AbilityMadness.PlayerInTrigger)
     };

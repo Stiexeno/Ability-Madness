@@ -19,6 +19,7 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Factory
                 .With(x => x.isAbility = true)
                 .AddId(_identifierService.Next())
                 .AddOwnerId(owner.Id)
+                .AddTeam(owner.Team)
 
                 .With(x => x.isManualLaunch = true)
                 .With(x => x.isRangedAttack = true);
