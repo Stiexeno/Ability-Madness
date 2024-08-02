@@ -8,7 +8,9 @@ namespace AbilityMadness.Code.Gameplay.Health
         public HealthFeature(ISystemFactory systemFactory)
         {
             Add(systemFactory.Create<SetDeadOnHealthDepletedSystem>());
+            Add(systemFactory.Create<CleanupHealthbarOnDeathSystem>());
             Add(systemFactory.Create<PlayDeathAnimationSystem>());
+            Add(systemFactory.Create<DisplayHealthbarSystem>());
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using Entitas;
+﻿using AbilityMadness.Code.Gameplay.Health.Behaviours;
+using AbilityMadness.Code.Infrastructure.Services.UI.Widgets;
+using Entitas;
 
 namespace AbilityMadness.Code.Gameplay.Health
 {
@@ -9,4 +11,7 @@ namespace AbilityMadness.Code.Gameplay.Health
     [Game] public class Dead : IComponent { }
 
     [Game] public class TeamComponent : IComponent { public Team Value; }
+
+    [Game] public class HealthbarComponent : IComponent { public Healthbar Value; }
+    [Game] public class HealthbarLoading : IComponent {  }
 }

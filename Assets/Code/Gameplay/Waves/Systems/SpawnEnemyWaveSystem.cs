@@ -29,8 +29,11 @@ namespace AbilityMadness.Code.Gameplay.Waves.Systems
 
                 wave.TimeElapsed = 0;
 
-                var position = CameraExtensions.GetRandomPositionOutsideScreen(5f);
-                _enemyFactory.CreateRobot(position);
+                for (int i = 0; i < 5; i++)
+                {
+                    var position = CameraExtensions.GetRandomPositionOutsideScreen(5f);
+                    _enemyFactory.CreateRobot(position);
+                }
             }
         }
     }

@@ -8,18 +8,18 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly AbilityMadness.Code.Common.ViewLoading viewLoadingComponent = new AbilityMadness.Code.Common.ViewLoading();
+    static readonly AbilityMadness.Code.Gameplay.Health.HealthbarLoading healthbarLoadingComponent = new AbilityMadness.Code.Gameplay.Health.HealthbarLoading();
 
-    public bool isViewLoading {
-        get { return HasComponent(GameComponentsLookup.ViewLoading); }
+    public bool isHealthbarLoading {
+        get { return HasComponent(GameComponentsLookup.HealthbarLoading); }
         set {
-            if (value != isViewLoading) {
-                var index = GameComponentsLookup.ViewLoading;
+            if (value != isHealthbarLoading) {
+                var index = GameComponentsLookup.HealthbarLoading;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : viewLoadingComponent;
+                            : healthbarLoadingComponent;
 
                     AddComponent(index, component);
                 } else {
@@ -40,17 +40,17 @@ public partial class GameEntity {
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherViewLoading;
+    static Entitas.IMatcher<GameEntity> _matcherHealthbarLoading;
 
-    public static Entitas.IMatcher<GameEntity> ViewLoading {
+    public static Entitas.IMatcher<GameEntity> HealthbarLoading {
         get {
-            if (_matcherViewLoading == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.ViewLoading);
+            if (_matcherHealthbarLoading == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.HealthbarLoading);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherViewLoading = matcher;
+                _matcherHealthbarLoading = matcher;
             }
 
-            return _matcherViewLoading;
+            return _matcherHealthbarLoading;
         }
     }
 }

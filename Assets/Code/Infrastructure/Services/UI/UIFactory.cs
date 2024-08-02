@@ -1,4 +1,6 @@
 ﻿using System.Linq;
+using AbilityMadness.Code.Common;
+using AbilityMadness.Code.Extensions;
 using AbilityMadness.Code.Infrastructure.Services.Camera;
 using AbilityMadness.Code.Infrastructure.Services.UI;
 using AbilityMadness.Code.Infrastructure.Services.UI.Widgets;
@@ -18,13 +20,22 @@ namespace AbilityMadness.Infrastructure.Factories.UI
         private IAssets _assets;
         private CameraProvider _cameraProvider;
         private IUIPool _uiPool;
+        private GameContext _gameContext;
 
-        public UIFactory(IAssets assets, CameraProvider cameraProvider, IUIPool uiPool)
+        public UIFactory(IAssets assets, CameraProvider cameraProvider, IUIPool uiPool, GameContext gameContext)
         {
+            _gameContext = gameContext;
             _uiPool = uiPool;
             _cameraProvider = cameraProvider;
             _assets = assets;
             Load().Forget();
+            Warmup();
+        }
+
+        private void Warmup()
+        {
+            _assets.LoadAsync<GameObject>(Constants.Prefabs.Widgets.DamageTextWidget).Forget();
+            _assets.LoadAsync<GameObject>(Constants.Prefabs.Widgets.HealthbarWidget).Forget();
         }
 
         public async UniTask<DamageTextWidget> CreateDamageText(Vector3 position, int damage)
@@ -35,6 +46,15 @@ namespace AbilityMadness.Infrastructure.Factories.UI
             damageText.Show(damage);
 
             return damageText;
+        }
+
+        public GameEntity CreateHealthbar(GameEntity gameEntity)
+        {
+            return CreateEntity.Empty()
+                .AddViewPath(Constants.Prefabs.Widgets.HealthbarWidget)
+                .AddTargetId(gameEntity.Id)
+                .AddWorldPosition(Vector3.zero)
+                .With(x => x.isTransformMovement = true);
         }
 
         #region Factory

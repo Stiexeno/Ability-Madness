@@ -13,5 +13,30 @@ namespace AbilityMadness.Code.Extensions
         {
             return new Vector2(vector3.x, vector3.y);
         }
+
+        public static Vector2 AddX(this Vector2 vector2, float x)
+        {
+            return new Vector2(vector2.x + x, vector2.y);
+        }
+
+        public static Vector2 AddY(this Vector2 vector2, float y)
+        {
+            return new Vector2(vector2.x, vector2.y + y);
+        }
+
+        public static Vector3 AddX(this Vector3 vector2, float x)
+        {
+            return new Vector3(vector2.x + x, vector2.y, vector2.z);
+        }
+
+        public static Vector3 AddY(this Vector3 vector2, float y)
+        {
+            return new Vector3(vector2.x, vector2.y + y, vector2.z);
+        }
+
+        public static Vector3 AddZ(this Vector3 vector2, float z)
+        {
+            return new Vector3(vector2.x, vector2.y, vector2.z + z);
+        }
     }
 }

@@ -20,6 +20,7 @@ namespace AbilityMadness
             public static class Widgets
             {
                 public const string DamageTextWidget = "Prefabs/UI/Widgets/DamageTextWidget";
+                public const string HealthbarWidget = "Prefabs/UI/Widgets/HealthbarWidget";
             }
 
             public static class Projectiles

@@ -81,6 +81,7 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 
 		private void SetupWindows()
 		{
+            _iuiService.Open<HudWindow>();
 		}
 
         private void CreatePlayer()

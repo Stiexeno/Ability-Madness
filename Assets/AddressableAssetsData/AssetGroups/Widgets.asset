@@ -21,6 +21,10 @@ MonoBehaviour:
     m_Address: Prefabs/UI/Widgets/DamageTextWidget
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 95fc662d742578940b4cf82fb3b0293b
+    m_Address: Prefabs/UI/Widgets/HealthbarWidget
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9f75c775787da8a4c8e7e94698c9d5b8, type: 2}
   m_SchemaSet:

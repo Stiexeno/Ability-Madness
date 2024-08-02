@@ -9,5 +9,6 @@ namespace AbilityMadness.Infrastructure.Factories.UI
 		T CreateWindow<T>() where T : Window;
 		UniTask CreateUIRoot();
         UniTask<DamageTextWidget> CreateDamageText(Vector3 position, int damage);
+        GameEntity CreateHealthbar(GameEntity gameEntity);
     }
 }

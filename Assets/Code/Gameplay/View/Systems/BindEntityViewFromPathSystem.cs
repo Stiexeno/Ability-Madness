@@ -16,7 +16,7 @@ namespace AbilityMadness.Code.Common.Systems
 
             _entities = contexts.game.GetGroup(GameMatcher
                 .AllOf(GameMatcher.ViewPath)
-                .NoneOf(GameMatcher.ViewLoading, GameMatcher.View));
+                .NoneOf(GameMatcher.Loading, GameMatcher.View));
         }
 
         public void Execute()
@@ -26,11 +26,9 @@ namespace AbilityMadness.Code.Common.Systems
                 if (string.IsNullOrEmpty(entity.ViewPath))
                     continue;
 
-                entity.isViewLoading = true;
-
+                entity.isLoading = true;
 
                 LoadView(entity).Forget();
-
             }
         }
 
@@ -41,7 +39,7 @@ namespace AbilityMadness.Code.Common.Systems
             entityView.gameObject.SetActive(true);
 
             entity.AddView(entityView);
-            entity.isViewLoading = false;
+            entity.isLoading = false;
         }
     }
 }

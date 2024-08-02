@@ -26,15 +26,15 @@ public static class GameComponentsLookup {
     public const int Enabled = 15;
     public const int Id = 16;
     public const int Interval = 17;
-    public const int OwnerId = 18;
-    public const int ProducerId = 19;
-    public const int Rigidbody2D = 20;
-    public const int TargetId = 21;
-    public const int TimeElapsed = 22;
-    public const int Transform = 23;
-    public const int Velocity = 24;
-    public const int View = 25;
-    public const int ViewLoading = 26;
+    public const int Loading = 18;
+    public const int OwnerId = 19;
+    public const int ProducerId = 20;
+    public const int Rigidbody2D = 21;
+    public const int TargetId = 22;
+    public const int TimeElapsed = 23;
+    public const int Transform = 24;
+    public const int Velocity = 25;
+    public const int View = 26;
     public const int ViewPath = 27;
     public const int WorldPosition = 28;
     public const int Ability = 29;
@@ -61,52 +61,54 @@ public static class GameComponentsLookup {
     public const int Alive = 50;
     public const int Dead = 51;
     public const int Health = 52;
-    public const int MaxHealth = 53;
-    public const int Team = 54;
-    public const int AttackPressed = 55;
-    public const int AxisInput = 56;
-    public const int Input = 57;
-    public const int LookInput = 58;
-    public const int MouseCollision = 59;
-    public const int MouseInHover = 60;
-    public const int MousePosition = 61;
-    public const int InteractBehaviour = 62;
-    public const int LifeTime = 63;
-    public const int LifeTimeTimeElapsed = 64;
-    public const int ForwardMovementModifier = 65;
-    public const int Modifier = 66;
-    public const int ModifierTypeId = 67;
-    public const int ModifierValue = 68;
-    public const int MultishootModifier = 69;
-    public const int SpeedModifier = 70;
-    public const int ZigZagDirection = 71;
-    public const int ZigZagMovementModifier = 72;
-    public const int ZigZagTimeElapsed = 73;
-    public const int Direction = 74;
-    public const int FaceToDirection = 75;
-    public const int ForwardMovement = 76;
-    public const int LookDirection = 77;
-    public const int MovementSpeed = 78;
-    public const int RigidbodyMovement = 79;
-    public const int TransformMovement = 80;
-    public const int ZigZagMovement = 81;
-    public const int Projectile = 82;
-    public const int ProjectileType = 83;
-    public const int ProccessedTargets = 84;
-    public const int SphereCast = 85;
-    public const int SphereCastRadius = 86;
-    public const int TargetBuffer = 87;
-    public const int TargetsInSight = 88;
-    public const int Vision = 89;
-    public const int VisionInterval = 90;
-    public const int VisionLayer = 91;
-    public const int VisionRadius = 92;
-    public const int VisionTimer = 93;
-    public const int Wave = 94;
-    public const int Player = 95;
-    public const int PlayerInTrigger = 96;
+    public const int Healthbar = 53;
+    public const int HealthbarLoading = 54;
+    public const int MaxHealth = 55;
+    public const int Team = 56;
+    public const int AttackPressed = 57;
+    public const int AxisInput = 58;
+    public const int Input = 59;
+    public const int LookInput = 60;
+    public const int MouseCollision = 61;
+    public const int MouseInHover = 62;
+    public const int MousePosition = 63;
+    public const int InteractBehaviour = 64;
+    public const int LifeTime = 65;
+    public const int LifeTimeTimeElapsed = 66;
+    public const int ForwardMovementModifier = 67;
+    public const int Modifier = 68;
+    public const int ModifierTypeId = 69;
+    public const int ModifierValue = 70;
+    public const int MultishootModifier = 71;
+    public const int SpeedModifier = 72;
+    public const int ZigZagDirection = 73;
+    public const int ZigZagMovementModifier = 74;
+    public const int ZigZagTimeElapsed = 75;
+    public const int Direction = 76;
+    public const int FaceToDirection = 77;
+    public const int ForwardMovement = 78;
+    public const int LookDirection = 79;
+    public const int MovementSpeed = 80;
+    public const int RigidbodyMovement = 81;
+    public const int TransformMovement = 82;
+    public const int ZigZagMovement = 83;
+    public const int Projectile = 84;
+    public const int ProjectileType = 85;
+    public const int ProccessedTargets = 86;
+    public const int SphereCast = 87;
+    public const int SphereCastRadius = 88;
+    public const int TargetBuffer = 89;
+    public const int TargetsInSight = 90;
+    public const int Vision = 91;
+    public const int VisionInterval = 92;
+    public const int VisionLayer = 93;
+    public const int VisionRadius = 94;
+    public const int VisionTimer = 95;
+    public const int Wave = 96;
+    public const int Player = 97;
+    public const int PlayerInTrigger = 98;
 
-    public const int TotalComponents = 97;
+    public const int TotalComponents = 99;
 
     public static readonly string[] componentNames = {
         "Collider2D",
@@ -127,6 +129,7 @@ public static class GameComponentsLookup {
         "Enabled",
         "Id",
         "Interval",
+        "Loading",
         "OwnerId",
         "ProducerId",
         "Rigidbody2D",
@@ -135,7 +138,6 @@ public static class GameComponentsLookup {
         "Transform",
         "Velocity",
         "View",
-        "ViewLoading",
         "ViewPath",
         "WorldPosition",
         "Ability",
@@ -162,6 +164,8 @@ public static class GameComponentsLookup {
         "Alive",
         "Dead",
         "Health",
+        "Healthbar",
+        "HealthbarLoading",
         "MaxHealth",
         "Team",
         "AttackPressed",
@@ -227,6 +231,7 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Common.Enabled),
         typeof(AbilityMadness.Code.Common.Id),
         typeof(AbilityMadness.Code.Common.Interval),
+        typeof(AbilityMadness.Code.Common.Loading),
         typeof(AbilityMadness.Code.Common.OwnerId),
         typeof(AbilityMadness.Code.Common.ProducerId),
         typeof(AbilityMadness.Code.Common.Rigidbody2DComponent),
@@ -235,7 +240,6 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Common.TransformComponent),
         typeof(AbilityMadness.Code.Common.Velocity),
         typeof(AbilityMadness.Code.Common.View),
-        typeof(AbilityMadness.Code.Common.ViewLoading),
         typeof(AbilityMadness.Code.Common.ViewPath),
         typeof(AbilityMadness.Code.Common.WorldPosition),
         typeof(AbilityMadness.Code.Gameplay.Abilities.Ability),
@@ -262,6 +266,8 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Health.Alive),
         typeof(AbilityMadness.Code.Gameplay.Health.Dead),
         typeof(AbilityMadness.Code.Gameplay.Health.Health),
+        typeof(AbilityMadness.Code.Gameplay.Health.HealthbarComponent),
+        typeof(AbilityMadness.Code.Gameplay.Health.HealthbarLoading),
         typeof(AbilityMadness.Code.Gameplay.Health.MaxHealth),
         typeof(AbilityMadness.Code.Gameplay.Health.TeamComponent),
         typeof(AbilityMadness.Code.Gameplay.Input.AttackPressed),
