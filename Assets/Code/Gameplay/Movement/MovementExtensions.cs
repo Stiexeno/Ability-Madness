@@ -20,13 +20,14 @@ namespace AbilityMadness.Code.Gameplay.Movement
                 .With(x => x.isForwardMovement = true);
         }
 
-        public static GameEntity SetZigZagMovement(this GameEntity gameEntity)
+        public static GameEntity SetZigZagMovement(this GameEntity gameEntity, Vector2 direction)
         {
             return gameEntity
                 .With(x => x.isZigZagMovement = true)
                 .With(x => x.isForwardMovement = true)
 
-                .AddZigZagTimeElapsed(0f);
+                .AddZigZagTimeElapsed(0f)
+                .AddZigZagDirection(direction);
         }
     }
 }

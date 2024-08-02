@@ -12,5 +12,5 @@ namespace AbilityMadness.Code.Gameplay.Modifiers
     [Game] public class SpeedModifier : IComponent { }
 
     [Game] public class ZigZagTimeElapsed : IComponent { public float Value; }
-    [Game] public class ZigZagTimeDirection : IComponent { public Vector2 Value; }
+    [Game] public class ZigZagDirection : IComponent { public Vector2 Value; }
 }

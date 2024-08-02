@@ -72,8 +72,8 @@ public static class GameComponentsLookup {
     public const int ModifierTypeId = 61;
     public const int ModifierValue = 62;
     public const int SpeedModifier = 63;
-    public const int ZigZagMovementModifier = 64;
-    public const int ZigZagTimeDirection = 65;
+    public const int ZigZagDirection = 64;
+    public const int ZigZagMovementModifier = 65;
     public const int ZigZagTimeElapsed = 66;
     public const int Direction = 67;
     public const int FaceToDirection = 68;
@@ -165,8 +165,8 @@ public static class GameComponentsLookup {
         "ModifierTypeId",
         "ModifierValue",
         "SpeedModifier",
+        "ZigZagDirection",
         "ZigZagMovementModifier",
-        "ZigZagTimeDirection",
         "ZigZagTimeElapsed",
         "Direction",
         "FaceToDirection",
@@ -257,8 +257,8 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Modifiers.ModifierTypeIdComponent),
         typeof(AbilityMadness.Code.Gameplay.Modifiers.ModifierValue),
         typeof(AbilityMadness.Code.Gameplay.Modifiers.SpeedModifier),
+        typeof(AbilityMadness.Code.Gameplay.Modifiers.ZigZagDirection),
         typeof(AbilityMadness.Code.Gameplay.Modifiers.ZigZagMovementModifier),
-        typeof(AbilityMadness.Code.Gameplay.Modifiers.ZigZagTimeDirection),
         typeof(AbilityMadness.Code.Gameplay.Modifiers.ZigZagTimeElapsed),
         typeof(AbilityMadness.Code.Gameplay.Movement.Direction),
         typeof(AbilityMadness.Code.Gameplay.Movement.FaceToDirection),

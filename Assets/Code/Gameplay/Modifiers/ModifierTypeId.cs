@@ -4,7 +4,7 @@
     {
         Unknown = 0,
         ForwardMovement = 1,
-        Speed = 2,
-        ZigZagMovement = 3,
+        ZigZagMovement = 2,
+        Speed = 3,
     }
 }

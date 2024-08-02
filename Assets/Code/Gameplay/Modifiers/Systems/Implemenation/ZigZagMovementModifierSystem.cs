@@ -33,8 +33,7 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation
             {
                 if (modifier.TargetId == abilityProducedEntity.AbilityProducerId)
                 {
-                    abilityProducedEntity.SetZigZagMovement();
-                    abilityProducedEntity.AddZigZagTimeDirection(abilityProducedEntity.Direction);
+                    abilityProducedEntity.SetZigZagMovement(abilityProducedEntity.Direction);
                 }
             }
         }

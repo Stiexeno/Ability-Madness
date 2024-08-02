@@ -18,5 +18,5 @@ MonoBehaviour:
   modifiers:
   - type: 1
     value: 0
-  - type: 2
+  - type: 3
     value: 0.05
