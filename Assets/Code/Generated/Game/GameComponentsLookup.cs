@@ -71,34 +71,35 @@ public static class GameComponentsLookup {
     public const int Modifier = 60;
     public const int ModifierTypeId = 61;
     public const int ModifierValue = 62;
-    public const int SpeedModifier = 63;
-    public const int ZigZagDirection = 64;
-    public const int ZigZagMovementModifier = 65;
-    public const int ZigZagTimeElapsed = 66;
-    public const int Direction = 67;
-    public const int FaceToDirection = 68;
-    public const int ForwardMovement = 69;
-    public const int LookDirection = 70;
-    public const int MovementSpeed = 71;
-    public const int RigidbodyMovement = 72;
-    public const int TransformMovement = 73;
-    public const int ZigZagMovement = 74;
-    public const int Projectile = 75;
-    public const int ProjectileType = 76;
-    public const int ProccessedTargets = 77;
-    public const int SphereCast = 78;
-    public const int SphereCastRadius = 79;
-    public const int TargetBuffer = 80;
-    public const int TargetsInSight = 81;
-    public const int Vision = 82;
-    public const int VisionInterval = 83;
-    public const int VisionLayer = 84;
-    public const int VisionRadius = 85;
-    public const int VisionTimer = 86;
-    public const int Player = 87;
-    public const int PlayerInTrigger = 88;
+    public const int MultishootModifier = 63;
+    public const int SpeedModifier = 64;
+    public const int ZigZagDirection = 65;
+    public const int ZigZagMovementModifier = 66;
+    public const int ZigZagTimeElapsed = 67;
+    public const int Direction = 68;
+    public const int FaceToDirection = 69;
+    public const int ForwardMovement = 70;
+    public const int LookDirection = 71;
+    public const int MovementSpeed = 72;
+    public const int RigidbodyMovement = 73;
+    public const int TransformMovement = 74;
+    public const int ZigZagMovement = 75;
+    public const int Projectile = 76;
+    public const int ProjectileType = 77;
+    public const int ProccessedTargets = 78;
+    public const int SphereCast = 79;
+    public const int SphereCastRadius = 80;
+    public const int TargetBuffer = 81;
+    public const int TargetsInSight = 82;
+    public const int Vision = 83;
+    public const int VisionInterval = 84;
+    public const int VisionLayer = 85;
+    public const int VisionRadius = 86;
+    public const int VisionTimer = 87;
+    public const int Player = 88;
+    public const int PlayerInTrigger = 89;
 
-    public const int TotalComponents = 89;
+    public const int TotalComponents = 90;
 
     public static readonly string[] componentNames = {
         "Collider2D",
@@ -164,6 +165,7 @@ public static class GameComponentsLookup {
         "Modifier",
         "ModifierTypeId",
         "ModifierValue",
+        "MultishootModifier",
         "SpeedModifier",
         "ZigZagDirection",
         "ZigZagMovementModifier",
@@ -256,6 +258,7 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Modifiers.Modifier),
         typeof(AbilityMadness.Code.Gameplay.Modifiers.ModifierTypeIdComponent),
         typeof(AbilityMadness.Code.Gameplay.Modifiers.ModifierValue),
+        typeof(AbilityMadness.Code.Gameplay.Modifiers.MultishootModifier),
         typeof(AbilityMadness.Code.Gameplay.Modifiers.SpeedModifier),
         typeof(AbilityMadness.Code.Gameplay.Modifiers.ZigZagDirection),
         typeof(AbilityMadness.Code.Gameplay.Modifiers.ZigZagMovementModifier),

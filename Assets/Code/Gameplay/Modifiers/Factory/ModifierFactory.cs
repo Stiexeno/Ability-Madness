@@ -24,6 +24,8 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Factory
                     return CreateSpeedModifier(targetId, value);
                 case ModifierTypeId.ZigZagMovement:
                     return CreateZigZagModifier(targetId, value);
+                case ModifierTypeId.Multishoot:
+                    return CreateMultishootModifier(targetId, value);
                 case ModifierTypeId.Unknown:
                     throw new Exception($"Modifier not set for {targetId} ID");
                 default:
@@ -51,6 +53,14 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Factory
             return CreateEmptyModifier(targetId)
                 .With(x => x.isSpeedModifier = true)
                 .AddModifierTypeId(ModifierTypeId.Speed)
+                .AddModifierValue(value);
+        }
+
+        public GameEntity CreateMultishootModifier(int targetId, float value)
+        {
+            return CreateEmptyModifier(targetId)
+                .With(x => x.isMultishootModifier = true)
+                .AddModifierTypeId(ModifierTypeId.Multishoot)
                 .AddModifierValue(value);
         }
 

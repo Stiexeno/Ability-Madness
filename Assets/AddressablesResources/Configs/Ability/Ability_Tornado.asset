@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Ability_Tornado
   m_EditorClassIdentifier: 
   type: 2
-  cooldown: 1
+  cooldown: 0.1
   damageMultiplier: 1
   modifiers:
   - type: 2
     value: 0
   - type: 3
-    value: 0.05
+    value: 0.1

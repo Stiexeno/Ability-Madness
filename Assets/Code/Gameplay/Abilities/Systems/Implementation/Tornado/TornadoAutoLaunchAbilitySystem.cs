@@ -1,4 +1,6 @@
-﻿using AbilityMadness.Code.Gameplay.Projectile.Factory;
+﻿using AbilityMadness.Code.Gameplay.Modifiers;
+using AbilityMadness.Code.Gameplay.Projectile.Factory;
+using AbilityMadness.Code.Gameplay.Vision;
 using Entitas;
 using UnityEngine;
 
@@ -10,6 +12,7 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Systems.Implementation.Tornado
         private GameContext _gameContext;
         private IProjectileFactory _projectileFactory;
         private IGroup<GameEntity> _owners;
+        private IGroup<GameEntity> _modifiers;
 
         public TornadoAutoLaunchAbilitySystem(GameContext gameContext, IProjectileFactory projectileFactory)
         {
@@ -29,6 +32,12 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Systems.Implementation.Tornado
                     GameMatcher.WorldPosition,
                     GameMatcher.LookDirection,
                     GameMatcher.TargetsInSight));
+
+            _modifiers = gameContext.GetGroup(GameMatcher
+                .AllOf(
+                    GameMatcher.Modifier,
+                    GameMatcher.MultishootModifier,
+                    GameMatcher.ModifierValue));
         }
 
         public void Execute()
@@ -41,37 +50,44 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Systems.Implementation.Tornado
                 {
                     if (owner.TargetsInSight.Count > 0)
                     {
-                        var closestTarget = GetClosestTarget(owner);
+                        var closestTarget = owner.GetClosestTarget();
                         var direction = (closestTarget.WorldPosition - owner.WorldPosition).normalized;
 
-                        _projectileFactory.CreateTornado(
-                            ability.Id,
-                            owner.WorldPosition,
-                            direction,
-                            ability.Team);
+                        ShootProjectile(ability, direction, owner);
                     }
                 }
             }
         }
 
-        private GameEntity GetClosestTarget(GameEntity attacker)
+        private void ShootProjectile(GameEntity ability, Vector3 direction, GameEntity owner)
         {
-            var distance = float.MaxValue;
-            var closestTarget = default(GameEntity);
-
-            foreach (var target in attacker.TargetsInSight)
+            foreach (var modifier in _modifiers)
             {
-                var targetEntity = _gameContext.GetEntityWithId(target);
-                var newDistance = Vector3.Distance(attacker.WorldPosition, targetEntity.WorldPosition);
-
-                if (newDistance < distance)
+                if (modifier.TargetId == ability.Id)
                 {
-                    distance = newDistance;
-                    closestTarget = targetEntity;
+                    for (int i = 0; i < modifier.ModifierValue; i++)
+                    {
+                        var multishotDirection = ModifierExtensions.GetMultishotDirection(
+                            direction,
+                            Mathf.RoundToInt(modifier.ModifierValue),
+                            i);
+
+                        _projectileFactory.CreateTornado(
+                            ability.Id,
+                            owner.WorldPosition,
+                            multishotDirection,
+                            ability.Team);
+                    }
+
+                    return;
                 }
             }
 
-            return closestTarget;
+            _projectileFactory.CreateTornado(
+                ability.Id,
+                owner.WorldPosition,
+                direction,
+                ability.Team);
         }
     }
 }
