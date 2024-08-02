@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Extensions;
+using AbilityMadness.Code.Gameplay.Experience;
 using AbilityMadness.Code.Gameplay.Health;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
 using AbilityMadness.Infrastructure.Services.Assets;
@@ -29,6 +30,8 @@ namespace AbilityMadness.Code.Gameplay.Enemy.Factory
                 .With(x => x.isAlive = true)
                 .AddHealth(20)
                 .AddMaxHealth(20)
+
+                .AddExperienceTypeId(ExperienceTypeId.Green)
 
                 .AddTargetsInSight(new List<int>(1))
 

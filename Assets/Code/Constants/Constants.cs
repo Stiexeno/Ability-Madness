@@ -38,6 +38,11 @@ namespace AbilityMadness
             {
                 public const string Robot = "Character_Robot";
             }
+
+            public static class Experiences
+            {
+                public const string Green = "Prefabs/Experience/Experience_Green";
+            }
         }
 
         public static class Input
@@ -60,6 +65,8 @@ namespace AbilityMadness
             public const int Interactable = 6;
             public const int Enemy = 7;
             public const int Player = 8;
+            public const int Loot = 9;
+
         }
     }
 }

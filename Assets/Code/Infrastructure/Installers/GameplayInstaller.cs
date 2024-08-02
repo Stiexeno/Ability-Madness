@@ -3,6 +3,7 @@ using AbilityMadness.Code.Gameplay.Camera.Factory;
 using AbilityMadness.Code.Gameplay.Chest.Factory;
 using AbilityMadness.Code.Gameplay.EffectApplication.Factory;
 using AbilityMadness.Code.Gameplay.Enemy.Factory;
+using AbilityMadness.Code.Gameplay.Experience.Factory;
 using AbilityMadness.Code.Gameplay.Modifiers.Factory;
 using AbilityMadness.Code.Gameplay.Projectile.Factory;
 using AbilityMadness.Code.Infrastructure.Services.Camera;
@@ -47,6 +48,9 @@ namespace AbilityMadness
                 .AsSingle();
 
             Container.BindInterfacesTo<EnemyFactory>()
+                .AsSingle();
+
+            Container.BindInterfacesTo<ExperienceFactory>()
                 .AsSingle();
         }
 

@@ -17,7 +17,8 @@ namespace AbilityMadness.Code.Gameplay.Movement
         public static GameEntity SetForwardMovement(this GameEntity gameEntity)
         {
             return gameEntity
-                .With(x => x.isForwardMovement = true);
+                .With(x => x.isForwardMovement = true)
+                .With(x => x.isAlive = true);
         }
 
         public static GameEntity SetZigZagMovement(this GameEntity gameEntity, Vector2 direction)

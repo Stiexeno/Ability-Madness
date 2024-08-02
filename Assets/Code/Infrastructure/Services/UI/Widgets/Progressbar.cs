@@ -16,7 +16,7 @@ namespace AbilityMadness
 
         //Progressbar
 
-        public void SetValue(float normalizedValue)
+        public void SetProgress(float normalizedValue)
         {
             fill.fillAmount = normalizedValue;
         }

@@ -7,6 +7,7 @@ using AbilityMadness.Code.Gameplay.Animator;
 using AbilityMadness.Code.Gameplay.Chest;
 using AbilityMadness.Code.Gameplay.DamageApplication;
 using AbilityMadness.Code.Gameplay.Enemy;
+using AbilityMadness.Code.Gameplay.Experience;
 using AbilityMadness.Code.Gameplay.Health;
 using AbilityMadness.Code.Gameplay.Input;
 using AbilityMadness.Code.Gameplay.Interaction;
@@ -43,6 +44,7 @@ namespace AbilityMadness.Code.Infrastructure.Services.ECS
             Add(systemFactory.Create<ModifierFeature>());
             Add(systemFactory.Create<WaveFeature>());
             Add(systemFactory.Create<EnemyFeature>());
+            Add(systemFactory.Create<ExperienceFeature>());
 
             Add(systemFactory.Create<CollisionFeature>());
             Add(systemFactory.Create<DestructFeature>());

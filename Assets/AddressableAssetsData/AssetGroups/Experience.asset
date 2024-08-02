@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Experience
+  m_EditorClassIdentifier: 
+  m_GroupName: Experience
+  m_Data:
+    m_SerializedData: []
+  m_GUID: a14d956f0913d744fb641321e8209cf6
+  m_SerializeEntries:
+  - m_GUID: e170d85bca11d494393e33f96af25a77
+    m_Address: Prefabs/Experience/Experience_Green
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 9f75c775787da8a4c8e7e94698c9d5b8, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 0c22ce347f485d74ea157a584fb54afe, type: 2}
+    - {fileID: 11400000, guid: e78be5c7eff985343859ed367a7b2d71, type: 2}

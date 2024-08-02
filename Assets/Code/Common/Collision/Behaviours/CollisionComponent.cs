@@ -1,4 +1,5 @@
-﻿using AbilityMadness.Code.Extensions;
+﻿using AbilityMadness.Code.Common.Collision.Registrars;
+using AbilityMadness.Code.Extensions;
 using AbilityMadness.Code.Infrastructure.Services.Physics;
 using AbilityMadness.Code.Infrastructure.View;
 using UnityEngine;
@@ -6,6 +7,7 @@ using Zenject;
 
 namespace AbilityMadness.Code.Common.Collision.Behaviours
 {
+    [RequireComponent(typeof(CollidersRegistrar))]
     public class CollisionComponent : EntityComponent
     {
         private ICollisionRegistry _collisionRegistry;

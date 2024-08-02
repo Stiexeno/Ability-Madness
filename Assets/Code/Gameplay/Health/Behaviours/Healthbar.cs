@@ -27,7 +27,7 @@ namespace AbilityMadness.Code.Gameplay.Health.Behaviours
 
         public void SetHealth(float health)
         {
-            progressbar.SetValue(health);
+            progressbar.SetProgress(health);
         }
     }
 }

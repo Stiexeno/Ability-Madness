@@ -6,16 +6,13 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using AbilityMadness.Code.Gameplay.Health.Behaviours;
-
 public partial class GameEntity {
 
     private AbilityMadness.Code.Gameplay.Health.HealthbarComponent healthbar { get { return (AbilityMadness.Code.Gameplay.Health.HealthbarComponent)GetComponent(GameComponentsLookup.Healthbar); } }
-    public Healthbar Healthbar { get { return healthbar.Value; } set { healthbar.Value = value; }}
+    public AbilityMadness.Code.Gameplay.Health.Behaviours.Healthbar Healthbar { get { return healthbar.Value; } set { healthbar.Value = value; }}
     public bool hasHealthbar { get { return HasComponent(GameComponentsLookup.Healthbar); } }
 
-    public GameEntity AddHealthbar(Healthbar newValue) {
+    public GameEntity AddHealthbar(AbilityMadness.Code.Gameplay.Health.Behaviours.Healthbar newValue) {
         var index = GameComponentsLookup.Healthbar;
         var component = (AbilityMadness.Code.Gameplay.Health.HealthbarComponent)CreateComponent(index, typeof(AbilityMadness.Code.Gameplay.Health.HealthbarComponent));
         component.Value = newValue;
@@ -24,7 +21,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReactiveReplaceHealthbar(Healthbar newValue) {
+    public GameEntity ReactiveReplaceHealthbar(AbilityMadness.Code.Gameplay.Health.Behaviours.Healthbar newValue) {
         var index = GameComponentsLookup.Healthbar;
         var component = (AbilityMadness.Code.Gameplay.Health.HealthbarComponent)CreateComponent(index, typeof(AbilityMadness.Code.Gameplay.Health.HealthbarComponent));
         component.Value = newValue;
@@ -33,7 +30,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceHealthbar(Healthbar newValue) {
+    public GameEntity ReplaceHealthbar(AbilityMadness.Code.Gameplay.Health.Behaviours.Healthbar newValue) {
         if (!hasHealthbar) 
         {
             AddHealthbar(newValue);

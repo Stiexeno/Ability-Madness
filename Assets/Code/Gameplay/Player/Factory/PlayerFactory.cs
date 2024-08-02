@@ -42,6 +42,10 @@ namespace AbilityMadness.Factory
                 .AddWorldPosition(Vector2.zero)
                 .AddLookDirection(Vector2.zero)
 
+                .AddPickupRadius(7f)
+                .AddExperience(0)
+                .AddMaxExperience(100)
+
                 .SetVision(8f, 1f, Constants.Layers.Enemy);
         }
     }
