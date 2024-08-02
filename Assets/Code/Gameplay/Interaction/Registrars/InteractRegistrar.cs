@@ -4,6 +4,7 @@ using SF = UnityEngine.SerializeField;
 
 namespace AbilityMadness.Code.Gameplay.Interaction.Registrars
 {
+    [EntityTag("Registrars")]
     public class InteractRegistrar : EntityComponentRegistrar
     {
         [SF] private InteractBehaviour interactBehaviour;

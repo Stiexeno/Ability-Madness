@@ -29,6 +29,7 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
                 .AddTeam(team)
 
                 .SetLifetime(LifeTime)
+                .With(x => x.isAlive = true)
 
                 .With(x => x.isTransformMovement = true)
                 .AddDirection(direction)
@@ -51,6 +52,7 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
                 .AddTeam(team)
 
                 .SetLifetime(LifeTime)
+                .With(x => x.isAlive = true)
 
                 .With(x => x.isTransformMovement = true)
                 .AddDirection(direction)

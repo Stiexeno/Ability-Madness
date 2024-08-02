@@ -1,4 +1,5 @@
 using Entitas;
+using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.DamageApplication.Systems
 {
@@ -6,6 +7,7 @@ namespace AbilityMadness.Code.Gameplay.DamageApplication.Systems
     {
         private IGroup<GameEntity> _damageApplicators;
         private GameContext _gameContext;
+        private IGroup<GameEntity> _targets;
 
         public ApplyDamageSystem(GameContext gameContext)
         {
@@ -13,7 +15,14 @@ namespace AbilityMadness.Code.Gameplay.DamageApplication.Systems
             _damageApplicators = gameContext.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.TargetBuffer,
-                    GameMatcher.Damage));
+                    GameMatcher.Damage,
+                    GameMatcher.Team));
+
+            _targets = gameContext.GetGroup(GameMatcher
+                .AllOf(
+                    GameMatcher.Team,
+                    GameMatcher.Health,
+                    GameMatcher.Alive));
         }
 
         public void Execute()
@@ -22,7 +31,12 @@ namespace AbilityMadness.Code.Gameplay.DamageApplication.Systems
             foreach (var targetId in damageApplicator.TargetBuffer)
             {
                 var entity = _gameContext.GetEntityWithId(targetId);
-                entity.ReplaceDamageReceived(damageApplicator.Damage);
+
+                if (_targets.ContainsEntity(entity) && entity.Team != damageApplicator.Team)
+                {
+                    entity.Health -= damageApplicator.Damage;
+                    entity.ReplaceDamageReceived(damageApplicator.Damage);
+                }
             }
         }
     }

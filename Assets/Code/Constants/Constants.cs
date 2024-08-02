@@ -13,8 +13,14 @@ namespace AbilityMadness
         public static class Prefabs
         {
             public const string UIRootPath = "Prefabs/UI/UIRoot";
+            public const string WorldUIRootPath = "Prefabs/UI/WorldUIRoot";
 
             public const string WindowLabel = "window";
+
+            public static class Widgets
+            {
+                public const string DamageTextWidget = "Prefabs/UI/Widgets/DamageTextWidget";
+            }
 
             public static class Projectiles
             {
@@ -25,6 +31,11 @@ namespace AbilityMadness
             public static class Effects
             {
                 public const string FireballHitEffect = "Prefabs/Effects/Effect_Fireball_Hit";
+            }
+
+            public static class Enemies
+            {
+                public const string Robot = "Character_Robot";
             }
         }
 
@@ -47,6 +58,7 @@ namespace AbilityMadness
             public const int Default = 0;
             public const int Interactable = 6;
             public const int Enemy = 7;
+            public const int Player = 8;
         }
     }
 }

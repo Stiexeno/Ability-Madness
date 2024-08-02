@@ -1,0 +1,14 @@
+using AbilityMadness.Code.Gameplay.Health.Systems;
+using AbilityMadness.Code.Infrastructure.Services.ECS;
+
+namespace AbilityMadness.Code.Gameplay.Health
+{
+    public class HealthFeature : Feature
+    {
+        public HealthFeature(ISystemFactory systemFactory)
+        {
+            Add(systemFactory.Create<SetDeadOnHealthDepletedSystem>());
+            Add(systemFactory.Create<PlayDeathAnimationSystem>());
+        }
+    }
+}

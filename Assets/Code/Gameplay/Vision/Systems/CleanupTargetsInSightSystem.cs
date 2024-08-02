@@ -1,5 +1,4 @@
 using Entitas;
-using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Vision.Systems
 {
@@ -11,7 +10,8 @@ namespace AbilityMadness.Code.Gameplay.Vision.Systems
         {
             _visionEntities = gameContext.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.TargetsInSight));
+                    GameMatcher.TargetsInSight,
+                    GameMatcher.VisionRadius));
         }
 
         public void Cleanup()

@@ -1,14 +1,11 @@
 using AbilityMadness.Code.Gameplay.Abilities.Factory;
-using AbilityMadness.Code.Gameplay.Camera.Factory;
-using AbilityMadness.Code.Gameplay.Chest.Factory;
-using AbilityMadness.Code.Gameplay.EffectApplication.Factory;
 using AbilityMadness.Code.Gameplay.Modifiers.Factory;
-using AbilityMadness.Code.Gameplay.Projectile.Factory;
+using AbilityMadness.Code.Gameplay.Waves.Factory;
 using AbilityMadness.Code.Infrastructure.Services.Camera;
 using AbilityMadness.Code.Infrastructure.Services.Cursors;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
 using AbilityMadness.Code.Infrastructure.Services.Physics;
-using AbilityMadness.Code.Infrastructure.Services.View;
+using AbilityMadness.Code.Infrastructure.Services.UI;
 using AbilityMadness.Factory;
 using AbilityMadness.Infrastructure.Factories.UI;
 using AbilityMadness.Infrastructure.Services.Assets;
@@ -27,6 +24,7 @@ namespace AbilityMadness
 {
 	public class BootstrapInstaller : MonoInstaller, IInitializable
 	{
+		[SF] private LoadingCurtain loadingCurtain;
 		[SF] private CoroutineRunner coroutineRunner;
 		[SF] private PlayerInput playerInput;
 
@@ -83,6 +81,10 @@ namespace AbilityMadness
             Container.BindInterfacesTo<CursorService>()
                 .AsSingle()
                 .NonLazy();
+
+            Container.BindInterfacesTo<LoadingCurtain>()
+                .FromInstance(loadingCurtain)
+                .AsSingle();
         }
 
         private void BindProviders()
@@ -99,10 +101,16 @@ namespace AbilityMadness
 			Container.BindInterfacesTo<UIFactory>()
 				.AsSingle();
 
+            Container.BindInterfacesTo<UIPool>()
+                .AsSingle();
+
 			Container.BindInterfacesTo<StatesFactory>()
 				.AsSingle();
 
             Container.BindInterfacesTo<PlayerFactory>()
+                .AsSingle();
+
+            Container.BindInterfacesTo<WaveFactory>()
                 .AsSingle();
 
             Container.BindInterfacesTo<AbilityFactory>()

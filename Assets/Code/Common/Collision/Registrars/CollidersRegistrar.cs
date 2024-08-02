@@ -6,6 +6,7 @@ using SF = UnityEngine.SerializeField;
 
 namespace AbilityMadness.Code.Common.Collision.Registrars
 {
+    [EntityTag("Registrars")]
     public class CollidersRegistrar : EntityComponentRegistrar
     {
         [SF] private Collider2D[] colliders;

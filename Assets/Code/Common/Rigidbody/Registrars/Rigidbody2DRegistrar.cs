@@ -3,6 +3,7 @@ using SF = UnityEngine.SerializeField;
 
 namespace AbilityMadness.Code.Common.Rigidbody.Registrars
 {
+    [EntityTag("Registrars")]
     public class Rigidbody2DRegistrar : EntityComponentRegistrar
     {
         [SF] private new UnityEngine.Rigidbody2D rigidbody2D;

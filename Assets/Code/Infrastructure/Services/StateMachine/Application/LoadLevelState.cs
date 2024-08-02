@@ -1,5 +1,6 @@
 ﻿using AbilityMadness.Code.Gameplay.Abilities;
 using AbilityMadness.Code.Gameplay.Abilities.Factory;
+using AbilityMadness.Code.Gameplay.Waves.Factory;
 using AbilityMadness.Code.Infrastructure.Services.ECS;
 using AbilityMadness.Factory;
 using AbilityMadness.Infrastructure.Factories.UI;
@@ -18,6 +19,8 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
         private IPlayerFactory _playerFactory;
         private IUIService _iuiService;
         private IAbilityFactory _abilityFactory;
+        private ILoadingCurtain _loadingCurtain;
+        private IWaveFactory _waveFactory;
 
         [Inject]
 		private void Construct(
@@ -26,8 +29,12 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 			IUIService iuiService,
 			IApplicationStateMachine applicationStateMachine,
             IPlayerFactory playerFactory,
-            IAbilityFactory abilityFactory)
+            IAbilityFactory abilityFactory,
+            ILoadingCurtain loadingCurtain,
+            IWaveFactory waveFactory)
 		{
+            _waveFactory = waveFactory;
+            _loadingCurtain = loadingCurtain;
             _abilityFactory = abilityFactory;
             _iuiService = iuiService;
             _playerFactory = playerFactory;
@@ -38,6 +45,8 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 
 		public void Enter(string sceneName)
 		{
+            _loadingCurtain.Show();
+
 			var currentActiveScene = SceneManager.GetActiveScene().name;
 
 			if (currentActiveScene != sceneName)
@@ -61,6 +70,7 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
             CreatePlayer();
 
             _applicationStateMachine.Enter<BattleLoopState>();
+            _loadingCurtain.Hide();
         }
 
 		private async UniTask SetupUI()
@@ -77,7 +87,8 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
         {
             var player = _playerFactory.CreatePlayer(Vector3.zero);
             _abilityFactory.CreateAbility(player, AbilityTypeId.Fireball);
-            _abilityFactory.CreateAbility(player, AbilityTypeId.Tornado);
+
+            _waveFactory.CreateWave();
         }
     }
 }

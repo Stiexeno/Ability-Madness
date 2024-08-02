@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 5791342626299227930}
   - component: {fileID: 3025160930272819578}
   - component: {fileID: 3473862097190043807}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 1
   m_SleepingMode: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!70 &4684532629205978622
 CapsuleCollider2D:
@@ -102,7 +102,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.27}
+  m_Offset: {x: 0, y: 0.16}
   m_Size: {x: 0.37, y: 0.37}
   m_Direction: 0
 --- !u!114 &4798429858383382005
@@ -138,28 +138,17 @@ MonoBehaviour:
       _Names: []
     _Speed: 1
     _Animations:
-    - {fileID: 7400000, guid: 12f6e40be9c6acf4a9176fdf92bd625d, type: 2}
-    - {fileID: 7400000, guid: e3abd9332daa4aa4f84468fdf8b240fe, type: 2}
-    - {fileID: 7400000, guid: 7f3f5ee5e564d8345aff3cba4ee952b9, type: 2}
-    - {fileID: 7400000, guid: c5399b06c43e06d4d88847cc46a7eeed, type: 2}
-    - {fileID: 7400000, guid: 0d17fd22900c8df4b901fa3967e0c44c, type: 2}
-    - {fileID: 7400000, guid: 097335d66a0a82d47992c56b5dd502f4, type: 2}
-    - {fileID: 7400000, guid: 7c0cc64693786374097a2861c8e42012, type: 2}
-    - {fileID: 7400000, guid: 15335c61f67374349a9351a9f92f4d10, type: 2}
+    - {fileID: 7400000, guid: 9a554418b58e9754db5b72f8f5e2f7f3, type: 2}
+    - {fileID: 7400000, guid: 9c6801c1adcc53c4eb9bdd227ccf10b4, type: 2}
     _Speeds: []
     _SynchronizeChildren: 
     _Thresholds:
     - 0
     - 1
-    - 2
-    - 3
-    - 4
-    - 5
-    - 6
-    - 7
     _DefaultParameter: 0
     _ExtrapolateSpeed: 1
   animancer: {fileID: 2340945194108810309}
+  sprite: {fileID: 6444820692220509216}
 --- !u!114 &1206948377134210620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,10 +222,9 @@ GameObject:
   m_Component:
   - component: {fileID: 669808287323199691}
   - component: {fileID: 6444820692220509216}
-  - component: {fileID: 2512051433661487322}
   - component: {fileID: 2107763722256237507}
   - component: {fileID: 2340945194108810309}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,9 +239,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4436172892739877929}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.447, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: -0.016, z: 0}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8727066170386216830}
   m_RootOrder: 0
@@ -299,7 +287,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -671510927, guid: 0f5bd3ddf444e0d4a900f635c6ffd2a3, type: 3}
+  m_Sprite: {fileID: -1479178775, guid: 57c0cbe59cc01074f9ffd8d214a9747c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -310,29 +298,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!111 &2512051433661487322
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4436172892739877929}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 12f6e40be9c6acf4a9176fdf92bd625d, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 12f6e40be9c6acf4a9176fdf92bd625d, type: 2}
-  - {fileID: 7400000, guid: 7f3f5ee5e564d8345aff3cba4ee952b9, type: 2}
-  - {fileID: 7400000, guid: c5399b06c43e06d4d88847cc46a7eeed, type: 2}
-  - {fileID: 7400000, guid: e3abd9332daa4aa4f84468fdf8b240fe, type: 2}
-  - {fileID: 7400000, guid: 0d17fd22900c8df4b901fa3967e0c44c, type: 2}
-  - {fileID: 7400000, guid: 7c0cc64693786374097a2861c8e42012, type: 2}
-  - {fileID: 7400000, guid: 15335c61f67374349a9351a9f92f4d10, type: 2}
-  - {fileID: 7400000, guid: 097335d66a0a82d47992c56b5dd502f4, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!95 &2107763722256237507
 Animator:
   serializedVersion: 5

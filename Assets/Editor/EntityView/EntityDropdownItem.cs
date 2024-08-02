@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using AbilityMadness.Code.Common.Behaviours;
 using AbilityMadness.Code.Infrastructure.View;
-using Apocalypse;
 using UnityEditor;
 using UnityEditor.IMGUI.Controls;
 using UnityEngine;

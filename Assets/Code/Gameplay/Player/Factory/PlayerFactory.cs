@@ -4,6 +4,7 @@ using AbilityMadness.Code.Gameplay.Health;
 using AbilityMadness.Code.Gameplay.Movement;
 using AbilityMadness.Code.Gameplay.Vision;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
+using AbilityMadness.Infrastructure.Services.Assets;
 using UnityEngine;
 
 namespace AbilityMadness.Factory
@@ -13,10 +14,19 @@ namespace AbilityMadness.Factory
         private const string PlayerPath = "Character_Player";
 
         private IIdentifierService _identifierService;
+        private IAssets _assets;
 
-        public PlayerFactory(IIdentifierService identifierService)
+        public PlayerFactory(IIdentifierService identifierService, IAssets assets)
         {
+            _assets = assets;
             _identifierService = identifierService;
+
+            Warmup();
+        }
+
+        private void Warmup()
+        {
+            _assets.LoadAsync<GameObject>(PlayerPath);
         }
 
         public GameEntity CreatePlayer(Vector3 position)
@@ -26,12 +36,13 @@ namespace AbilityMadness.Factory
                 .With(x => x.isPlayer = true)
                 .AddViewPath(PlayerPath)
                 .AddTeam(Team.Player)
+                .With(x => x.isAlive = true)
 
                 .SetRigidbodyMovement(300f)
                 .AddWorldPosition(Vector2.zero)
                 .AddLookDirection(Vector2.zero)
 
-                .SetVision(10f, 1f, Constants.Layers.Enemy);
+                .SetVision(8f, 1f, Constants.Layers.Enemy);
         }
     }
 }

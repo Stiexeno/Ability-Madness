@@ -8,6 +8,7 @@ namespace AbilityMadness.Code.Gameplay.Lifetime
         public LifetimeFeature(ISystemFactory systemFactory)
         {
             Add(systemFactory.Create<ProcessLifetimeSystem>());
+            Add(systemFactory.Create<ProcessTimeElapsedSystem>());
         }
     }
 }

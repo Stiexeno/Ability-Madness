@@ -3,6 +3,7 @@ using SF = UnityEngine.SerializeField;
 
 namespace AbilityMadness.Code.Gameplay.Animator.Registrars
 {
+    [EntityTag("Registrars")]
     public class MovementAnimatorRegistrar : EntityComponentRegistrar
     {
         [SF] private Common.Behaviours.MovementAnimator movementAnimator;

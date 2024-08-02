@@ -5,4 +5,5 @@ namespace AbilityMadness.Code.Gameplay.Animator
 {
     public class MovementAnimatorComponent : IComponent { public MovementAnimator Value; }
     public class DamageAnimatorComponent : IComponent { public DamageAnimator Value; }
+    public class DeathAnimatorComponent : IComponent { public DeathAnimator Value; }
 }

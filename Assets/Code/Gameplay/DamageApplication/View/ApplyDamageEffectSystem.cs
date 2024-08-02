@@ -26,7 +26,8 @@ namespace AbilityMadness.Code.Gameplay.DamageApplication.View
             _targets = gameContext.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.WorldPosition,
-                    GameMatcher.Team));
+                    GameMatcher.Team,
+                    GameMatcher.Alive));
         }
 
         public void Execute()

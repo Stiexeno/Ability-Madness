@@ -7,7 +7,7 @@ namespace AbilityMadness.Code.Gameplay.Animator
     {
         public AnimatorFeature(ISystemFactory systemFactory)
         {
-            Add(systemFactory.Create<AnimatePlayerMovementSystem>());
+            Add(systemFactory.Create<AnimateMovementSystem>());
         }
     }
 }

@@ -4,6 +4,7 @@ using SF = UnityEngine.SerializeField;
 
 namespace AbilityMadness.Code.Gameplay.Animator.Registrars
 {
+    [EntityTag("Registrars")]
     public class DamageAnimatorRegistrar : EntityComponentRegistrar
     {
         [SF] private DamageAnimator damageAnimator;

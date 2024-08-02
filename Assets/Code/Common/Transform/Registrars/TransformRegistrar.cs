@@ -2,6 +2,7 @@
 
 namespace AbilityMadness.Code.Common.Transform.Registrars
 {
+    [EntityTag("Registrars")]
     public class TransformRegistrar : EntityComponentRegistrar
     {
         public override void RegisterComponents(GameEntity entity)

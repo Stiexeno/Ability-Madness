@@ -12,6 +12,7 @@ namespace AbilityMadness.Code.Gameplay.DamageApplication
 
             Add(systemFactory.Create<PlayDamageAnimatorSystem>());
             Add(systemFactory.Create<ApplyDamageEffectSystem>());
+            Add(systemFactory.Create<ShowDamageTextSystem>());
 
             Add(systemFactory.Create<CleanupDamageReceivedSystem>());
         }

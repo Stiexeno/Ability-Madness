@@ -3,7 +3,7 @@
 namespace AbilityMadness.Code.Gameplay.Abilities.Configs
 {
     [CreateAssetMenu(fileName = nameof(AbilityConfig), menuName = Constants.Root + "/AbilityMadness/AbilityConfig")]
-    public class AbilityConfig : ScriptableObject
+    public sealed class AbilityConfig : ScriptableObject
     {
         public AbilityTypeId type;
         public float cooldown;

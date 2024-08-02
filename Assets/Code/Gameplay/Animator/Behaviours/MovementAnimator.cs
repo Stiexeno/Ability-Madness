@@ -12,13 +12,9 @@ namespace AbilityMadness.Code.Common.Behaviours
     {
         [SF] private LinearMixerTransition movementTransition;
         [SF] private AnimancerComponent animancer;
+        [SF] private SpriteRenderer sprite;
 
         private Vector2 _velocity;
-
-        private const float BACK_PARAMETER = 0;
-        private const float RIGHT_PARAMETER = 1;
-        private const float FRONT_PARAMETER = 2;
-        private const float LEFT_PARAMETER = 3;
 
         private void OnEnable()
         {
@@ -27,49 +23,58 @@ namespace AbilityMadness.Code.Common.Behaviours
 
         public void SetIdle(Vector2 lookDirection)
         {
-            var parameter = GetLookParameter(lookDirection);
-            movementTransition.State.Parameter = parameter;
+            Flip(lookDirection);
+            movementTransition.State.Parameter = 0;
         }
 
         public void SetWalk(Vector2 lookDirection)
         {
-            var parameter = GetLookParameter(lookDirection);
-            parameter += 4;
-
-            movementTransition.State.Parameter = Mathf.RoundToInt(parameter);
+            Flip(lookDirection);
+            movementTransition.State.Parameter = 1;
         }
 
-        private float GetLookParameter(Vector2 velocity)
+        private void Flip(Vector2 lookDirection)
         {
-            if (velocity.magnitude == 0f)
+            if (lookDirection.magnitude == 0f)
             {
-                velocity = _velocity;
+                lookDirection = _velocity;
             }
 
-            _velocity = velocity;
-
-
-            var parameter = 0f;
-
-            if (velocity.x > 0)
-            {
-                parameter = RIGHT_PARAMETER;
-            }
-            else if (velocity.x < 0)
-            {
-                parameter = LEFT_PARAMETER;
-            }
-            else if (velocity.y > 0)
-            {
-                parameter = BACK_PARAMETER;
-            }
-            else if (velocity.y < 0)
-            {
-                parameter = FRONT_PARAMETER;
-            }
-
-            return parameter;
+            _velocity = lookDirection;
+            sprite.flipX = lookDirection.x < 0 || lookDirection.x == 0 && sprite.flipX;
         }
+
+        // private float GetLookParameter(Vector2 velocity)
+        // {
+        //     if (velocity.magnitude == 0f)
+        //     {
+        //         velocity = _velocity;
+        //     }
+        //
+        //     _velocity = velocity;
+        //
+        //
+        //     var parameter = 0f;
+        //
+        //     if (velocity.x > 0)
+        //     {
+        //         parameter = RIGHT_PARAMETER;
+        //     }
+        //     else if (velocity.x < 0)
+        //     {
+        //         parameter = LEFT_PARAMETER;
+        //     }
+        //     else if (velocity.y > 0)
+        //     {
+        //         parameter = BACK_PARAMETER;
+        //     }
+        //     else if (velocity.y < 0)
+        //     {
+        //         parameter = FRONT_PARAMETER;
+        //     }
+        //
+        //     return parameter;
+        // }
 
         // private float GetLookParameter(Vector2 lookDirection)
         // {

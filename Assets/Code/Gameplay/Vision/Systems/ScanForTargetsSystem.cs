@@ -29,7 +29,8 @@ namespace AbilityMadness.Code.Gameplay.Vision.Systems
             _targets = gameContext.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Id,
-                    GameMatcher.WorldPosition));
+                    GameMatcher.WorldPosition,
+                    GameMatcher.Alive));
         }
 
         public void Execute()

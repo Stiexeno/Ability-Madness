@@ -4,19 +4,20 @@ namespace AbilityMadness.Code.Gameplay.DamageApplication.View
 {
     public class PlayDamageAnimatorSystem : IExecuteSystem
     {
-        private IGroup<GameEntity> _damageAnimators;
+        private IGroup<GameEntity> _damagedEntities;
 
         public PlayDamageAnimatorSystem(GameContext gameContext)
         {
-            _damageAnimators = gameContext.GetGroup(GameMatcher
+            _damagedEntities = gameContext.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.DamageAnimator,
-                    GameMatcher.DamageReceived));
+                    GameMatcher.DamageReceived,
+                    GameMatcher.Alive));
         }
 
         public void Execute()
         {
-            foreach (var damageAnimator in _damageAnimators)
+            foreach (var damageAnimator in _damagedEntities)
             {
                 damageAnimator.DamageAnimator.PlayDamageAnimation();
             }
