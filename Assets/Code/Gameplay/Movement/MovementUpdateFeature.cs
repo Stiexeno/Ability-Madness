@@ -15,6 +15,8 @@ namespace AbilityMadness.Code.Gameplay.Movement
 
             Add(systemFactory.Create<MoveForwardDirectionSystem>());
             Add(systemFactory.Create<MoveZigZagSystem>());
+
+            Add(systemFactory.Create<ResetVelocityOnDeathSystem>());
         }
     }
 }

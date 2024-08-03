@@ -1,27 +1,24 @@
 using Entitas;
-using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Movement.Systems
 {
-    public class SetVelocityByDirectionSystem : IExecuteSystem
+    public class ResetVelocityOnDeathSystem : IExecuteSystem
     {
         private IGroup<GameEntity> _entities;
 
-        public SetVelocityByDirectionSystem(Contexts contexts)
+        public ResetVelocityOnDeathSystem(Contexts contexts)
         {
             _entities = contexts.game.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.Direction,
                     GameMatcher.Velocity,
-                    GameMatcher.Alive,
-                    GameMatcher.MovementSpeed));
+                    GameMatcher.Dead));
         }
 
         public void Execute()
         {
             foreach (var entity in _entities)
             {
-                entity.Velocity = entity.Direction.normalized * entity.MovementSpeed * Time.deltaTime;
+                entity.Velocity = UnityEngine.Vector2.zero;
             }
         }
     }

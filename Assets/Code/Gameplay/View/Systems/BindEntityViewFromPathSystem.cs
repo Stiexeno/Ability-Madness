@@ -36,6 +36,12 @@ namespace AbilityMadness.Code.Common.Systems
         {
             var entityView = await _viewPool.Take(entity.ViewPath);
             entityView.LinkEntity(entity);
+
+            if (entity.hasWorldPosition)
+            {
+                entityView.transform.position = entity.WorldPosition;
+            }
+
             entityView.gameObject.SetActive(true);
 
             entity.AddView(entityView);

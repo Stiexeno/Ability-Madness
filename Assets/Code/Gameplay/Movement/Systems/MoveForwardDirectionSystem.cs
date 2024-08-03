@@ -15,7 +15,8 @@ namespace AbilityMadness.Code.Gameplay.Movement.Systems
                     GameMatcher.WorldPosition,
                     GameMatcher.MovementSpeed,
                     GameMatcher.ForwardMovement,
-                    GameMatcher.Alive));
+                    GameMatcher.Alive,
+                    GameMatcher.TransformMovement));
         }
 
         public void Execute()

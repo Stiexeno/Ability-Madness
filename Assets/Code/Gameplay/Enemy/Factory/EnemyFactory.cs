@@ -3,6 +3,7 @@ using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Extensions;
 using AbilityMadness.Code.Gameplay.Experience;
 using AbilityMadness.Code.Gameplay.Health;
+using AbilityMadness.Code.Gameplay.Movement;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
 using AbilityMadness.Infrastructure.Services.Assets;
 using UnityEngine;
@@ -35,13 +36,12 @@ namespace AbilityMadness.Code.Gameplay.Enemy.Factory
 
                 .AddTargetsInSight(new List<int>(1))
 
-                .With(x => x.isTransformMovement = true)
-                .With(x => x.isForwardMovement = true)
-                .AddMovementSpeed(0.01f)
-                .AddVelocity(Vector2.zero)
+                //.With(x => x.isTransformMovement = true)
+                //.With(x => x.isForwardMovement = true)
+                .SetRigidbodyMovement(150f)
                 .AddWorldPosition(position)
-                .AddDirection(Vector2.zero)
                 .AddLookDirection(Vector2.zero);
+                //.AddDirection(Vector2.zero)
         }
     }
 }

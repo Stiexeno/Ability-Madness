@@ -17,7 +17,8 @@ namespace AbilityMadness.Code.Gameplay.Enemy.Systems
                     GameMatcher.TargetsInSight,
                     GameMatcher.WorldPosition,
                     GameMatcher.LookDirection,
-                    GameMatcher.TransformMovement));
+                    GameMatcher.Direction,
+                    GameMatcher.Alive));
 
             _targets = gameContext.GetGroup(GameMatcher
                 .AllOf(

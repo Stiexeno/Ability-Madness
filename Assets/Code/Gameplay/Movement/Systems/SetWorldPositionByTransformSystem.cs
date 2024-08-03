@@ -11,7 +11,8 @@ namespace AbilityMadness.Code.Gameplay.Movement.Systems
             _entities = contexts.game.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.WorldPosition,
-                    GameMatcher.Transform)
+                    GameMatcher.Transform,
+                    GameMatcher.Alive)
                 .NoneOf(GameMatcher.TransformMovement));
         }
 
