@@ -14,6 +14,7 @@ namespace AbilityMadness
             Add(systemFactory.Create<RemovePlayerInTriggerSystem>());
 
             Add(systemFactory.Create<PlayerAttackingSystem>());
+            Add(systemFactory.Create<PlayerDashingSystem>());
         }
     }
 }

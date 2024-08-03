@@ -28,8 +28,8 @@ namespace AbilityMadness.Code.Gameplay.Enemy.Factory
                 .AddViewPath(Constants.Prefabs.Enemies.Robot)
                 .AddTeam(Team.Enemy)
                 .With(x => x.isAlive = true)
-                .AddHealth(40)
-                .AddMaxHealth(40)
+                .AddHealth(30)
+                .AddMaxHealth(30)
 
                 .AddExperienceTypeId(ExperienceTypeId.Green)
 

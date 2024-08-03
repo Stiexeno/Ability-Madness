@@ -11,7 +11,9 @@ namespace AbilityMadness.Code.Gameplay.Movement.Systems
             _entities = contexts.game.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Velocity,
-                    GameMatcher.Rigidbody2D));
+                    GameMatcher.Rigidbody2D)
+                .NoneOf(
+                    GameMatcher.Dashing));
         }
 
         public void Execute()

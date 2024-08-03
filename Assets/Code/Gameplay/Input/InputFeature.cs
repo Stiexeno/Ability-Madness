@@ -21,6 +21,7 @@ namespace AbilityMadness.Code.Gameplay.Input
             Add(systemFactory.Create<CleanupMouseTriggerSystem>());
 
             Add(systemFactory.Create<SetAttackInputSystem>());
+            Add(systemFactory.Create<SetDashInputSystem>());
         }
     }
 }

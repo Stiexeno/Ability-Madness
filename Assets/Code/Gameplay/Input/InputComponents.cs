@@ -9,6 +9,7 @@ namespace AbilityMadness.Code.Gameplay.Input
     [Game] public class MousePosition : IComponent { public Vector2 Value; }
 
     [Game] public class AttackPressed : IComponent {  }
+    [Game] public class DashPressed : IComponent {  }
 
     [Game] public class MouseInHover : IComponent {  }
 

@@ -50,6 +50,7 @@ namespace AbilityMadness
             public const string Movement = "Movement";
             public const string Aiming = "Aiming";
             public const string Attack = "Attack";
+            public const string Dash = "Dash";
         }
 
         public static class Configs
