@@ -88,7 +88,6 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
         {
             var player = _playerFactory.CreatePlayer(Vector3.zero);
             _abilityFactory.CreateAbility(player, AbilityTypeId.Fireball);
-            _abilityFactory.CreateAbility(player, AbilityTypeId.Tornado);
 
             _waveFactory.CreateWave();
         }

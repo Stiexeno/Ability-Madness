@@ -1,4 +1,5 @@
-﻿using AbilityMadness.Code.Common;
+﻿using System;
+using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Extensions;
 using AbilityMadness.Code.Gameplay.Health;
 using AbilityMadness.Code.Gameplay.Lifetime;
@@ -19,23 +20,45 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
             _identifierService = identifierService;
         }
 
-        public GameEntity CreateFireball(int abilityId, Vector3 position, Vector3 direction, Team team)
+        public GameEntity CreateProjectile(ProjectileTypeId type, int abilityId, Vector3 position, Vector3 direction, Team team)
+        {
+            switch (type)
+            {
+                case ProjectileTypeId.Unknown:
+                    throw new ArgumentOutOfRangeException(nameof(type), type, null);
+                case ProjectileTypeId.Fireball:
+                    return CreateFireball(abilityId, position, direction, team);
+                case ProjectileTypeId.Tornado:
+                    return CreateTornado(abilityId, position, direction, team);
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(type), type, null);
+            }
+        }
+
+        // Requests
+
+        public GameEntity CreateProjectileRequest(ProjectileTypeId type, int abilityId, Vector3 position, Vector3 direction, Team team)
         {
             return CreateEntity.Empty()
-                .With(x => x.isProjectile = true)
                 .AddId(_identifierService.Next())
-                .AddAbilityProducerId(abilityId)
-                .AddViewPath(Constants.Prefabs.Projectiles.Fireball)
-                .AddTeam(team)
 
-                .SetLifetime(LifeTime)
-                .With(x => x.isAlive = true)
+                .With(x => x.isProducedByAbility = true)
+                .AddProducerId(abilityId)
+                .AddRequestProjectile(type)
 
-                .With(x => x.isTransformMovement = true)
-                .AddDirection(direction)
+                .AddSpawnAmount(1)
                 .AddWorldPosition(position)
-                .With(x => x.isFaceToDirection = true)
+                .AddDirection(direction)
+                .AddTeam(team);
+        }
 
+        // Implementations
+
+        public GameEntity CreateFireball(int abilityId, Vector3 position, Vector3 direction, Team team)
+        {
+            return CreateEmptyProjectile(abilityId, position, direction, team)
+                .AddProjectileTypeId(ProjectileTypeId.Fireball)
+                .AddViewPath(Constants.Prefabs.Projectiles.Fireball)
                 .AddDamage(10)
                 .CollectTargetsWithSphereCast(0.3f)
 
@@ -44,24 +67,32 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
 
         public GameEntity CreateTornado(int abilityId, Vector3 position, Vector3 direction, Team team)
         {
-            return CreateEntity.Empty()
-                .With(x => x.isProjectile = true)
-                .AddId(_identifierService.Next())
-                .AddAbilityProducerId(abilityId)
+            return CreateEmptyProjectile(abilityId, position, direction, team)
+                .AddProjectileTypeId(ProjectileTypeId.Tornado)
                 .AddViewPath(Constants.Prefabs.Projectiles.Tornado)
+                .AddDamage(10)
+                .CollectTargetsWithSphereCast(0.3f)
+
+                .AddEffectViewPath(Constants.Prefabs.Effects.FireballHitEffect);
+        }
+
+        private GameEntity CreateEmptyProjectile(int abilityId, Vector3 position, Vector3 direction, Team team)
+        {
+            return CreateEntity.Empty()
+                .AddId(_identifierService.Next())
+                .With(x => x.isProjectile = true)
+                .With(x => x.isProducedByAbility = true)
+                .AddProducerId(abilityId)
+
                 .AddTeam(team)
 
                 .SetLifetime(LifeTime)
                 .With(x => x.isAlive = true)
 
                 .With(x => x.isTransformMovement = true)
+                .With(x => x.isFaceToDirection = true)
                 .AddDirection(direction)
-                .AddWorldPosition(position)
-
-                .AddDamage(10)
-                .CollectTargetsWithSphereCast(0.3f)
-
-                .AddEffectViewPath(Constants.Prefabs.Effects.FireballHitEffect);
+                .AddWorldPosition(position);
         }
     }
 }

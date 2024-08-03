@@ -35,6 +35,9 @@ namespace AbilityMadness.Code.Gameplay.Health.Systems
         {
             foreach (var owner in _ownerEntities.GetEntities(_buffer))
             {
+                if (owner.Health >= owner.MaxHealth)
+                    continue;
+
                 var hasHealthbar = false;
 
                 foreach (var healthbarEntity in _healthbarEntities)

@@ -37,11 +37,13 @@ namespace AbilityMadness.Code.Infrastructure.Services.ECS
             Add(systemFactory.Create<InteractionFeature>());
             Add(systemFactory.Create<ChestFreature>());
             Add(systemFactory.Create<VisionFeature>());
-            Add(systemFactory.Create<ProjectileFeature>());
             Add(systemFactory.Create<CooldownFeature>());
+
             Add(systemFactory.Create<AbilityFeature>());
-            Add(systemFactory.Create<LifetimeFeature>());
             Add(systemFactory.Create<ModifierFeature>());
+            Add(systemFactory.Create<ProjectileFeature>());
+
+            Add(systemFactory.Create<LifetimeFeature>());
             Add(systemFactory.Create<WaveFeature>());
             Add(systemFactory.Create<EnemyFeature>());
             Add(systemFactory.Create<ExperienceFeature>());

@@ -30,90 +30,93 @@ public static class GameComponentsLookup {
     public const int OwnerId = 19;
     public const int ProducerId = 20;
     public const int Rigidbody2D = 21;
-    public const int TargetId = 22;
-    public const int TimeElapsed = 23;
-    public const int Transform = 24;
-    public const int Velocity = 25;
-    public const int View = 26;
-    public const int ViewPath = 27;
-    public const int WorldPosition = 28;
-    public const int Ability = 29;
-    public const int AbilityProducerId = 30;
-    public const int AbilityTypeId = 31;
-    public const int AutoLaunch = 32;
-    public const int FireballAbility = 33;
-    public const int ManualLaunch = 34;
-    public const int Ready = 35;
-    public const int TornadoAbility = 36;
-    public const int DamageAnimator = 37;
-    public const int DeathAnimator = 38;
-    public const int MovementAnimator = 39;
-    public const int Camera = 40;
-    public const int CameraOffset = 41;
-    public const int CameraSmooth = 42;
-    public const int FollowTargetId = 43;
-    public const int Chest = 44;
-    public const int Attacking = 45;
-    public const int Damage = 46;
-    public const int DamageReceived = 47;
-    public const int EffectViewPath = 48;
-    public const int Enemy = 49;
-    public const int Experience = 50;
-    public const int ExperienceTypeId = 51;
-    public const int MaxExperience = 52;
-    public const int PickedUp = 53;
-    public const int PickupRadius = 54;
-    public const int Alive = 55;
-    public const int Dead = 56;
-    public const int Health = 57;
-    public const int Healthbar = 58;
-    public const int HealthbarLoading = 59;
-    public const int MaxHealth = 60;
-    public const int Team = 61;
-    public const int AttackPressed = 62;
-    public const int AxisInput = 63;
-    public const int Input = 64;
-    public const int LookInput = 65;
-    public const int MouseCollision = 66;
-    public const int MouseInHover = 67;
-    public const int MousePosition = 68;
-    public const int InteractBehaviour = 69;
-    public const int LifeTime = 70;
-    public const int LifeTimeTimeElapsed = 71;
-    public const int ForwardMovementModifier = 72;
-    public const int Modifier = 73;
-    public const int ModifierTypeId = 74;
-    public const int ModifierValue = 75;
-    public const int MultishootModifier = 76;
-    public const int SpeedModifier = 77;
-    public const int ZigZagDirection = 78;
-    public const int ZigZagMovementModifier = 79;
-    public const int ZigZagTimeElapsed = 80;
-    public const int Direction = 81;
-    public const int FaceToDirection = 82;
-    public const int ForwardMovement = 83;
-    public const int LookDirection = 84;
-    public const int MovementSpeed = 85;
-    public const int RigidbodyMovement = 86;
-    public const int TransformMovement = 87;
-    public const int ZigZagMovement = 88;
-    public const int Projectile = 89;
-    public const int ProjectileType = 90;
-    public const int ProccessedTargets = 91;
-    public const int SphereCast = 92;
-    public const int SphereCastRadius = 93;
-    public const int TargetBuffer = 94;
-    public const int TargetsInSight = 95;
-    public const int Vision = 96;
-    public const int VisionInterval = 97;
-    public const int VisionLayer = 98;
-    public const int VisionRadius = 99;
-    public const int VisionTimer = 100;
-    public const int Wave = 101;
-    public const int Player = 102;
-    public const int PlayerInTrigger = 103;
+    public const int SpawnAmount = 22;
+    public const int TargetId = 23;
+    public const int TimeElapsed = 24;
+    public const int Transform = 25;
+    public const int Velocity = 26;
+    public const int View = 27;
+    public const int ViewPath = 28;
+    public const int WorldPosition = 29;
+    public const int Ability = 30;
+    public const int AbilityProjectile = 31;
+    public const int AbilityTypeId = 32;
+    public const int AutoLaunch = 33;
+    public const int FireballAbility = 34;
+    public const int ManualLaunch = 35;
+    public const int ProducedByAbility = 36;
+    public const int Ready = 37;
+    public const int TornadoAbility = 38;
+    public const int DamageAnimator = 39;
+    public const int DeathAnimator = 40;
+    public const int MovementAnimator = 41;
+    public const int Camera = 42;
+    public const int CameraOffset = 43;
+    public const int CameraSmooth = 44;
+    public const int FollowTargetId = 45;
+    public const int Chest = 46;
+    public const int Attacking = 47;
+    public const int Damage = 48;
+    public const int DamageReceived = 49;
+    public const int EffectViewPath = 50;
+    public const int Enemy = 51;
+    public const int Experience = 52;
+    public const int ExperienceTypeId = 53;
+    public const int MaxExperience = 54;
+    public const int PickedUp = 55;
+    public const int PickupRadius = 56;
+    public const int Alive = 57;
+    public const int Dead = 58;
+    public const int Health = 59;
+    public const int Healthbar = 60;
+    public const int HealthbarLoading = 61;
+    public const int MaxHealth = 62;
+    public const int Team = 63;
+    public const int AttackPressed = 64;
+    public const int AxisInput = 65;
+    public const int Input = 66;
+    public const int LookInput = 67;
+    public const int MouseCollision = 68;
+    public const int MouseInHover = 69;
+    public const int MousePosition = 70;
+    public const int InteractBehaviour = 71;
+    public const int LifeTime = 72;
+    public const int LifeTimeTimeElapsed = 73;
+    public const int ForwardMovementModifier = 74;
+    public const int Modifier = 75;
+    public const int ModifierTypeId = 76;
+    public const int ModifierValue = 77;
+    public const int MultishootModifier = 78;
+    public const int SpeedModifier = 79;
+    public const int ZigZagDirection = 80;
+    public const int ZigZagMovementModifier = 81;
+    public const int ZigZagTimeElapsed = 82;
+    public const int Direction = 83;
+    public const int FaceToDirection = 84;
+    public const int ForwardMovement = 85;
+    public const int LookDirection = 86;
+    public const int MovementSpeed = 87;
+    public const int RigidbodyMovement = 88;
+    public const int TransformMovement = 89;
+    public const int ZigZagMovement = 90;
+    public const int Projectile = 91;
+    public const int ProjectileTypeId = 92;
+    public const int RequestProjectile = 93;
+    public const int ProccessedTargets = 94;
+    public const int SphereCast = 95;
+    public const int SphereCastRadius = 96;
+    public const int TargetBuffer = 97;
+    public const int TargetsInSight = 98;
+    public const int Vision = 99;
+    public const int VisionInterval = 100;
+    public const int VisionLayer = 101;
+    public const int VisionRadius = 102;
+    public const int VisionTimer = 103;
+    public const int Wave = 104;
+    public const int Player = 105;
+    public const int PlayerInTrigger = 106;
 
-    public const int TotalComponents = 104;
+    public const int TotalComponents = 107;
 
     public static readonly string[] componentNames = {
         "Collider2D",
@@ -138,6 +141,7 @@ public static class GameComponentsLookup {
         "OwnerId",
         "ProducerId",
         "Rigidbody2D",
+        "SpawnAmount",
         "TargetId",
         "TimeElapsed",
         "Transform",
@@ -146,11 +150,12 @@ public static class GameComponentsLookup {
         "ViewPath",
         "WorldPosition",
         "Ability",
-        "AbilityProducerId",
+        "AbilityProjectile",
         "AbilityTypeId",
         "AutoLaunch",
         "FireballAbility",
         "ManualLaunch",
+        "ProducedByAbility",
         "Ready",
         "TornadoAbility",
         "DamageAnimator",
@@ -206,7 +211,8 @@ public static class GameComponentsLookup {
         "TransformMovement",
         "ZigZagMovement",
         "Projectile",
-        "ProjectileType",
+        "ProjectileTypeId",
+        "RequestProjectile",
         "ProccessedTargets",
         "SphereCast",
         "SphereCastRadius",
@@ -245,6 +251,7 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Common.OwnerId),
         typeof(AbilityMadness.Code.Common.ProducerId),
         typeof(AbilityMadness.Code.Common.Rigidbody2DComponent),
+        typeof(AbilityMadness.Code.Common.SpawnAmount),
         typeof(AbilityMadness.Code.Common.TargetId),
         typeof(AbilityMadness.Code.Common.TimeElapsed),
         typeof(AbilityMadness.Code.Common.TransformComponent),
@@ -253,11 +260,12 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Common.ViewPath),
         typeof(AbilityMadness.Code.Common.WorldPosition),
         typeof(AbilityMadness.Code.Gameplay.Abilities.Ability),
-        typeof(AbilityMadness.Code.Gameplay.Abilities.AbilityProducerId),
+        typeof(AbilityMadness.Code.Gameplay.Abilities.AbilityProjectile),
         typeof(AbilityMadness.Code.Gameplay.Abilities.AbilityTypeIdComponent),
         typeof(AbilityMadness.Code.Gameplay.Abilities.AutoLaunch),
         typeof(AbilityMadness.Code.Gameplay.Abilities.FireballAbility),
         typeof(AbilityMadness.Code.Gameplay.Abilities.ManualLaunch),
+        typeof(AbilityMadness.Code.Gameplay.Abilities.ProducedByAbility),
         typeof(AbilityMadness.Code.Gameplay.Abilities.Ready),
         typeof(AbilityMadness.Code.Gameplay.Abilities.TornadoAbility),
         typeof(AbilityMadness.Code.Gameplay.Animator.DamageAnimatorComponent),
@@ -313,7 +321,8 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Movement.TransformMovement),
         typeof(AbilityMadness.Code.Gameplay.Movement.ZigZagMovement),
         typeof(AbilityMadness.Code.Gameplay.Projectile.Projectile),
-        typeof(AbilityMadness.Code.Gameplay.Projectile.ProjectileTypeComponent),
+        typeof(AbilityMadness.Code.Gameplay.Projectile.ProjectileTypeIdComponent),
+        typeof(AbilityMadness.Code.Gameplay.Projectile.RequestProjectile),
         typeof(AbilityMadness.Code.Gameplay.TargetCollection.ProccessedTargets),
         typeof(AbilityMadness.Code.Gameplay.TargetCollection.SphereCast),
         typeof(AbilityMadness.Code.Gameplay.TargetCollection.SphereCastRadius),

@@ -20,7 +20,8 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation
 
             _abilityProducedEntities = gameContext.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.AbilityProducerId)
+                    GameMatcher.ProducerId,
+                    GameMatcher.ProducedByAbility)
                 .NoneOf(
                     GameMatcher.ForwardMovement));
         }
@@ -30,7 +31,7 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation
             foreach (var abilityProducedEntity in _abilityProducedEntities.GetEntities(_buffer))
             foreach (var modifier in _modifiers)
             {
-                if (modifier.TargetId == abilityProducedEntity.AbilityProducerId)
+                if (modifier.TargetId == abilityProducedEntity.ProducerId)
                 {
                     abilityProducedEntity.SetForwardMovement();
                 }

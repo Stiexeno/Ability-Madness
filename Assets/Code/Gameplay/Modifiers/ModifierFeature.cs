@@ -13,6 +13,7 @@ namespace AbilityMadness.Code.Gameplay.Modifiers
             Add(systemFactory.Create<ZigZagMovementModifierSystem>());
 
             Add(systemFactory.Create<SpeedModifierSystem>());
+            Add(systemFactory.Create<MultishotModifierSystem>());
         }
     }
 }

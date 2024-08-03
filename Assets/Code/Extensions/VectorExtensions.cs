@@ -4,6 +4,17 @@ namespace AbilityMadness.Code.Extensions
 {
     public static class VectorExtensions
     {
+        public static Vector2 GetSpreadDirection(Vector2 direction, int amount, int index)
+        {
+            var angleBetweenProjectiles = 45f / amount;
+            var startAngle = -angleBetweenProjectiles * (amount - 1f) / 2f;
+
+            var currentAngle = startAngle + index * angleBetweenProjectiles;
+            var rotatedDirection = Quaternion.Euler(0, 0, currentAngle) * direction;
+
+            return rotatedDirection;
+        }
+
         public static Vector3 ToVector3(this Vector2 vector2)
         {
             return new Vector3(vector2.x, vector2.y, 0);

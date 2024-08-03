@@ -23,6 +23,8 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Systems.Implementation.Tornado
                 .AllOf(
                     GameMatcher.Ability,
                     GameMatcher.TornadoAbility,
+                    GameMatcher.AbilityProjectile,
+                    GameMatcher.ProjectileTypeId,
                     GameMatcher.Ready,
                     GameMatcher.ProducerId,
                     GameMatcher.AutoLaunch));
@@ -53,41 +55,15 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Systems.Implementation.Tornado
                         var closestTarget = owner.GetClosestTarget();
                         var direction = (closestTarget.WorldPosition - owner.WorldPosition).normalized;
 
-                        ShootProjectile(ability, direction, owner);
-                    }
-                }
-            }
-        }
-
-        private void ShootProjectile(GameEntity ability, Vector3 direction, GameEntity owner)
-        {
-            foreach (var modifier in _modifiers)
-            {
-                if (modifier.TargetId == ability.Id)
-                {
-                    for (int i = 0; i < modifier.ModifierValue; i++)
-                    {
-                        var multishotDirection = ModifierExtensions.GetMultishotDirection(
-                            direction,
-                            Mathf.RoundToInt(modifier.ModifierValue),
-                            i);
-
-                        _projectileFactory.CreateTornado(
+                        _projectileFactory.CreateProjectileRequest(
+                            ability.ProjectileTypeId,
                             ability.Id,
                             owner.WorldPosition,
-                            multishotDirection,
+                            direction,
                             ability.Team);
                     }
-
-                    return;
                 }
             }
-
-            _projectileFactory.CreateTornado(
-                ability.Id,
-                owner.WorldPosition,
-                direction,
-                ability.Team);
         }
     }
 }

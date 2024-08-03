@@ -3,8 +3,10 @@ using Entitas;
 namespace AbilityMadness.Code.Gameplay.Abilities
 {
     [Game] public class Ability : IComponent {  }
-    [Game] public class AbilityProducerId : IComponent { public int Value; }
+    [Game] public class ProducedByAbility : IComponent {  }
     [Game] public class AbilityTypeIdComponent : IComponent { public AbilityTypeId Value; }
+
+    [Game] public class AbilityProjectile : IComponent {  }
 
     [Game] public class Ready : IComponent {  }
 

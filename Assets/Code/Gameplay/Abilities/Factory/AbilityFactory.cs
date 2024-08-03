@@ -3,6 +3,7 @@ using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Extensions;
 using AbilityMadness.Code.Gameplay.Abilities.Configs;
 using AbilityMadness.Code.Gameplay.Modifiers.Factory;
+using AbilityMadness.Code.Gameplay.Projectile;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
 using AbilityMadness.Infrastructure.Services.Configs;
 
@@ -47,6 +48,8 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Factory
                 .With(x => x.isFireballAbility = true)
                 .With(x => x.isAutoLaunch = true)
                 .AddAbilityTypeId(AbilityTypeId.Fireball)
+                .AddProjectileTypeId(ProjectileTypeId.Fireball)
+                .With(x => x.isAbilityProjectile = true)
 
                 .AddCooldown(_config.cooldown);
         }
@@ -57,6 +60,8 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Factory
                 .With(x => x.isTornadoAbility = true)
                 .With(x => x.isAutoLaunch = true)
                 .AddAbilityTypeId(AbilityTypeId.Tornado)
+                .AddProjectileTypeId(ProjectileTypeId.Tornado)
+                .With(x => x.isAbilityProjectile = true)
 
                 .AddCooldown(_config.cooldown);
         }

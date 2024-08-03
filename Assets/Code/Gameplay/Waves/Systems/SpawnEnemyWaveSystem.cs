@@ -1,7 +1,6 @@
 using AbilityMadness.Code.Extensions;
 using AbilityMadness.Code.Gameplay.Enemy.Factory;
 using Entitas;
-using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Waves.Systems
 {
@@ -29,7 +28,7 @@ namespace AbilityMadness.Code.Gameplay.Waves.Systems
 
                 wave.TimeElapsed = 0;
 
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 3; i++)
                 {
                     var position = CameraExtensions.GetRandomPositionOutsideScreen(5f);
                     _enemyFactory.CreateRobot(position);
