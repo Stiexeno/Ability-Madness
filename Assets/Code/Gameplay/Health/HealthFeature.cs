@@ -9,10 +9,12 @@ namespace AbilityMadness.Code.Gameplay.Health
         {
             Add(systemFactory.Create<MarkLifeStateSystem>());
             Add(systemFactory.Create<PlayDeathAnimationSystem>());
-            Add(systemFactory.Create<DestructHealthbarOnTargetDeathSystem>());
-            Add(systemFactory.Create<DisplayHealthbarSystem>());
+
+            Add(systemFactory.Create<CreateHealthbarSystem>());
+            Add(systemFactory.Create<RefreshHealthbarSystem>());
 
             Add(systemFactory.Create<FinalizeDeathProccessing>());
+            Add(systemFactory.Create<DestructHealthbarOnTargetDeathSystem>());
         }
     }
 }

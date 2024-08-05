@@ -1,5 +1,6 @@
 ﻿using AbilityMadness.Code.Gameplay.Health.Behaviours;
 using Entitas;
+using Entitas.CodeGeneration.Attributes;
 
 namespace AbilityMadness.Code.Gameplay.Health
 {
@@ -14,4 +15,5 @@ namespace AbilityMadness.Code.Gameplay.Health
 
     [Game] public class HealthbarComponent : IComponent { public Healthbar Value; }
     [Game] public class HealthbarLoading : IComponent {  }
+    [Game, FlagPrefix("")] public class HasHealthbar : IComponent {  }
 }

@@ -4,6 +4,7 @@ using AbilityMadness.Code.Extensions;
 using AbilityMadness.Code.Gameplay.Experience;
 using AbilityMadness.Code.Gameplay.Health;
 using AbilityMadness.Code.Gameplay.Movement;
+using AbilityMadness.Code.Gameplay.TargetCollection;
 using AbilityMadness.Code.Gameplay.Vision;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
 using AbilityMadness.Infrastructure.Services.Assets;
@@ -32,8 +33,10 @@ namespace AbilityMadness.Code.Gameplay.Enemy.Factory
                 .With(x => x.isAlive = true)
                 .AddHealth(30)
                 .AddMaxHealth(30)
+                .AddDamage(3)
 
                 .AddExperienceTypeId(ExperienceTypeId.Green)
+                .CollectTargetsWithSphereCast(0.3f)
 
                 // .AddTargetsInSight(new List<int>(1))
 

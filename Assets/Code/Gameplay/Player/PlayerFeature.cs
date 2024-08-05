@@ -15,6 +15,8 @@ namespace AbilityMadness
 
             Add(systemFactory.Create<PlayerAttackingSystem>());
             Add(systemFactory.Create<PlayerDashingSystem>());
+
+            Add(systemFactory.Create<ShakeCameraOnPlayerGetHitSystem>());
         }
     }
 }

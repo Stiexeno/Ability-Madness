@@ -15,7 +15,8 @@ namespace AbilityMadness.Code.Gameplay.DamageApplication.Systems
                 .AllOf(
                     GameMatcher.TargetBuffer,
                     GameMatcher.Damage,
-                    GameMatcher.Team));
+                    GameMatcher.Team,
+                    GameMatcher.Alive));
 
             _targets = gameContext.GetGroup(GameMatcher
                 .AllOf(

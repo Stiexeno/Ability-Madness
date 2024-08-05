@@ -10,8 +10,10 @@ namespace AbilityMadness.Code.Common
     [Game] public class TargetId : IComponent { public int Value; }
 
     [Game] public class WorldPosition : IComponent { public Vector3 Value; }
+    [Game] public class RotationComponent : IComponent { public Vector3 Value; }
     [Game] public class TransformComponent : IComponent { public UnityEngine.Transform Value; }
     [Game] public class Velocity : IComponent { public Vector3 Value; }
+    [Game] public class Offset : IComponent { public Vector3 Value; }
 
     [Game] public class CooldownComponent : IComponent { public float Value; }
     [Game] public class CooldownLeft : IComponent { public float Value; }

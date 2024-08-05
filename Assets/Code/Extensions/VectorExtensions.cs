@@ -6,7 +6,7 @@ namespace AbilityMadness.Code.Extensions
     {
         public static Vector2 GetSpreadDirection(Vector2 direction, int amount, int index)
         {
-            var angleBetweenProjectiles = 45f / amount;
+            var angleBetweenProjectiles = 30f / amount;
             var startAngle = -angleBetweenProjectiles * (amount - 1f) / 2f;
 
             var currentAngle = startAngle + index * angleBetweenProjectiles;

@@ -7,6 +7,7 @@ using AbilityMadness.Code.Gameplay.Projectile.Factory;
 using AbilityMadness.Code.Infrastructure.Services.Assembler;
 using AbilityMadness.Code.Infrastructure.Services.Assembler.Installer;
 using AbilityMadness.Code.Infrastructure.Services.Camera;
+using AbilityMadness.Code.Infrastructure.Services.Camera.Shake;
 using AbilityMadness.Code.Infrastructure.Services.View;
 using AbilityMadness.Infrastructure.Services.Instantiator;
 using UnityEngine;
@@ -25,13 +26,16 @@ namespace AbilityMadness
 			BindServices();
             BindFactories();
             BindInstallers();
-
 		}
 
 		private void BindServices()
         {
             Container.BindInterfacesTo<ViewPool>()
                 .AsSingle();
+
+            Container.BindInterfacesTo<ShakeService>()
+                .AsSingle()
+                .WithArguments(camera);
         }
 
         private void BindFactories()

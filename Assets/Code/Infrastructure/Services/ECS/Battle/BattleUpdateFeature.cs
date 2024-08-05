@@ -18,6 +18,7 @@ using AbilityMadness.Code.Gameplay.Movement;
 using AbilityMadness.Code.Gameplay.Projectile;
 using AbilityMadness.Code.Gameplay.TargetCollection;
 using AbilityMadness.Code.Gameplay.Vision;
+using AbilityMadness.Code.Gameplay.Weapons;
 
 namespace AbilityMadness.Code.Infrastructure.Services.ECS
 {
@@ -27,13 +28,16 @@ namespace AbilityMadness.Code.Infrastructure.Services.ECS
         {
             Add(systemFactory.Create<InputFeature>());
             Add(systemFactory.Create<ViewFeature>());
+
+            Add(systemFactory.Create<TargetCollectionFeature>());
+            Add(systemFactory.Create<DamageFeature>());
+            Add(systemFactory.Create<HealthFeature>());
+
             Add(systemFactory.Create<PlayerFeature>());
             Add(systemFactory.Create<MovementUpdateFeature>());
             Add(systemFactory.Create<CommonFeature>());
             Add(systemFactory.Create<AnimatorFeature>());
-            Add(systemFactory.Create<TargetCollectionFeature>());
-            Add(systemFactory.Create<DamageFeature>());
-            Add(systemFactory.Create<HealthFeature>());
+
             Add(systemFactory.Create<InteractionFeature>());
             Add(systemFactory.Create<ChestFreature>());
             Add(systemFactory.Create<VisionFeature>());
@@ -42,6 +46,7 @@ namespace AbilityMadness.Code.Infrastructure.Services.ECS
             Add(systemFactory.Create<AbilityFeature>());
             Add(systemFactory.Create<ModifierFeature>());
             Add(systemFactory.Create<ProjectileFeature>());
+            Add(systemFactory.Create<WeaponFeature>());
 
             Add(systemFactory.Create<LifetimeFeature>());
             Add(systemFactory.Create<WaveFeature>());

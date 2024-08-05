@@ -1,6 +1,7 @@
 ﻿using AbilityMadness.Code.Gameplay.Abilities;
 using AbilityMadness.Code.Gameplay.Abilities.Factory;
 using AbilityMadness.Code.Gameplay.Enemy.Waves.Factory;
+using AbilityMadness.Code.Gameplay.Weapons.Factory;
 using AbilityMadness.Code.Infrastructure.Services.ECS;
 using AbilityMadness.Factory;
 using AbilityMadness.Infrastructure.Factories.UI;
@@ -21,6 +22,7 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
         private IAbilityFactory _abilityFactory;
         private ILoadingCurtain _loadingCurtain;
         private IWaveFactory _waveFactory;
+        private IWeaponFactory _weaponFactory;
 
         [Inject]
 		private void Construct(
@@ -31,8 +33,10 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
             IPlayerFactory playerFactory,
             IAbilityFactory abilityFactory,
             ILoadingCurtain loadingCurtain,
-            IWaveFactory waveFactory)
+            IWaveFactory waveFactory,
+            IWeaponFactory weaponFactory)
 		{
+            _weaponFactory = weaponFactory;
             _waveFactory = waveFactory;
             _loadingCurtain = loadingCurtain;
             _abilityFactory = abilityFactory;
@@ -88,6 +92,8 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
         {
             var player = _playerFactory.CreatePlayer(Vector3.zero);
             _abilityFactory.CreateAbility(player, AbilityTypeId.Fireball);
+
+            _weaponFactory.CreateWeapon(player);
 
             _waveFactory.CreateWave();
         }
