@@ -1,8 +1,6 @@
-﻿using AbilityMadness.Code.Gameplay.Modifiers;
-using AbilityMadness.Code.Gameplay.Projectile.Factory;
+﻿using AbilityMadness.Code.Gameplay.Projectile.Factory;
 using AbilityMadness.Code.Gameplay.Vision;
 using Entitas;
-using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Abilities.Systems.Implementation.Tornado
 {
@@ -27,19 +25,15 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Systems.Implementation.Tornado
                     GameMatcher.ProjectileTypeId,
                     GameMatcher.Ready,
                     GameMatcher.ProducerId,
-                    GameMatcher.AutoLaunch));
+                    GameMatcher.AutoLaunch,
+                    GameMatcher.Team));
 
             _owners = gameContext.GetGroup(GameMatcher
                 .AllOf(
+                    GameMatcher.Id,
                     GameMatcher.WorldPosition,
                     GameMatcher.LookDirection,
                     GameMatcher.TargetsInSight));
-
-            _modifiers = gameContext.GetGroup(GameMatcher
-                .AllOf(
-                    GameMatcher.Modifier,
-                    GameMatcher.MultishootModifier,
-                    GameMatcher.ModifierValue));
         }
 
         public void Execute()

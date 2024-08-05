@@ -1,14 +1,13 @@
-﻿using AbilityMadness.Code.Gameplay.Abilities.Factory;
-using AbilityMadness.Code.Gameplay.Camera.Factory;
+﻿using AbilityMadness.Code.Gameplay.Camera.Factory;
 using AbilityMadness.Code.Gameplay.Chest.Factory;
 using AbilityMadness.Code.Gameplay.EffectApplication.Factory;
 using AbilityMadness.Code.Gameplay.Enemy.Factory;
 using AbilityMadness.Code.Gameplay.Experience.Factory;
-using AbilityMadness.Code.Gameplay.Modifiers.Factory;
 using AbilityMadness.Code.Gameplay.Projectile.Factory;
+using AbilityMadness.Code.Infrastructure.Services.Assembler;
+using AbilityMadness.Code.Infrastructure.Services.Assembler.Installer;
 using AbilityMadness.Code.Infrastructure.Services.Camera;
 using AbilityMadness.Code.Infrastructure.Services.View;
-using AbilityMadness.Factory;
 using AbilityMadness.Infrastructure.Services.Instantiator;
 using UnityEngine;
 using Zenject;
@@ -25,6 +24,8 @@ namespace AbilityMadness
 			BindSetters();
 			BindServices();
             BindFactories();
+            BindInstallers();
+
 		}
 
 		private void BindServices()
@@ -35,7 +36,7 @@ namespace AbilityMadness
 
         private void BindFactories()
         {
-            Container.BindInterfacesTo<EffectFactory>()
+            Container.BindInterfacesTo<VFXFactory>()
                 .AsSingle();
 
             Container.BindInterfacesTo<ProjectileFactory>()
@@ -54,7 +55,17 @@ namespace AbilityMadness
                 .AsSingle();
         }
 
-		private void BindSetters()
+        private void BindInstallers()
+        {
+            Container.BindInterfacesTo<AttachmentFacade>()
+                .FromSubContainerResolve()
+                .ByInstaller<AttachmentInstaller>()
+                .WithKernel()
+                .AsSingle()
+                .NonLazy();
+        }
+
+        private void BindSetters()
 		{
 			Container.BindInterfacesTo<InstantiatorSetter>()
 				.AsSingle();

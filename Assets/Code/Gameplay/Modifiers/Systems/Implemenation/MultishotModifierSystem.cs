@@ -28,8 +28,8 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation
 
         public void Execute()
         {
-            foreach (var request in _requests.GetEntities(_buffer))
             foreach (var modifier in _modifiers)
+            foreach (var request in _requests.GetEntities(_buffer))
             {
                 if (modifier.TargetId == request.ProducerId)
                 {

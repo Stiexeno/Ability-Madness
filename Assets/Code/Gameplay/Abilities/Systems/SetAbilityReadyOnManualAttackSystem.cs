@@ -28,7 +28,7 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Systems
             {
                 var owner = _contexts.game.GetEntityWithId(ability.ProducerId);
 
-                ability.isReady = _attackingEntities.ContainsEntity(owner) && ability.hasCooldown == false;
+                ability.isReady = owner.isAttacking && ability.hasCooldown == false;
             }
         }
     }

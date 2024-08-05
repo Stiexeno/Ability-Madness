@@ -9,6 +9,7 @@ namespace AbilityMadness.Code.Gameplay.Abilities
     [Game] public class AbilityProjectile : IComponent {  }
 
     [Game] public class Ready : IComponent {  }
+    [Game] public class Proccessed : IComponent {  }
 
     [Game] public class AutoLaunch : IComponent {  }
     [Game] public class ManualLaunch : IComponent {  }

@@ -1,4 +1,3 @@
-using System.Linq;
 using AbilityMadness.Code.Infrastructure.Services.Physics;
 using Entitas;
 using UnityEngine;
@@ -37,13 +36,13 @@ namespace AbilityMadness.Code.Gameplay.Vision.Systems
         {
             foreach (var visionEntity in _visionEntities)
             {
-                // if (visionEntity.VisionTimer > 0)
-                // {
-                //     visionEntity.VisionTimer -= Time.deltaTime;
-                //     continue;
-                // }
-                //
-                // visionEntity.VisionTimer = visionEntity.VisionInterval;
+                if (visionEntity.VisionTimer > 0)
+                {
+                    visionEntity.VisionTimer -= Time.deltaTime;
+                    continue;
+                }
+
+                visionEntity.VisionTimer = visionEntity.VisionInterval;
 
                 ScanForTargets(visionEntity);
             }
@@ -56,6 +55,7 @@ namespace AbilityMadness.Code.Gameplay.Vision.Systems
                 visionEntity.VisionRadius,
                 1 << visionEntity.VisionLayer);
 
+            visionEntity.TargetsInSight.Clear();
             foreach (var hit in hits)
             {
                 if (_targets.ContainsEntity(hit) == false)

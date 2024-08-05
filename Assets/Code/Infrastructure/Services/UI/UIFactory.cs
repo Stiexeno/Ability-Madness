@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Extensions;
+using AbilityMadness.Code.Gameplay.UI.Modifier;
+using AbilityMadness.Code.Gameplay.UI.Upgrade;
 using AbilityMadness.Code.Infrastructure.Services.Camera;
 using AbilityMadness.Code.Infrastructure.Services.UI;
 using AbilityMadness.Code.Infrastructure.Services.UI.Widgets;
@@ -53,8 +55,18 @@ namespace AbilityMadness.Infrastructure.Factories.UI
             return CreateEntity.Empty()
                 .AddViewPath(Constants.Prefabs.Widgets.HealthbarWidget)
                 .AddTargetId(gameEntity.Id)
-                .AddWorldPosition(Vector3.zero)
+                .AddWorldPosition(Vector2.one * 999)
                 .With(x => x.isTransformMovement = true);
+        }
+
+        public async UniTask<GridWidget> CreateGridWidget(Transform parent)
+        {
+            return await _uiPool.Take<GridWidget>(Constants.Prefabs.Widgets.GridWidget, parent);
+        }
+
+        public async UniTask<UpgradeWidget> CreateUpgradeWidget(Transform parent)
+        {
+            return await _uiPool.Take<UpgradeWidget>(Constants.Prefabs.Widgets.UpgradeWidget, parent);
         }
 
         #region Factory

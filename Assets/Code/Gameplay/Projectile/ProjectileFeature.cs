@@ -7,8 +7,8 @@ namespace AbilityMadness.Code.Gameplay.Projectile
     {
         public ProjectileFeature(ISystemFactory systemFactory)
         {
-            Add(systemFactory.Create<FaceProjectileToDirectionSystem>());
             Add(systemFactory.Create<CreateProjectileByRequestSystem>());
+            Add(systemFactory.Create<FaceProjectileToDirectionSystem>());
         }
     }
 }

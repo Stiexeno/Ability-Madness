@@ -1,6 +1,7 @@
 using AbilityMadness.Code.Gameplay.Abilities.Factory;
+using AbilityMadness.Code.Gameplay.Enemy.Waves.Factory;
+using AbilityMadness.Code.Gameplay.Experience.Services;
 using AbilityMadness.Code.Gameplay.Modifiers.Factory;
-using AbilityMadness.Code.Gameplay.Waves.Factory;
 using AbilityMadness.Code.Infrastructure.Services.Camera;
 using AbilityMadness.Code.Infrastructure.Services.Cursors;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
@@ -85,6 +86,9 @@ namespace AbilityMadness
             Container.BindInterfacesTo<LoadingCurtain>()
                 .FromInstance(loadingCurtain)
                 .AsSingle();
+
+            Container.BindInterfacesTo<ExperienceCalculatorService>()
+                .AsSingle();
         }
 
         private void BindProviders()
@@ -97,9 +101,10 @@ namespace AbilityMadness
         }
 
         private void BindFactories()
-		{
-			Container.BindInterfacesTo<UIFactory>()
-				.AsSingle();
+        {
+            Container.BindInterfacesTo<UIFactory>()
+                .AsSingle()
+                .NonLazy();
 
             Container.BindInterfacesTo<UIPool>()
                 .AsSingle();

@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using AbilityMadness.Code.Gameplay.Enemy.Waves;
+
 public static class GameComponentsLookup {
 
     public const int Collider2D = 0;
@@ -44,84 +47,87 @@ public static class GameComponentsLookup {
     public const int AutoLaunch = 33;
     public const int FireballAbility = 34;
     public const int ManualLaunch = 35;
-    public const int ProducedByAbility = 36;
-    public const int Ready = 37;
-    public const int TornadoAbility = 38;
-    public const int DamageAnimator = 39;
-    public const int DeathAnimator = 40;
-    public const int MovementAnimator = 41;
-    public const int Camera = 42;
-    public const int CameraOffset = 43;
-    public const int CameraSmooth = 44;
-    public const int FollowTargetId = 45;
-    public const int Chest = 46;
-    public const int Attacking = 47;
-    public const int Damage = 48;
-    public const int DamageReceived = 49;
-    public const int EffectViewPath = 50;
-    public const int Enemy = 51;
-    public const int Experience = 52;
-    public const int ExperienceTypeId = 53;
-    public const int MaxExperience = 54;
-    public const int PickedUp = 55;
-    public const int PickupRadius = 56;
-    public const int Alive = 57;
-    public const int Dead = 58;
-    public const int Health = 59;
-    public const int Healthbar = 60;
-    public const int HealthbarLoading = 61;
-    public const int MaxHealth = 62;
-    public const int Team = 63;
-    public const int AttackPressed = 64;
-    public const int AxisInput = 65;
-    public const int DashPressed = 66;
-    public const int Input = 67;
-    public const int LookInput = 68;
-    public const int MouseCollision = 69;
-    public const int MouseInHover = 70;
-    public const int MousePosition = 71;
-    public const int InteractBehaviour = 72;
-    public const int LifeTime = 73;
-    public const int LifeTimeTimeElapsed = 74;
-    public const int ForwardMovementModifier = 75;
-    public const int Modifier = 76;
-    public const int ModifierTypeId = 77;
-    public const int ModifierValue = 78;
-    public const int MultishootModifier = 79;
-    public const int SpeedModifier = 80;
-    public const int ZigZagDirection = 81;
-    public const int ZigZagMovementModifier = 82;
-    public const int ZigZagTimeElapsed = 83;
-    public const int DashCooldown = 84;
-    public const int DashDuration = 85;
-    public const int Dashing = 86;
-    public const int Direction = 87;
-    public const int FaceToDirection = 88;
-    public const int ForwardMovement = 89;
-    public const int LookDirection = 90;
-    public const int MovementSpeed = 91;
-    public const int RequestDash = 92;
-    public const int RigidbodyMovement = 93;
-    public const int TransformMovement = 94;
-    public const int ZigZagMovement = 95;
-    public const int Projectile = 96;
-    public const int ProjectileTypeId = 97;
-    public const int RequestProjectile = 98;
-    public const int ProccessedTargets = 99;
-    public const int SphereCast = 100;
-    public const int SphereCastRadius = 101;
-    public const int TargetBuffer = 102;
-    public const int TargetsInSight = 103;
-    public const int Vision = 104;
-    public const int VisionInterval = 105;
-    public const int VisionLayer = 106;
-    public const int VisionRadius = 107;
-    public const int VisionTimer = 108;
-    public const int Wave = 109;
-    public const int Player = 110;
-    public const int PlayerInTrigger = 111;
+    public const int Proccessed = 36;
+    public const int ProducedByAbility = 37;
+    public const int Ready = 38;
+    public const int TornadoAbility = 39;
+    public const int DamageAnimator = 40;
+    public const int DeathAnimator = 41;
+    public const int MovementAnimator = 42;
+    public const int Camera = 43;
+    public const int CameraOffset = 44;
+    public const int CameraSmooth = 45;
+    public const int FollowTargetId = 46;
+    public const int Chest = 47;
+    public const int Attacking = 48;
+    public const int Damage = 49;
+    public const int DamageReceived = 50;
+    public const int EffectViewPath = 51;
+    public const int Enemy = 52;
+    public const int Experience = 53;
+    public const int ExperienceTypeId = 54;
+    public const int Level = 55;
+    public const int MaxExperience = 56;
+    public const int PickedUp = 57;
+    public const int PickupRadius = 58;
+    public const int Alive = 59;
+    public const int Dead = 60;
+    public const int Health = 61;
+    public const int Healthbar = 62;
+    public const int HealthbarLoading = 63;
+    public const int MaxHealth = 64;
+    public const int ProccessingDeath = 65;
+    public const int Team = 66;
+    public const int AttackPressed = 67;
+    public const int AxisInput = 68;
+    public const int DashPressed = 69;
+    public const int Input = 70;
+    public const int LookInput = 71;
+    public const int MouseCollision = 72;
+    public const int MouseInHover = 73;
+    public const int MousePosition = 74;
+    public const int InteractBehaviour = 75;
+    public const int LifeTime = 76;
+    public const int LifeTimeTimeElapsed = 77;
+    public const int ForwardMovementModifier = 78;
+    public const int Modifier = 79;
+    public const int ModifierTypeId = 80;
+    public const int ModifierValue = 81;
+    public const int MultishootModifier = 82;
+    public const int SpeedModifier = 83;
+    public const int ZigZagDirection = 84;
+    public const int ZigZagMovementModifier = 85;
+    public const int ZigZagTimeElapsed = 86;
+    public const int DashCooldown = 87;
+    public const int DashDuration = 88;
+    public const int Dashing = 89;
+    public const int Direction = 90;
+    public const int FaceToDirection = 91;
+    public const int ForwardMovement = 92;
+    public const int LookDirection = 93;
+    public const int MovementSpeed = 94;
+    public const int RequestDash = 95;
+    public const int RigidbodyMovement = 96;
+    public const int TransformMovement = 97;
+    public const int ZigZagMovement = 98;
+    public const int Projectile = 99;
+    public const int ProjectileTypeId = 100;
+    public const int RequestProjectile = 101;
+    public const int ProccessedTargets = 102;
+    public const int SphereCast = 103;
+    public const int SphereCastRadius = 104;
+    public const int TargetBuffer = 105;
+    public const int TargetsInSight = 106;
+    public const int Vision = 107;
+    public const int VisionInterval = 108;
+    public const int VisionLayer = 109;
+    public const int VisionRadius = 110;
+    public const int VisionTimer = 111;
+    public const int Wave = 112;
+    public const int Player = 113;
+    public const int PlayerInTrigger = 114;
 
-    public const int TotalComponents = 112;
+    public const int TotalComponents = 115;
 
     public static readonly string[] componentNames = {
         "Collider2D",
@@ -160,6 +166,7 @@ public static class GameComponentsLookup {
         "AutoLaunch",
         "FireballAbility",
         "ManualLaunch",
+        "Proccessed",
         "ProducedByAbility",
         "Ready",
         "TornadoAbility",
@@ -178,6 +185,7 @@ public static class GameComponentsLookup {
         "Enemy",
         "Experience",
         "ExperienceTypeId",
+        "Level",
         "MaxExperience",
         "PickedUp",
         "PickupRadius",
@@ -187,6 +195,7 @@ public static class GameComponentsLookup {
         "Healthbar",
         "HealthbarLoading",
         "MaxHealth",
+        "ProccessingDeath",
         "Team",
         "AttackPressed",
         "AxisInput",
@@ -275,6 +284,7 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Abilities.AutoLaunch),
         typeof(AbilityMadness.Code.Gameplay.Abilities.FireballAbility),
         typeof(AbilityMadness.Code.Gameplay.Abilities.ManualLaunch),
+        typeof(AbilityMadness.Code.Gameplay.Abilities.Proccessed),
         typeof(AbilityMadness.Code.Gameplay.Abilities.ProducedByAbility),
         typeof(AbilityMadness.Code.Gameplay.Abilities.Ready),
         typeof(AbilityMadness.Code.Gameplay.Abilities.TornadoAbility),
@@ -293,6 +303,7 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Enemy.Enemy),
         typeof(AbilityMadness.Code.Gameplay.Experience.Experience),
         typeof(AbilityMadness.Code.Gameplay.Experience.ExperienceTypeIdComponent),
+        typeof(AbilityMadness.Code.Gameplay.Experience.Level),
         typeof(AbilityMadness.Code.Gameplay.Experience.MaxExperience),
         typeof(AbilityMadness.Code.Gameplay.Experience.PickedUp),
         typeof(AbilityMadness.Code.Gameplay.Experience.PickupRadius),
@@ -302,6 +313,7 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Health.HealthbarComponent),
         typeof(AbilityMadness.Code.Gameplay.Health.HealthbarLoading),
         typeof(AbilityMadness.Code.Gameplay.Health.MaxHealth),
+        typeof(AbilityMadness.Code.Gameplay.Health.ProccessingDeath),
         typeof(AbilityMadness.Code.Gameplay.Health.TeamComponent),
         typeof(AbilityMadness.Code.Gameplay.Input.AttackPressed),
         typeof(AbilityMadness.Code.Gameplay.Input.AxisInput),
@@ -348,7 +360,7 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Vision.VisionLayer),
         typeof(AbilityMadness.Code.Gameplay.Vision.VisionRadius),
         typeof(AbilityMadness.Code.Gameplay.Vision.VisionTimer),
-        typeof(AbilityMadness.Code.Gameplay.Waves.Wave),
+        typeof(Wave),
         typeof(AbilityMadness.Player),
         typeof(AbilityMadness.PlayerInTrigger)
     };

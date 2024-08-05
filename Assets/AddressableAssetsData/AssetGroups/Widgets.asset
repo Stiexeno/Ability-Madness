@@ -25,6 +25,18 @@ MonoBehaviour:
     m_Address: Prefabs/UI/Widgets/HealthbarWidget
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: b09849a68db135542b41870b5a0a3a71
+    m_Address: Prefabs/UI/Attachmnets/GridWidget
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5cd7c0b88d8c8914f85f09af4c1ce026
+    m_Address: Prefabs/UI/Attachmnets/AttachmentWidget
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f5eb3c86ce8a900418147b35adef8a4c
+    m_Address: Prefabs/UI/Attachmnets/UpgradeWidget
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9f75c775787da8a4c8e7e94698c9d5b8, type: 2}
   m_SchemaSet:

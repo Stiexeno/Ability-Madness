@@ -47,9 +47,8 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Factory
             return CreateEmptyAbility(owner)
                 .With(x => x.isFireballAbility = true)
                 .With(x => x.isAutoLaunch = true)
-                .AddAbilityTypeId(AbilityTypeId.Fireball)
-                .AddProjectileTypeId(ProjectileTypeId.Fireball)
                 .With(x => x.isAbilityProjectile = true)
+                .AddProjectileTypeId(ProjectileTypeId.Fireball)
 
                 .AddCooldown(_config.cooldown);
         }
@@ -59,9 +58,8 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Factory
             return CreateEmptyAbility(owner)
                 .With(x => x.isTornadoAbility = true)
                 .With(x => x.isAutoLaunch = true)
-                .AddAbilityTypeId(AbilityTypeId.Tornado)
-                .AddProjectileTypeId(ProjectileTypeId.Tornado)
                 .With(x => x.isAbilityProjectile = true)
+                .AddProjectileTypeId(ProjectileTypeId.Tornado)
 
                 .AddCooldown(_config.cooldown);
         }
@@ -72,6 +70,7 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Factory
 
             var abilityEntity = CreateEntity.Empty()
                 .AddId(abilityId)
+                .AddAbilityTypeId(_config.type)
                 .With(x => x.isAbility = true)
                 .With(x => x.isReady = true)
                 .AddProducerId(owner.Id)
@@ -81,11 +80,11 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Factory
             return abilityEntity;
         }
 
-        private void CreateModifiersFromConfig(int id)
+        private void CreateModifiersFromConfig(int targetId)
         {
             foreach (var modifierConfig in _config.modifiers)
             {
-               _modifierFactory.CreateModifier(modifierConfig.type, id, modifierConfig.value);
+               _modifierFactory.CreateModifier(modifierConfig.type, targetId, modifierConfig.value);
             }
         }
     }

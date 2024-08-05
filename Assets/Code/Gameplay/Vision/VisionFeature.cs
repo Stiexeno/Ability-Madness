@@ -8,7 +8,6 @@ namespace AbilityMadness.Code.Gameplay.Vision
         public VisionFeature(ISystemFactory systemFactory)
         {
             Add(systemFactory.Create<ScanForTargetsSystem>());
-            Add(systemFactory.Create<CleanupTargetsInSightSystem>());
         }
     }
 }

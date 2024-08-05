@@ -14,8 +14,8 @@ namespace AbilityMadness.Code.Gameplay.Health.Systems
             _deadEntties = gameContext.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Dead,
-                    GameMatcher.DeathAnimator)
-                .NoneOf(GameMatcher.LifeTime));
+                    GameMatcher.DeathAnimator,
+                    GameMatcher.ProccessingDeath));
         }
 
         public void Execute()

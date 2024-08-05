@@ -57,7 +57,6 @@ namespace AbilityMadness.Code.Infrastructure.Services.View
             _pooledViews[path].Add(viewInstance);
 
             viewInstance.transform.SetParent(_viewsParent);
-            //viewInstance.transform.position = Vector2.one * 999f;
 
             return viewInstance;
         }

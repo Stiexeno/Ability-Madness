@@ -6,9 +6,12 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using AbilityMadness.Code.Gameplay.Enemy.Waves;
+
 public partial class GameEntity {
 
-    static readonly AbilityMadness.Code.Gameplay.Waves.Wave waveComponent = new AbilityMadness.Code.Gameplay.Waves.Wave();
+    static readonly Wave waveComponent = new Wave();
 
     public bool isWave {
         get { return HasComponent(GameComponentsLookup.Wave); }

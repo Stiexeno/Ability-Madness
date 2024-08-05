@@ -21,6 +21,9 @@ namespace AbilityMadness
             {
                 public const string DamageTextWidget = "Prefabs/UI/Widgets/DamageTextWidget";
                 public const string HealthbarWidget = "Prefabs/UI/Widgets/HealthbarWidget";
+                public const string GridWidget = "Prefabs/UI/Attachmnets/GridWidget";
+                public const string UpgradeWidget = "Prefabs/UI/Attachmnets/UpgradeWidget";
+                public const string AttachmentWidget = "Prefabs/UI/Attachmnets/AttachmentWidget";
             }
 
             public static class Projectiles
@@ -51,6 +54,7 @@ namespace AbilityMadness
             public const string Aiming = "Aiming";
             public const string Attack = "Attack";
             public const string Dash = "Dash";
+            public const string OpenAssembler = "OpenAssembler";
         }
 
         public static class Configs
@@ -58,6 +62,7 @@ namespace AbilityMadness
             public const string CursorConfig = "CursorConfig";
 
             public const string AbilityConfigLabel = "config_ability";
+            public const string AttachmentConfigLabel = "config_attachment";
         }
 
         public static class Layers

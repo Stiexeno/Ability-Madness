@@ -1,5 +1,5 @@
 using AbilityMadness.Code.Gameplay.DamageApplication.Systems;
-using AbilityMadness.Code.Gameplay.DamageApplication.View;
+using AbilityMadness.Code.Gameplay.DamageApplication.Systems.View;
 using AbilityMadness.Code.Infrastructure.Services.ECS;
 
 namespace AbilityMadness.Code.Gameplay.DamageApplication
@@ -8,10 +8,10 @@ namespace AbilityMadness.Code.Gameplay.DamageApplication
     {
         public DamageFeature(ISystemFactory systemFactory)
         {
-            Add(systemFactory.Create<ApplyDamageSystem>());
+            Add(systemFactory.Create<ApplyDamageToTargetBufferSystem>());
 
             Add(systemFactory.Create<PlayDamageAnimatorSystem>());
-            Add(systemFactory.Create<ApplyDamageEffectSystem>());
+            Add(systemFactory.Create<ApplyDamageVFXSystem>());
             Add(systemFactory.Create<ShowDamageTextSystem>());
 
             Add(systemFactory.Create<CleanupDamageReceivedSystem>());

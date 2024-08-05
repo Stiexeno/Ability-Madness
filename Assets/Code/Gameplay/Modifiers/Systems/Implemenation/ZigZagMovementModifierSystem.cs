@@ -29,8 +29,8 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation
 
         public void Execute()
         {
-            foreach (var abilityProducedEntity in _abilityProducedEntities.GetEntities(_buffer))
             foreach (var modifier in _modifiers)
+            foreach (var abilityProducedEntity in _abilityProducedEntities.GetEntities(_buffer))
             {
                 if (modifier.TargetId == abilityProducedEntity.ProducerId)
                 {

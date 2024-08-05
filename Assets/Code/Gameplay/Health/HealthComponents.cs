@@ -1,5 +1,4 @@
 ﻿using AbilityMadness.Code.Gameplay.Health.Behaviours;
-using AbilityMadness.Code.Infrastructure.Services.UI.Widgets;
 using Entitas;
 
 namespace AbilityMadness.Code.Gameplay.Health
@@ -9,6 +8,7 @@ namespace AbilityMadness.Code.Gameplay.Health
 
     [Game] public class Alive : IComponent { }
     [Game] public class Dead : IComponent { }
+    [Game] public class ProccessingDeath : IComponent { }
 
     [Game] public class TeamComponent : IComponent { public Team Value; }
 

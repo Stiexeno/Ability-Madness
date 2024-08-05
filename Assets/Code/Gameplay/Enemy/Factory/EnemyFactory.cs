@@ -4,6 +4,7 @@ using AbilityMadness.Code.Extensions;
 using AbilityMadness.Code.Gameplay.Experience;
 using AbilityMadness.Code.Gameplay.Health;
 using AbilityMadness.Code.Gameplay.Movement;
+using AbilityMadness.Code.Gameplay.Vision;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
 using AbilityMadness.Infrastructure.Services.Assets;
 using UnityEngine;
@@ -34,14 +35,16 @@ namespace AbilityMadness.Code.Gameplay.Enemy.Factory
 
                 .AddExperienceTypeId(ExperienceTypeId.Green)
 
-                .AddTargetsInSight(new List<int>(1))
+                // .AddTargetsInSight(new List<int>(1))
 
                 //.With(x => x.isTransformMovement = true)
                 //.With(x => x.isForwardMovement = true)
                 .SetRigidbodyMovement(150f)
                 .AddWorldPosition(position)
                 .AddLookDirection(Vector2.zero);
-                //.AddDirection(Vector2.zero)
+            //.AddDirection(Vector2.zero)
+            // .SetVision(8f, 1f, Constants.Layers.Player);
+
         }
     }
 }

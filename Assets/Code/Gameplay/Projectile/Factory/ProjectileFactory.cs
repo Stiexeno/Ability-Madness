@@ -61,6 +61,7 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
                 .AddViewPath(Constants.Prefabs.Projectiles.Fireball)
                 .AddDamage(10)
                 .CollectTargetsWithSphereCast(0.3f)
+                .With(x => x.isFaceToDirection = true)
 
                 .AddEffectViewPath(Constants.Prefabs.Effects.FireballHitEffect);
         }
@@ -90,7 +91,6 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
                 .With(x => x.isAlive = true)
 
                 .With(x => x.isTransformMovement = true)
-                .With(x => x.isFaceToDirection = true)
                 .AddDirection(direction)
                 .AddWorldPosition(position);
         }

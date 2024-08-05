@@ -1,6 +1,6 @@
 ﻿using AbilityMadness.Code.Gameplay.Abilities;
 using AbilityMadness.Code.Gameplay.Abilities.Factory;
-using AbilityMadness.Code.Gameplay.Waves.Factory;
+using AbilityMadness.Code.Gameplay.Enemy.Waves.Factory;
 using AbilityMadness.Code.Infrastructure.Services.ECS;
 using AbilityMadness.Factory;
 using AbilityMadness.Infrastructure.Factories.UI;

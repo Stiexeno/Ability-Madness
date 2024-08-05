@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using AbilityMadness.Code.Gameplay.Experience.Factory;
 using Entitas;
 
@@ -5,6 +6,8 @@ namespace AbilityMadness.Code.Gameplay.Experience.Systems
 {
     public class DropExperienceOnDeathSystem : IExecuteSystem
     {
+        private readonly List<GameEntity> _buffer = new(32);
+
         private IGroup<GameEntity> _deadEntities;
         private IExperienceFactory _experienceFactory;
 
@@ -15,15 +18,15 @@ namespace AbilityMadness.Code.Gameplay.Experience.Systems
                 .AllOf(
                     GameMatcher.Dead,
                     GameMatcher.ExperienceTypeId,
-                    GameMatcher.WorldPosition,
-                    GameMatcher.Destructed));
+                    GameMatcher.WorldPosition));
         }
 
         public void Execute()
         {
-            foreach (var deadEntity in _deadEntities)
+            foreach (var deadEntity in _deadEntities.GetEntities(_buffer))
             {
                 _experienceFactory.CreateExperience(deadEntity.ExperienceTypeId, deadEntity.WorldPosition);
+                deadEntity.RemoveExperienceTypeId();
             }
         }
     }

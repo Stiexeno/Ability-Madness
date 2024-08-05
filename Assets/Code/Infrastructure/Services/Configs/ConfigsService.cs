@@ -1,5 +1,6 @@
 ﻿using AbilityMadness.Code.Gameplay.Abilities;
 using AbilityMadness.Code.Gameplay.Abilities.Configs;
+using AbilityMadness.Code.Infrastructure.Services.Assembler;
 using AbilityMadness.Code.Infrastructure.Services.Cursors.Configs;
 using AbilityMadness.Infrastructure.Services.Assets;
 using Cysharp.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace AbilityMadness.Infrastructure.Services.Configs
 
         public CursorConfig CursorConfig { get; private set; }
         public AbilityConfig[] AbilityConfigs { get; private set; }
+        public AttachmentConfig[] AttachmentConfigs { get; private set; }
 
 		public ConfigsService(IAssets assets)
 		{
@@ -24,6 +26,7 @@ namespace AbilityMadness.Infrastructure.Services.Configs
 		{
             CursorConfig = await _assets.LoadAsync<CursorConfig>(Constants.Configs.CursorConfig);
             AbilityConfigs = _assets.GetAssetsByLabel<AbilityConfig>(Constants.Configs.AbilityConfigLabel);
+            AttachmentConfigs = _assets.GetAssetsByLabel<AttachmentConfig>(Constants.Configs.AttachmentConfigLabel);
 		}
 
         public AbilityConfig GetAbilityConfig(AbilityTypeId type)
@@ -39,5 +42,5 @@ namespace AbilityMadness.Infrastructure.Services.Configs
             Debug.LogError($"AbilityConfig with type {type} not found");
             return null;
         }
-	}
+    }
 }

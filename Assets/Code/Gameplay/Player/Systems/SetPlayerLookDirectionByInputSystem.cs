@@ -1,6 +1,6 @@
 ﻿using Entitas;
 
-namespace AbilityMadness.Systems
+namespace AbilityMadness.Code.Gameplay.Player.Systems
 {
     public class SetPlayerLookDirectionByInputSystem : IExecuteSystem
     {

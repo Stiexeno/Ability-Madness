@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Entitas;
 using UnityEngine;
@@ -17,9 +16,7 @@ namespace AbilityMadness.Code.Gameplay.Experience.Systems
                 .AllOf(
                     GameMatcher.Experience,
                     GameMatcher.ExperienceTypeId,
-                    GameMatcher.PickedUp)
-                .NoneOf(
-                    GameMatcher.Destructed));
+                    GameMatcher.PickedUp));
 
             _players = gameContext.GetGroup(GameMatcher
                 .AllOf(

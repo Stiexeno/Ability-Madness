@@ -7,8 +7,8 @@ namespace AbilityMadness.Code.Gameplay.Enemy
     {
         public EnemyFeature(ISystemFactory systemFactory)
         {
-            Add(systemFactory.Create<SetEnemyTargetPlayerSystem>());
-            Add(systemFactory.Create<MoveEnemyToTargetSystem>());
+            //Add(systemFactory.Create<SetEnemyTargetPlayerSystem>());
+            Add(systemFactory.Create<MoveEnemyToPlayerSystem>());
         }
     }
 }

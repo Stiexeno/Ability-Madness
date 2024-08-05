@@ -54,6 +54,7 @@ namespace AbilityMadness.Code.Infrastructure.Services.UI
             _pooledViews[path].Add(viewInstance);
 
             viewInstance.transform.SetParent(parent);
+            viewInstance.transform.localScale = Vector3.one;
 
             return viewInstance;
         }

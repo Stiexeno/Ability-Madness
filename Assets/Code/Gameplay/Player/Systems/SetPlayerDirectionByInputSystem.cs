@@ -1,6 +1,6 @@
 using Entitas;
 
-namespace AbilityMadness.Systems
+namespace AbilityMadness.Code.Gameplay.Player.Systems
 {
     public class SetPlayerDirectionByInputSystem : IExecuteSystem
     {
@@ -10,7 +10,9 @@ namespace AbilityMadness.Systems
         public SetPlayerDirectionByInputSystem(Contexts contexts)
         {
             _players = contexts.game.GetGroup(GameMatcher
-                .AllOf(GameMatcher.Player));
+                .AllOf(GameMatcher.Player)
+                .NoneOf(
+                    GameMatcher.Dashing));
 
             _axisInputs = contexts.game.GetGroup(GameMatcher
                 .AllOf(GameMatcher.AxisInput));

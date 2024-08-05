@@ -45,8 +45,12 @@ namespace AbilityMadness.Factory
                 .AddPickupRadius(7f)
                 .AddExperience(0)
                 .AddMaxExperience(100)
+                .AddLevel(1)
 
-                .SetVision(8f, 1f, Constants.Layers.Enemy);
+                .AddHealth(100)
+                .AddMaxHealth(100)
+
+                .SetVision(8f, 0.15f, Constants.Layers.Enemy);
         }
     }
 }
