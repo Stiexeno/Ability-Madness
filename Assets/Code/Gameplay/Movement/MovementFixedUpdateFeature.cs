@@ -8,9 +8,7 @@ namespace AbilityMadness.Code.Gameplay.Movement
     {
         public MovementFixedUpdateFeature(ISystemFactory systemFactory)
         {
-            Add(systemFactory.Create<MoveRigidbodySystem>());
-            Add(systemFactory.Create<StartDashSystem>());
-            Add(systemFactory.Create<RigidbodyDashSystem>());
+
         }
     }
 }

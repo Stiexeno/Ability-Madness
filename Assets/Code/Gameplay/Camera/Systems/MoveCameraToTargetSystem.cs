@@ -39,12 +39,12 @@ namespace AbilityMadness.Code.Gameplay.Camera.Systems
 
                     var cameraVelocity = camera.Velocity;
 
-                    camera.WorldPosition = targetPosition;
-                     // camera.WorldPosition = Vector3.SmoothDamp(
-                     //     camera.WorldPosition,
-                     //     targetPosition,
-                     //     ref cameraVelocity,
-                     //     0);
+                    //camera.WorldPosition = targetPosition;
+                     camera.WorldPosition = Vector3.SmoothDamp(
+                         camera.WorldPosition,
+                         targetPosition,
+                         ref cameraVelocity,
+                         0.1f);
 
                      camera.Velocity = cameraVelocity;
                 }

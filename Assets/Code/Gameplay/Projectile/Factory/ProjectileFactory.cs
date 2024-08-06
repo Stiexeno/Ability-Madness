@@ -58,7 +58,7 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
         {
             return CreateEmptyProjectile(abilityId, position, direction, team)
                 .AddProjectileTypeId(ProjectileTypeId.Fireball)
-                .AddViewPath(Constants.Prefabs.Projectiles.Fireball)
+                .AddViewPath(Constants.Prefabs.Projectiles.Bullet)
                 .AddDamage(10)
                 .CollectTargetsWithSphereCast(0.3f)
                 .With(x => x.isFaceToDirection = true)

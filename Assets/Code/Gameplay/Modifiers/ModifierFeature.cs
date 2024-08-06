@@ -1,4 +1,5 @@
 ﻿using AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation;
+using AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation.Ricochet;
 using AbilityMadness.Code.Infrastructure.Services.ECS;
 
 namespace AbilityMadness.Code.Gameplay.Modifiers
@@ -14,6 +15,9 @@ namespace AbilityMadness.Code.Gameplay.Modifiers
 
             Add(systemFactory.Create<SpeedModifierSystem>());
             Add(systemFactory.Create<MultishotModifierSystem>());
+
+            Add(systemFactory.Create<RicochetModifierSystem>());
+            Add(systemFactory.Create<ProjectileRicochetSystem>());
         }
     }
 }

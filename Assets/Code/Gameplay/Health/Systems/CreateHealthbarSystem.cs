@@ -21,7 +21,9 @@ namespace AbilityMadness.Code.Gameplay.Health.Systems
                     GameMatcher.Id,
                     GameMatcher.Health,
                     GameMatcher.MaxHealth)
-                .NoneOf(GameMatcher.HasHealthbar));
+                .NoneOf(
+                    GameMatcher.HasHealthbar,
+                    GameMatcher.Player));
         }
 
         public void Execute()
@@ -34,33 +36,6 @@ namespace AbilityMadness.Code.Gameplay.Health.Systems
                 _uiFactory.CreateHealthbar(entity);
                 entity.HasHealthbar = true;
             }
-
-            // foreach (var owner in _ownerEntities.GetEntities(_buffer))
-            // {
-            //     if (owner.Health >= owner.MaxHealth)
-            //         continue;
-            //
-            //     var hasHealthbar = false;
-            //
-            //     foreach (var healthbarEntity in _healthbarEntities)
-            //     {
-            //         if (healthbarEntity.TargetId == owner.Id)
-            //         {
-            //             if (owner.isHealthbarLoading)
-            //                 owner.isHealthbarLoading = false;
-            //
-            //             hasHealthbar = true;
-            //             healthbarEntity.WorldPosition = owner.WorldPosition.AddY(0.5f);
-            //             healthbarEntity.Healthbar.SetHealth(owner.Health / (float)owner.MaxHealth);
-            //         }
-            //     }
-            //
-            //     if (hasHealthbar == false && owner.isHealthbarLoading == false)
-            //     {
-            //         owner.isHealthbarLoading = true;
-            //         _uiFactory.CreateHealthbar(owner);
-            //     }
-            // }
         }
     }
 }

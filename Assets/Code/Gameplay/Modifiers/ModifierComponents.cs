@@ -15,4 +15,8 @@ namespace AbilityMadness.Code.Gameplay.Modifiers
 
     [Game] public class SpeedModifier : IComponent { }
     [Game] public class MultishootModifier : IComponent { }
+
+    [Game] public class Ricochet : IComponent { }
+    [Game] public class RicochetModifier : IComponent { }
+    [Game] public class RicochetHitCount : IComponent { public int Value; }
 }

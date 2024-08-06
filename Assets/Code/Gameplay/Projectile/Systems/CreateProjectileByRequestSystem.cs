@@ -37,7 +37,7 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Systems
                     _projectileFactory.CreateProjectile(
                         request.RequestProjectile,
                         request.ProducerId,
-                        request.WorldPosition,
+                        request.WorldPosition + spreadDirection.ToVector3(),
                         spreadDirection,
                         request.Team);
                 }

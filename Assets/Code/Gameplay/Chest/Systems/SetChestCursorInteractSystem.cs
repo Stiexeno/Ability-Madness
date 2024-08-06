@@ -11,9 +11,8 @@ namespace AbilityMadness.Code.Gameplay.Chest.Systems
         private IGroup<GameEntity> _chests;
         private ICursorService _cursorService;
 
-        public SetChestCursorInteractSystem(Contexts contexts, ICursorService cursorService)
+        public SetChestCursorInteractSystem(Contexts contexts)
         {
-            _cursorService = cursorService;
             _chests = contexts.game.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Chest));
@@ -32,7 +31,7 @@ namespace AbilityMadness.Code.Gameplay.Chest.Systems
                 }
             }
 
-            _cursorService.SetCursor(cursorType);
+           // _cursorService.SetCursor(cursorType);
         }
     }
 }

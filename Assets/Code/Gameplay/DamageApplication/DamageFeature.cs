@@ -15,6 +15,7 @@ namespace AbilityMadness.Code.Gameplay.DamageApplication
             Add(systemFactory.Create<ShowDamageTextSystem>());
 
             Add(systemFactory.Create<CleanupDamageReceivedSystem>());
+            Add(systemFactory.Create<CleanupDamageDealtSystem>());
         }
     }
 }

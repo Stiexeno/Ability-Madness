@@ -36,6 +36,7 @@ namespace AbilityMadness.Code.Gameplay.DamageApplication.Systems
                 {
                     entity.Health -= damageApplicator.Damage;
                     entity.ReplaceDamageReceived(damageApplicator.Damage);
+                    damageApplicator.isDamageDealt = true;
                 }
             }
         }

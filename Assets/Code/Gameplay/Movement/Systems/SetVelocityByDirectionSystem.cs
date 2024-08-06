@@ -1,5 +1,4 @@
 using Entitas;
-using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Movement.Systems
 {
@@ -21,7 +20,7 @@ namespace AbilityMadness.Code.Gameplay.Movement.Systems
         {
             foreach (var entity in _entities)
             {
-                entity.Velocity = entity.Direction.normalized * entity.MovementSpeed * Time.deltaTime;
+                entity.Velocity = entity.Direction.normalized * entity.MovementSpeed;
             }
         }
     }

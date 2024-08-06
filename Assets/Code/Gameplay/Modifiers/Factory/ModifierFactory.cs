@@ -26,6 +26,8 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Factory
                     return CreateZigZagModifier(targetId, value);
                 case ModifierTypeId.Multishoot:
                     return CreateMultishootModifier(targetId, value);
+                case ModifierTypeId.Ricochet:
+                    return CreateRicochetModifier(targetId, value);
                 case ModifierTypeId.Unknown:
                     throw new Exception($"Modifier not set for {targetId} ID");
                 default:
@@ -61,6 +63,14 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Factory
             return CreateEmptyModifier(targetId)
                 .With(x => x.isMultishootModifier = true)
                 .AddModifierTypeId(ModifierTypeId.Multishoot)
+                .AddModifierValue(value);
+        }
+
+        public GameEntity CreateRicochetModifier(int targetId, float value)
+        {
+            return CreateEmptyModifier(targetId)
+                .With(x => x.isRicochetModifier = true)
+                .AddModifierTypeId(ModifierTypeId.Ricochet)
                 .AddModifierValue(value);
         }
 

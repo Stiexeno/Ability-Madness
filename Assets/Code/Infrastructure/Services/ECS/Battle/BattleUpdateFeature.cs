@@ -36,9 +36,8 @@ namespace AbilityMadness.Code.Infrastructure.Services.ECS
 
             Add(systemFactory.Create<CommonFeature>());
             Add(systemFactory.Create<PlayerFeature>());
-            Add(systemFactory.Create<MovementUpdateFeature>());
-            Add(systemFactory.Create<MovementFixedUpdateFeature>());
             Add(systemFactory.Create<CameraFreature>());
+            Add(systemFactory.Create<MovementUpdateFeature>());
 
             Add(systemFactory.Create<AnimatorFeature>());
 

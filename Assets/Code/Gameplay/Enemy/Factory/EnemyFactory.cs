@@ -42,7 +42,7 @@ namespace AbilityMadness.Code.Gameplay.Enemy.Factory
 
                 //.With(x => x.isTransformMovement = true)
                 //.With(x => x.isForwardMovement = true)
-                .SetRigidbodyMovement(150f)
+                .SetRigidbodyMovement(1.5f)
                 .AddWorldPosition(position)
                 .AddLookDirection(Vector2.zero);
             //.AddDirection(Vector2.zero)

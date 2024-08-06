@@ -38,7 +38,7 @@ namespace AbilityMadness.Factory
                 .AddTeam(Team.Player)
                 .With(x => x.isAlive = true)
 
-                .SetRigidbodyMovement(300f)
+                .SetRigidbodyMovement(3f)
                 .AddWorldPosition(Vector2.zero)
                 .AddLookDirection(Vector2.zero)
 

@@ -1,4 +1,4 @@
-﻿using AbilityMadness.Code.Gameplay.Camera;
+﻿using AbilityMadness.Code.Gameplay.Movement.Systems;
 
 namespace AbilityMadness.Code.Infrastructure.Services.ECS
 {
@@ -6,6 +6,7 @@ namespace AbilityMadness.Code.Infrastructure.Services.ECS
     {
         public BattleLateUpdateFeature(ISystemFactory systemFactory)
         {
+            Add(systemFactory.Create<SetWorldPositionByTransformSystem>());
         }
     }
 }

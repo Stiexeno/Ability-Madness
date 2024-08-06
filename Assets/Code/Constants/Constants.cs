@@ -30,6 +30,7 @@ namespace AbilityMadness
             {
                 public const string Fireball = "Prefabs/Projectiles/Projectile_Fireball";
                 public const string Tornado = "Prefabs/Projectiles/Tornado/Projectile_Tornado";
+                public const string Bullet = "Prefabs/Projectiles/Bullet/Projectile_Bullet";
             }
 
             public static class Effects
