@@ -6,7 +6,6 @@ namespace AbilityMadness.Code.Infrastructure.Services.ECS
     {
         public BattleFixedUpdateFeature(ISystemFactory systemFactory)
         {
-            Add(systemFactory.Create<MovementFixedUpdateFeature>());
         }
     }
 }

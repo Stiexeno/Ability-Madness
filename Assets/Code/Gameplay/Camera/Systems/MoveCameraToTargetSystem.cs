@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Camera.Systems
 {
-    public class SetCameraOffsetToFollowTargetSystem : IExecuteSystem
+    public class MoveCameraToTargetSystem : IExecuteSystem
     {
         private IGroup<GameEntity> _cameras;
         private IGroup<GameEntity> _followTargets;
         private Contexts _contexts;
 
-        public SetCameraOffsetToFollowTargetSystem(Contexts contexts)
+        public MoveCameraToTargetSystem(Contexts contexts)
         {
             _contexts = contexts;
             _cameras = contexts.game.GetGroup(GameMatcher
@@ -39,11 +39,12 @@ namespace AbilityMadness.Code.Gameplay.Camera.Systems
 
                     var cameraVelocity = camera.Velocity;
 
-                     camera.WorldPosition = Vector3.SmoothDamp(
-                         camera.WorldPosition,
-                         targetPosition,
-                         ref cameraVelocity,
-                         camera.CameraSmooth);
+                    camera.WorldPosition = targetPosition;
+                     // camera.WorldPosition = Vector3.SmoothDamp(
+                     //     camera.WorldPosition,
+                     //     targetPosition,
+                     //     ref cameraVelocity,
+                     //     0);
 
                      camera.Velocity = cameraVelocity;
                 }

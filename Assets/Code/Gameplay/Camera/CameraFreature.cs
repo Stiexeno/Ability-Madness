@@ -8,7 +8,7 @@ namespace AbilityMadness.Code.Gameplay.Camera
         public CameraFreature(ISystemFactory systemFactory)
         {
             Add(systemFactory.Create<InitializeCameraSystem>());
-            Add(systemFactory.Create<SetCameraOffsetToFollowTargetSystem>());
+            Add(systemFactory.Create<MoveCameraToTargetSystem>());
         }
     }
 }

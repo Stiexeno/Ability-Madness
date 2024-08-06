@@ -4,6 +4,7 @@ using AbilityMadness.Code.Common.Cooldown;
 using AbilityMadness.Code.Common.Destruct;
 using AbilityMadness.Code.Gameplay.Abilities;
 using AbilityMadness.Code.Gameplay.Animator;
+using AbilityMadness.Code.Gameplay.Camera;
 using AbilityMadness.Code.Gameplay.Chest;
 using AbilityMadness.Code.Gameplay.DamageApplication;
 using AbilityMadness.Code.Gameplay.Enemy;
@@ -33,9 +34,12 @@ namespace AbilityMadness.Code.Infrastructure.Services.ECS
             Add(systemFactory.Create<DamageFeature>());
             Add(systemFactory.Create<HealthFeature>());
 
+            Add(systemFactory.Create<CommonFeature>());
             Add(systemFactory.Create<PlayerFeature>());
             Add(systemFactory.Create<MovementUpdateFeature>());
-            Add(systemFactory.Create<CommonFeature>());
+            Add(systemFactory.Create<MovementFixedUpdateFeature>());
+            Add(systemFactory.Create<CameraFreature>());
+
             Add(systemFactory.Create<AnimatorFeature>());
 
             Add(systemFactory.Create<InteractionFeature>());

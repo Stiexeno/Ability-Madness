@@ -6,7 +6,6 @@ namespace AbilityMadness.Code.Infrastructure.Services.ECS
     {
         public BattleLateUpdateFeature(ISystemFactory systemFactory)
         {
-            Add(systemFactory.Create<CameraFreature>());
         }
     }
 }
