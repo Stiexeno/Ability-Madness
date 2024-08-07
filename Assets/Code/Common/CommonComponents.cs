@@ -23,6 +23,8 @@ namespace AbilityMadness.Code.Common
     [Game] public class TimeElapsed : IComponent { public float Value; }
 
     [Game] public class SpawnAmount : IComponent { public int Value; }
+    [Game] public class SpawnedAmount : IComponent { public int Value; }
+    [Game] public class SpawnInterval : IComponent { public float Value; }
 
     [Game] public class Rigidbody2DComponent : IComponent { public Rigidbody2D Value; }
     [Game] public class Collider2DComponent : IComponent { public Collider2D Value; }

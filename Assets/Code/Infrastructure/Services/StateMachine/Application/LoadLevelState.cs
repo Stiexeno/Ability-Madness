@@ -2,7 +2,8 @@
 using AbilityMadness.Code.Gameplay.Abilities.Factory;
 using AbilityMadness.Code.Gameplay.Enemy.Waves.Factory;
 using AbilityMadness.Code.Gameplay.Weapons.Factory;
-using AbilityMadness.Code.Infrastructure.Services.ECS;
+using AbilityMadness.Code.Infrastructure.Services.WorldBuilder.Configs;
+using AbilityMadness.Code.Infrastructure.Services.WorldBuilder.Services;
 using AbilityMadness.Factory;
 using AbilityMadness.Infrastructure.Factories.UI;
 using Cysharp.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
         private ILoadingCurtain _loadingCurtain;
         private IWaveFactory _waveFactory;
         private IWeaponFactory _weaponFactory;
+        private IWorldBuilderService _worldBuilderService;
 
         [Inject]
 		private void Construct(
@@ -34,8 +36,10 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
             IAbilityFactory abilityFactory,
             ILoadingCurtain loadingCurtain,
             IWaveFactory waveFactory,
-            IWeaponFactory weaponFactory)
+            IWeaponFactory weaponFactory,
+            IWorldBuilderService worldBuilderService)
 		{
+            _worldBuilderService = worldBuilderService;
             _weaponFactory = weaponFactory;
             _waveFactory = waveFactory;
             _loadingCurtain = loadingCurtain;
@@ -49,27 +53,12 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 
 		public void Enter(string sceneName)
 		{
-            _loadingCurtain.Show();
-
-			var currentActiveScene = SceneManager.GetActiveScene().name;
-
-			if (currentActiveScene != sceneName)
-			{
-				_sceneService.Load(sceneName, onLoaded: OnSceneLoaded);
-			}
-			else
-			{
-				OnSceneLoaded();
-			}
-		}
-
-		private void OnSceneLoaded()
-		{
             SetupScene().Forget();
 		}
 
         private async UniTask SetupScene()
         {
+            await _worldBuilderService.Generate(WorldType.Grassland);
             await SetupUI();
             CreatePlayer();
 

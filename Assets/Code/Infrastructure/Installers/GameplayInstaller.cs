@@ -1,16 +1,23 @@
-﻿using AbilityMadness.Code.Gameplay.Camera.Factory;
+﻿using AbilityMadness.Code.Gameplay.Abilities.Factory;
+using AbilityMadness.Code.Gameplay.Camera.Factory;
 using AbilityMadness.Code.Gameplay.Chest.Factory;
 using AbilityMadness.Code.Gameplay.EffectApplication.Factory;
 using AbilityMadness.Code.Gameplay.Enemy.Factory;
+using AbilityMadness.Code.Gameplay.Enemy.Waves.Factory;
 using AbilityMadness.Code.Gameplay.Experience.Factory;
+using AbilityMadness.Code.Gameplay.Modifiers.Factory;
 using AbilityMadness.Code.Gameplay.Projectile.Factory;
+using AbilityMadness.Code.Gameplay.Weapons.Factory;
 using AbilityMadness.Code.Infrastructure.Services.Assembler;
 using AbilityMadness.Code.Infrastructure.Services.Assembler.Installer;
 using AbilityMadness.Code.Infrastructure.Services.Camera;
 using AbilityMadness.Code.Infrastructure.Services.Camera.Shake;
 using AbilityMadness.Code.Infrastructure.Services.View;
+using AbilityMadness.Code.Infrastructure.Services.WorldBuilder.Services;
+using AbilityMadness.Factory;
 using AbilityMadness.Infrastructure.Services.Instantiator;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using Zenject;
 using SF = UnityEngine.SerializeField;
 
@@ -19,6 +26,7 @@ namespace AbilityMadness
 	public class GameplayInstaller : MonoInstaller
 	{
         [SF] private new Camera camera;
+        [SF] private Tilemap[] tilemaps;
 
 		public override void InstallBindings()
 		{
@@ -36,6 +44,10 @@ namespace AbilityMadness
             Container.BindInterfacesTo<ShakeService>()
                 .AsSingle()
                 .WithArguments(camera);
+
+            Container.BindInterfacesTo<WorldBuilderService>()
+                .AsSingle()
+                .WithArguments(tilemaps);
         }
 
         private void BindFactories()
@@ -56,6 +68,21 @@ namespace AbilityMadness
                 .AsSingle();
 
             Container.BindInterfacesTo<ExperienceFactory>()
+                .AsSingle();
+
+            Container.BindInterfacesTo<PlayerFactory>()
+                .AsSingle();
+
+            Container.BindInterfacesTo<WaveFactory>()
+                .AsSingle();
+
+            Container.BindInterfacesTo<AbilityFactory>()
+                .AsSingle();
+
+            Container.BindInterfacesTo<ModifierFactory>()
+                .AsSingle();
+
+            Container.BindInterfacesTo<WeaponFactory>()
                 .AsSingle();
         }
 

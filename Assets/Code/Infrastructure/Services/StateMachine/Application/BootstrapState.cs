@@ -8,19 +8,22 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 {
 	public class BootstrapState : IState, IEnter
 	{
-		private string _currentScene;
 		private IApplicationStateMachine _applicationStateMachine;
 		private ISceneService _sceneService;
 		private IAssets _assets;
-		private const int TARGET_FRAME_RATE = 120;
+        private ILoadingCurtain _loadingCurtain;
+
+        private const int TARGET_FRAME_RATE = 120;
 
 		[Inject]
 		private void Construct(
 			IApplicationStateMachine applicationStateMachine,
 			ISceneService sceneService,
-			IAssets assets)
+			IAssets assets,
+            ILoadingCurtain loadingCurtain)
 		{
-			_assets = assets;
+            _loadingCurtain = loadingCurtain;
+            _assets = assets;
 			_sceneService = sceneService;
 			_applicationStateMachine = applicationStateMachine;
 		}
@@ -28,8 +31,6 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 		public void Enter()
 		{
 			SetTargetFrameRate();
-
-			_currentScene = SceneManager.GetActiveScene().name;
 
 			_assets.Initialize();
 			_sceneService.Load(Constants.Scenes.BootSceneName, EnterLoadedScene);
@@ -42,18 +43,23 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 
 		private void EnterLoadedScene()
 		{
-			var sceneToLoad = Constants.Scenes.GameplaySceneName;
+            _loadingCurtain.Show();
+            var currentActiveScene = SceneManager.GetActiveScene().name;
 
-            _applicationStateMachine.Enter<LoadLevelState, string>(sceneToLoad).Forget();
-
-			// if (Application.isEditor && _currentScene != Constants.Scenes.BootSceneName)
-			// {
-			// 	_applicationStateMachine.Enter<LoadLevelState, string>(_currentScene).Forget();
-			// }
-			// else
-			// {
-			//
-			// }
+            if (currentActiveScene != Constants.Scenes.GameplaySceneName)
+            {
+                _sceneService.Load(Constants.Scenes.GameplaySceneName, onLoaded: OnSceneLoaded);
+            }
+            else
+            {
+                OnSceneLoaded();
+            }
 		}
-	}
+
+        private void OnSceneLoaded()
+        {
+            var sceneToLoad = Constants.Scenes.GameplaySceneName;
+            _applicationStateMachine.Enter<LoadLevelState, string>(sceneToLoad).Forget();
+        }
+    }
 }

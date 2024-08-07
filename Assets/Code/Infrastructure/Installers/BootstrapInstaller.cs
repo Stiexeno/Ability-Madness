@@ -8,6 +8,7 @@ using AbilityMadness.Code.Infrastructure.Services.Cursors;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
 using AbilityMadness.Code.Infrastructure.Services.Physics;
 using AbilityMadness.Code.Infrastructure.Services.UI;
+using AbilityMadness.Code.Infrastructure.Services.WorldBuilder.Services;
 using AbilityMadness.Factory;
 using AbilityMadness.Infrastructure.Factories.UI;
 using AbilityMadness.Infrastructure.Services.Assets;
@@ -112,21 +113,6 @@ namespace AbilityMadness
 
 			Container.BindInterfacesTo<StatesFactory>()
 				.AsSingle();
-
-            Container.BindInterfacesTo<PlayerFactory>()
-                .AsSingle();
-
-            Container.BindInterfacesTo<WaveFactory>()
-                .AsSingle();
-
-            Container.BindInterfacesTo<AbilityFactory>()
-                .AsSingle();
-
-            Container.BindInterfacesTo<ModifierFactory>()
-                .AsSingle();
-
-            Container.BindInterfacesTo<WeaponFactory>()
-                .AsSingle();
 		}
 
 		public void Initialize()

@@ -33,107 +33,109 @@ public static class GameComponentsLookup {
     public const int Rigidbody2D = 22;
     public const int Rotation = 23;
     public const int SpawnAmount = 24;
-    public const int TargetId = 25;
-    public const int TimeElapsed = 26;
-    public const int Transform = 27;
-    public const int Velocity = 28;
-    public const int View = 29;
-    public const int ViewPath = 30;
-    public const int WorldPosition = 31;
-    public const int Ability = 32;
-    public const int AbilityProjectile = 33;
-    public const int AbilityTypeId = 34;
-    public const int AutoLaunch = 35;
-    public const int FireballAbility = 36;
-    public const int ManualLaunch = 37;
-    public const int Proccessed = 38;
-    public const int ProducedByAbility = 39;
-    public const int Ready = 40;
-    public const int TornadoAbility = 41;
-    public const int DamageAnimator = 42;
-    public const int DeathAnimator = 43;
-    public const int MovementAnimator = 44;
-    public const int Camera = 45;
-    public const int CameraOffset = 46;
-    public const int CameraSmooth = 47;
-    public const int FollowTargetId = 48;
-    public const int Chest = 49;
-    public const int Attacking = 50;
-    public const int Damage = 51;
-    public const int DamageDealt = 52;
-    public const int DamageReceived = 53;
-    public const int EffectViewPath = 54;
-    public const int Enemy = 55;
-    public const int Wave = 56;
-    public const int Experience = 57;
-    public const int ExperienceTypeId = 58;
-    public const int Level = 59;
-    public const int MaxExperience = 60;
-    public const int PickedUp = 61;
-    public const int PickupRadius = 62;
-    public const int Alive = 63;
-    public const int Dead = 64;
-    public const int HasHealthbar = 65;
-    public const int Health = 66;
-    public const int Healthbar = 67;
-    public const int HealthbarLoading = 68;
-    public const int MaxHealth = 69;
-    public const int ProccessingDeath = 70;
-    public const int Team = 71;
-    public const int AttackPressed = 72;
-    public const int AxisInput = 73;
-    public const int DashPressed = 74;
-    public const int Input = 75;
-    public const int LookInput = 76;
-    public const int MouseCollision = 77;
-    public const int MouseInHover = 78;
-    public const int MousePosition = 79;
-    public const int InteractBehaviour = 80;
-    public const int LifeTime = 81;
-    public const int LifeTimeTimeElapsed = 82;
-    public const int ForwardMovementModifier = 83;
-    public const int Modifier = 84;
-    public const int ModifierTypeId = 85;
-    public const int ModifierValue = 86;
-    public const int MultishootModifier = 87;
-    public const int Ricochet = 88;
-    public const int RicochetHitCount = 89;
-    public const int RicochetModifier = 90;
-    public const int SpeedModifier = 91;
-    public const int ZigZagDirection = 92;
-    public const int ZigZagMovementModifier = 93;
-    public const int ZigZagTimeElapsed = 94;
-    public const int DashCooldown = 95;
-    public const int DashDuration = 96;
-    public const int Dashing = 97;
-    public const int Direction = 98;
-    public const int FaceToDirection = 99;
-    public const int ForwardMovement = 100;
-    public const int LookDirection = 101;
-    public const int MovementSpeed = 102;
-    public const int RequestDash = 103;
-    public const int RigidbodyMovement = 104;
-    public const int TransformMovement = 105;
-    public const int ZigZagMovement = 106;
-    public const int Projectile = 107;
-    public const int ProjectileTypeId = 108;
-    public const int RequestProjectile = 109;
-    public const int ProccessedTargets = 110;
-    public const int SphereCast = 111;
-    public const int SphereCastRadius = 112;
-    public const int TargetBuffer = 113;
-    public const int TargetsInSight = 114;
-    public const int Vision = 115;
-    public const int VisionInterval = 116;
-    public const int VisionLayer = 117;
-    public const int VisionRadius = 118;
-    public const int VisionTimer = 119;
-    public const int WeaponAnimator = 120;
-    public const int Weapon = 121;
-    public const int Player = 122;
-    public const int PlayerInTrigger = 123;
+    public const int SpawnedAmount = 25;
+    public const int SpawnInterval = 26;
+    public const int TargetId = 27;
+    public const int TimeElapsed = 28;
+    public const int Transform = 29;
+    public const int Velocity = 30;
+    public const int View = 31;
+    public const int ViewPath = 32;
+    public const int WorldPosition = 33;
+    public const int Ability = 34;
+    public const int AbilityProjectile = 35;
+    public const int AbilityTypeId = 36;
+    public const int AutoLaunch = 37;
+    public const int FireballAbility = 38;
+    public const int ManualLaunch = 39;
+    public const int Proccessed = 40;
+    public const int ProducedByAbility = 41;
+    public const int Ready = 42;
+    public const int TornadoAbility = 43;
+    public const int DamageAnimator = 44;
+    public const int DeathAnimator = 45;
+    public const int MovementAnimator = 46;
+    public const int Camera = 47;
+    public const int CameraOffset = 48;
+    public const int CameraSmooth = 49;
+    public const int FollowTargetId = 50;
+    public const int Chest = 51;
+    public const int Attacking = 52;
+    public const int Damage = 53;
+    public const int DamageDealt = 54;
+    public const int DamageReceived = 55;
+    public const int EffectViewPath = 56;
+    public const int Enemy = 57;
+    public const int Wave = 58;
+    public const int Experience = 59;
+    public const int ExperienceTypeId = 60;
+    public const int Level = 61;
+    public const int MaxExperience = 62;
+    public const int PickedUp = 63;
+    public const int PickupRadius = 64;
+    public const int Alive = 65;
+    public const int Dead = 66;
+    public const int HasHealthbar = 67;
+    public const int Health = 68;
+    public const int Healthbar = 69;
+    public const int HealthbarLoading = 70;
+    public const int MaxHealth = 71;
+    public const int ProccessingDeath = 72;
+    public const int Team = 73;
+    public const int AttackPressed = 74;
+    public const int AxisInput = 75;
+    public const int DashPressed = 76;
+    public const int Input = 77;
+    public const int LookInput = 78;
+    public const int MouseCollision = 79;
+    public const int MouseInHover = 80;
+    public const int MousePosition = 81;
+    public const int InteractBehaviour = 82;
+    public const int LifeTime = 83;
+    public const int LifeTimeTimeElapsed = 84;
+    public const int ForwardMovementModifier = 85;
+    public const int Modifier = 86;
+    public const int ModifierTypeId = 87;
+    public const int ModifierValue = 88;
+    public const int MultishootModifier = 89;
+    public const int Ricochet = 90;
+    public const int RicochetHitCount = 91;
+    public const int RicochetModifier = 92;
+    public const int SpeedModifier = 93;
+    public const int ZigZagDirection = 94;
+    public const int ZigZagMovementModifier = 95;
+    public const int ZigZagTimeElapsed = 96;
+    public const int DashCooldown = 97;
+    public const int DashDuration = 98;
+    public const int Dashing = 99;
+    public const int Direction = 100;
+    public const int FaceToDirection = 101;
+    public const int ForwardMovement = 102;
+    public const int LookDirection = 103;
+    public const int MovementSpeed = 104;
+    public const int RequestDash = 105;
+    public const int RigidbodyMovement = 106;
+    public const int TransformMovement = 107;
+    public const int ZigZagMovement = 108;
+    public const int Projectile = 109;
+    public const int ProjectileTypeId = 110;
+    public const int RequestProjectile = 111;
+    public const int ProccessedTargets = 112;
+    public const int SphereCast = 113;
+    public const int SphereCastRadius = 114;
+    public const int TargetBuffer = 115;
+    public const int TargetsInSight = 116;
+    public const int Vision = 117;
+    public const int VisionInterval = 118;
+    public const int VisionLayer = 119;
+    public const int VisionRadius = 120;
+    public const int VisionTimer = 121;
+    public const int WeaponAnimator = 122;
+    public const int Weapon = 123;
+    public const int Player = 124;
+    public const int PlayerInTrigger = 125;
 
-    public const int TotalComponents = 124;
+    public const int TotalComponents = 126;
 
     public static readonly string[] componentNames = {
         "Collider2D",
@@ -161,6 +163,8 @@ public static class GameComponentsLookup {
         "Rigidbody2D",
         "Rotation",
         "SpawnAmount",
+        "SpawnedAmount",
+        "SpawnInterval",
         "TargetId",
         "TimeElapsed",
         "Transform",
@@ -288,6 +292,8 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Common.Rigidbody2DComponent),
         typeof(AbilityMadness.Code.Common.RotationComponent),
         typeof(AbilityMadness.Code.Common.SpawnAmount),
+        typeof(AbilityMadness.Code.Common.SpawnedAmount),
+        typeof(AbilityMadness.Code.Common.SpawnInterval),
         typeof(AbilityMadness.Code.Common.TargetId),
         typeof(AbilityMadness.Code.Common.TimeElapsed),
         typeof(AbilityMadness.Code.Common.TransformComponent),

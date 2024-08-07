@@ -50,6 +50,7 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation.Ricochet
                         direction.Normalize();
 
                         producedEntity.ReplaceDirection(direction);
+                        producedEntity.MovementSpeed *= 1.2f;
                         producedEntity.RicochetHitCount--;
 
                         if (producedEntity.RicochetHitCount <= 0)

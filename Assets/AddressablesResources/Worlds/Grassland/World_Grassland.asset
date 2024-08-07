@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb317323b5d94ef6b5ccf02e6de813ef, type: 3}
+  m_Name: World_Grassland
+  m_EditorClassIdentifier: 
+  worldType: 1
+  width: 150
+  height: 150
+  scale: 0.001
+  octaves: 2
+  tiles:
+  - value: 0.5
+    tileRef:
+      m_AssetGUID: b454e53972f9bd744a315416fa95238b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0

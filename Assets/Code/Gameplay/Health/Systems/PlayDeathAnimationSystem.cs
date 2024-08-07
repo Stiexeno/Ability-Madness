@@ -25,7 +25,7 @@ namespace AbilityMadness.Code.Gameplay.Health.Systems
                 deadEntity.DeathAnimator.PlayDeath();
 
                 var deadAnimationLength = deadEntity.DeathAnimator.GetDeathAnimationLength();
-                deadEntity.SetLifetime(deadAnimationLength + 1f);
+                deadEntity.SetLifetime(deadAnimationLength);
             }
         }
     }

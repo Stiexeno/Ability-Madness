@@ -23,7 +23,8 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Systems
                     GameMatcher.WorldPosition,
                     GameMatcher.Team,
                     GameMatcher.Direction,
-                    GameMatcher.SpawnAmount));
+                    GameMatcher.SpawnAmount,
+                    GameMatcher.SpawnedAmount));
         }
 
         public void Execute()
