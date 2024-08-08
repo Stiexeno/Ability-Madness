@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly AbilityMadness.Code.Gameplay.Abilities.Ready readyComponent = new AbilityMadness.Code.Gameplay.Abilities.Ready();
+    static readonly AbilityMadness.Code.Gameplay.Weapons.Ready readyComponent = new AbilityMadness.Code.Gameplay.Weapons.Ready();
 
     public bool isReady {
         get { return HasComponent(GameComponentsLookup.Ready); }

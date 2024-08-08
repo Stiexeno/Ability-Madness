@@ -46,7 +46,7 @@ namespace AbilityMadness.Code.Infrastructure.Services.ECS
             Add(systemFactory.Create<VisionFeature>());
             Add(systemFactory.Create<CooldownFeature>());
 
-            Add(systemFactory.Create<AbilityFeature>());
+           // Add(systemFactory.Create<AbilityFeature>());
             Add(systemFactory.Create<ModifierFeature>());
             Add(systemFactory.Create<ProjectileFeature>());
             Add(systemFactory.Create<WeaponFeature>());

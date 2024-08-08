@@ -65,6 +65,7 @@ namespace AbilityMadness
             public const string AbilityConfigLabel = "config_ability";
             public const string AttachmentConfigLabel = "config_attachment";
             public const string WorldBuilderConfigLabel = "config_world";
+            public const string WeaponConfigLabel = "config_weapon";
 
             public const string ShakePlayerHit = "Configs/Shake/Shake_Player_Hit";
         }

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using AbilityMadness.Code.Extensions;
 using AbilityMadness.Code.Gameplay.Projectile.Factory;
 using Entitas;
 
@@ -18,29 +17,16 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Systems
             _projectileFactory = projectileFactory;
             _requests = gameContext.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.RequestProjectile,
-                    GameMatcher.ProducerId,
-                    GameMatcher.WorldPosition,
-                    GameMatcher.Team,
-                    GameMatcher.Direction,
-                    GameMatcher.SpawnAmount,
-                    GameMatcher.SpawnedAmount));
+                    GameMatcher.ProjectileRequest));
         }
 
         public void Execute()
         {
             foreach (var request in _requests.GetEntities(_buffer))
             {
-                for (int i = 0; i < request.SpawnAmount; i++)
+                for (int i = 0; i < request.ProjectileRequest.spawnCount; i++)
                 {
-                    var spreadDirection = VectorExtensions.GetSpreadDirection(request.Direction, request.SpawnAmount, i);
-
-                    _projectileFactory.CreateProjectile(
-                        request.RequestProjectile,
-                        request.ProducerId,
-                        request.WorldPosition + spreadDirection.ToVector3(),
-                        spreadDirection,
-                        request.Team);
+                    _projectileFactory.CreateProjectile(request.ProjectileRequest);
                 }
 
                 request.Destroy();

@@ -38,26 +38,26 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Systems.Implementation.Fireball
 
         public void Execute()
         {
-            foreach (var ability in _abilities)
-            {
-                var owner = _gameContext.GetEntityWithId(ability.ProducerId);
-
-                if (_owners.ContainsEntity(owner))
-                {
-                    if (owner.TargetsInSight.Count > 0)
-                    {
-                        var closestTarget = owner.GetClosestTarget();
-                        var direction = (closestTarget.WorldPosition - owner.WorldPosition).normalized;
-
-                        _projectileFactory.CreateProjectileRequest(
-                            ability.ProjectileTypeId,
-                            ability.Id,
-                            owner.WorldPosition,
-                            direction,
-                            ability.Team);
-                    }
-                }
-            }
+            // foreach (var ability in _abilities)
+            // {
+            //     var owner = _gameContext.GetEntityWithId(ability.ProducerId);
+            //
+            //     if (_owners.ContainsEntity(owner))
+            //     {
+            //         if (owner.TargetsInSight.Count > 0)
+            //         {
+            //             var closestTarget = owner.GetClosestTarget();
+            //             var direction = (closestTarget.WorldPosition - owner.WorldPosition).normalized;
+            //
+            //             _projectileFactory.CreateProjectileRequest(
+            //                 ability.ProjectileTypeId,
+            //                 ability.Id,
+            //                 owner.WorldPosition,
+            //                 direction,
+            //                 ability.Team);
+            //         }
+            //     }
+            // }
         }
     }
 }

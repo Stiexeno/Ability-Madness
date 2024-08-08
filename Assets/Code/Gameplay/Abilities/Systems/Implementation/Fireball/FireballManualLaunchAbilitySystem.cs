@@ -31,19 +31,19 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Systems.Implementation.Fireball
 
         public void Execute()
         {
-            foreach (var ability in _abilities)
-            {
-                var owner = _gameContext.GetEntityWithId(ability.ProducerId);
-
-                if (_owners.ContainsEntity(owner))
-                {
-                    _projectileFactory.CreateFireball(
-                        ability.Id,
-                        owner.WorldPosition,
-                        owner.LookDirection,
-                        ability.Team);
-                }
-            }
+            // foreach (var ability in _abilities)
+            // {
+            //     var owner = _gameContext.GetEntityWithId(ability.ProducerId);
+            //
+            //     if (_owners.ContainsEntity(owner))
+            //     {
+            //         _projectileFactory.CreateFireball(
+            //             ability.Id,
+            //             owner.WorldPosition,
+            //             owner.LookDirection,
+            //             ability.Team);
+            //     }
+            // }
         }
     }
 }

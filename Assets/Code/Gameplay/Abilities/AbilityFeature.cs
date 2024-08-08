@@ -1,6 +1,5 @@
 using AbilityMadness.Code.Gameplay.Abilities.Systems;
 using AbilityMadness.Code.Gameplay.Abilities.Systems.Implementation.Fireball;
-using AbilityMadness.Code.Gameplay.Abilities.Systems.Implementation.Tornado;
 using AbilityMadness.Code.Infrastructure.Services.ECS;
 
 namespace AbilityMadness.Code.Gameplay.Abilities
@@ -15,7 +14,7 @@ namespace AbilityMadness.Code.Gameplay.Abilities
             Add(systemFactory.Create<FireballManualLaunchAbilitySystem>());
             Add(systemFactory.Create<FireballAutoLaunchAbilitySystem>());
 
-            Add(systemFactory.Create<TornadoAutoLaunchAbilitySystem>());
+            //Add(systemFactory.Create<TornadoAutoLaunchAbilitySystem>());
 
             Add(systemFactory.Create<PutAbilityOnCooldownSystem>());
         }

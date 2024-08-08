@@ -1,5 +1,7 @@
 ﻿using AbilityMadness.Code.Gameplay.Abilities;
 using AbilityMadness.Code.Gameplay.Abilities.Configs;
+using AbilityMadness.Code.Gameplay.Weapons;
+using AbilityMadness.Code.Gameplay.Weapons.Configs;
 using AbilityMadness.Code.Infrastructure.Services.Assembler;
 using AbilityMadness.Code.Infrastructure.Services.Cursors;
 using AbilityMadness.Code.Infrastructure.Services.Cursors.Configs;
@@ -17,6 +19,7 @@ namespace AbilityMadness.Infrastructure.Services.Configs
         public AbilityConfig[] AbilityConfigs { get; private set; }
         public AttachmentConfig[] AttachmentConfigs { get; private set; }
         public WorldBuilderConfig[] WorldBuilderConfigs { get; private set; }
+        public WeaponConfig[] WeaponConfigs { get; private set; }
 
 		public ConfigsService(IAssets assets)
 		{
@@ -29,6 +32,7 @@ namespace AbilityMadness.Infrastructure.Services.Configs
             AbilityConfigs = _assets.GetAssetsByLabel<AbilityConfig>(Constants.Configs.AbilityConfigLabel);
             AttachmentConfigs = _assets.GetAssetsByLabel<AttachmentConfig>(Constants.Configs.AttachmentConfigLabel);
             WorldBuilderConfigs = _assets.GetAssetsByLabel<WorldBuilderConfig>(Constants.Configs.WorldBuilderConfigLabel);
+            WeaponConfigs = _assets.GetAssetsByLabel<WeaponConfig>(Constants.Configs.WeaponConfigLabel);
 		}
 
         public async UniTask<Texture2D> GetCursor(CursorType type)
@@ -48,6 +52,20 @@ namespace AbilityMadness.Infrastructure.Services.Configs
             }
 
             Debug.LogError($"AbilityConfig with type {type} not found");
+            return null;
+        }
+
+        public WeaponConfig GetWeaponConfig(WeaponTypeId type)
+        {
+            foreach (var weaponConfig in WeaponConfigs)
+            {
+                if (weaponConfig.weaponTypeId == type)
+                {
+                    return weaponConfig;
+                }
+            }
+
+            Debug.LogError($"WeaponConfig with type {type} not found");
             return null;
         }
 

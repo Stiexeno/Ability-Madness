@@ -7,6 +7,7 @@ using AbilityMadness.Code.Gameplay.Enemy.Waves.Factory;
 using AbilityMadness.Code.Gameplay.Experience.Factory;
 using AbilityMadness.Code.Gameplay.Modifiers.Factory;
 using AbilityMadness.Code.Gameplay.Projectile.Factory;
+using AbilityMadness.Code.Gameplay.Weapons.Bullets.Factory;
 using AbilityMadness.Code.Gameplay.Weapons.Factory;
 using AbilityMadness.Code.Infrastructure.Services.Assembler;
 using AbilityMadness.Code.Infrastructure.Services.Assembler.Installer;
@@ -83,6 +84,9 @@ namespace AbilityMadness
                 .AsSingle();
 
             Container.BindInterfacesTo<WeaponFactory>()
+                .AsSingle();
+
+            Container.BindInterfacesTo<BulletFactory>()
                 .AsSingle();
         }
 

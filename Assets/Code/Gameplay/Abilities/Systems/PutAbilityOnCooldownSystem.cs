@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using AbilityMadness.Code.Common.Cooldown;
 using Entitas;
-using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Abilities.Systems
 {
@@ -24,7 +23,7 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Systems
         {
             foreach (var ability in _abilities.GetEntities(_buffer))
             {
-                ability.SetOnCooldown();
+                ability.SetOnCooldown(ability.Cooldown);
                 ability.isReady = false;
             }
         }

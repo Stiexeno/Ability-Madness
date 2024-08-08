@@ -1,6 +1,7 @@
 ﻿using AbilityMadness.Code.Gameplay.Abilities;
 using AbilityMadness.Code.Gameplay.Abilities.Factory;
 using AbilityMadness.Code.Gameplay.Enemy.Waves.Factory;
+using AbilityMadness.Code.Gameplay.Weapons;
 using AbilityMadness.Code.Gameplay.Weapons.Factory;
 using AbilityMadness.Code.Infrastructure.Services.WorldBuilder.Configs;
 using AbilityMadness.Code.Infrastructure.Services.WorldBuilder.Services;
@@ -82,7 +83,7 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
             var player = _playerFactory.CreatePlayer(Vector3.zero);
             _abilityFactory.CreateAbility(player, AbilityTypeId.Fireball);
 
-            _weaponFactory.CreateWeapon(player);
+            _weaponFactory.CreateWeapon(player, WeaponTypeId.Revolver);
 
             _waveFactory.CreateWave();
         }
