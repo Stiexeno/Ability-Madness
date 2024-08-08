@@ -14,5 +14,7 @@ namespace AbilityMadness.Infrastructure.Factories.UI
         GameEntity CreateHealthbar(GameEntity gameEntity);
         UniTask<GridWidget> CreateGridWidget(Transform parent);
         UniTask<UpgradeWidget> CreateUpgradeWidget(Transform parent);
+        GameEntity CreateReloadWidget(GameEntity gameEntity);
+        UniTask<BulletWidget> CreateBulletWidget(Transform parent);
     }
 }

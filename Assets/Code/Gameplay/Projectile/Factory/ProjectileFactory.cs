@@ -30,6 +30,8 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
                     throw new ArgumentOutOfRangeException();
                 case BulletTypeId.Regular:
                     return CreateRegularProjectile(scheme);
+                case BulletTypeId.Hard:
+                    return CreateHardProjectile(scheme);
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -37,7 +39,14 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
 
         // Requests
 
-        public GameEntity CreateProjectileRequest(BulletTypeId type, int abilityId, Vector3 position, Vector3 direction, Team team)
+        public GameEntity CreateProjectileRequest(
+            BulletTypeId type,
+            int abilityId,
+            Vector3 position,
+            Vector3 direction,
+            Team team,
+            int bulletDamage,
+            float spread)
         {
             var projectileScheme = new ProjectileScheme
             {
@@ -46,9 +55,10 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
                 position = position,
                 direction = direction,
                 team = team,
-                damage = 10,
+                damage = bulletDamage,
                 movementSpeed = 0.15f,
-                spawnCount = 1
+                spawnCount = 1,
+                spread = spread
             };
 
             return CreateEntity.Empty()
@@ -63,6 +73,17 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
         {
             return CreateEmptyProjectile(scheme)
                 .AddViewPath(Constants.Prefabs.Projectiles.Bullet)
+                .CollectTargetsWithSphereCast(0.3f)
+                .With(x => x.isFaceToDirection = true)
+                .SetForwardMovement()
+
+                .AddEffectViewPath(Constants.Prefabs.Effects.FireballHitEffect);
+        }
+
+        private GameEntity CreateHardProjectile(ProjectileScheme scheme)
+        {
+            return CreateEmptyProjectile(scheme)
+                .AddViewPath(Constants.Prefabs.Projectiles.Fireball)
                 .CollectTargetsWithSphereCast(0.3f)
                 .With(x => x.isFaceToDirection = true)
                 .SetForwardMovement()

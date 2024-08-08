@@ -8,6 +8,10 @@ namespace AbilityMadness
         [SF] private ExperienceWidget experienceWidget;
         [SF] private DamageFlashWidget damageFlashWidget;
 
+        [SF] private AmmoWidget ammoWidget;
+
+        public AmmoWidget AmmoWidget => ammoWidget;
+
         public void SetExperience(int experience, int maxExperience)
         {
             experienceWidget.SetExperience(experience, maxExperience);

@@ -34,8 +34,10 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Bullets.Factory
                     throw new ArgumentOutOfRangeException(nameof(type), type, null);
                 case BulletTypeId.Regular:
                     return CreateRegularBullet(targetId, index, team);
+                case BulletTypeId.Hard:
+                    return CreateHardBullet(targetId, index, team);
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(type), type, null);
+                    throw new Exception($"Unknown bullet type: {type}");
             }
         }
 
@@ -48,6 +50,21 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Bullets.Factory
                 .With(x => x.isBullet = true)
                 .AddBulletTypeId(BulletTypeId.Regular)
                 .AddTeam(team)
+                .AddDamage(10)
+
+                .AddBulletIndex(index);
+        }
+
+        private GameEntity CreateHardBullet(int targetId, int index, Team team)
+        {
+            return CreateEntity.Empty()
+                .AddId(_identifierService.Next())
+                .AddTargetId(targetId)
+
+                .With(x => x.isBullet = true)
+                .AddBulletTypeId(BulletTypeId.Hard)
+                .AddTeam(team)
+                .AddDamage(20)
 
                 .AddBulletIndex(index);
         }

@@ -1,5 +1,6 @@
 ﻿using AbilityMadness.Code.Gameplay.Weapons.Behaviours;
 using Entitas;
+using Entitas.CodeGeneration.Attributes;
 
 namespace AbilityMadness.Code.Gameplay.Weapons
 {
@@ -13,9 +14,14 @@ namespace AbilityMadness.Code.Gameplay.Weapons
     [Game] public class AmmoIndex : IComponent { public int Value; }
 
     [Game] public class FireRate : IComponent { public float Value; }
+    [Game] public class Spread : IComponent { public float Value; }
+
     [Game] public class ReloadTime : IComponent { public float Value; }
     [Game] public class Reloading : IComponent {  }
     [Game] public class Recovering : IComponent {  }
+
+    [Game] public class ReloadWidgetComponent: IComponent { public ReloadWidget Value; }
+    [Game, FlagPrefix("")] public class HasReloadWidget : IComponent {  }
 
     [Game] public class Shot : IComponent { }
 

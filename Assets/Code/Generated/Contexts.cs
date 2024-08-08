@@ -59,6 +59,7 @@ public partial class Contexts : Entitas.IContexts {
 public partial class Contexts {
 
     public const string Id = "Id";
+    public const string OwnerId = "OwnerId";
     public const string TargetId = "TargetId";
 
     [Entitas.CodeGeneration.Attributes.PostConstructor]
@@ -67,6 +68,11 @@ public partial class Contexts {
             Id,
             game.GetGroup(GameMatcher.Id),
             (e, c) => ((AbilityMadness.Code.Common.Id)c).Value));
+
+        game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, int>(
+            OwnerId,
+            game.GetGroup(GameMatcher.OwnerId),
+            (e, c) => ((AbilityMadness.Code.Common.OwnerId)c).Value));
 
         game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, int>(
             TargetId,
@@ -79,6 +85,10 @@ public static class ContextsExtensions {
 
     public static GameEntity GetEntityWithId(this GameContext context, int Value) {
         return ((Entitas.PrimaryEntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.Id)).GetEntity(Value);
+    }
+
+    public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithOwnerId(this GameContext context, int Value) {
+        return ((Entitas.EntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.OwnerId)).GetEntities(Value);
     }
 
     public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithTargetId(this GameContext context, int Value) {

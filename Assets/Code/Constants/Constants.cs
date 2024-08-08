@@ -21,8 +21,10 @@ namespace AbilityMadness
             {
                 public const string DamageTextWidget = "Prefabs/UI/Widgets/DamageTextWidget";
                 public const string HealthbarWidget = "Prefabs/UI/Widgets/HealthbarWidget";
+                public const string ReloadWidget = "Prefabs/UI/Widgets/ReloadWidget";
                 public const string GridWidget = "Prefabs/UI/Attachmnets/GridWidget";
                 public const string UpgradeWidget = "Prefabs/UI/Attachmnets/UpgradeWidget";
+                public const string BulletWidget = "Prefabs/UI/Widgets/BulletWidget";
                 public const string AttachmentWidget = "Prefabs/UI/Attachmnets/AttachmentWidget";
             }
 

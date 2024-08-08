@@ -4,5 +4,6 @@
     {
         Unkonwn = 0,
         Regular = 1,
+        Hard = 2,
     }
 }

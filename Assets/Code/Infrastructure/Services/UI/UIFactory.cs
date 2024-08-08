@@ -59,6 +59,15 @@ namespace AbilityMadness.Infrastructure.Factories.UI
                 .With(x => x.isTransformMovement = true);
         }
 
+        public GameEntity CreateReloadWidget(GameEntity gameEntity)
+        {
+            return CreateEntity.Empty()
+                .AddViewPath(Constants.Prefabs.Widgets.ReloadWidget)
+                .AddTargetId(gameEntity.Id)
+                .AddWorldPosition(Vector2.one * 999)
+                .With(x => x.isTransformMovement = true);
+        }
+
         public async UniTask<GridWidget> CreateGridWidget(Transform parent)
         {
             return await _uiPool.Take<GridWidget>(Constants.Prefabs.Widgets.GridWidget, parent);
@@ -67,6 +76,11 @@ namespace AbilityMadness.Infrastructure.Factories.UI
         public async UniTask<UpgradeWidget> CreateUpgradeWidget(Transform parent)
         {
             return await _uiPool.Take<UpgradeWidget>(Constants.Prefabs.Widgets.UpgradeWidget, parent);
+        }
+
+        public async UniTask<BulletWidget> CreateBulletWidget(Transform parent)
+        {
+            return await _uiPool.Take<BulletWidget>(Constants.Prefabs.Widgets.BulletWidget, parent);
         }
 
         #region Factory

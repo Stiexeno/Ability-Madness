@@ -135,19 +135,22 @@ public static class GameComponentsLookup {
     public const int BulletIndex = 124;
     public const int BulletTypeId = 125;
     public const int FireRate = 126;
-    public const int MaxAmmoCapacity = 127;
-    public const int Ready = 128;
-    public const int Recovering = 129;
-    public const int Reloading = 130;
-    public const int ReloadTime = 131;
-    public const int Shot = 132;
-    public const int WeaponAnimator = 133;
-    public const int Weapon = 134;
-    public const int WeaponTypeId = 135;
-    public const int Player = 136;
-    public const int PlayerInTrigger = 137;
+    public const int HasReloadWidget = 127;
+    public const int MaxAmmoCapacity = 128;
+    public const int Ready = 129;
+    public const int Recovering = 130;
+    public const int Reloading = 131;
+    public const int ReloadTime = 132;
+    public const int ReloadWidget = 133;
+    public const int Shot = 134;
+    public const int Spread = 135;
+    public const int WeaponAnimator = 136;
+    public const int Weapon = 137;
+    public const int WeaponTypeId = 138;
+    public const int Player = 139;
+    public const int PlayerInTrigger = 140;
 
-    public const int TotalComponents = 138;
+    public const int TotalComponents = 141;
 
     public static readonly string[] componentNames = {
         "Collider2D",
@@ -277,12 +280,15 @@ public static class GameComponentsLookup {
         "BulletIndex",
         "BulletTypeId",
         "FireRate",
+        "HasReloadWidget",
         "MaxAmmoCapacity",
         "Ready",
         "Recovering",
         "Reloading",
         "ReloadTime",
+        "ReloadWidget",
         "Shot",
+        "Spread",
         "WeaponAnimator",
         "Weapon",
         "WeaponTypeId",
@@ -418,12 +424,15 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Weapons.Bullets.BulletIndex),
         typeof(AbilityMadness.Code.Gameplay.Weapons.Bullets.BulletTypeIdComponent),
         typeof(AbilityMadness.Code.Gameplay.Weapons.FireRate),
+        typeof(AbilityMadness.Code.Gameplay.Weapons.HasReloadWidget),
         typeof(AbilityMadness.Code.Gameplay.Weapons.MaxAmmoCapacity),
         typeof(AbilityMadness.Code.Gameplay.Weapons.Ready),
         typeof(AbilityMadness.Code.Gameplay.Weapons.Recovering),
         typeof(AbilityMadness.Code.Gameplay.Weapons.Reloading),
         typeof(AbilityMadness.Code.Gameplay.Weapons.ReloadTime),
+        typeof(AbilityMadness.Code.Gameplay.Weapons.ReloadWidgetComponent),
         typeof(AbilityMadness.Code.Gameplay.Weapons.Shot),
+        typeof(AbilityMadness.Code.Gameplay.Weapons.Spread),
         typeof(AbilityMadness.Code.Gameplay.Weapons.WeaponAnimatorComponent),
         typeof(AbilityMadness.Code.Gameplay.Weapons.WeaponComponent),
         typeof(AbilityMadness.Code.Gameplay.Weapons.WeaponTypeIdComponent),

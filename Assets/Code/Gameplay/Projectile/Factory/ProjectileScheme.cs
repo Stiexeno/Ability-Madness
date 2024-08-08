@@ -16,5 +16,6 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
         public float movementSpeed = 0.15f;
         public int spawnCount = 1;
         public int damage = 10;
+        public float spread = 0;
     }
 }

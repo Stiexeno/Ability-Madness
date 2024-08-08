@@ -1,4 +1,6 @@
-﻿using AbilityMadness.Code.Gameplay.Weapons.Systems;
+﻿using AbilityMadness.Code.Gameplay.Abilities.Systems;
+using AbilityMadness.Code.Gameplay.Weapons.Systems;
+using AbilityMadness.Code.Gameplay.Weapons.Systems.View;
 using AbilityMadness.Code.Infrastructure.Services.ECS;
 
 namespace AbilityMadness.Code.Gameplay.Weapons
@@ -10,9 +12,18 @@ namespace AbilityMadness.Code.Gameplay.Weapons
             Add(systemFactory.Create<RotateWeaponByDirectionSystem>());
             Add(systemFactory.Create<AttachWeaponToOwnerPositionSystem>());
 
-            Add(systemFactory.Create<WeaponReadySystem>());
-            Add(systemFactory.Create<WeaponTargetSystem>());
+            Add(systemFactory.Create<WeaponManualAttackReadySystem>());
+            Add(systemFactory.Create<SetWeaponShotOnReadySystem>());
+
+            //Add(systemFactory.Create<WeaponReadySystem>());
+            //Add(systemFactory.Create<WeaponTargetSystem>());
             Add(systemFactory.Create<CreateWeaponRequestSystem>());
+
+            Add(systemFactory.Create<CreateReloadWidgetSystem>());
+            Add(systemFactory.Create<RefreshReloadWidgetSystem>());
+            Add(systemFactory.Create<DestructReloadWidgetSystem>());
+
+            Add(systemFactory.Create<RefreshAmmoWidgetSystem>());
 
             Add(systemFactory.Create<IncreaseWeaponAmmoIndexSystem>());
 

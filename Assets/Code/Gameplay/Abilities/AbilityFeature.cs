@@ -8,7 +8,6 @@ namespace AbilityMadness.Code.Gameplay.Abilities
     {
         public AbilityFeature(ISystemFactory systemFactory)
         {
-            Add(systemFactory.Create<SetAbilityReadyOnManualAttackSystem>());
             Add(systemFactory.Create<SetAbilityReadyOnCooldownUpSystem>());
 
             Add(systemFactory.Create<FireballManualLaunchAbilitySystem>());

@@ -37,6 +37,14 @@ MonoBehaviour:
     m_Address: Prefabs/UI/Attachmnets/UpgradeWidget
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 34c11567121002e419e9d281ce02d4b2
+    m_Address: Prefabs/UI/Widgets/ReloadWidget
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d197656a6a4a73e46a9a4adf6e350cc0
+    m_Address: Prefabs/UI/Widgets/BulletWidget
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9f75c775787da8a4c8e7e94698c9d5b8, type: 2}
   m_SchemaSet:

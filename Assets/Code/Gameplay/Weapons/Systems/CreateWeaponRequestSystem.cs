@@ -22,7 +22,8 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Systems
                     GameMatcher.Shot,
                     GameMatcher.Direction,
                     GameMatcher.AmmoIndex,
-                    GameMatcher.Ready));
+                    GameMatcher.Ready,
+                    GameMatcher.Spread));
 
             _owners = gameContext.GetGroup(GameMatcher
                 .AllOf(
@@ -34,7 +35,8 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Systems
                     GameMatcher.Bullet,
                     GameMatcher.BulletTypeId,
                     GameMatcher.BulletIndex,
-                    GameMatcher.TargetId));
+                    GameMatcher.TargetId,
+                    GameMatcher.Damage));
         }
 
 
@@ -57,7 +59,9 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Systems
                                 weapon.Id,
                                 owner.WorldPosition,
                                 weapon.Direction,
-                                weapon.Team);
+                                weapon.Team,
+                                bullet.Damage,
+                                weapon.Spread);
                         }
                     }
                 }

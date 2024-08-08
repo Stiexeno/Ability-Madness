@@ -7,6 +7,6 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
     public interface IProjectileFactory
     {
         GameEntity CreateProjectile(ProjectileScheme scheme);
-        GameEntity CreateProjectileRequest(BulletTypeId type, int abilityId, Vector3 position, Vector3 direction, Team team);
+        GameEntity CreateProjectileRequest(BulletTypeId type, int abilityId, Vector3 position, Vector3 direction, Team team, int bulletDamage, float spread);
     }
 }

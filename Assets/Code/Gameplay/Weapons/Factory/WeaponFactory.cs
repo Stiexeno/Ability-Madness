@@ -15,13 +15,16 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Factory
         private IIdentifierService _identifierService;
         private IConfigsService _configsService;
         private IBulletFactory _bulletFactory;
+        private IUIService _uiService;
 
         [Inject]
         private void Construct(
             IIdentifierService identifierService,
             IConfigsService configsService,
-            IBulletFactory bulletFactory)
+            IBulletFactory bulletFactory,
+            IUIService uiService)
         {
+            _uiService = uiService;
             _bulletFactory = bulletFactory;
             _configsService = configsService;
             _identifierService = identifierService;
@@ -33,6 +36,9 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Factory
             var config = _configsService.GetWeaponConfig(weaponType);
 
             _bulletFactory.CreateBullets(id, config, gameEntity.Team);
+
+            var hudWindow = _uiService.Get<HudWindow>();
+            hudWindow.AmmoWidget.Setup(config.bullets.Length).Forget();
 
             return CreateEntity.Empty()
                 .AddId(id)
@@ -49,8 +55,9 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Factory
 
                 .AddReloadTime(config.reloadTime)
                 .AddFireRate(config.fireRate)
-                .AddAmmoCapacity(config.ammoCapacity)
-                .AddMaxAmmoCapacity(config.ammoCapacity)
+                .AddSpread(config.spread)
+                .AddAmmoCapacity(config.bullets.Length)
+                .AddMaxAmmoCapacity(config.bullets.Length)
                 .AddAmmoIndex(0);
         }
     }
