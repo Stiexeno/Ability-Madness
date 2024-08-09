@@ -1,6 +1,4 @@
-﻿using AbilityMadness.Code.Gameplay.Abilities;
-using AbilityMadness.Code.Gameplay.Abilities.Factory;
-using AbilityMadness.Code.Gameplay.Enemy.Waves.Factory;
+﻿using AbilityMadness.Code.Gameplay.Enemy.Waves.Factory;
 using AbilityMadness.Code.Gameplay.Round.Factory;
 using AbilityMadness.Code.Gameplay.Weapons;
 using AbilityMadness.Code.Gameplay.Weapons.Factory;
@@ -22,7 +20,6 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
         private IApplicationStateMachine _applicationStateMachine;
         private IPlayerFactory _playerFactory;
         private IUIService _iuiService;
-        private IAbilityFactory _abilityFactory;
         private ILoadingCurtain _loadingCurtain;
         private IWaveFactory _waveFactory;
         private IWeaponFactory _weaponFactory;
@@ -36,7 +33,6 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 			IUIService iuiService,
 			IApplicationStateMachine applicationStateMachine,
             IPlayerFactory playerFactory,
-            IAbilityFactory abilityFactory,
             ILoadingCurtain loadingCurtain,
             IWaveFactory waveFactory,
             IWeaponFactory weaponFactory,
@@ -48,7 +44,6 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
             _weaponFactory = weaponFactory;
             _waveFactory = waveFactory;
             _loadingCurtain = loadingCurtain;
-            _abilityFactory = abilityFactory;
             _iuiService = iuiService;
             _playerFactory = playerFactory;
             _applicationStateMachine = applicationStateMachine;
@@ -85,7 +80,6 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
         private void CreatePlayer()
         {
             var player = _playerFactory.CreatePlayer(Vector3.zero);
-            _abilityFactory.CreateAbility(player, AbilityTypeId.Fireball);
 
             _weaponFactory.CreateWeapon(player, WeaponTypeId.Revolver);
 

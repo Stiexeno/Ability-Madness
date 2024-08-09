@@ -1,5 +1,4 @@
 using AbilityMadness.Code.Extensions;
-using AbilityMadness.Code.Gameplay.Abilities.Factory;
 using AbilityMadness.Code.Gameplay.Enemy.Factory;
 using AbilityMadness.Code.Gameplay.Weapons.Factory;
 using Entitas;
@@ -10,17 +9,14 @@ namespace AbilityMadness.Code.Gameplay.Enemy.Waves.Systems
     {
         private IGroup<GameEntity> _waves;
         private IEnemyFactory _enemyFactory;
-        private IAbilityFactory _abilityFactory;
         private IWeaponFactory _weaponFactory;
 
         public SpawnEnemyWaveSystem(
             GameContext gameContext,
             IEnemyFactory enemyFactory,
-            IAbilityFactory abilityFactory,
             IWeaponFactory weaponFactory)
         {
             _weaponFactory = weaponFactory;
-            _abilityFactory = abilityFactory;
             _enemyFactory = enemyFactory;
             _waves = gameContext.GetGroup(GameMatcher
                 .AllOf(

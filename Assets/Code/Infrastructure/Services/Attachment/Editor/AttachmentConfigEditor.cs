@@ -44,9 +44,6 @@ namespace AbilityMadness.Code.Infrastructure.Services.Assembler.Editor
                 {
                     case AttachmentTypeId.Unknown:
                         break;
-                    case AttachmentTypeId.Ability:
-                        _config.abilityType = (AbilityTypeId)EditorGUILayout.EnumPopup("Ability Type", _config.abilityType);
-                        break;
                     case AttachmentTypeId.Modifier:
                         _config.modifierType = (ModifierTypeId)EditorGUILayout.EnumPopup("Modifier Type", _config.modifierType);
                         break;

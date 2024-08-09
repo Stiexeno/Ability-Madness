@@ -1,6 +1,4 @@
-﻿using AbilityMadness.Code.Gameplay.Abilities;
-using AbilityMadness.Code.Gameplay.Abilities.Configs;
-using AbilityMadness.Code.Gameplay.Weapons;
+﻿using AbilityMadness.Code.Gameplay.Weapons;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Configs;
 using AbilityMadness.Code.Gameplay.Weapons.Configs;
 using AbilityMadness.Code.Infrastructure.Services.Assembler;
@@ -17,7 +15,6 @@ namespace AbilityMadness.Infrastructure.Services.Configs
 	{
 		private IAssets _assets;
 
-        public AbilityConfig[] AbilityConfigs { get; private set; }
         public AttachmentConfig[] AttachmentConfigs { get; private set; }
         public WorldBuilderConfig[] WorldBuilderConfigs { get; private set; }
         public WeaponConfig[] WeaponConfigs { get; private set; }
@@ -31,7 +28,6 @@ namespace AbilityMadness.Infrastructure.Services.Configs
 
 		private async UniTaskVoid Load()
 		{
-            AbilityConfigs = _assets.GetAssetsByLabel<AbilityConfig>(Constants.Configs.AbilityConfigLabel);
             AttachmentConfigs = _assets.GetAssetsByLabel<AttachmentConfig>(Constants.Configs.AttachmentConfigLabel);
             WorldBuilderConfigs = _assets.GetAssetsByLabel<WorldBuilderConfig>(Constants.Configs.WorldBuilderConfigLabel);
             WeaponConfigs = _assets.GetAssetsByLabel<WeaponConfig>(Constants.Configs.WeaponConfigLabel);
@@ -42,20 +38,6 @@ namespace AbilityMadness.Infrastructure.Services.Configs
         {
             var cursorConfig = await _assets.LoadAsync<CursorConfig>(Constants.Configs.CursorConfig);
             return cursorConfig.GetCursor(type);
-        }
-
-        public AbilityConfig GetAbilityConfig(AbilityTypeId type)
-        {
-            foreach (var abilityConfig in AbilityConfigs)
-            {
-                if (abilityConfig.type == type)
-                {
-                    return abilityConfig;
-                }
-            }
-
-            Debug.LogError($"AbilityConfig with type {type} not found");
-            return null;
         }
 
         public WeaponConfig GetWeaponConfig(WeaponTypeId type)

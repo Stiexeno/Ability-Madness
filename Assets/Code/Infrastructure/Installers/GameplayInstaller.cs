@@ -1,5 +1,4 @@
-﻿using AbilityMadness.Code.Gameplay.Abilities.Factory;
-using AbilityMadness.Code.Gameplay.Camera.Factory;
+﻿using AbilityMadness.Code.Gameplay.Camera.Factory;
 using AbilityMadness.Code.Gameplay.Chest.Factory;
 using AbilityMadness.Code.Gameplay.EffectApplication.Factory;
 using AbilityMadness.Code.Gameplay.Enemy.Factory;
@@ -76,9 +75,6 @@ namespace AbilityMadness
                 .AsSingle();
 
             Container.BindInterfacesTo<WaveFactory>()
-                .AsSingle();
-
-            Container.BindInterfacesTo<AbilityFactory>()
                 .AsSingle();
 
             Container.BindInterfacesTo<ModifierFactory>()

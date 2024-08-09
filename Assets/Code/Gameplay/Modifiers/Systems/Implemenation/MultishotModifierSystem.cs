@@ -21,7 +21,6 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation
 
             _requests = gameContext.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.ProducedByAbility,
                     GameMatcher.ProducerId,
                     GameMatcher.SpawnAmount));
         }

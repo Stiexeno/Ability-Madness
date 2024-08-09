@@ -16,7 +16,6 @@ namespace AbilityMadness.Code.Gameplay.Modifiers
             Add(systemFactory.Create<SpeedModifierSystem>());
             Add(systemFactory.Create<MultishotModifierSystem>());
 
-            Add(systemFactory.Create<RicochetModifierSystem>());
             Add(systemFactory.Create<ProjectileRicochetSystem>());
         }
     }

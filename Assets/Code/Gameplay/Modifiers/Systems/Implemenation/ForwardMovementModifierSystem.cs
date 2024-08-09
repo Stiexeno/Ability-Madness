@@ -20,8 +20,7 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation
 
             _abilityProducedEntities = gameContext.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.ProducerId,
-                    GameMatcher.ProducedByAbility)
+                    GameMatcher.ProducerId)
                 .NoneOf(
                     GameMatcher.ForwardMovement));
         }

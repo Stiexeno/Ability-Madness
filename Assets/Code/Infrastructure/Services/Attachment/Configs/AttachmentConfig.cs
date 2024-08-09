@@ -12,7 +12,6 @@ namespace AbilityMadness.Code.Infrastructure.Services.Assembler
         [HideInInspector] public Array2DBool shape;
         [HideInInspector] public AttachmentTypeId type;
 
-        [HideInInspector] public AbilityTypeId abilityType;
         [HideInInspector] public ModifierTypeId modifierType;
 
         public Sprite icon;
