@@ -15,6 +15,6 @@ namespace AbilityMadness.Infrastructure.Factories.UI
         UniTask<GridWidget> CreateGridWidget(Transform parent);
         UniTask<UpgradeWidget> CreateUpgradeWidget(Transform parent);
         GameEntity CreateReloadWidget(GameEntity gameEntity);
-        UniTask<BulletWidget> CreateBulletWidget(Transform parent);
+        UniTask<SmallBulletWidget> CreateBulletWidget(Transform parent);
     }
 }

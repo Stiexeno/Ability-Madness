@@ -78,9 +78,9 @@ namespace AbilityMadness.Infrastructure.Factories.UI
             return await _uiPool.Take<UpgradeWidget>(Constants.Prefabs.Widgets.UpgradeWidget, parent);
         }
 
-        public async UniTask<BulletWidget> CreateBulletWidget(Transform parent)
+        public async UniTask<SmallBulletWidget> CreateBulletWidget(Transform parent)
         {
-            return await _uiPool.Take<BulletWidget>(Constants.Prefabs.Widgets.BulletWidget, parent);
+            return await _uiPool.Take<SmallBulletWidget>(Constants.Prefabs.Widgets.SmallBulletWidget, parent);
         }
 
         #region Factory

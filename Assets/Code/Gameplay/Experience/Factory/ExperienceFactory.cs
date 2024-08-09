@@ -34,7 +34,7 @@ namespace AbilityMadness.Code.Gameplay.Experience.Factory
                 .AddId(_identifierService.Next())
                 .AddViewPath(Constants.Prefabs.Experiences.Green)
                 .AddExperienceTypeId(ExperienceTypeId.Green)
-                .AddExperience(10)
+                .AddExperience(1)
                 .AddMovementSpeed(0.1f)
 
                 .With(x => x.isTransformMovement = true)

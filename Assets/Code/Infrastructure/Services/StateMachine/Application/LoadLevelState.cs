@@ -1,6 +1,7 @@
 ﻿using AbilityMadness.Code.Gameplay.Abilities;
 using AbilityMadness.Code.Gameplay.Abilities.Factory;
 using AbilityMadness.Code.Gameplay.Enemy.Waves.Factory;
+using AbilityMadness.Code.Gameplay.Round.Factory;
 using AbilityMadness.Code.Gameplay.Weapons;
 using AbilityMadness.Code.Gameplay.Weapons.Factory;
 using AbilityMadness.Code.Infrastructure.Services.WorldBuilder.Configs;
@@ -26,6 +27,7 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
         private IWaveFactory _waveFactory;
         private IWeaponFactory _weaponFactory;
         private IWorldBuilderService _worldBuilderService;
+        private IRoundFactory _roundFactory;
 
         [Inject]
 		private void Construct(
@@ -38,8 +40,10 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
             ILoadingCurtain loadingCurtain,
             IWaveFactory waveFactory,
             IWeaponFactory weaponFactory,
-            IWorldBuilderService worldBuilderService)
+            IWorldBuilderService worldBuilderService,
+            IRoundFactory roundFactory)
 		{
+            _roundFactory = roundFactory;
             _worldBuilderService = worldBuilderService;
             _weaponFactory = weaponFactory;
             _waveFactory = waveFactory;
@@ -86,6 +90,7 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
             _weaponFactory.CreateWeapon(player, WeaponTypeId.Revolver);
 
             _waveFactory.CreateWave();
+            _roundFactory.CreateRound(20 * 60);
         }
     }
 }

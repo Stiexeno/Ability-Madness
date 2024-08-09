@@ -35,12 +35,13 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Systems
 
                 if (_owners.ContainsEntity(owner))
                 {
-                    if (owner.TargetsInSight.Count > 0)
-                    {
-                        var closestTarget = owner.GetClosestTarget();
-                        var direction = (closestTarget.WorldPosition - owner.WorldPosition).normalized;
-                        weapon.WeaponAnimator.SetDirection(direction);
-                    }
+                    weapon.WeaponAnimator.SetDirection(owner.LookDirection);
+
+                    // if (owner.TargetsInSight.Count > 0)
+                    // {
+                    //     var closestTarget = owner.GetClosestTarget();
+                    //     var direction = (closestTarget.WorldPosition - owner.WorldPosition).normalized;
+                    // }
                 }
             }
         }

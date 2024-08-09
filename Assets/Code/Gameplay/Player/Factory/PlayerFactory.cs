@@ -1,5 +1,6 @@
 ﻿using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Extensions;
+using AbilityMadness.Code.Gameplay.Experience.Services;
 using AbilityMadness.Code.Gameplay.Health;
 using AbilityMadness.Code.Gameplay.Movement;
 using AbilityMadness.Code.Gameplay.Vision;
@@ -15,9 +16,11 @@ namespace AbilityMadness.Factory
 
         private IIdentifierService _identifierService;
         private IAssets _assets;
+        private IExperienceCalculatorService _experienceCalculatorService;
 
-        public PlayerFactory(IIdentifierService identifierService, IAssets assets)
+        public PlayerFactory(IIdentifierService identifierService, IAssets assets, IExperienceCalculatorService experienceCalculatorService)
         {
+            _experienceCalculatorService = experienceCalculatorService;
             _assets = assets;
             _identifierService = identifierService;
 
@@ -44,7 +47,7 @@ namespace AbilityMadness.Factory
 
                 .AddPickupRadius(4f)
                 .AddExperience(0)
-                .AddMaxExperience(100)
+                .AddMaxExperience(_experienceCalculatorService.CalculateMaxExperience(1))
                 .AddLevel(1)
 
                 .AddHealth(1000)

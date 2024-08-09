@@ -1,4 +1,3 @@
-using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Experience.Services
 {
@@ -9,14 +8,37 @@ namespace AbilityMadness.Code.Gameplay.Experience.Services
 
         public int CalculateMaxExperience(int level)
         {
-            int totalXP = 0;
+            return CalculateRequiredXP(level);
+        }
 
-            for (int i = 1; i <= level; i++)
+        private int CalculateRequiredXP(int level)
+        {
+            if (level >= 1 && level <= 19)
             {
-                totalXP += Mathf.FloorToInt(baseExperience * Mathf.Pow(level, experienceMultiplier));
+                return 10 * level - 5;
             }
 
-            return totalXP;
+            if (level == 20)
+            {
+                return 16 * level - 8;
+            }
+
+            if (level >= 21 && level <= 39)
+            {
+                return 13 * level - 6;
+            }
+
+            if (level >= 40 && level <= 59)
+            {
+                return 16 * level - 8;
+            }
+
+            if (level >= 60)
+            {
+                return level * level;
+            }
+
+            return 0; // In case of an invalid level input
         }
     }
 }

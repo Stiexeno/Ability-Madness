@@ -42,7 +42,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: d197656a6a4a73e46a9a4adf6e350cc0
-    m_Address: Prefabs/UI/Widgets/BulletWidget
+    m_Address: Prefabs/UI/Widgets/SmallBulletWidget
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

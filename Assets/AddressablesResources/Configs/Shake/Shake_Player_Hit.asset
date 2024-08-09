@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Shake_Player_Hit
   m_EditorClassIdentifier: 
   ignoreGlobalCap: 0
-  strength: {x: 5, y: 5, z: 0}
+  strength: {x: 2, y: 2, z: 0}
   duration: 0.2
-  vibration: 2
+  vibration: 1
   frequencyCurve:
     serializedVersion: 2
     m_Curve:
@@ -91,7 +91,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  strengthRandomizer: {x: 0, y: 0, z: 0}
+  strengthRandomizer: {x: 1, y: 1, z: 0}
   powerBoostCurve:
     serializedVersion: 2
     m_Curve:

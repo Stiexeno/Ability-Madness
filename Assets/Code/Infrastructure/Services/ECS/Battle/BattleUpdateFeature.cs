@@ -17,6 +17,7 @@ using AbilityMadness.Code.Gameplay.Lifetime;
 using AbilityMadness.Code.Gameplay.Modifiers;
 using AbilityMadness.Code.Gameplay.Movement;
 using AbilityMadness.Code.Gameplay.Projectile;
+using AbilityMadness.Code.Gameplay.Round;
 using AbilityMadness.Code.Gameplay.TargetCollection;
 using AbilityMadness.Code.Gameplay.Vision;
 using AbilityMadness.Code.Gameplay.Weapons;
@@ -55,6 +56,8 @@ namespace AbilityMadness.Code.Infrastructure.Services.ECS
             Add(systemFactory.Create<WaveFeature>());
             Add(systemFactory.Create<EnemyFeature>());
             Add(systemFactory.Create<ExperienceFeature>());
+
+            Add(systemFactory.Create<RoundFeature>());
 
             Add(systemFactory.Create<CollisionFeature>());
             Add(systemFactory.Create<DestructFeature>());

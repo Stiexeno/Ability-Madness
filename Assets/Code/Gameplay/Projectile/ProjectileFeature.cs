@@ -9,6 +9,9 @@ namespace AbilityMadness.Code.Gameplay.Projectile
         {
             Add(systemFactory.Create<CreateProjectileByRequestSystem>());
             Add(systemFactory.Create<FaceProjectileToDirectionSystem>());
+
+            Add(systemFactory.Create<IncreaseProjectilePierceOnDamageDealtSystem>());
+            Add(systemFactory.Create<DestructProjectileOnPierceSystem>());
         }
     }
 }

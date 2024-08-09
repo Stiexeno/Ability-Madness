@@ -15,6 +15,8 @@ namespace AbilityMadness.Code.Gameplay.Weapons
 
     [Game] public class FireRate : IComponent { public float Value; }
     [Game] public class Spread : IComponent { public float Value; }
+    [Game] public class Pierce : IComponent { public int Value; }
+    [Game] public class PiercedAmount : IComponent { public int Value; }
 
     [Game] public class ReloadTime : IComponent { public float Value; }
     [Game] public class Reloading : IComponent {  }

@@ -1,13 +1,11 @@
 ﻿using System;
 using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Extensions;
-using AbilityMadness.Code.Gameplay.Health;
 using AbilityMadness.Code.Gameplay.Lifetime;
 using AbilityMadness.Code.Gameplay.Movement;
 using AbilityMadness.Code.Gameplay.TargetCollection;
 using AbilityMadness.Code.Gameplay.Weapons;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
-using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Projectile.Factory
 {
@@ -32,6 +30,8 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
                     return CreateRegularProjectile(scheme);
                 case BulletTypeId.Hard:
                     return CreateHardProjectile(scheme);
+                case BulletTypeId.Ricochet:
+                    return CreateRicochetProjectile(scheme);
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -39,32 +39,11 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
 
         // Requests
 
-        public GameEntity CreateProjectileRequest(
-            BulletTypeId type,
-            int abilityId,
-            Vector3 position,
-            Vector3 direction,
-            Team team,
-            int bulletDamage,
-            float spread)
+        public GameEntity CreateProjectileRequest(ProjectileScheme scheme)
         {
-            var projectileScheme = new ProjectileScheme
-            {
-                type = type,
-                producerId = abilityId,
-                position = position,
-                direction = direction,
-                team = team,
-                damage = bulletDamage,
-                movementSpeed = 0.15f,
-                spawnCount = 1,
-                spread = spread
-            };
-
             return CreateEntity.Empty()
                 .AddId(_identifierService.Next())
-                .AddProjectileRequest(projectileScheme);
-
+                .AddProjectileRequest(scheme);
         }
 
         // Implementations
@@ -91,6 +70,19 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
                 .AddEffectViewPath(Constants.Prefabs.Effects.FireballHitEffect);
         }
 
+        public GameEntity CreateRicochetProjectile(ProjectileScheme scheme)
+        {
+            return CreateEmptyProjectile(scheme)
+                .AddViewPath(Constants.Prefabs.Projectiles.Ricochet)
+                .CollectTargetsWithSphereCast(0.3f)
+                .With(x => x.isFaceToDirection = true)
+                .SetForwardMovement()
+                .With(x => x.isRicochet = true)
+                .AddRicochetHitCount(15)
+
+                .AddEffectViewPath(Constants.Prefabs.Effects.FireballHitEffect);
+        }
+
         private GameEntity CreateEmptyProjectile(ProjectileScheme scheme)
         {
             return CreateEntity.Empty()
@@ -106,7 +98,9 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
                 .With(x => x.isTransformMovement = true)
                 .AddDirection(scheme.direction)
                 .AddWorldPosition(scheme.position)
-                .AddMovementSpeed(scheme.movementSpeed);
+                .AddMovementSpeed(scheme.movementSpeed)
+                .AddPierce(scheme.pierce)
+                .AddPiercedAmount(0);
         }
     }
 }

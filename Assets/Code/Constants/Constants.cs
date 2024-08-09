@@ -24,13 +24,15 @@ namespace AbilityMadness
                 public const string ReloadWidget = "Prefabs/UI/Widgets/ReloadWidget";
                 public const string GridWidget = "Prefabs/UI/Attachmnets/GridWidget";
                 public const string UpgradeWidget = "Prefabs/UI/Attachmnets/UpgradeWidget";
-                public const string BulletWidget = "Prefabs/UI/Widgets/BulletWidget";
                 public const string AttachmentWidget = "Prefabs/UI/Attachmnets/AttachmentWidget";
+                public const string SmallBulletWidget = "Prefabs/UI/Widgets/SmallBulletWidget";
             }
 
             public static class Projectiles
             {
                 public const string Fireball = "Prefabs/Projectiles/Projectile_Fireball";
+                public const string Ricochet = "Projectiles/Ricochet/Projectile_Bullet_Ricochet";
+
                 public const string Tornado = "Prefabs/Projectiles/Tornado/Projectile_Tornado";
                 public const string Bullet = "Prefabs/Projectiles/Bullet/Projectile_Bullet";
             }
@@ -68,8 +70,10 @@ namespace AbilityMadness
             public const string AttachmentConfigLabel = "config_attachment";
             public const string WorldBuilderConfigLabel = "config_world";
             public const string WeaponConfigLabel = "config_weapon";
+            public const string BulletConfigLabel = "config_bullet";
 
             public const string ShakePlayerHit = "Configs/Shake/Shake_Player_Hit";
+            public const string ShakeShoot = "Configs/Shake/Shake_Shoot";
         }
 
         public static class Layers

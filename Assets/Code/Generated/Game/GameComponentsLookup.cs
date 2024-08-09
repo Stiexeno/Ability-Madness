@@ -119,38 +119,41 @@ public static class GameComponentsLookup {
     public const int Projectile = 108;
     public const int ProjectileRequest = 109;
     public const int ProjectileTypeId = 110;
-    public const int ProccessedTargets = 111;
-    public const int SphereCast = 112;
-    public const int SphereCastRadius = 113;
-    public const int TargetBuffer = 114;
-    public const int TargetsInSight = 115;
-    public const int Vision = 116;
-    public const int VisionInterval = 117;
-    public const int VisionLayer = 118;
-    public const int VisionRadius = 119;
-    public const int VisionTimer = 120;
-    public const int AmmoCapacity = 121;
-    public const int AmmoIndex = 122;
-    public const int Bullet = 123;
-    public const int BulletIndex = 124;
-    public const int BulletTypeId = 125;
-    public const int FireRate = 126;
-    public const int HasReloadWidget = 127;
-    public const int MaxAmmoCapacity = 128;
-    public const int Ready = 129;
-    public const int Recovering = 130;
-    public const int Reloading = 131;
-    public const int ReloadTime = 132;
-    public const int ReloadWidget = 133;
-    public const int Shot = 134;
-    public const int Spread = 135;
-    public const int WeaponAnimator = 136;
-    public const int Weapon = 137;
-    public const int WeaponTypeId = 138;
-    public const int Player = 139;
-    public const int PlayerInTrigger = 140;
+    public const int RoundTime = 111;
+    public const int ProccessedTargets = 112;
+    public const int SphereCast = 113;
+    public const int SphereCastRadius = 114;
+    public const int TargetBuffer = 115;
+    public const int TargetsInSight = 116;
+    public const int Vision = 117;
+    public const int VisionInterval = 118;
+    public const int VisionLayer = 119;
+    public const int VisionRadius = 120;
+    public const int VisionTimer = 121;
+    public const int AmmoCapacity = 122;
+    public const int AmmoIndex = 123;
+    public const int Bullet = 124;
+    public const int BulletIndex = 125;
+    public const int BulletTypeId = 126;
+    public const int FireRate = 127;
+    public const int HasReloadWidget = 128;
+    public const int MaxAmmoCapacity = 129;
+    public const int Pierce = 130;
+    public const int PiercedAmount = 131;
+    public const int Ready = 132;
+    public const int Recovering = 133;
+    public const int Reloading = 134;
+    public const int ReloadTime = 135;
+    public const int ReloadWidget = 136;
+    public const int Shot = 137;
+    public const int Spread = 138;
+    public const int WeaponAnimator = 139;
+    public const int Weapon = 140;
+    public const int WeaponTypeId = 141;
+    public const int Player = 142;
+    public const int PlayerInTrigger = 143;
 
-    public const int TotalComponents = 141;
+    public const int TotalComponents = 144;
 
     public static readonly string[] componentNames = {
         "Collider2D",
@@ -264,6 +267,7 @@ public static class GameComponentsLookup {
         "Projectile",
         "ProjectileRequest",
         "ProjectileTypeId",
+        "RoundTime",
         "ProccessedTargets",
         "SphereCast",
         "SphereCastRadius",
@@ -282,6 +286,8 @@ public static class GameComponentsLookup {
         "FireRate",
         "HasReloadWidget",
         "MaxAmmoCapacity",
+        "Pierce",
+        "PiercedAmount",
         "Ready",
         "Recovering",
         "Reloading",
@@ -408,6 +414,7 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Projectile.Projectile),
         typeof(AbilityMadness.Code.Gameplay.Projectile.ProjectileRequest),
         typeof(AbilityMadness.Code.Gameplay.Projectile.ProjectileTypeIdComponent),
+        typeof(AbilityMadness.Code.Gameplay.Round.RoundTime),
         typeof(AbilityMadness.Code.Gameplay.TargetCollection.ProccessedTargets),
         typeof(AbilityMadness.Code.Gameplay.TargetCollection.SphereCast),
         typeof(AbilityMadness.Code.Gameplay.TargetCollection.SphereCastRadius),
@@ -426,6 +433,8 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Weapons.FireRate),
         typeof(AbilityMadness.Code.Gameplay.Weapons.HasReloadWidget),
         typeof(AbilityMadness.Code.Gameplay.Weapons.MaxAmmoCapacity),
+        typeof(AbilityMadness.Code.Gameplay.Weapons.Pierce),
+        typeof(AbilityMadness.Code.Gameplay.Weapons.PiercedAmount),
         typeof(AbilityMadness.Code.Gameplay.Weapons.Ready),
         typeof(AbilityMadness.Code.Gameplay.Weapons.Recovering),
         typeof(AbilityMadness.Code.Gameplay.Weapons.Reloading),

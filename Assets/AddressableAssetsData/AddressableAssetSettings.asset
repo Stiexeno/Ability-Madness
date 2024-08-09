@@ -54,10 +54,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 353f50ac012dfc845a5b266937168a07, type: 2}
   - {fileID: 11400000, guid: 7e880b4776c77214383828df56072bfb, type: 2}
   - {fileID: 11400000, guid: 11f42b34099a611488e0ffbc648366c0, type: 2}
+  - {fileID: 11400000, guid: 147ce339573d73b49b1fc8c97dc3504b, type: 2}
+  - {fileID: 11400000, guid: d511670c482a05b4fa7856396d36762c, type: 2}
   - {fileID: 11400000, guid: 5abdb56faa687c848ae1e15e5f1e383a, type: 2}
   - {fileID: 11400000, guid: ee2915de2a355c5498b840e291e93550, type: 2}
   - {fileID: 11400000, guid: f75cec9b5b60d3e4b9b37a15028dec76, type: 2}
-  - {fileID: 11400000, guid: d511670c482a05b4fa7856396d36762c, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -104,6 +105,7 @@ MonoBehaviour:
     - config_attachment
     - config_world
     - config_weapon
+    - config_bullet
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: acc3aa47f944f9f46a715273a7230e94, type: 2}

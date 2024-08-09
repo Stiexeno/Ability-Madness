@@ -2,7 +2,7 @@
 
 namespace AbilityMadness.Code.Gameplay.Abilities.Configs
 {
-    [CreateAssetMenu(fileName = nameof(AbilityConfig), menuName = Constants.Root + "/AbilityMadness/AbilityConfig")]
+    [CreateAssetMenu(fileName = nameof(AbilityConfig), menuName = Constants.Root + "/Configs/AbilityConfig")]
     public sealed class AbilityConfig : ScriptableObject
     {
         public AbilityTypeId type;

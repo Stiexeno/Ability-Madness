@@ -1,5 +1,7 @@
-﻿using AbilityMadness.Code.Gameplay.Weapons.Registrars;
+﻿using System.Collections;
+using AbilityMadness.Code.Gameplay.Weapons.Registrars;
 using AbilityMadness.Code.Infrastructure.View;
+using Animancer;
 using UnityEngine;
 using SF = UnityEngine.SerializeField;
 
@@ -9,6 +11,8 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Behaviours
     public class WeaponAnimator : EntityComponent
     {
         [SF] private SpriteRenderer weapon;
+        [SF] private AnimancerComponent animancer;
+        [SF] private ClipTransition reloadClip;
 
         private Vector2 _direction;
 
@@ -27,6 +31,20 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Behaviours
 
             float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
             weapon.flipY = angle > 90 || angle < -90;
+        }
+
+        public void Reload(float duration)
+        {
+            StartCoroutine(ReloadCoroutine(duration));
+        }
+
+        private IEnumerator ReloadCoroutine(float duration)
+        {
+            animancer.gameObject.SetActive(true);
+            animancer.Play(reloadClip);
+            yield return new WaitForSeconds(duration);
+
+            animancer.gameObject.SetActive(false);
         }
     }
 }

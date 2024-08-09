@@ -17,5 +17,6 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
         public int spawnCount = 1;
         public int damage = 10;
         public float spread = 0;
+        public int pierce = 1;
     }
 }

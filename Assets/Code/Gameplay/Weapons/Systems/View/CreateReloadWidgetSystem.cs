@@ -23,7 +23,9 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Systems.View
             _weapons = gameContext.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Weapon,
-                    GameMatcher.Reloading));
+                    GameMatcher.Reloading,
+                    GameMatcher.WeaponAnimator,
+                    GameMatcher.ReloadTime));
 
             _owners = gameContext.GetGroup(GameMatcher
                 .AllOf(
@@ -42,6 +44,8 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Systems.View
                 {
                     _uiFactory.CreateReloadWidget(owner);
                     owner.HasReloadWidget = true;
+
+                    weapon.WeaponAnimator.Reload(weapon.ReloadTime);
                 }
             }
         }

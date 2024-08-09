@@ -12,7 +12,7 @@ namespace AbilityMadness.Code.Infrastructure.Services.UI.Widgets
 
         private int _maxAmmoCapacity;
 
-        private BulletWidget[] bullets;
+        private SmallBulletWidget[] bullets;
         private IUIFactory _uiFactory;
 
         [Inject]
@@ -24,7 +24,7 @@ namespace AbilityMadness.Code.Infrastructure.Services.UI.Widgets
         public async UniTaskVoid Setup(int maxAmmoCapacity)
         {
             _maxAmmoCapacity = maxAmmoCapacity;
-            bullets = new BulletWidget[maxAmmoCapacity];
+            bullets = new SmallBulletWidget[maxAmmoCapacity];
 
             for (int i = 0; i < maxAmmoCapacity; i++)
             {

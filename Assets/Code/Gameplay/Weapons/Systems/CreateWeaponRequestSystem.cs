@@ -1,4 +1,3 @@
-using System;
 using AbilityMadness.Code.Gameplay.Projectile.Factory;
 using Entitas;
 
@@ -54,14 +53,21 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Systems
                     {
                         if (bullet.BulletIndex == weapon.AmmoIndex)
                         {
-                            _projectileFactory.CreateProjectileRequest(
-                                bullet.BulletTypeId,
-                                weapon.Id,
-                                owner.WorldPosition,
-                                weapon.Direction,
-                                weapon.Team,
-                                bullet.Damage,
-                                weapon.Spread);
+                            var projectileScheme = new ProjectileScheme
+                            {
+                                type = bullet.BulletTypeId,
+                                producerId = weapon.Id,
+                                position = owner.WorldPosition,
+                                direction = weapon.Direction,
+                                team = weapon.Team,
+                                damage = bullet.Damage,
+                                movementSpeed = bullet.MovementSpeed,
+                                spawnCount = 1,
+                                spread = weapon.Spread,
+                                pierce = bullet.Pierce
+                            };
+
+                            _projectileFactory.CreateProjectileRequest(projectileScheme);
                         }
                     }
                 }

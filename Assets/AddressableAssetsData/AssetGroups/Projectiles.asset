@@ -21,8 +21,8 @@ MonoBehaviour:
     m_Address: Prefabs/Projectiles/Projectile_Fireball
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 712de92f2bfd30744ae9bc1b924b439d
-    m_Address: Prefabs/Projectiles/Arrow/Projectile_Arrow
+  - m_GUID: 0919512cebcc86d48ab1fdecbbf1ec54
+    m_Address: Projectiles/Ricochet/Projectile_Bullet_Ricochet
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: cdb610c5365020742aa6607b9682015f

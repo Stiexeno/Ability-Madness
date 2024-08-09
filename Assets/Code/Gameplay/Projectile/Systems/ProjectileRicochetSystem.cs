@@ -6,19 +6,19 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation.Ricochet
 {
     public class ProjectileRicochetSystem : IExecuteSystem
     {
-        private const float RicochetDistance = 8f;
+        private const float RicochetDistance = 20f;
 
         private readonly List<GameEntity> _buffer = new(32);
-        private IGroup<GameEntity> _producedEntities;
+        private IGroup<GameEntity> _projectiles;
         private IGroup<GameEntity> _targets;
         private IPhysicsService _physicsService;
 
         public ProjectileRicochetSystem(GameContext gameContext, IPhysicsService physicsService)
         {
             _physicsService = physicsService;
-            _producedEntities = gameContext.GetGroup(GameMatcher
+            _projectiles = gameContext.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.ProducedByAbility,
+                    GameMatcher.Projectile,
                     GameMatcher.Ricochet,
                     GameMatcher.RicochetHitCount,
                     GameMatcher.Direction,
@@ -35,27 +35,26 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation.Ricochet
 
         public void Execute()
         {
-            foreach (var producedEntity in _producedEntities.GetEntities(_buffer))
+            foreach (var projectile in _projectiles.GetEntities(_buffer))
             {
                 var hits =  _physicsService.CircleCast(
-                    producedEntity.WorldPosition,
+                    projectile.WorldPosition,
                     RicochetDistance,
                     ~0);
 
                 foreach (var hit in hits)
                 {
-                    if (_targets.ContainsEntity(hit) && hit.Team != producedEntity.Team)
+                    if (_targets.ContainsEntity(hit) && hit.Team != projectile.Team)
                     {
-                        var direction = hit.WorldPosition - producedEntity.WorldPosition;
+                        var direction = hit.WorldPosition - projectile.WorldPosition;
                         direction.Normalize();
 
-                        producedEntity.ReplaceDirection(direction);
-                        producedEntity.MovementSpeed *= 1.2f;
-                        producedEntity.RicochetHitCount--;
+                        projectile.ReplaceDirection(direction);
+                        projectile.RicochetHitCount--;
 
-                        if (producedEntity.RicochetHitCount <= 0)
+                        if (projectile.RicochetHitCount <= 0)
                         {
-                            producedEntity.isRicochet = false;
+                            projectile.isRicochet = false;
                         }
 
                         break;
