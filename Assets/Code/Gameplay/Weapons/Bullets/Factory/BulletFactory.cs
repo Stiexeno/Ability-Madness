@@ -1,8 +1,6 @@
-using System;
 using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Extensions;
 using AbilityMadness.Code.Gameplay.Health;
-using AbilityMadness.Code.Gameplay.Modifiers.Factory;
 using AbilityMadness.Code.Gameplay.Weapons.Configs;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
 using AbilityMadness.Infrastructure.Services.Configs;
@@ -13,11 +11,9 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Bullets.Factory
     {
         private IIdentifierService _identifierService;
         private IConfigsService _configsService;
-        private IModifierFactory _modifierFactory;
 
-        public BulletFactory(IIdentifierService identifierService, IConfigsService configsService, IModifierFactory modifierFactory)
+        public BulletFactory(IIdentifierService identifierService, IConfigsService configsService)
         {
-            _modifierFactory = modifierFactory;
             _configsService = configsService;
             _identifierService = identifierService;
         }
@@ -57,16 +53,8 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Bullets.Factory
                 .With(x => x.isBullet = true)
                 .AddBulletTypeId(bulletTypeId)
                 .AddTeam(team)
-                .AddDamage(config.damage)
-                .AddPierce(config.pierce)
-                .AddMovementSpeed(config.movementSpeed)
 
                 .AddBulletIndex(index);
-
-            // foreach (var modifier in config.modifiers)
-            // {
-            //     _modifierFactory.CreateModifier(bullet, modifier.type, modifier.value);
-            // }
 
             return bullet;
         }

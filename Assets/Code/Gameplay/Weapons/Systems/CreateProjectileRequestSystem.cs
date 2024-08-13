@@ -55,7 +55,7 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Systems
                     {
                         if (bullet.BulletIndex == weapon.AmmoIndex)
                         {
-                            var projectileScheme = new ProjectileScheme
+                            var projectileScheme = new ProjectileRequest
                             {
                                 type = bullet.BulletTypeId,
                                 ownerId = owner.Id,
@@ -63,15 +63,10 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Systems
                                 assetRef = bullet.AssetReference,
                                 position = weapon.WeaponPivot.position,
                                 direction = weapon.Direction,
-                                team = weapon.Team,
-                                damage = bullet.Damage,
-                                movementSpeed = bullet.MovementSpeed,
-                                spawnCount = 1,
-                                spread = weapon.Spread,
-                                pierce = bullet.Pierce
+                                team = weapon.Team
                             };
 
-                            _projectileFactory.CreateProjectileRequest(projectileScheme);
+                            _projectileFactory.CreateProjectile(projectileScheme);
                         }
                     }
                 }

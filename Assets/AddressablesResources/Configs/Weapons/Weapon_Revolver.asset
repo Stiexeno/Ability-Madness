@@ -17,9 +17,9 @@ MonoBehaviour:
   reloadTime: 1.5
   spread: 5
   bullets:
+  - type: 2
+  - type: 4
+  - type: 2
   - type: 1
   - type: 1
-  - type: 1
-  - type: 1
-  - type: 1
-  - type: 1
+  - type: 4

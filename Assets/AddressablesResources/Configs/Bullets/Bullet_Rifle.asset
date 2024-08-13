@@ -16,11 +16,15 @@ MonoBehaviour:
   name: Rifle Bullet
   type: 2
   projectileRef:
-    m_AssetGUID: 
+    m_AssetGUID: b931ba43c5be3394bad80ed48de0d176
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  damage: 30
-  movementSpeed: 0.25
-  pierce: 999
-  modifiers: []
+  projectileSetup:
+    damage: 30
+    movementSpeed: 0.35
+    spawnCount: 1
+    lifeTime: 5
+    spread: 0
+    pierce: 3
+    ricochet: 0

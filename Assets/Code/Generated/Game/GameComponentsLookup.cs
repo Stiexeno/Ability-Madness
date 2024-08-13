@@ -88,80 +88,71 @@ public static class GameComponentsLookup {
     public const int InteractBehaviour = 77;
     public const int LifeTime = 78;
     public const int LifeTimeTimeElapsed = 79;
-    public const int ForwardMovementModifier = 80;
-    public const int LifeSteal = 81;
-    public const int LifeStealModifier = 82;
-    public const int Modifiable = 83;
-    public const int Modifier = 84;
-    public const int ModifierTypeId = 85;
-    public const int ModifierValue = 86;
-    public const int MultishootModifier = 87;
-    public const int Ricochet = 88;
-    public const int RicochetHitCount = 89;
-    public const int RicochetModifier = 90;
-    public const int SpeedModifier = 91;
-    public const int ZigZagDirection = 92;
-    public const int ZigZagMovementModifier = 93;
-    public const int ZigZagTimeElapsed = 94;
-    public const int DashCooldown = 95;
-    public const int DashDuration = 96;
-    public const int Dashing = 97;
-    public const int Direction = 98;
-    public const int FaceToDirection = 99;
-    public const int ForwardMovement = 100;
-    public const int LookDirection = 101;
-    public const int MovementSpeed = 102;
-    public const int RequestDash = 103;
-    public const int RigidbodyMovement = 104;
-    public const int TransformMovement = 105;
-    public const int ZigZagMovement = 106;
-    public const int Projectile = 107;
-    public const int ProjectileRequest = 108;
-    public const int ProjectileTypeId = 109;
-    public const int RoundTime = 110;
-    public const int StatsChange = 111;
-    public const int StatsValue = 112;
-    public const int Depleted = 113;
-    public const int Fire = 114;
-    public const int Freeze = 115;
-    public const int Posion = 116;
-    public const int Status = 117;
-    public const int StatusTypeId = 118;
-    public const int ProccessedTargets = 119;
-    public const int SphereCast = 120;
-    public const int SphereCastRadius = 121;
-    public const int TargetBuffer = 122;
-    public const int TargetsInSight = 123;
-    public const int Vision = 124;
-    public const int VisionInterval = 125;
-    public const int VisionLayer = 126;
-    public const int VisionRadius = 127;
-    public const int VisionTimer = 128;
-    public const int AmmoCapacity = 129;
-    public const int AmmoIndex = 130;
-    public const int Bullet = 131;
-    public const int BulletIndex = 132;
-    public const int BulletTypeId = 133;
-    public const int FireRate = 134;
-    public const int HasReloadWidget = 135;
-    public const int MaxAmmoCapacity = 136;
-    public const int Pierce = 137;
-    public const int PiercedAmount = 138;
-    public const int Ready = 139;
-    public const int Recovering = 140;
-    public const int Reloading = 141;
-    public const int ReloadTime = 142;
-    public const int ReloadWidget = 143;
-    public const int Shot = 144;
-    public const int Spread = 145;
-    public const int WeaponAnimator = 146;
-    public const int Weapon = 147;
-    public const int WeaponPivot = 148;
-    public const int WeaponTypeId = 149;
-    public const int Player = 150;
-    public const int PlayerInTrigger = 151;
+    public const int LifeSteal = 80;
+    public const int LifeStealModifier = 81;
+    public const int Modifiable = 82;
+    public const int Modifier = 83;
+    public const int ModifierTypeId = 84;
+    public const int ModifierValue = 85;
+    public const int RicochetHitCount = 86;
+    public const int DashCooldown = 87;
+    public const int DashDuration = 88;
+    public const int Dashing = 89;
+    public const int Direction = 90;
+    public const int FaceToDirection = 91;
+    public const int ForwardMovement = 92;
+    public const int LookDirection = 93;
+    public const int MovementSpeed = 94;
+    public const int RequestDash = 95;
+    public const int RigidbodyMovement = 96;
+    public const int TransformMovement = 97;
+    public const int ZigZagMovement = 98;
+    public const int Projectile = 99;
+    public const int ProjectileTypeId = 100;
+    public const int RoundTime = 101;
+    public const int StatsChange = 102;
+    public const int StatsValue = 103;
+    public const int Depleted = 104;
+    public const int Fire = 105;
+    public const int Freeze = 106;
+    public const int Posion = 107;
+    public const int Status = 108;
+    public const int StatusTypeId = 109;
+    public const int ProccessedTargets = 110;
+    public const int SphereCast = 111;
+    public const int SphereCastRadius = 112;
+    public const int TargetBuffer = 113;
+    public const int TargetsInSight = 114;
+    public const int Vision = 115;
+    public const int VisionInterval = 116;
+    public const int VisionLayer = 117;
+    public const int VisionRadius = 118;
+    public const int VisionTimer = 119;
+    public const int AmmoCapacity = 120;
+    public const int AmmoIndex = 121;
+    public const int Bullet = 122;
+    public const int BulletIndex = 123;
+    public const int BulletTypeId = 124;
+    public const int FireRate = 125;
+    public const int HasReloadWidget = 126;
+    public const int MaxAmmoCapacity = 127;
+    public const int Pierce = 128;
+    public const int PiercedAmount = 129;
+    public const int Ready = 130;
+    public const int Recovering = 131;
+    public const int Reloading = 132;
+    public const int ReloadTime = 133;
+    public const int ReloadWidget = 134;
+    public const int Shot = 135;
+    public const int Spread = 136;
+    public const int WeaponAnimator = 137;
+    public const int Weapon = 138;
+    public const int WeaponPivot = 139;
+    public const int WeaponTypeId = 140;
+    public const int Player = 141;
+    public const int PlayerInTrigger = 142;
 
-    public const int TotalComponents = 152;
+    public const int TotalComponents = 143;
 
     public static readonly string[] componentNames = {
         "AssetReference",
@@ -244,21 +235,13 @@ public static class GameComponentsLookup {
         "InteractBehaviour",
         "LifeTime",
         "LifeTimeTimeElapsed",
-        "ForwardMovementModifier",
         "LifeSteal",
         "LifeStealModifier",
         "Modifiable",
         "Modifier",
         "ModifierTypeId",
         "ModifierValue",
-        "MultishootModifier",
-        "Ricochet",
         "RicochetHitCount",
-        "RicochetModifier",
-        "SpeedModifier",
-        "ZigZagDirection",
-        "ZigZagMovementModifier",
-        "ZigZagTimeElapsed",
         "DashCooldown",
         "DashDuration",
         "Dashing",
@@ -272,7 +255,6 @@ public static class GameComponentsLookup {
         "TransformMovement",
         "ZigZagMovement",
         "Projectile",
-        "ProjectileRequest",
         "ProjectileTypeId",
         "RoundTime",
         "StatsChange",
@@ -399,21 +381,13 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Interaction.InteractBehaviourComponent),
         typeof(AbilityMadness.Code.Gameplay.Lifetime.LifeTime),
         typeof(AbilityMadness.Code.Gameplay.Lifetime.LifeTimeTimeElapsed),
-        typeof(AbilityMadness.Code.Gameplay.Modifiers.ForwardMovementModifier),
         typeof(AbilityMadness.Code.Gameplay.Modifiers.LifeSteal),
         typeof(AbilityMadness.Code.Gameplay.Modifiers.LifeStealModifier),
         typeof(AbilityMadness.Code.Gameplay.Modifiers.Modifiable),
         typeof(AbilityMadness.Code.Gameplay.Modifiers.Modifier),
         typeof(AbilityMadness.Code.Gameplay.Modifiers.ModifierTypeIdComponent),
         typeof(AbilityMadness.Code.Gameplay.Modifiers.ModifierValue),
-        typeof(AbilityMadness.Code.Gameplay.Modifiers.MultishootModifier),
-        typeof(AbilityMadness.Code.Gameplay.Modifiers.Ricochet),
         typeof(AbilityMadness.Code.Gameplay.Modifiers.RicochetHitCount),
-        typeof(AbilityMadness.Code.Gameplay.Modifiers.RicochetModifier),
-        typeof(AbilityMadness.Code.Gameplay.Modifiers.SpeedModifier),
-        typeof(AbilityMadness.Code.Gameplay.Modifiers.ZigZagDirection),
-        typeof(AbilityMadness.Code.Gameplay.Modifiers.ZigZagMovementModifier),
-        typeof(AbilityMadness.Code.Gameplay.Modifiers.ZigZagTimeElapsed),
         typeof(AbilityMadness.Code.Gameplay.Movement.DashCooldown),
         typeof(AbilityMadness.Code.Gameplay.Movement.DashDuration),
         typeof(AbilityMadness.Code.Gameplay.Movement.Dashing),
@@ -427,7 +401,6 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Movement.TransformMovement),
         typeof(AbilityMadness.Code.Gameplay.Movement.ZigZagMovement),
         typeof(AbilityMadness.Code.Gameplay.Projectile.Projectile),
-        typeof(AbilityMadness.Code.Gameplay.Projectile.ProjectileRequest),
         typeof(AbilityMadness.Code.Gameplay.Projectile.ProjectileTypeIdComponent),
         typeof(AbilityMadness.Code.Gameplay.Round.RoundTime),
         typeof(AbilityMadness.Code.Gameplay.Stats.StatsChange),

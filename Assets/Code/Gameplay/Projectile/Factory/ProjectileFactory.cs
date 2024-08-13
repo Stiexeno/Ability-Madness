@@ -3,92 +3,68 @@ using AbilityMadness.Code.Extensions;
 using AbilityMadness.Code.Gameplay.Lifetime;
 using AbilityMadness.Code.Gameplay.Movement;
 using AbilityMadness.Code.Gameplay.TargetCollection;
+using AbilityMadness.Code.Gameplay.Weapons;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
+using AbilityMadness.Infrastructure.Services.Configs;
 
 namespace AbilityMadness.Code.Gameplay.Projectile.Factory
 {
     public class ProjectileFactory : IProjectileFactory
     {
-        private const float LifeTime = 5f;
-
         private IIdentifierService _identifierService;
+        private IConfigsService _configsService;
 
-        public ProjectileFactory(IIdentifierService identifierService)
+        public ProjectileFactory(IIdentifierService identifierService, IConfigsService configsService)
         {
+            _configsService = configsService;
             _identifierService = identifierService;
         }
 
-        public GameEntity CreateProjectile(ProjectileScheme scheme)
+        public GameEntity CreateProjectile(ProjectileRequest request)
         {
-            return scheme.type switch
+            var bulletConfig = _configsService.GetBulletConfig(request.type);
+            return request.type switch
             {
-                _ => CreateDefaultProjectile(scheme)
+                _ => CreateDefaultProjectile(request, bulletConfig.projectileSetup)
             };
-        }
-
-        // Requests
-
-        public GameEntity CreateProjectileRequest(ProjectileScheme scheme)
-        {
-            return CreateEntity.Empty()
-                .AddId(_identifierService.Next())
-                .AddProjectileRequest(scheme);
         }
 
         // Implementations
 
-        private GameEntity CreateDefaultProjectile(ProjectileScheme scheme)
+        private GameEntity CreateDefaultProjectile(ProjectileRequest request, ProjectileSetup setup)
         {
-            return CreateEmptyProjectile(scheme)
+            return CreateEmptyProjectile(request, setup)
                 .CollectTargetsWithSphereCast(0.3f)
                 .With(x => x.isFaceToDirection = true)
                 .SetForwardMovement();
         }
 
-        private GameEntity CreateRifleProjectile(ProjectileScheme scheme)
+        private GameEntity CreateEmptyProjectile(ProjectileRequest request, ProjectileSetup setup)
         {
-            return CreateEmptyProjectile(scheme)
-                .AddViewPath(Constants.Prefabs.Projectiles.Fireball)
-                .CollectTargetsWithSphereCast(0.3f)
-                .With(x => x.isFaceToDirection = true)
-                .SetForwardMovement()
+            var direction = ProjectileExtensions.CalculateSpreadDirection(
+                request.spread + setup.spread,
+                request.direction);
 
-                .AddEffectViewPath(Constants.Prefabs.Effects.FireballHitEffect);
-        }
-
-        public GameEntity CreateRicochetProjectile(ProjectileScheme scheme)
-        {
-            return CreateEmptyProjectile(scheme)
-                .AddViewPath(Constants.Prefabs.Projectiles.Ricochet)
-                .CollectTargetsWithSphereCast(0.3f)
-                .With(x => x.isFaceToDirection = true)
-                .SetForwardMovement()
-                .With(x => x.isRicochet = true)
-                .AddRicochetHitCount(15)
-
-                .AddEffectViewPath(Constants.Prefabs.Effects.FireballHitEffect);
-        }
-
-        private GameEntity CreateEmptyProjectile(ProjectileScheme scheme)
-        {
             return CreateEntity.Empty()
                 .AddId(_identifierService.Next())
                 .With(x => x.isProjectile = true)
-                .AddViewReference(scheme.assetRef)
-                .AddProducerId(scheme.producerId)
-                .AddOwnerId(scheme.ownerId)
-                .AddDamage(scheme.damage)
-                .AddTeam(scheme.team)
+                .AddViewReference(request.assetRef)
+                .AddProducerId(request.producerId)
+                .AddOwnerId(request.ownerId)
+                .AddDamage(setup.damage)
+                .AddTeam(request.team)
+                .AddWorldPosition(request.position)
+                .AddDirection(direction)
 
-                .SetLifetime(LifeTime)
                 .With(x => x.isAlive = true)
-
                 .With(x => x.isTransformMovement = true)
-                .AddDirection(scheme.direction)
-                .AddWorldPosition(scheme.position)
-                .AddMovementSpeed(scheme.movementSpeed)
-                .AddPierce(scheme.pierce)
-                .AddPiercedAmount(0);
+                .AddMovementSpeed(setup.movementSpeed)
+                .SetLifetime(setup.lifeTime)
+
+                .With(x => x.AddPierce(setup.pierce), when: setup.pierce > 0)
+                .With(x => x.AddPiercedAmount(0), when: setup.pierce > 0)
+
+                .With(x => x.AddRicochetHitCount(setup.ricochet), when: setup.ricochet > 0);
         }
     }
 }

@@ -20,7 +20,6 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation.Ricochet
             _projectiles = gameContext.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Projectile,
-                    GameMatcher.Ricochet,
                     GameMatcher.RicochetHitCount,
                     GameMatcher.Direction,
                     GameMatcher.Team,
@@ -56,7 +55,7 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation.Ricochet
 
                         if (projectile.RicochetHitCount <= 0)
                         {
-                            projectile.isRicochet = false;
+                            projectile.RemoveRicochetHitCount();
                         }
 
                         break;
