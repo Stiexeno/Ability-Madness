@@ -12,7 +12,10 @@ namespace AbilityMadness.Code.Gameplay.Experience
             Add(systemFactory.Create<DropExperienceOnDeathSystem>());
             Add(systemFactory.Create<PlayerPickupExperienceSystem>());
             Add(systemFactory.Create<FlyExperienceToPlayerSystem>());
+
             Add(systemFactory.Create<LevelUpSystem>());
+
+            Add(systemFactory.Create<CleanupLevelUpSystem>());
         }
     }
 }

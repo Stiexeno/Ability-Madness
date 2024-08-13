@@ -12,7 +12,9 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Behaviours
     {
         [SF] private SpriteRenderer weapon;
         [SF] private AnimancerComponent animancer;
+        [SF] private AnimancerComponent weaponAnimancer;
         [SF] private ClipTransition reloadClip;
+        [SF] private ClipTransition shootClip;
 
         private Vector2 _direction;
 
@@ -33,6 +35,11 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Behaviours
             weapon.flipY = angle > 90 || angle < -90;
         }
 
+        public void Shoot()
+        {
+            weaponAnimancer.Play(shootClip, 0f, mode: FadeMode.FromStart);
+        }
+
         public void Reload(float duration)
         {
             StartCoroutine(ReloadCoroutine(duration));
@@ -40,11 +47,13 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Behaviours
 
         private IEnumerator ReloadCoroutine(float duration)
         {
+            weapon.enabled = false;
             animancer.gameObject.SetActive(true);
             animancer.Play(reloadClip);
             yield return new WaitForSeconds(duration);
 
             animancer.gameObject.SetActive(false);
+            weapon.enabled = true;
         }
     }
 }

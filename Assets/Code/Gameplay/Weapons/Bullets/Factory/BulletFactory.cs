@@ -2,6 +2,7 @@ using System;
 using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Extensions;
 using AbilityMadness.Code.Gameplay.Health;
+using AbilityMadness.Code.Gameplay.Modifiers.Factory;
 using AbilityMadness.Code.Gameplay.Weapons.Configs;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
 using AbilityMadness.Infrastructure.Services.Configs;
@@ -12,9 +13,11 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Bullets.Factory
     {
         private IIdentifierService _identifierService;
         private IConfigsService _configsService;
+        private IModifierFactory _modifierFactory;
 
-        public BulletFactory(IIdentifierService identifierService, IConfigsService configsService)
+        public BulletFactory(IIdentifierService identifierService, IConfigsService configsService, IModifierFactory modifierFactory)
         {
+            _modifierFactory = modifierFactory;
             _configsService = configsService;
             _identifierService = identifierService;
         }
@@ -31,32 +34,13 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Bullets.Factory
 
         public GameEntity CreateBullet(int targetId, BulletTypeId type, int index, Team team)
         {
-            switch (type)
+            return type switch
             {
-                case BulletTypeId.Unkonwn:
-                    throw new ArgumentOutOfRangeException(nameof(type), type, null);
-                case BulletTypeId.Regular:
-                    return CreateRegularBullet(type, targetId, index, team);
-                case BulletTypeId.Hard:
-                    return CreateHardBullet(type, targetId, index, team);
-                case BulletTypeId.Ricochet:
-                    return CreateRicochetBullet(type, targetId, index, team);
-                default:
-                    throw new Exception($"Unknown bullet type: {type}");
-            }
+                _ => CreateDefaultBullet(type, targetId, index, team)
+            };
         }
 
-        public GameEntity CreateRegularBullet(BulletTypeId type, int targetId, int index, Team team)
-        {
-            return CreateEmptyBullet(type, targetId, index, team);
-        }
-
-        private GameEntity CreateHardBullet(BulletTypeId type, int targetId, int index, Team team)
-        {
-            return CreateEmptyBullet(type, targetId, index, team);
-        }
-
-        private GameEntity CreateRicochetBullet(BulletTypeId type, int targetId, int index, Team team)
+        public GameEntity CreateDefaultBullet(BulletTypeId type, int targetId, int index, Team team)
         {
             return CreateEmptyBullet(type, targetId, index, team);
         }
@@ -65,9 +49,10 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Bullets.Factory
         {
             var config = _configsService.GetBulletConfig(bulletTypeId);
 
-            return CreateEntity.Empty()
+            var bullet =  CreateEntity.Empty()
                 .AddId(_identifierService.Next())
                 .AddTargetId(targetId)
+                .AddAssetReference(config.projectileRef)
 
                 .With(x => x.isBullet = true)
                 .AddBulletTypeId(bulletTypeId)
@@ -77,6 +62,13 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Bullets.Factory
                 .AddMovementSpeed(config.movementSpeed)
 
                 .AddBulletIndex(index);
+
+            // foreach (var modifier in config.modifiers)
+            // {
+            //     _modifierFactory.CreateModifier(bullet, modifier.type, modifier.value);
+            // }
+
+            return bullet;
         }
     }
 }

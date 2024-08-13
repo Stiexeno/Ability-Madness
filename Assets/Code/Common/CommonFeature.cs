@@ -8,7 +8,6 @@ namespace AbilityMadness.Code.Common
     {
         public CommonFeature(ISystemFactory systemFactory)
         {
-            Add(systemFactory.Create<MoveTransformSystem>());
         }
     }
 }

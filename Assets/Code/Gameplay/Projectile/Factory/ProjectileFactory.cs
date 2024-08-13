@@ -1,10 +1,8 @@
-﻿using System;
-using AbilityMadness.Code.Common;
+﻿using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Extensions;
 using AbilityMadness.Code.Gameplay.Lifetime;
 using AbilityMadness.Code.Gameplay.Movement;
 using AbilityMadness.Code.Gameplay.TargetCollection;
-using AbilityMadness.Code.Gameplay.Weapons;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
 
 namespace AbilityMadness.Code.Gameplay.Projectile.Factory
@@ -22,19 +20,10 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
 
         public GameEntity CreateProjectile(ProjectileScheme scheme)
         {
-            switch (scheme.type)
+            return scheme.type switch
             {
-                case BulletTypeId.Unkonwn:
-                    throw new ArgumentOutOfRangeException();
-                case BulletTypeId.Regular:
-                    return CreateRegularProjectile(scheme);
-                case BulletTypeId.Hard:
-                    return CreateHardProjectile(scheme);
-                case BulletTypeId.Ricochet:
-                    return CreateRicochetProjectile(scheme);
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+                _ => CreateDefaultProjectile(scheme)
+            };
         }
 
         // Requests
@@ -48,18 +37,15 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
 
         // Implementations
 
-        private GameEntity CreateRegularProjectile(ProjectileScheme scheme)
+        private GameEntity CreateDefaultProjectile(ProjectileScheme scheme)
         {
             return CreateEmptyProjectile(scheme)
-                .AddViewPath(Constants.Prefabs.Projectiles.Bullet)
                 .CollectTargetsWithSphereCast(0.3f)
                 .With(x => x.isFaceToDirection = true)
-                .SetForwardMovement()
-
-                .AddEffectViewPath(Constants.Prefabs.Effects.FireballHitEffect);
+                .SetForwardMovement();
         }
 
-        private GameEntity CreateHardProjectile(ProjectileScheme scheme)
+        private GameEntity CreateRifleProjectile(ProjectileScheme scheme)
         {
             return CreateEmptyProjectile(scheme)
                 .AddViewPath(Constants.Prefabs.Projectiles.Fireball)
@@ -88,7 +74,9 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
             return CreateEntity.Empty()
                 .AddId(_identifierService.Next())
                 .With(x => x.isProjectile = true)
+                .AddViewReference(scheme.assetRef)
                 .AddProducerId(scheme.producerId)
+                .AddOwnerId(scheme.ownerId)
                 .AddDamage(scheme.damage)
                 .AddTeam(scheme.team)
 

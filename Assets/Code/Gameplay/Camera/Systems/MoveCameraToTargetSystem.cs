@@ -39,7 +39,6 @@ namespace AbilityMadness.Code.Gameplay.Camera.Systems
 
                     var cameraVelocity = camera.Velocity;
 
-                    //camera.WorldPosition = targetPosition;
                      camera.WorldPosition = Vector3.SmoothDamp(
                          camera.WorldPosition,
                          targetPosition,

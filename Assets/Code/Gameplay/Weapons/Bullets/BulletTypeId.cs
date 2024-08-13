@@ -4,7 +4,16 @@
     {
         Unkonwn = 0,
         Regular = 1,
-        Hard = 2,
-        Ricochet = 3,
+        Rifle = 2,
+        Shotgun = 3,
+        Ricochet = 4,
+        Acid = 5,
+        Fire = 6,
+        Frost = 7,
+        Airstrike = 8,
+        Firework = 9,
+        Lava = 10,
+        Rocket = 11,
+        Tesla = 12
     }
 }

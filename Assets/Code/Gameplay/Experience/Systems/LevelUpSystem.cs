@@ -27,6 +27,8 @@ namespace AbilityMadness.Code.Gameplay.Experience.Systems
                     entity.Experience = 0;
                     entity.Level++;
                     entity.MaxExperience = _experienceCalculator.CalculateMaxExperience(entity.Level);
+
+                    entity.isLevelUp = true;
                 }
             }
         }

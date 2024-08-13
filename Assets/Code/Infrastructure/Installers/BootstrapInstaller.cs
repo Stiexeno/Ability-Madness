@@ -1,4 +1,5 @@
 using AbilityMadness.Code.Gameplay.Experience.Services;
+using AbilityMadness.Code.Gameplay.UI.Factory;
 using AbilityMadness.Code.Infrastructure.Services.Camera;
 using AbilityMadness.Code.Infrastructure.Services.Cursors;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
@@ -107,6 +108,9 @@ namespace AbilityMadness
 
 			Container.BindInterfacesTo<StatesFactory>()
 				.AsSingle();
+
+            Container.BindInterfacesTo<UIEntityFactory>()
+                .AsSingle();
 		}
 
 		public void Initialize()

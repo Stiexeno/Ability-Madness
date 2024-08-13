@@ -8,6 +8,9 @@ namespace AbilityMadness.Code.Gameplay.Movement
     {
         public MovementUpdateFeature(ISystemFactory systemFactory)
         {
+            Add(systemFactory.Create<SetWorldPositionByTransformSystem>());
+            Add(systemFactory.Create<MoveTransformSystem>());
+
             Add(systemFactory.Create<SetVelocityByDirectionSystem>());
             Add(systemFactory.Create<MoveRigidbodySystem>());
             Add(systemFactory.Create<ResetVelocityOnDeathSystem>());

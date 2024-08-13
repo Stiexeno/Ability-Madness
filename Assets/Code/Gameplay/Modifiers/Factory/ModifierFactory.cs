@@ -7,79 +7,36 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Factory
 {
     public class ModifierFactory : IModifierFactory
     {
-        private IIdentifierService _identifierService;
-
-        public ModifierFactory(IIdentifierService identifierService)
+        public GameEntity CreateModifier(GameEntity gameEntity, ModifierTypeId type, float value)
         {
-            _identifierService = identifierService;
-        }
-
-        public GameEntity CreateModifier(ModifierTypeId type, int targetId, float value)
-        {
-            switch (type)
+            return type switch
             {
-                case ModifierTypeId.ForwardMovement:
-                    return CreateForwardMovementModifier(targetId, value);
-                case ModifierTypeId.Speed:
-                    return CreateSpeedModifier(targetId, value);
-                case ModifierTypeId.ZigZagMovement:
-                    return CreateZigZagModifier(targetId, value);
-                case ModifierTypeId.Multishoot:
-                    return CreateMultishootModifier(targetId, value);
-                case ModifierTypeId.Ricochet:
-                    return CreateRicochetModifier(targetId, value);
-                case ModifierTypeId.Unknown:
-                    throw new Exception($"Modifier not set for {targetId} ID");
-                default:
-                    return default;
-            }
+                ModifierTypeId.Speed => CreateSpeedModifier(gameEntity, value),
+                ModifierTypeId.Ricochet => CreateRicochetModifier(gameEntity, value),
+                ModifierTypeId.LifeSteal => CreateLifeStealModifier(gameEntity, value),
+
+                ModifierTypeId.Unknown => throw new Exception($"Modifier not set for {gameEntity} ID"),
+                _ => default
+            };
         }
 
-        public GameEntity CreateForwardMovementModifier(int targetId, float value)
+        private GameEntity CreateSpeedModifier(GameEntity gameEntity, float value)
         {
-            return CreateEmptyModifier(targetId)
-                .With(x => x.isForwardMovementModifier = true)
-                .AddModifierTypeId(ModifierTypeId.ForwardMovement);
+            return gameEntity
+                .ReplaceMovementSpeed(gameEntity.MovementSpeed + value);
         }
 
-        public GameEntity CreateZigZagModifier(int targetId, float value)
+        private GameEntity CreateRicochetModifier(GameEntity gameEntity, float value)
         {
-            return CreateEmptyModifier(targetId)
-                .With(x => x.isZigZagMovementModifier = true)
-                .AddModifierTypeId(ModifierTypeId.ZigZagMovement)
-                .AddModifierValue(value);
+            return gameEntity
+                .With(x => x.isRicochet = true)
+                .AddRicochetHitCount((int)value);
         }
 
-        public GameEntity CreateSpeedModifier(int targetId, float value)
+        private GameEntity CreateLifeStealModifier(GameEntity gameEntity, float value)
         {
-            return CreateEmptyModifier(targetId)
-                .With(x => x.isSpeedModifier = true)
-                .AddModifierTypeId(ModifierTypeId.Speed)
-                .AddModifierValue(value);
-        }
-
-        public GameEntity CreateMultishootModifier(int targetId, float value)
-        {
-            return CreateEmptyModifier(targetId)
-                .With(x => x.isMultishootModifier = true)
-                .AddModifierTypeId(ModifierTypeId.Multishoot)
-                .AddModifierValue(value);
-        }
-
-        public GameEntity CreateRicochetModifier(int targetId, float value)
-        {
-            return CreateEmptyModifier(targetId)
-                .With(x => x.isRicochetModifier = true)
-                .AddModifierTypeId(ModifierTypeId.Ricochet)
-                .AddModifierValue(value);
-        }
-
-        private GameEntity CreateEmptyModifier(int targetId)
-        {
-            return CreateEntity.Empty()
-                .AddId(_identifierService.Next())
-                .With(x => x.isModifier = true)
-                .AddTargetId(targetId);
+            return gameEntity
+                .AddLifeSteal((int)value);
         }
     }
 }

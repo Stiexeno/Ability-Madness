@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using AbilityMadness.Code.Infrastructure.Services.Physics;
 using Entitas;
 
@@ -6,7 +7,7 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation.Ricochet
 {
     public class ProjectileRicochetSystem : IExecuteSystem
     {
-        private const float RicochetDistance = 20f;
+        private const float RicochetDistance = 8f;
 
         private readonly List<GameEntity> _buffer = new(32);
         private IGroup<GameEntity> _projectiles;
@@ -23,7 +24,8 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation.Ricochet
                     GameMatcher.RicochetHitCount,
                     GameMatcher.Direction,
                     GameMatcher.Team,
-                    GameMatcher.DamageDealt));
+                    GameMatcher.DamageDealt,
+                    GameMatcher.ProccessedTargets));
 
             _targets = gameContext.GetGroup(GameMatcher
                 .AllOf(
@@ -44,7 +46,7 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation.Ricochet
 
                 foreach (var hit in hits)
                 {
-                    if (_targets.ContainsEntity(hit) && hit.Team != projectile.Team)
+                    if (_targets.ContainsEntity(hit) && hit.Team != projectile.Team && projectile.ProccessedTargets.Last() != hit.Id)
                     {
                         var direction = hit.WorldPosition - projectile.WorldPosition;
                         direction.Normalize();

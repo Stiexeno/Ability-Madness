@@ -1,3 +1,4 @@
+using AbilityMadness.Code.Gameplay.DamageApplication.OnDamageDealt.Systems;
 using AbilityMadness.Code.Gameplay.DamageApplication.Systems;
 using AbilityMadness.Code.Gameplay.DamageApplication.Systems.View;
 using AbilityMadness.Code.Infrastructure.Services.ECS;
@@ -9,6 +10,7 @@ namespace AbilityMadness.Code.Gameplay.DamageApplication
         public DamageFeature(ISystemFactory systemFactory)
         {
             Add(systemFactory.Create<ApplyDamageToTargetBufferSystem>());
+            Add(systemFactory.Create<HealOnDamageDealtSystem>());
 
             Add(systemFactory.Create<PlayDamageAnimatorSystem>());
             Add(systemFactory.Create<ApplyDamageVFXSystem>());

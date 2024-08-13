@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using AbilityMadness.Code.Gameplay.UI.Factory;
 using AbilityMadness.Infrastructure.Factories.UI;
 using Entitas;
 
@@ -14,11 +15,12 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Systems.View
         private IGroup<GameEntity> _weapons;
         private IGroup<GameEntity> _owners;
         private GameContext _gameContext;
+        private IUIEntityFactory _uiEntityFactory;
 
-        public CreateReloadWidgetSystem(GameContext gameContext, IUIFactory uiFactory)
+        public CreateReloadWidgetSystem(GameContext gameContext, IUIEntityFactory uiEntityFactory)
         {
+            _uiEntityFactory = uiEntityFactory;
             _gameContext = gameContext;
-            _uiFactory = uiFactory;
 
             _weapons = gameContext.GetGroup(GameMatcher
                 .AllOf(
@@ -42,7 +44,7 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Systems.View
 
                 if (_owners.ContainsEntity(owner))
                 {
-                    _uiFactory.CreateReloadWidget(owner);
+                    _uiEntityFactory.CreateReloadWidget(owner);
                     owner.HasReloadWidget = true;
 
                     weapon.WeaponAnimator.Reload(weapon.ReloadTime);

@@ -1,6 +1,7 @@
 ﻿using AbilityMadness.Code.Gameplay.Weapons.Behaviours;
 using Entitas;
 using Entitas.CodeGeneration.Attributes;
+using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Weapons
 {
@@ -21,6 +22,8 @@ namespace AbilityMadness.Code.Gameplay.Weapons
     [Game] public class ReloadTime : IComponent { public float Value; }
     [Game] public class Reloading : IComponent {  }
     [Game] public class Recovering : IComponent {  }
+
+    [Game] public class WeaponPivot: IComponent { public Transform Value; }
 
     [Game] public class ReloadWidgetComponent: IComponent { public ReloadWidget Value; }
     [Game, FlagPrefix("")] public class HasReloadWidget : IComponent {  }

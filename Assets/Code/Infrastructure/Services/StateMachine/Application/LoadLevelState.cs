@@ -67,7 +67,8 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
         }
 
 		private async UniTask SetupUI()
-		{
+        {
+            await _uiFactory.Load();
 			await _uiFactory.CreateUIRoot();
 			SetupWindows();
 		}

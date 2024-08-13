@@ -22,15 +22,12 @@ namespace AbilityMadness.Infrastructure.Factories.UI
         private IAssets _assets;
         private CameraProvider _cameraProvider;
         private IUIPool _uiPool;
-        private GameContext _gameContext;
 
-        public UIFactory(IAssets assets, CameraProvider cameraProvider, IUIPool uiPool, GameContext gameContext)
+        public UIFactory(IAssets assets, CameraProvider cameraProvider, IUIPool uiPool)
         {
-            _gameContext = gameContext;
             _uiPool = uiPool;
             _cameraProvider = cameraProvider;
             _assets = assets;
-            Load().Forget();
             Warmup();
         }
 
@@ -50,24 +47,6 @@ namespace AbilityMadness.Infrastructure.Factories.UI
             return damageText;
         }
 
-        public GameEntity CreateHealthbar(GameEntity gameEntity)
-        {
-            return CreateEntity.Empty()
-                .AddViewPath(Constants.Prefabs.Widgets.HealthbarWidget)
-                .AddTargetId(gameEntity.Id)
-                .AddWorldPosition(Vector2.one * 999)
-                .With(x => x.isTransformMovement = true);
-        }
-
-        public GameEntity CreateReloadWidget(GameEntity gameEntity)
-        {
-            return CreateEntity.Empty()
-                .AddViewPath(Constants.Prefabs.Widgets.ReloadWidget)
-                .AddTargetId(gameEntity.Id)
-                .AddWorldPosition(Vector2.one * 999)
-                .With(x => x.isTransformMovement = true);
-        }
-
         public async UniTask<GridWidget> CreateGridWidget(Transform parent)
         {
             return await _uiPool.Take<GridWidget>(Constants.Prefabs.Widgets.GridWidget, parent);
@@ -85,7 +64,7 @@ namespace AbilityMadness.Infrastructure.Factories.UI
 
         #region Factory
 
-        private async UniTaskVoid Load()
+        public async UniTask Load()
         {
             await LoadWindowPrefabs();
         }

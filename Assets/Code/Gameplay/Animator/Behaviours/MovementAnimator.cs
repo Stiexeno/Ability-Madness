@@ -1,4 +1,3 @@
-using System;
 using AbilityMadness.Code.Gameplay.Animator.Registrars;
 using AbilityMadness.Code.Infrastructure.View;
 using Animancer;

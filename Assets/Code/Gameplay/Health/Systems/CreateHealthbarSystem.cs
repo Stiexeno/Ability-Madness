@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using AbilityMadness.Code.Gameplay.UI.Factory;
 using AbilityMadness.Infrastructure.Factories.UI;
 using Entitas;
 
@@ -11,11 +12,11 @@ namespace AbilityMadness.Code.Gameplay.Health.Systems
         private IGroup<GameEntity> _ownerEntities;
 
         private IUIFactory _uiFactory;
+        private IUIEntityFactory _uiEntityFactory;
 
-        public CreateHealthbarSystem(GameContext gameContext, IUIFactory uiFactory)
+        public CreateHealthbarSystem(GameContext gameContext, IUIEntityFactory uiEntityFactory)
         {
-            _uiFactory = uiFactory;
-
+            _uiEntityFactory = uiEntityFactory;
             _ownerEntities = gameContext.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Id,
@@ -33,7 +34,7 @@ namespace AbilityMadness.Code.Gameplay.Health.Systems
                 if (entity.Health >= entity.MaxHealth)
                     continue;
 
-                _uiFactory.CreateHealthbar(entity);
+                _uiEntityFactory.CreateHealthbar(entity);
                 entity.HasHealthbar = true;
             }
         }

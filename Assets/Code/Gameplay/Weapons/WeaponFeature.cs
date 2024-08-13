@@ -17,7 +17,7 @@ namespace AbilityMadness.Code.Gameplay.Weapons
 
             //Add(systemFactory.Create<WeaponReadySystem>());
             //Add(systemFactory.Create<WeaponTargetSystem>());
-            Add(systemFactory.Create<CreateWeaponRequestSystem>());
+            Add(systemFactory.Create<CreateProjectileRequestSystem>());
 
             Add(systemFactory.Create<ShakeOnShootSystem>());
             Add(systemFactory.Create<CreateReloadWidgetSystem>());
@@ -25,6 +25,7 @@ namespace AbilityMadness.Code.Gameplay.Weapons
             Add(systemFactory.Create<DestructReloadWidgetSystem>());
 
             Add(systemFactory.Create<RefreshAmmoWidgetSystem>());
+            Add(systemFactory.Create<PlayWeaponShotSystem>());
 
             Add(systemFactory.Create<IncreaseWeaponAmmoIndexSystem>());
 

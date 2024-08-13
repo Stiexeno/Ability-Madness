@@ -3,10 +3,9 @@
     public enum ModifierTypeId
     {
         Unknown = 0,
-        ForwardMovement = 1,
-        ZigZagMovement = 2,
-        Speed = 3,
-        Multishoot = 4,
-        Ricochet = 5
+        Speed = 1,
+        LifeSteal = 2,
+        Ricochet = 3,
+        Piercing = 4,
     }
 }

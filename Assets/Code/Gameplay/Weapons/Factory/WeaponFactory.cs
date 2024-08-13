@@ -10,7 +10,7 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Factory
 {
     public class WeaponFactory : IWeaponFactory
     {
-        private const string WeaponPrefabPath = "Prefabs/Weapons/Weapon_Revolver";
+        private const string WeaponPrefabPath = "Prefabs/Weapons/Winchester/Weapon_Winchester";
 
         private IIdentifierService _identifierService;
         private IConfigsService _configsService;
