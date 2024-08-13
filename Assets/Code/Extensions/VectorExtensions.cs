@@ -4,7 +4,7 @@ namespace AbilityMadness.Code.Extensions
 {
     public static class VectorExtensions
     {
-        public static Vector2 GetSpreadDirection(Vector2 direction, int amount, int index)
+        public static Vector2 GetArcDirection(Vector2 direction, int amount, int index)
         {
             var angleBetweenProjectiles = 30f / amount;
             var startAngle = -angleBetweenProjectiles * (amount - 1f) / 2f;

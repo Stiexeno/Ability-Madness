@@ -56,6 +56,7 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Factory
                 .AddReloadTime(config.reloadTime)
                 .AddFireRate(config.fireRate)
                 .AddSpread(config.spread)
+                .AddSpawnAmount(config.spawnCount)
                 .AddAmmoCapacity(config.bullets.Length)
                 .AddMaxAmmoCapacity(config.bullets.Length)
                 .AddAmmoIndex(0);

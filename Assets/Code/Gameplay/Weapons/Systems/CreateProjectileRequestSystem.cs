@@ -1,5 +1,7 @@
+using AbilityMadness.Code.Extensions;
 using AbilityMadness.Code.Gameplay.Projectile.Factory;
 using Entitas;
+using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Weapons.Systems
 {
@@ -55,18 +57,25 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Systems
                     {
                         if (bullet.BulletIndex == weapon.AmmoIndex)
                         {
-                            var projectileScheme = new ProjectileRequest
-                            {
-                                type = bullet.BulletTypeId,
-                                ownerId = owner.Id,
-                                producerId = weapon.Id,
-                                assetRef = bullet.AssetReference,
-                                position = weapon.WeaponPivot.position,
-                                direction = weapon.Direction,
-                                team = weapon.Team
-                            };
+                            var spawnCount = weapon.SpawnAmount + bullet.SpawnAmount;
 
-                            _projectileFactory.CreateProjectile(projectileScheme);
+                            for (int i = 0; i < spawnCount; i++)
+                            {
+                                var direction = VectorExtensions.GetArcDirection(weapon.Direction, spawnCount, i);
+                                var projectileScheme = new ProjectileRequest
+                                {
+                                    type = bullet.BulletTypeId,
+                                    ownerId = owner.Id,
+                                    producerId = weapon.Id,
+                                    assetRef = bullet.AssetReference,
+                                    position = weapon.WeaponPivot.position,
+                                    direction = direction,
+                                    team = weapon.Team
+                                };
+
+                                _projectileFactory.CreateProjectile(projectileScheme);
+                            }
+
                         }
                     }
                 }

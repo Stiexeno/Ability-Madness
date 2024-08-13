@@ -11,6 +11,7 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Configs
         public float fireRate = 0.1f;
         public float reloadTime = 1f;
         public float spread = 0f;
+        public int spawnCount = 1;
 
         public BulletScheme[] bullets;
     }

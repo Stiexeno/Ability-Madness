@@ -7,7 +7,7 @@ namespace AbilityMadness.Code.Gameplay.Items
     {
         public ItemsFeature(ISystemFactory systemFactory)
         {
-            Add(systemFactory.Create<OpenItemSelectionWindowSystem>());
+            //Add(systemFactory.Create<OpenItemSelectionWindowSystem>());
         }
     }
 }

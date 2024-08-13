@@ -20,12 +20,11 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  damage: 10
   projectileSetup:
     damage: 10
     movementSpeed: 0.15
-    spawnCount: 1
+    spawnCount: 0
     lifeTime: 5
     spread: 0
-    pierce: 0
+    pierce: 1
     ricochet: 0

@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85b5d8935fe24058a2acccb386274f61, type: 3}
-  m_Name: Bullet_Rifle
+  m_Name: Bullet_Shotgun
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 964f5649aacf26c42b98d3636f896eb2, type: 3}
   name: Rifle Bullet
-  type: 2
+  type: 3
   projectileRef:
     m_AssetGUID: b931ba43c5be3394bad80ed48de0d176
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   projectileSetup:
-    damage: 30
-    movementSpeed: 0.35
-    spawnCount: 0
+    damage: 5
+    movementSpeed: 0.25
+    spawnCount: 4
     lifeTime: 5
     spread: 0
-    pierce: 3
+    pierce: 2
     ricochet: 0
