@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using AbilityMadness.Code.Gameplay.Health;
+
 namespace AbilityMadness
 {
     public static class Constants
@@ -40,6 +43,7 @@ namespace AbilityMadness
             public static class Effects
             {
                 public const string FireballHitEffect = "Prefabs/Effects/Effect_Fireball_Hit";
+                public const string BulletHitEffect = "Prefabs/Projectiles/Bullet/Effect_Bullet_Hit";
             }
 
             public static class Enemies
@@ -84,6 +88,11 @@ namespace AbilityMadness
             public const int Player = 8;
             public const int Loot = 9;
 
+            public static readonly Dictionary<Team, int> TeamToLayer = new()
+            {
+                {Team.Player, Enemy},
+                {Team.Enemy, Player}
+            };
         }
     }
 }

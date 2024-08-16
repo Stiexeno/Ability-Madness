@@ -1,3 +1,4 @@
+using System.Collections;
 using AbilityMadness.Code.Gameplay.Animator.Registrars;
 using AbilityMadness.Code.Infrastructure.View;
 using DG.Tweening;
@@ -9,12 +10,41 @@ namespace AbilityMadness.Code.Common.Behaviours
     [RequireComponent(typeof(DamageAnimatorRegistrar))]
     public class DamageAnimator : EntityComponent
     {
-        [SF] private UnityEngine.Transform sprite;
+        [SF] private SpriteRenderer spriteRenderer;
+
+        private Renderer _renderer;
+        private MaterialPropertyBlock _materialPropertyBlock;
+
+        private static readonly int flashProperty = Shader.PropertyToID("_FlashAmount");
+        private Coroutine _flashCoroutine;
+
+        private void Awake()
+        {
+            _materialPropertyBlock = new MaterialPropertyBlock();
+            _renderer = spriteRenderer.GetComponent<Renderer>();
+        }
 
         public void PlayDamageAnimation()
         {
-            sprite.transform.DOKill(true);
-            sprite.transform.DOPunchScale(Vector3.one * 0.25f, 0.15f, 10, 1);
+            if (_flashCoroutine != null)
+            {
+                StopCoroutine(_flashCoroutine);
+                _flashCoroutine = null;
+            }
+
+            _flashCoroutine = StartCoroutine(FlashCoroutine());
+        }
+
+        private IEnumerator FlashCoroutine()
+        {
+            _renderer.GetPropertyBlock(_materialPropertyBlock);
+            _materialPropertyBlock.SetFloat(flashProperty, 1);
+            _renderer.SetPropertyBlock(_materialPropertyBlock);
+
+            yield return new WaitForSeconds(0.15f);
+
+            _materialPropertyBlock.SetFloat(flashProperty, 0);
+            _renderer.SetPropertyBlock(_materialPropertyBlock);
         }
     }
 }

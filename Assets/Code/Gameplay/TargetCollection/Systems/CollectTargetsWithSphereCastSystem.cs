@@ -17,7 +17,8 @@ namespace AbilityMadness.Code.Gameplay.TargetCollection.Systems
                     GameMatcher.ProccessedTargets,
                     GameMatcher.WorldPosition,
                     GameMatcher.SphereCast,
-                    GameMatcher.SphereCastRadius));
+                    GameMatcher.SphereCastRadius,
+                    GameMatcher.Team));
         }
 
         public void Execute()
@@ -27,7 +28,7 @@ namespace AbilityMadness.Code.Gameplay.TargetCollection.Systems
                var hits =  _physicsService.CircleCast(
                    targetCollector.WorldPosition,
                    targetCollector.SphereCastRadius,
-                   ~0);
+                   1 << Constants.Layers.TeamToLayer[targetCollector.Team]);
 
                foreach (var hit in hits)
                {

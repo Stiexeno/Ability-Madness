@@ -23,7 +23,8 @@ namespace AbilityMadness.Code.Gameplay.Health.Systems
                 .AllOf(
                     GameMatcher.Id,
                     GameMatcher.Health,
-                    GameMatcher.MaxHealth));
+                    GameMatcher.MaxHealth,
+                    GameMatcher.Head));
         }
 
         public void Execute()
@@ -34,7 +35,7 @@ namespace AbilityMadness.Code.Gameplay.Health.Systems
 
                 if (_owners.ContainsEntity(owner))
                 {
-                    healthbar.WorldPosition = owner.WorldPosition.AddY(0.5f);
+                    healthbar.WorldPosition = owner.Head.position.AddY(0.25f);
                     healthbar.Healthbar.SetHealth(owner.Health / (float)owner.MaxHealth);
                 }
             }

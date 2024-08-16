@@ -7,4 +7,6 @@ namespace AbilityMadness.Code.Gameplay.TargetCollection
     public class ProccessedTargets : IComponent { public List<int> Value; }
     public class SphereCast : IComponent {  }
     public class SphereCastRadius : IComponent { public float Value; }
+
+    public class TargetLayer : IComponent { public int Value; }
 }

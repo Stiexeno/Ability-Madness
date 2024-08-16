@@ -55,6 +55,7 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
                 .AddTeam(request.team)
                 .AddWorldPosition(request.position)
                 .AddDirection(direction)
+                .AddEffectViewPath(Constants.Prefabs.Effects.BulletHitEffect)
 
                 .With(x => x.isAlive = true)
                 .With(x => x.isTransformMovement = true)

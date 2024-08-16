@@ -9,6 +9,7 @@ using AbilityMadness.Code.Gameplay.Projectile.Factory;
 using AbilityMadness.Code.Gameplay.Round.Factory;
 using AbilityMadness.Code.Gameplay.Stats.Factory;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Factory;
+using AbilityMadness.Code.Gameplay.Weapons.Bullets.Services;
 using AbilityMadness.Code.Gameplay.Weapons.Factory;
 using AbilityMadness.Code.Infrastructure.Services.Assembler;
 using AbilityMadness.Code.Infrastructure.Services.Assembler.Installer;
@@ -50,6 +51,9 @@ namespace AbilityMadness
             Container.BindInterfacesTo<WorldBuilderService>()
                 .AsSingle()
                 .WithArguments(tilemaps);
+
+            Container.BindInterfacesTo<BulletService>()
+                .AsSingle();
         }
 
         private void BindFactories()
