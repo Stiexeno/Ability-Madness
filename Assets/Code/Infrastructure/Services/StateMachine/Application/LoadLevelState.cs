@@ -1,5 +1,10 @@
 ﻿using AbilityMadness.Code.Gameplay.Enemy.Waves.Factory;
+using AbilityMadness.Code.Gameplay.Gears.UI;
+using AbilityMadness.Code.Gameplay.Gears.UI.Inventory;
+using AbilityMadness.Code.Gameplay.Gears.UI.ItemSelection;
+using AbilityMadness.Code.Gameplay.Projectile.Factory;
 using AbilityMadness.Code.Gameplay.Round.Factory;
+using AbilityMadness.Code.Gameplay.Upgrades.Services;
 using AbilityMadness.Code.Gameplay.Weapons;
 using AbilityMadness.Code.Gameplay.Weapons.Factory;
 using AbilityMadness.Code.Infrastructure.Services.WorldBuilder.Configs;
@@ -25,6 +30,8 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
         private IWeaponFactory _weaponFactory;
         private IWorldBuilderService _worldBuilderService;
         private IRoundFactory _roundFactory;
+        private IProjectileFactory _projectileFactory;
+        private IUpgradeService _upgradeService;
 
         [Inject]
 		private void Construct(
@@ -37,8 +44,12 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
             IWaveFactory waveFactory,
             IWeaponFactory weaponFactory,
             IWorldBuilderService worldBuilderService,
-            IRoundFactory roundFactory)
+            IRoundFactory roundFactory,
+            IProjectileFactory projectileFactory,
+            IUpgradeService upgradeService)
 		{
+            _upgradeService = upgradeService;
+            _projectileFactory = projectileFactory;
             _roundFactory = roundFactory;
             _worldBuilderService = worldBuilderService;
             _weaponFactory = weaponFactory;
@@ -59,11 +70,17 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
         private async UniTask SetupScene()
         {
             await _worldBuilderService.Generate(WorldType.Grassland);
+            await LoadAssets();
             await SetupUI();
             CreatePlayer();
 
             _applicationStateMachine.Enter<BattleLoopState>();
             _loadingCurtain.Hide();
+        }
+
+        private async UniTask LoadAssets()
+        {
+            await _projectileFactory.Load();
         }
 
 		private async UniTask SetupUI()
@@ -76,7 +93,16 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 		private void SetupWindows()
 		{
             _iuiService.Open<HudWindow>();
+            _iuiService.Get<ItemSelectionWindow>();
+            _iuiService.Get<ItemDescriptionWindow>();
+            _iuiService.Get<InventoryWindow>();
+            _iuiService.Open<OverlayWindow>();
 		}
+
+        private void SetupOverlayWindow()
+        {
+
+        }
 
         private void CreatePlayer()
         {
@@ -86,6 +112,8 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 
             _waveFactory.CreateWave();
             _roundFactory.CreateRound(20 * 60);
+
+            _upgradeService.Load();
         }
     }
 }

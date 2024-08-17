@@ -13,7 +13,7 @@ namespace AbilityMadness.Code.Gameplay.Input.Systems
 
         public SetLookInputSystem(Contexts contexts, PlayerInput playerInput)
         {
-            _aimingInput = playerInput.actions[Constants.Input.Aiming];
+            _aimingInput = playerInput.actions[Constants.Input.MousePosition];
 
             _inputs = contexts.game.GetGroup(GameMatcher
                 .AllOf(GameMatcher.LookInput));

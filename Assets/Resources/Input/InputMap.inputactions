@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Aiming",
+                    "name": "MousePosition",
                     "type": "Value",
                     "id": "f1d8569f-5f58-4f7d-98b1-159afee03d36",
                     "expectedControlType": "Vector2",
@@ -45,6 +45,15 @@
                     "name": "OpenAssembler",
                     "type": "Button",
                     "id": "d1dbae49-65d1-498c-bc35-0126c8287218",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightClick",
+                    "type": "Button",
+                    "id": "90ae5774-46ab-408b-a29a-fdde091159eb",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -114,7 +123,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Aiming",
+                    "action": "MousePosition",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -148,6 +157,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "OpenAssembler",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "33a3e132-3042-4a9f-b871-aea5bab6ded3",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightClick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

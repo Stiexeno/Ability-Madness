@@ -12,7 +12,7 @@ namespace AbilityMadness.Code.Gameplay.Input.Systems
 
         public SetMousePositionInputSystem(Contexts contexts, PlayerInput playerInput)
         {
-            _mouseInput = playerInput.actions[Constants.Input.Aiming];
+            _mouseInput = playerInput.actions[Constants.Input.MousePosition];
 
             _inputs = contexts.game.GetGroup(GameMatcher
                 .AllOf(GameMatcher.MousePosition));

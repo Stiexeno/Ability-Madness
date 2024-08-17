@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AbilityMadness.Code.Infrastructure.Services.Cursors
 {
-    public enum CursorType { Unknown, Default, Aim, Interact, Talk }
+    public enum CursorType { Unknown, Default, Select, Interact, Talk }
 
     public class CursorService : ICursorService
     {
@@ -25,8 +25,9 @@ namespace AbilityMadness.Code.Infrastructure.Services.Cursors
 
             _cursorType = cursorType;
 
-            var cursorTexture = await _configsService.GetCursor(cursorType);
-            Cursor.SetCursor(cursorTexture, Vector2.one * 16, CursorMode.Auto);
+            var cursorConfig = await _configsService.GetCursor(cursorType);
+            var cursor = cursorConfig.GetCursor(cursorType);
+            Cursor.SetCursor(cursor.texture, cursor.center, CursorMode.Auto);
         }
     }
 }

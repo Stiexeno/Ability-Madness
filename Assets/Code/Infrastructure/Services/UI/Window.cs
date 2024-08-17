@@ -3,7 +3,7 @@ using SF = UnityEngine.SerializeField;
 
 namespace AbilityMadness
 {
-    public class Window : MonoBehaviour
+    public abstract class Window : MonoBehaviour
     {
         public void Open()
         {

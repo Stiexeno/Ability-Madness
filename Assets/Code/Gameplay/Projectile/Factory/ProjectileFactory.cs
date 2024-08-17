@@ -5,7 +5,10 @@ using AbilityMadness.Code.Gameplay.Movement;
 using AbilityMadness.Code.Gameplay.TargetCollection;
 using AbilityMadness.Code.Gameplay.Weapons;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
+using AbilityMadness.Infrastructure.Services.Assets;
 using AbilityMadness.Infrastructure.Services.Configs;
+using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Projectile.Factory
 {
@@ -13,11 +16,21 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
     {
         private IIdentifierService _identifierService;
         private IConfigsService _configsService;
+        private IAssets _assets;
 
-        public ProjectileFactory(IIdentifierService identifierService, IConfigsService configsService)
+        public ProjectileFactory(
+            IIdentifierService identifierService,
+            IConfigsService configsService,
+            IAssets assets)
         {
+            _assets = assets;
             _configsService = configsService;
             _identifierService = identifierService;
+        }
+
+        public async UniTask Load()
+        {
+            _assets.GetAssetsByLabelAsync<GameObject>(Constants.Prefabs.ProjectileLabel);
         }
 
         public GameEntity CreateProjectile(ProjectileRequest request)

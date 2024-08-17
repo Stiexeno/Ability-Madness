@@ -20,24 +20,17 @@ namespace AbilityMadness
 
             public const string WindowLabel = "window";
 
+            public const string ProjectileLabel = "projectile";
+
             public static class Widgets
             {
                 public const string DamageTextWidget = "Prefabs/UI/Widgets/DamageTextWidget";
                 public const string HealthbarWidget = "Prefabs/UI/Widgets/HealthbarWidget";
                 public const string ReloadWidget = "Prefabs/UI/Widgets/ReloadWidget";
-                public const string GridWidget = "Prefabs/UI/Attachmnets/GridWidget";
-                public const string UpgradeWidget = "Prefabs/UI/Attachmnets/UpgradeWidget";
-                public const string AttachmentWidget = "Prefabs/UI/Attachmnets/AttachmentWidget";
                 public const string SmallBulletWidget = "Prefabs/UI/Widgets/SmallBulletWidget";
-            }
-
-            public static class Projectiles
-            {
-                public const string Fireball = "Prefabs/Projectiles/Projectile_Fireball";
-                public const string Ricochet = "Projectiles/Ricochet/Projectile_Bullet_Ricochet";
-
-                public const string Tornado = "Prefabs/Projectiles/Tornado/Projectile_Tornado";
-                public const string Bullet = "Prefabs/Projectiles/Bullet/Projectile_Bullet";
+                public const string BulletWidget = "Prefabs/UI/Widgets/BulletWidget";
+                public const string BulletSelectionWidget = "Prefabs/UI/Widgets/BulletSelectionWidget";
+                public const string BulletDragWidget = "Prefabs/UI/Widgets/BulletDragWidget";
             }
 
             public static class Effects
@@ -60,7 +53,8 @@ namespace AbilityMadness
         public static class Input
         {
             public const string Movement = "Movement";
-            public const string Aiming = "Aiming";
+            public const string MousePosition = "MousePosition";
+            public const string RightClick = "RightClick";
             public const string Attack = "Attack";
             public const string Dash = "Dash";
             public const string OpenAssembler = "OpenAssembler";
@@ -75,6 +69,7 @@ namespace AbilityMadness
             public const string WorldBuilderConfigLabel = "config_world";
             public const string WeaponConfigLabel = "config_weapon";
             public const string BulletConfigLabel = "config_bullet";
+            public const string GearConfigLabel = "config_gear";
 
             public const string ShakePlayerHit = "Configs/Shake/Shake_Player_Hit";
             public const string ShakeShoot = "Configs/Shake/Shake_Shoot";

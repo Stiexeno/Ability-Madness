@@ -4,6 +4,7 @@ using AbilityMadness.Code.Infrastructure.Services.Camera;
 using AbilityMadness.Code.Infrastructure.Services.Cursors;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
 using AbilityMadness.Code.Infrastructure.Services.Physics;
+using AbilityMadness.Code.Infrastructure.Services.TimeService;
 using AbilityMadness.Code.Infrastructure.Services.UI;
 using AbilityMadness.Infrastructure.Factories.UI;
 using AbilityMadness.Infrastructure.Services.Assets;
@@ -85,6 +86,9 @@ namespace AbilityMadness
                 .AsSingle();
 
             Container.BindInterfacesTo<ExperienceCalculatorService>()
+                .AsSingle();
+
+            Container.BindInterfacesTo<TimeService>()
                 .AsSingle();
         }
 

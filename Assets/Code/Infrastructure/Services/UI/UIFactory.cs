@@ -1,8 +1,6 @@
 ﻿using System.Linq;
-using AbilityMadness.Code.Common;
-using AbilityMadness.Code.Extensions;
-using AbilityMadness.Code.Gameplay.UI.Modifier;
-using AbilityMadness.Code.Gameplay.UI.Upgrade;
+using AbilityMadness.Code.Gameplay.Gears.UI.Inventory;
+using AbilityMadness.Code.Gameplay.Gears.UI.ItemSelection;
 using AbilityMadness.Code.Infrastructure.Services.Camera;
 using AbilityMadness.Code.Infrastructure.Services.UI;
 using AbilityMadness.Code.Infrastructure.Services.UI.Widgets;
@@ -47,19 +45,24 @@ namespace AbilityMadness.Infrastructure.Factories.UI
             return damageText;
         }
 
-        public async UniTask<GridWidget> CreateGridWidget(Transform parent)
-        {
-            return await _uiPool.Take<GridWidget>(Constants.Prefabs.Widgets.GridWidget, parent);
-        }
-
-        public async UniTask<UpgradeWidget> CreateUpgradeWidget(Transform parent)
-        {
-            return await _uiPool.Take<UpgradeWidget>(Constants.Prefabs.Widgets.UpgradeWidget, parent);
-        }
-
-        public async UniTask<SmallBulletWidget> CreateBulletWidget(Transform parent)
+        public async UniTask<SmallBulletWidget> CreateSmallBulletWidget(Transform parent)
         {
             return await _uiPool.Take<SmallBulletWidget>(Constants.Prefabs.Widgets.SmallBulletWidget, parent);
+        }
+
+        public async UniTask<BulletWidget> CreateBulletWidget(Transform parent)
+        {
+            return await _uiPool.Take<BulletWidget>(Constants.Prefabs.Widgets.BulletWidget, parent);
+        }
+
+        public async UniTask<BulletSelectWidget> CreateBulletSelectWidget(Transform parent)
+        {
+            return await _uiPool.Take<BulletSelectWidget>(Constants.Prefabs.Widgets.BulletSelectionWidget, parent);
+        }
+
+        public async UniTask<BulletDragWidget> CreateBulletDragWidget(Transform parent)
+        {
+            return await _uiPool.Take<BulletDragWidget>(Constants.Prefabs.Widgets.BulletDragWidget, parent);
         }
 
         #region Factory
@@ -78,10 +81,10 @@ namespace AbilityMadness.Infrastructure.Factories.UI
         public async UniTask CreateUIRoot()
         {
             _uiRoot = await _assets.LoadAsync<GameObject>(Constants.Prefabs.UIRootPath);
-            var _worlduiRoot = await _assets.LoadAsync<GameObject>(Constants.Prefabs.WorldUIRootPath);
+            var worlduiRoot = await _assets.LoadAsync<GameObject>(Constants.Prefabs.WorldUIRootPath);
 
             _uiRootParent = _assets.Instantiate(_uiRoot, Vector3.zero, Vector3.zero).transform;
-            _worldUiRootParent = _assets.Instantiate(_worlduiRoot, Vector3.zero, Vector3.zero).transform;
+            _worldUiRootParent = _assets.Instantiate(worlduiRoot, Vector3.zero, Vector3.zero).transform;
 
             var worldCanvas = _worldUiRootParent.GetComponent<Canvas>();
             worldCanvas.worldCamera = _cameraProvider.Camera;

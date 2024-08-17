@@ -5,14 +5,14 @@ using AbilityMadness.Code.Gameplay.EffectApplication.Factory;
 using AbilityMadness.Code.Gameplay.Enemy.Factory;
 using AbilityMadness.Code.Gameplay.Enemy.Waves.Factory;
 using AbilityMadness.Code.Gameplay.Experience.Factory;
+using AbilityMadness.Code.Gameplay.Gears.UI.ItemSelection;
 using AbilityMadness.Code.Gameplay.Projectile.Factory;
 using AbilityMadness.Code.Gameplay.Round.Factory;
 using AbilityMadness.Code.Gameplay.Stats.Factory;
+using AbilityMadness.Code.Gameplay.Upgrades.Services;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Factory;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Services;
 using AbilityMadness.Code.Gameplay.Weapons.Factory;
-using AbilityMadness.Code.Infrastructure.Services.Assembler;
-using AbilityMadness.Code.Infrastructure.Services.Assembler.Installer;
 using AbilityMadness.Code.Infrastructure.Services.Camera;
 using AbilityMadness.Code.Infrastructure.Services.Camera.Shake;
 using AbilityMadness.Code.Infrastructure.Services.View;
@@ -36,7 +36,6 @@ namespace AbilityMadness
 			BindSetters();
 			BindServices();
             BindFactories();
-            BindInstallers();
 		}
 
 		private void BindServices()
@@ -53,6 +52,12 @@ namespace AbilityMadness
                 .WithArguments(tilemaps);
 
             Container.BindInterfacesTo<BulletService>()
+                .AsSingle();
+
+            Container.BindInterfacesTo<UpgradeService>()
+                .AsSingle();
+
+            Container.BindInterfacesTo<ItemSelectModel>()
                 .AsSingle();
         }
 
@@ -96,16 +101,6 @@ namespace AbilityMadness
 
             Container.BindInterfacesTo<ViewFactory>()
                 .AsSingle();
-        }
-
-        private void BindInstallers()
-        {
-            Container.BindInterfacesTo<AttachmentFacade>()
-                .FromSubContainerResolve()
-                .ByInstaller<AttachmentInstaller>()
-                .WithKernel()
-                .AsSingle()
-                .NonLazy();
         }
 
         private void BindSetters()

@@ -18,21 +18,25 @@ MonoBehaviour:
   m_GUID: 6bb64ced1250d9c428c104dca65d3fff
   m_SerializeEntries:
   - m_GUID: e4e0b3a49037d2749b3d4bd266162896
-    m_Address: Prefabs/Projectiles/Projectile_Fireball
+    m_Address: Projectile_Fireball
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - projectile
   - m_GUID: 0919512cebcc86d48ab1fdecbbf1ec54
-    m_Address: Projectiles/Ricochet/Projectile_Bullet_Ricochet
+    m_Address: Projectile_Bullet_Ricochet
     m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: cdb610c5365020742aa6607b9682015f
-    m_Address: Prefabs/Projectiles/Tornado/Projectile_Tornado
+    m_SerializedLabels:
+    - projectile
+  - m_GUID: b931ba43c5be3394bad80ed48de0d176
+    m_Address: Projectile_Bullet_Rifle
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - projectile
   - m_GUID: 51ee2c1654720e548a0ddd9a1a4d7012
-    m_Address: Prefabs/Projectiles/Bullet/Projectile_Bullet
+    m_Address: Projectile_Bullet
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - projectile
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9f75c775787da8a4c8e7e94698c9d5b8, type: 2}
   m_SchemaSet:

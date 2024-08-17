@@ -25,24 +25,24 @@ MonoBehaviour:
     m_Address: Prefabs/UI/Widgets/HealthbarWidget
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: b09849a68db135542b41870b5a0a3a71
-    m_Address: Prefabs/UI/Attachmnets/GridWidget
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 5cd7c0b88d8c8914f85f09af4c1ce026
-    m_Address: Prefabs/UI/Attachmnets/AttachmentWidget
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: f5eb3c86ce8a900418147b35adef8a4c
-    m_Address: Prefabs/UI/Attachmnets/UpgradeWidget
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 34c11567121002e419e9d281ce02d4b2
     m_Address: Prefabs/UI/Widgets/ReloadWidget
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: d197656a6a4a73e46a9a4adf6e350cc0
     m_Address: Prefabs/UI/Widgets/SmallBulletWidget
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: dbc6883fafef69144b960cb31f2e9298
+    m_Address: Prefabs/UI/Widgets/BulletWidget
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 42cfda387dfafc942bfe9ed8ccca2c70
+    m_Address: Prefabs/UI/Widgets/BulletSelectionWidget
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e118344189c70e64da26cab4a3ae1275
+    m_Address: Prefabs/UI/Widgets/BulletDragWidget
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

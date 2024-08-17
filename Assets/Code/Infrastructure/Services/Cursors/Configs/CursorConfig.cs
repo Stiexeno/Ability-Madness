@@ -8,17 +8,18 @@ namespace AbilityMadness.Code.Infrastructure.Services.Cursors.Configs
     {
         public CursorIcon[] cursorIcons;
 
-        public Texture2D GetCursor(CursorType cursorType)
+        public CursorIcon GetCursor(CursorType cursorType)
         {
             foreach (CursorIcon cursorIcon in cursorIcons)
             {
                 if (cursorIcon.type == cursorType)
                 {
-                    return cursorIcon.texture;
+                    return cursorIcon;
                 }
             }
 
-            return null;
+            Debug.LogError($"CursorIcon with type {cursorType} not found");
+            return default;
         }
     }
 
@@ -27,5 +28,6 @@ namespace AbilityMadness.Code.Infrastructure.Services.Cursors.Configs
     {
         public CursorType type;
         public Texture2D texture;
+        public Vector2 center;
     }
 }

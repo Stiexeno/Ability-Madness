@@ -1,5 +1,5 @@
-using AbilityMadness.Code.Gameplay.UI.Modifier;
-using AbilityMadness.Code.Gameplay.UI.Upgrade;
+using AbilityMadness.Code.Gameplay.Gears.UI.Inventory;
+using AbilityMadness.Code.Gameplay.Gears.UI.ItemSelection;
 using AbilityMadness.Code.Infrastructure.Services.UI.Widgets;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -11,9 +11,10 @@ namespace AbilityMadness.Infrastructure.Factories.UI
 		T CreateWindow<T>() where T : Window;
 		UniTask CreateUIRoot();
         UniTask<DamageTextWidget> CreateDamageText(Vector3 position, int damage);
-        UniTask<GridWidget> CreateGridWidget(Transform parent);
-        UniTask<UpgradeWidget> CreateUpgradeWidget(Transform parent);
-        UniTask<SmallBulletWidget> CreateBulletWidget(Transform parent);
+        UniTask<SmallBulletWidget> CreateSmallBulletWidget(Transform parent);
         UniTask Load();
+        UniTask<BulletWidget> CreateBulletWidget(Transform parent);
+        UniTask<BulletSelectWidget> CreateBulletSelectWidget(Transform parent);
+        UniTask<BulletDragWidget> CreateBulletDragWidget(Transform parent);
     }
 }

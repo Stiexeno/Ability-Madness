@@ -16,11 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 03f787871f63b584f904ceba5045e2fc
-  m_SerializeEntries:
-  - m_GUID: b931ba43c5be3394bad80ed48de0d176
-    m_Address: Assets/AddressablesResources/Prefabs/Projectiles/Rifle/Projectile_Bullet_Rifle.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9f75c775787da8a4c8e7e94698c9d5b8, type: 2}
   m_SchemaSet:

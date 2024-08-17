@@ -1,7 +1,8 @@
-﻿using AbilityMadness.Code.Gameplay.Weapons;
+﻿using System.Collections.Generic;
+using AbilityMadness.Code.Gameplay.Gears.Configs;
+using AbilityMadness.Code.Gameplay.Weapons;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Configs;
 using AbilityMadness.Code.Gameplay.Weapons.Configs;
-using AbilityMadness.Code.Infrastructure.Services.Assembler;
 using AbilityMadness.Code.Infrastructure.Services.Cursors;
 using AbilityMadness.Code.Infrastructure.Services.Cursors.Configs;
 using AbilityMadness.Code.Infrastructure.Services.WorldBuilder.Configs;
@@ -15,10 +16,10 @@ namespace AbilityMadness.Infrastructure.Services.Configs
 	{
 		private IAssets _assets;
 
-        public AttachmentConfig[] AttachmentConfigs { get; private set; }
         public WorldBuilderConfig[] WorldBuilderConfigs { get; private set; }
         public WeaponConfig[] WeaponConfigs { get; private set; }
         public BulletConfig[] BulletConfigs { get; private set; }
+        public GearConfig[] GearConfig { get; private set; }
 
 		public ConfigsService(IAssets assets)
 		{
@@ -28,16 +29,16 @@ namespace AbilityMadness.Infrastructure.Services.Configs
 
 		private async UniTaskVoid Load()
 		{
-            AttachmentConfigs = _assets.GetAssetsByLabel<AttachmentConfig>(Constants.Configs.AttachmentConfigLabel);
             WorldBuilderConfigs = _assets.GetAssetsByLabel<WorldBuilderConfig>(Constants.Configs.WorldBuilderConfigLabel);
             WeaponConfigs = _assets.GetAssetsByLabel<WeaponConfig>(Constants.Configs.WeaponConfigLabel);
             BulletConfigs = _assets.GetAssetsByLabel<BulletConfig>(Constants.Configs.BulletConfigLabel);
+            GearConfig = _assets.GetAssetsByLabel<GearConfig>(Constants.Configs.GearConfigLabel);
 		}
 
-        public async UniTask<Texture2D> GetCursor(CursorType type)
+        public async UniTask<CursorConfig> GetCursor(CursorType type)
         {
             var cursorConfig = await _assets.LoadAsync<CursorConfig>(Constants.Configs.CursorConfig);
-            return cursorConfig.GetCursor(type);
+            return cursorConfig;
         }
 
         public WeaponConfig GetWeaponConfig(WeaponTypeId type)
@@ -80,6 +81,28 @@ namespace AbilityMadness.Infrastructure.Services.Configs
 
             Debug.LogError($"WorldBuilderConfig with type {worldTyp} not found");
             return null;
+        }
+
+        public List<ItemConfig> GetItemConfigs()
+        {
+            var itemConfigs = new List<ItemConfig>();
+            foreach (var bulletConfig in BulletConfigs)
+            {
+                if (bulletConfig is ItemConfig itemConfig)
+                {
+                    itemConfigs.Add(itemConfig);
+                }
+            }
+
+            // foreach (var gearConfig in GearConfig)
+            // {
+            //     if (gearConfig is ItemConfig itemConfig)
+            //     {
+            //         itemConfigs.Add(itemConfig);
+            //     }
+            // }
+
+            return itemConfigs;
         }
     }
 }

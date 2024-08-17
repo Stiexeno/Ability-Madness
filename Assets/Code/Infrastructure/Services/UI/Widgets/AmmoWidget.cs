@@ -28,7 +28,7 @@ namespace AbilityMadness.Code.Infrastructure.Services.UI.Widgets
 
             for (int i = 0; i < maxAmmoCapacity; i++)
             {
-                var bulletWidget = await _uiFactory.CreateBulletWidget(content);
+                var bulletWidget = await _uiFactory.CreateSmallBulletWidget(content);
                 bullets[i] = bulletWidget;
             }
         }
