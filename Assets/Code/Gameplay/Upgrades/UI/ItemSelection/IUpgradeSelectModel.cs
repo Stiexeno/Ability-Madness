@@ -1,10 +1,10 @@
-using AbilityMadness.Code.Gameplay.Gears.UI.Inventory;
+using AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Configs;
 using Cysharp.Threading.Tasks;
 
-namespace AbilityMadness.Code.Gameplay.Gears.UI.ItemSelection
+namespace AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection
 {
-    public interface IItemSelectModel
+    public interface IUpgradeSelectModel
     {
         UniTaskVoid Select(BulletSelectWidget bulletSelectWidget, BulletConfig bulletConfig);
         bool IsAnySelected();

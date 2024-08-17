@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using AbilityMadness.Code.Gameplay.Gears.Configs;
+using AbilityMadness.Code.Gameplay.Upgrades.Configs;
 using AbilityMadness.Code.Gameplay.Weapons;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Configs;
 using AbilityMadness.Code.Gameplay.Weapons.Configs;

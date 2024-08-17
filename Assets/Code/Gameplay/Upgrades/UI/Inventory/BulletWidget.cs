@@ -1,5 +1,4 @@
-using System;
-using AbilityMadness.Code.Gameplay.Gears.UI.ItemSelection;
+using AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Configs;
 using DG.Tweening;
 using UnityEngine;
@@ -8,7 +7,7 @@ using UnityEngine.UI;
 using Zenject;
 using SF = UnityEngine.SerializeField;
 
-namespace AbilityMadness.Code.Gameplay.Gears.UI.Inventory
+namespace AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory
 {
     public class BulletWidget : Widget, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
     {
@@ -19,12 +18,12 @@ namespace AbilityMadness.Code.Gameplay.Gears.UI.Inventory
 
         private ItemDescriptionWindow _descriptionWindow;
         private BulletConfig _bulletConfig;
-        private IItemSelectModel _itemSelectModel;
+        private IUpgradeSelectModel _upgradeSelectModel;
 
         [Inject]
-        private void Construct(IUIService uiService, IItemSelectModel itemSelectModel)
+        private void Construct(IUIService uiService, IUpgradeSelectModel upgradeSelectModel)
         {
-            _itemSelectModel = itemSelectModel;
+            _upgradeSelectModel = upgradeSelectModel;
             _descriptionWindow = uiService.Get<ItemDescriptionWindow>();
         }
 
@@ -75,9 +74,9 @@ namespace AbilityMadness.Code.Gameplay.Gears.UI.Inventory
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            if (_itemSelectModel.IsAnySelected())
+            if (_upgradeSelectModel.IsAnySelected())
             {
-                _itemSelectModel.Replace(this);
+                _upgradeSelectModel.Replace(this);
             }
         }
     }

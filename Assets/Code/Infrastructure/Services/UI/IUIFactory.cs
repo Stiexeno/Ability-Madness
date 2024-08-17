@@ -1,5 +1,5 @@
-using AbilityMadness.Code.Gameplay.Gears.UI.Inventory;
-using AbilityMadness.Code.Gameplay.Gears.UI.ItemSelection;
+using AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory;
+using AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection;
 using AbilityMadness.Code.Infrastructure.Services.UI.Widgets;
 using Cysharp.Threading.Tasks;
 using UnityEngine;

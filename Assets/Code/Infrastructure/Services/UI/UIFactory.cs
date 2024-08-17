@@ -1,6 +1,6 @@
 ﻿using System.Linq;
-using AbilityMadness.Code.Gameplay.Gears.UI.Inventory;
-using AbilityMadness.Code.Gameplay.Gears.UI.ItemSelection;
+using AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory;
+using AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection;
 using AbilityMadness.Code.Infrastructure.Services.Camera;
 using AbilityMadness.Code.Infrastructure.Services.UI;
 using AbilityMadness.Code.Infrastructure.Services.UI.Widgets;

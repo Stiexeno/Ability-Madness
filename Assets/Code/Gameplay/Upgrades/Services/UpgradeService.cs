@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using AbilityMadness.Code.Gameplay.Gears.Configs;
-using AbilityMadness.Code.Gameplay.Gears.UI.ItemSelection;
+using AbilityMadness.Code.Gameplay.Upgrades.Configs;
+using AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection;
 using AbilityMadness.Infrastructure.Services.Configs;
 using UnityEngine;
 
@@ -30,7 +31,7 @@ namespace AbilityMadness.Code.Gameplay.Upgrades.Services
 
         public void Upgrade()
         {
-            var itemSelectWindow = _uiService.Get<ItemSelectionWindow>();
+            var itemSelectWindow = _uiService.Get<UpgradeSelectionWindow>();
             itemSelectWindow.Setup(GetRandomItems());
         }
 

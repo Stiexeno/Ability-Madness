@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine.UI;
 using SF = UnityEngine.SerializeField;
 
-namespace AbilityMadness.Code.Gameplay.Gears.UI
+namespace AbilityMadness.Code.Gameplay.Upgrades.UI
 {
     public class ItemDescriptionWindow : Window
     {

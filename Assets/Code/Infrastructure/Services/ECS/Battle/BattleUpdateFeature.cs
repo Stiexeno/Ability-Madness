@@ -21,6 +21,7 @@ using AbilityMadness.Code.Gameplay.Round;
 using AbilityMadness.Code.Gameplay.Stats;
 using AbilityMadness.Code.Gameplay.Status;
 using AbilityMadness.Code.Gameplay.TargetCollection;
+using AbilityMadness.Code.Gameplay.Upgrades;
 using AbilityMadness.Code.Gameplay.Vision;
 using AbilityMadness.Code.Gameplay.Weapons;
 
@@ -53,7 +54,8 @@ namespace AbilityMadness.Code.Infrastructure.Services.ECS
             Add(systemFactory.Create<CooldownFeature>());
 
             Add(systemFactory.Create<ExperienceFeature>());
-            Add(systemFactory.Create<ItemsFeature>());
+            Add(systemFactory.Create<GearFeature>());
+            Add(systemFactory.Create<UpgradeFeature>());
 
             Add(systemFactory.Create<ModifierFeature>());
             Add(systemFactory.Create<ProjectileFeature>());

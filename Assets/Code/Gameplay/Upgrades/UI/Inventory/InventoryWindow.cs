@@ -7,7 +7,7 @@ using UnityEngine;
 using Zenject;
 using SF = UnityEngine.SerializeField;
 
-namespace AbilityMadness.Code.Gameplay.Gears.UI.Inventory
+namespace AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory
 {
     public class InventoryWindow : Window
     {

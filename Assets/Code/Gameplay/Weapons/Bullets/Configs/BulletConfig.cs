@@ -1,5 +1,6 @@
 ﻿using AbilityMadness.Code.Gameplay.Gears.Configs;
 using AbilityMadness.Code.Gameplay.Projectile.Factory;
+using AbilityMadness.Code.Gameplay.Upgrades.Configs;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 

@@ -3,9 +3,9 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using SF = UnityEngine.SerializeField;
 
-namespace AbilityMadness.Code.Gameplay.Gears.UI.ItemSelection
+namespace AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection
 {
-    public abstract class ItemSelectWidget : Widget, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+    public abstract class UpgradeSelectWidget : Widget, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
         [SF] protected Image icon;
         [SF] protected GameObject selectIcon;

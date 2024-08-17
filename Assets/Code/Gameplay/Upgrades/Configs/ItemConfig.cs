@@ -1,7 +1,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace AbilityMadness.Code.Gameplay.Gears.Configs
+namespace AbilityMadness.Code.Gameplay.Upgrades.Configs
 {
     public abstract class ItemConfig : ScriptableObject
     {

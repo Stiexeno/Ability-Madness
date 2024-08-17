@@ -10,7 +10,7 @@ using UnityEngine.UI;
 using Zenject;
 using SF = UnityEngine.SerializeField;
 
-namespace AbilityMadness.Code.Gameplay.Gears.UI.ItemSelection
+namespace AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection
 {
     [RequireComponent(typeof(UpdatableGameObject))]
     public class BulletDragWidget : Widget, IUpdatable

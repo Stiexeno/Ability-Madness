@@ -1,10 +1,10 @@
 ﻿using AbilityMadness.Code.Gameplay.Enemy.Waves.Factory;
-using AbilityMadness.Code.Gameplay.Gears.UI;
-using AbilityMadness.Code.Gameplay.Gears.UI.Inventory;
-using AbilityMadness.Code.Gameplay.Gears.UI.ItemSelection;
 using AbilityMadness.Code.Gameplay.Projectile.Factory;
 using AbilityMadness.Code.Gameplay.Round.Factory;
 using AbilityMadness.Code.Gameplay.Upgrades.Services;
+using AbilityMadness.Code.Gameplay.Upgrades.UI;
+using AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory;
+using AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection;
 using AbilityMadness.Code.Gameplay.Weapons;
 using AbilityMadness.Code.Gameplay.Weapons.Factory;
 using AbilityMadness.Code.Infrastructure.Services.WorldBuilder.Configs;
@@ -93,7 +93,7 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 		private void SetupWindows()
 		{
             _iuiService.Open<HudWindow>();
-            _iuiService.Get<ItemSelectionWindow>();
+            _iuiService.Get<UpgradeSelectionWindow>();
             _iuiService.Get<ItemDescriptionWindow>();
             _iuiService.Get<InventoryWindow>();
             _iuiService.Open<OverlayWindow>();

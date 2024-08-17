@@ -5,11 +5,11 @@ using AbilityMadness.Code.Gameplay.EffectApplication.Factory;
 using AbilityMadness.Code.Gameplay.Enemy.Factory;
 using AbilityMadness.Code.Gameplay.Enemy.Waves.Factory;
 using AbilityMadness.Code.Gameplay.Experience.Factory;
-using AbilityMadness.Code.Gameplay.Gears.UI.ItemSelection;
 using AbilityMadness.Code.Gameplay.Projectile.Factory;
 using AbilityMadness.Code.Gameplay.Round.Factory;
 using AbilityMadness.Code.Gameplay.Stats.Factory;
 using AbilityMadness.Code.Gameplay.Upgrades.Services;
+using AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Factory;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Services;
 using AbilityMadness.Code.Gameplay.Weapons.Factory;
@@ -57,7 +57,7 @@ namespace AbilityMadness
             Container.BindInterfacesTo<UpgradeService>()
                 .AsSingle();
 
-            Container.BindInterfacesTo<ItemSelectModel>()
+            Container.BindInterfacesTo<UpgradeSelectModel>()
                 .AsSingle();
         }
 

@@ -1,15 +1,15 @@
 using AbilityMadness.Code.Gameplay.Upgrades.Services;
 using Entitas;
 
-namespace AbilityMadness.Code.Gameplay.Gears.Systems
+namespace AbilityMadness.Code.Gameplay.Upgrades.Systems
 {
-    public class OpenItemSelectionWindowSystem : IExecuteSystem
+    public class OpenUpgradeSelectWindowSystem : IExecuteSystem
     {
         private IGroup<GameEntity> _players;
         private IUIService _uiService;
         private IUpgradeService _upgradeService;
 
-        public OpenItemSelectionWindowSystem(GameContext gameContext, IUpgradeService upgradeService)
+        public OpenUpgradeSelectWindowSystem(GameContext gameContext, IUpgradeService upgradeService)
         {
             _upgradeService = upgradeService;
 

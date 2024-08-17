@@ -1,4 +1,4 @@
-using AbilityMadness.Code.Gameplay.Gears.UI.Inventory;
+using AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Configs;
 using AbilityMadness.Code.Infrastructure.Services.UI;
 using AbilityMadness.Infrastructure.Factories.UI;
@@ -6,9 +6,9 @@ using Cysharp.Threading.Tasks;
 using UnityEngine.InputSystem;
 using Zenject;
 
-namespace AbilityMadness.Code.Gameplay.Gears.UI.ItemSelection
+namespace AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection
 {
-    public class ItemSelectModel : IItemSelectModel, ITickable
+    public class UpgradeSelectModel : IUpgradeSelectModel, ITickable
     {
         private BulletConfig _bulletConfig;
         private BulletSelectWidget _bulletSelectWidget;
@@ -22,7 +22,7 @@ namespace AbilityMadness.Code.Gameplay.Gears.UI.ItemSelection
         private IUIFactory _uiFactory;
         private IUIPool _uiPool;
 
-        public ItemSelectModel(IUIService uiService, IUIFactory uiFactory, PlayerInput playerInput, IUIPool uiPool)
+        public UpgradeSelectModel(IUIService uiService, IUIFactory uiFactory, PlayerInput playerInput, IUIPool uiPool)
         {
             _rightClickAction = playerInput.actions[Constants.Input.RightClick];
 
@@ -59,7 +59,7 @@ namespace AbilityMadness.Code.Gameplay.Gears.UI.ItemSelection
                 bulletWidget.Setup(_bulletConfig);
                 Cleanup();
 
-                _uiService.Close<ItemSelectionWindow>();
+                _uiService.Close<UpgradeSelectionWindow>();
             });
         }
 

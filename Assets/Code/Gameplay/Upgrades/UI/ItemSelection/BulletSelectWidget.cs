@@ -1,23 +1,24 @@
 using AbilityMadness.Code.Gameplay.Gears.Configs;
+using AbilityMadness.Code.Gameplay.Upgrades.Configs;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Configs;
 using UnityEngine.UI;
 using Zenject;
 using SF = UnityEngine.SerializeField;
 
-namespace AbilityMadness.Code.Gameplay.Gears.UI.ItemSelection
+namespace AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection
 {
-    public class BulletSelectWidget : ItemSelectWidget
+    public class BulletSelectWidget : UpgradeSelectWidget
     {
         [SF] protected Image shadow;
 
         private ItemDescriptionWindow _descriptionWindow;
         private BulletConfig _bulletConfig;
-        private IItemSelectModel _itemSelectModel;
+        private IUpgradeSelectModel _upgradeSelectModel;
 
         [Inject]
-        private void Construct(IUIService uiService, IItemSelectModel itemSelectModel)
+        private void Construct(IUIService uiService, IUpgradeSelectModel upgradeSelectModel)
         {
-            _itemSelectModel = itemSelectModel;
+            _upgradeSelectModel = upgradeSelectModel;
             _descriptionWindow = uiService.Get<ItemDescriptionWindow>();
         }
 
@@ -39,7 +40,7 @@ namespace AbilityMadness.Code.Gameplay.Gears.UI.ItemSelection
         public void Select()
         {
             icon.gameObject.SetActive(false);
-            _itemSelectModel.Select(this, _bulletConfig).Forget();
+            _upgradeSelectModel.Select(this, _bulletConfig).Forget();
         }
 
         public void Deselect()

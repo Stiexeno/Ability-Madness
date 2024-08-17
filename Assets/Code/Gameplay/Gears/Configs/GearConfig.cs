@@ -1,3 +1,4 @@
+using AbilityMadness.Code.Gameplay.Upgrades.Configs;
 using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Gears.Configs

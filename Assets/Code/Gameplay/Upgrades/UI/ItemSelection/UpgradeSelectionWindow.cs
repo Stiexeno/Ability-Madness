@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using AbilityMadness.Code.Gameplay.Gears.Configs;
-using AbilityMadness.Code.Gameplay.Gears.UI.Inventory;
+using AbilityMadness.Code.Gameplay.Upgrades.Configs;
+using AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory;
 using AbilityMadness.Code.Infrastructure.Services.Cursors;
 using AbilityMadness.Code.Infrastructure.Services.TimeService;
 using AbilityMadness.Code.Infrastructure.Services.UI;
@@ -10,9 +11,9 @@ using UnityEngine;
 using Zenject;
 using SF = UnityEngine.SerializeField;
 
-namespace AbilityMadness.Code.Gameplay.Gears.UI.ItemSelection
+namespace AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection
 {
-    public class ItemSelectionWindow : Window
+    public class UpgradeSelectionWindow : Window
     {
         [SF] private Transform content;
 
