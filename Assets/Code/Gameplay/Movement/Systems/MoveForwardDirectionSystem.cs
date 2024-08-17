@@ -1,5 +1,6 @@
 using AbilityMadness.Code.Extensions;
 using Entitas;
+using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Movement.Systems
 {
@@ -23,7 +24,7 @@ namespace AbilityMadness.Code.Gameplay.Movement.Systems
         {
             foreach (var forwardEntity in _forwardEntities)
             {
-                forwardEntity.WorldPosition += forwardEntity.Direction.ToVector3() * forwardEntity.MovementSpeed;
+                forwardEntity.WorldPosition += forwardEntity.Direction.ToVector3() * forwardEntity.MovementSpeed * Time.deltaTime;
             }
         }
     }

@@ -10,6 +10,6 @@ namespace AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection
         bool IsAnySelected();
         BulletSelectWidget GetSelectedWidget();
         void Deselect();
-        void Replace(BulletWidget bulletWidget);
+        void Replace(BulletWidget bulletWidget, int index);
     }
 }

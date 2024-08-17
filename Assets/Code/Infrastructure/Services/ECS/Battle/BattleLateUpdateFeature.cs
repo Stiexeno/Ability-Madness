@@ -1,6 +1,4 @@
-﻿using AbilityMadness.Code.Gameplay.Camera;
-
-namespace AbilityMadness.Code.Infrastructure.Services.ECS
+﻿namespace AbilityMadness.Code.Infrastructure.Services.ECS
 {
     public class BattleLateUpdateFeature : Feature
     {

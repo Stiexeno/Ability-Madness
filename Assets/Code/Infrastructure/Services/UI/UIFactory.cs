@@ -33,6 +33,7 @@ namespace AbilityMadness.Infrastructure.Factories.UI
         {
             _assets.LoadAsync<GameObject>(Constants.Prefabs.Widgets.DamageTextWidget).Forget();
             _assets.LoadAsync<GameObject>(Constants.Prefabs.Widgets.HealthbarWidget).Forget();
+            _assets.LoadAsync<GameObject>(Constants.Prefabs.Widgets.BulletDragWidget).Forget();
         }
 
         public async UniTask<DamageTextWidget> CreateDamageText(Vector3 position, int damage)

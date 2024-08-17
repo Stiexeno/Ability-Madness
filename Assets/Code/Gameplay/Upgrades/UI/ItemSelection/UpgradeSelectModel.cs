@@ -1,8 +1,10 @@
 using AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Configs;
+using AbilityMadness.Code.Gameplay.Weapons.Bullets.Services;
 using AbilityMadness.Code.Infrastructure.Services.UI;
 using AbilityMadness.Infrastructure.Factories.UI;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
 
@@ -21,9 +23,16 @@ namespace AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection
         private IUIService _uiService;
         private IUIFactory _uiFactory;
         private IUIPool _uiPool;
+        private IBulletService _bulletService;
 
-        public UpgradeSelectModel(IUIService uiService, IUIFactory uiFactory, PlayerInput playerInput, IUIPool uiPool)
+        public UpgradeSelectModel(
+            IUIService uiService,
+            IUIFactory uiFactory,
+            PlayerInput playerInput,
+            IUIPool uiPool,
+            IBulletService bulletService)
         {
+            _bulletService = bulletService;
             _rightClickAction = playerInput.actions[Constants.Input.RightClick];
 
             _uiPool = uiPool;
@@ -51,14 +60,15 @@ namespace AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection
             _bulletDragWidget.Setup(_bulletConfig);
         }
 
-        public void Replace(BulletWidget bulletWidget)
+        public void Replace(BulletWidget bulletWidget, int index)
         {
             bulletWidget.Replace(_bulletConfig);
             _bulletDragWidget.Replace(bulletWidget.transform, () =>
             {
-                bulletWidget.Setup(_bulletConfig);
-                Cleanup();
+                bulletWidget.Setup(_bulletConfig, index);
+                _bulletService.ChangeTo(_bulletConfig.type, index);
 
+                Cleanup();
                 _uiService.Close<UpgradeSelectionWindow>();
             });
         }

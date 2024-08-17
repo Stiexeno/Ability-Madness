@@ -24,11 +24,19 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Bullets.Factory
             {
                 var bullet = weaponConfig.bullets[i];
 
-                CreateBullet(targetId, bullet.type, i, team);
+                CreateBullet(bullet.type, targetId, i, team);
             }
         }
 
-        public GameEntity CreateBullet(int targetId, BulletTypeId type, int index, Team team)
+        public GameEntity CreateBulletRequest(BulletTypeId type, int index)
+        {
+            return CreateEntity.Empty()
+                .With(x => x.isBulletChangeRequest = true)
+                .AddBulletTypeId(type)
+                .AddBulletIndex(index);
+        }
+
+        public GameEntity CreateBullet(BulletTypeId type, int targetId, int index, Team team)
         {
             return type switch
             {

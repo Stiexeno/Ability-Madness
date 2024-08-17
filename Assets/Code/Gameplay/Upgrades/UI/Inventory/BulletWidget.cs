@@ -16,8 +16,11 @@ namespace AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory
 
         [SF] private GameObject selectIcon;
 
-        private ItemDescriptionWindow _descriptionWindow;
+        private int _index;
         private BulletConfig _bulletConfig;
+
+        private ItemDescriptionWindow _descriptionWindow;
+
         private IUpgradeSelectModel _upgradeSelectModel;
 
         [Inject]
@@ -27,9 +30,11 @@ namespace AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory
             _descriptionWindow = uiService.Get<ItemDescriptionWindow>();
         }
 
-        public void Setup(BulletConfig bulletConfig)
+        public void Setup(BulletConfig bulletConfig, int index)
         {
             _bulletConfig = bulletConfig;
+            _index = index;
+
             icon.sprite = bulletConfig.icon;
             shadow.sprite = bulletConfig.icon;
 
@@ -76,7 +81,7 @@ namespace AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory
         {
             if (_upgradeSelectModel.IsAnySelected())
             {
-                _upgradeSelectModel.Replace(this);
+                _upgradeSelectModel.Replace(this, _index);
             }
         }
     }

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using AbilityMadness.Code.Gameplay.Gears.Configs;
 using AbilityMadness.Code.Gameplay.Upgrades.Configs;
 using AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection;
 using AbilityMadness.Infrastructure.Services.Configs;
@@ -11,7 +10,7 @@ namespace AbilityMadness.Code.Gameplay.Upgrades.Services
     {
         private List<ItemConfig> _itemPool = new();
 
-        private const int MAX_ITEMS = 3;
+        private const int MAX_ITEMS = 4;
         private readonly ItemConfig[] _generatedItems = new ItemConfig[MAX_ITEMS];
 
         private IConfigsService _configsService;
@@ -32,7 +31,7 @@ namespace AbilityMadness.Code.Gameplay.Upgrades.Services
         public void Upgrade()
         {
             var itemSelectWindow = _uiService.Get<UpgradeSelectionWindow>();
-            itemSelectWindow.Setup(GetRandomItems());
+            itemSelectWindow.Setup(GetRandomItems()).Forget();
         }
 
         private ItemConfig[] GetRandomItems()

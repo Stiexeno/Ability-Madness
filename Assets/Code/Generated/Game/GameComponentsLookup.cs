@@ -133,28 +133,29 @@ public static class GameComponentsLookup {
     public const int AmmoCapacity = 122;
     public const int AmmoIndex = 123;
     public const int Bullet = 124;
-    public const int BulletIndex = 125;
-    public const int BulletTypeId = 126;
-    public const int FireRate = 127;
-    public const int HasReloadWidget = 128;
-    public const int MaxAmmoCapacity = 129;
-    public const int Pierce = 130;
-    public const int PiercedAmount = 131;
-    public const int Ready = 132;
-    public const int Recovering = 133;
-    public const int Reloading = 134;
-    public const int ReloadTime = 135;
-    public const int ReloadWidget = 136;
-    public const int Shot = 137;
-    public const int Spread = 138;
-    public const int WeaponAnimator = 139;
-    public const int Weapon = 140;
-    public const int WeaponPivot = 141;
-    public const int WeaponTypeId = 142;
-    public const int Player = 143;
-    public const int PlayerInTrigger = 144;
+    public const int BulletChangeRequest = 125;
+    public const int BulletIndex = 126;
+    public const int BulletTypeId = 127;
+    public const int FireRate = 128;
+    public const int HasReloadWidget = 129;
+    public const int MaxAmmoCapacity = 130;
+    public const int Pierce = 131;
+    public const int PiercedAmount = 132;
+    public const int Ready = 133;
+    public const int Recovering = 134;
+    public const int Reloading = 135;
+    public const int ReloadTime = 136;
+    public const int ReloadWidget = 137;
+    public const int Shot = 138;
+    public const int Spread = 139;
+    public const int WeaponAnimator = 140;
+    public const int Weapon = 141;
+    public const int WeaponPivot = 142;
+    public const int WeaponTypeId = 143;
+    public const int Player = 144;
+    public const int PlayerInTrigger = 145;
 
-    public const int TotalComponents = 145;
+    public const int TotalComponents = 146;
 
     public static readonly string[] componentNames = {
         "AssetReference",
@@ -282,6 +283,7 @@ public static class GameComponentsLookup {
         "AmmoCapacity",
         "AmmoIndex",
         "Bullet",
+        "BulletChangeRequest",
         "BulletIndex",
         "BulletTypeId",
         "FireRate",
@@ -430,6 +432,7 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Weapons.AmmoCapacity),
         typeof(AbilityMadness.Code.Gameplay.Weapons.AmmoIndex),
         typeof(AbilityMadness.Code.Gameplay.Weapons.Bullets.Bullet),
+        typeof(AbilityMadness.Code.Gameplay.Weapons.Bullets.BulletChangeRequest),
         typeof(AbilityMadness.Code.Gameplay.Weapons.Bullets.BulletIndex),
         typeof(AbilityMadness.Code.Gameplay.Weapons.Bullets.BulletTypeIdComponent),
         typeof(AbilityMadness.Code.Gameplay.Weapons.FireRate),

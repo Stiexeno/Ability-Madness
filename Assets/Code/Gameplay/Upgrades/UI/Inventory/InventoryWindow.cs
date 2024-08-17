@@ -47,10 +47,11 @@ namespace AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory
             Cleanup();
             var bulletConfigs = _bulletService.GetBulletConfigs();
 
-            foreach (var bulletConfig in bulletConfigs)
+            for (var i = 0; i < bulletConfigs.Length; i++)
             {
+                var bulletConfig = bulletConfigs[i];
                 var bulletWidget = await _uiFactory.CreateBulletWidget(content);
-                bulletWidget.Setup(bulletConfig);
+                bulletWidget.Setup(bulletConfig, i);
 
                 _bulletWidgets.Add(bulletWidget);
             }

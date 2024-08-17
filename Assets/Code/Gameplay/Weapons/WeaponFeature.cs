@@ -34,11 +34,13 @@ namespace AbilityMadness.Code.Gameplay.Weapons
             Add(systemFactory.Create<WeaponCooldownBetweenShotsSystem>());
 
             Add(systemFactory.Create<SendBulletEntitiesToServiceSystem>());
+            Add(systemFactory.Create<ChangeBulletWithRequestSystem>());
 
             Add(systemFactory.Create<ReloadWeaponSystem>());
             Add(systemFactory.Create<RecoverWeaponSystem>());
 
             Add(systemFactory.Create<CleanupWeaponShotSystem>());
+            Add(systemFactory.Create<CleanupBulletChangeRequestsSystem>());
         }
     }
 }

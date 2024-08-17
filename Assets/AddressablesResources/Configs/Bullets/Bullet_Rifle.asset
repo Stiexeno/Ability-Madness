@@ -23,7 +23,7 @@ MonoBehaviour:
     m_EditorAssetChanged: 0
   projectileSetup:
     damage: 30
-    movementSpeed: 0.35
+    movementSpeed: 35
     spawnCount: 0
     lifeTime: 5
     spread: 0

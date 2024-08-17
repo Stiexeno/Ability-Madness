@@ -7,5 +7,6 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Bullets.Services
     {
         List<BulletTypeId> Bullets { get; }
         BulletConfig[] GetBulletConfigs();
+        void ChangeTo(BulletTypeId type, int index);
     }
 }
