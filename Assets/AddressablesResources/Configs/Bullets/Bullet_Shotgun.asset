@@ -26,8 +26,10 @@ MonoBehaviour:
     spawnCount: 4
     lifeTime: 5
     spread: 0
-    pierce: 5
+    pierce: 1
     ricochet: 0
     effectSetups:
     - type: 1
-      value: 10
+      value: 5
+      damageType: 1
+    statusSetups: []

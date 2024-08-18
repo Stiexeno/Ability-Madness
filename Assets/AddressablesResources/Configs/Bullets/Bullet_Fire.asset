@@ -23,10 +23,10 @@ MonoBehaviour:
     m_EditorAssetChanged: 0
   projectileSetup:
     movementSpeed: 25
-    spawnCount: 4
+    spawnCount: 1
     lifeTime: 5
     spread: 0
-    pierce: 5
+    pierce: 3
     ricochet: 0
     effectSetups:
     - type: 1

@@ -23,7 +23,7 @@ MonoBehaviour:
     m_EditorAssetChanged: 0
   projectileSetup:
     movementSpeed: 15
-    spawnCount: 0
+    spawnCount: 1
     lifeTime: 5
     spread: 0
     pierce: 1
@@ -32,9 +32,4 @@ MonoBehaviour:
     - type: 1
       value: 10
       damageType: 1
-    statusSetups:
-    - type: 2
-      duration: 3
-      period: 0
-      value: -0.8
-      damageType: 3
+    statusSetups: []
