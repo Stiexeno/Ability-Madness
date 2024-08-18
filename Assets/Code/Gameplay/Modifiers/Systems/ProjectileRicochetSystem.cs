@@ -13,9 +13,12 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation.Ricochet
         private IGroup<GameEntity> _projectiles;
         private IGroup<GameEntity> _targets;
         private IPhysicsService _physicsService;
+        private IGroup<GameEntity> _entities;
+        private GameContext _gameContext;
 
         public ProjectileRicochetSystem(GameContext gameContext, IPhysicsService physicsService)
         {
+            _gameContext = gameContext;
             _physicsService = physicsService;
             _projectiles = gameContext.GetGroup(GameMatcher
                 .AllOf(
@@ -23,7 +26,6 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation.Ricochet
                     GameMatcher.RicochetHitCount,
                     GameMatcher.Direction,
                     GameMatcher.Team,
-                    GameMatcher.DamageDealt,
                     GameMatcher.ProccessedTargets));
 
             _targets = gameContext.GetGroup(GameMatcher
@@ -32,33 +34,42 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation.Ricochet
                     GameMatcher.WorldPosition,
                     GameMatcher.Alive,
                     GameMatcher.Team));
+
+           _entities = gameContext.GetGroup(GameMatcher
+               .AllOf(
+                   GameMatcher.EffectDealt));
         }
 
         public void Execute()
         {
-            foreach (var projectile in _projectiles.GetEntities(_buffer))
+            foreach (var entity in _entities)
             {
-                var hits =  _physicsService.CircleCast(
-                    projectile.WorldPosition,
-                    RicochetDistance,
-                    ~0);
+                var projectile = _gameContext.GetEntityWithId(entity.EffectDealt);
 
-                foreach (var hit in hits)
+                if (_projectiles.ContainsEntity(projectile))
                 {
-                    if (_targets.ContainsEntity(hit) && hit.Team != projectile.Team && projectile.ProccessedTargets.Last() != hit.Id)
+                    var hits =  _physicsService.CircleCast(
+                        projectile.WorldPosition,
+                        RicochetDistance,
+                        ~0);
+
+                    foreach (var hit in hits)
                     {
-                        var direction = hit.WorldPosition - projectile.WorldPosition;
-                        direction.Normalize();
-
-                        projectile.ReplaceDirection(direction);
-                        projectile.RicochetHitCount--;
-
-                        if (projectile.RicochetHitCount <= 0)
+                        if (_targets.ContainsEntity(hit) && hit.Team != projectile.Team && projectile.ProccessedTargets.Last() != hit.Id)
                         {
-                            projectile.RemoveRicochetHitCount();
-                        }
+                            var direction = hit.WorldPosition - projectile.WorldPosition;
+                            direction.Normalize();
 
-                        break;
+                            projectile.ReplaceDirection(direction);
+                            projectile.RicochetHitCount--;
+
+                            if (projectile.RicochetHitCount <= 0)
+                            {
+                                projectile.RemoveRicochetHitCount();
+                            }
+
+                            break;
+                        }
                     }
                 }
             }

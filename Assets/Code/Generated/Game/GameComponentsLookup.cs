@@ -56,108 +56,110 @@ public static class GameComponentsLookup {
     public const int FollowTargetId = 45;
     public const int Chest = 46;
     public const int Attacking = 47;
-    public const int Damage = 48;
-    public const int DamageDealt = 49;
-    public const int DamageReceived = 50;
-    public const int DamageRequest = 51;
-    public const int EffectViewPath = 52;
-    public const int Enemy = 53;
-    public const int Wave = 54;
-    public const int Experience = 55;
-    public const int ExperienceTypeId = 56;
-    public const int Level = 57;
-    public const int LevelUp = 58;
-    public const int MaxExperience = 59;
-    public const int PickedUp = 60;
-    public const int PickupRadius = 61;
-    public const int Alive = 62;
-    public const int Dead = 63;
-    public const int HasHealthbar = 64;
-    public const int Health = 65;
-    public const int Healthbar = 66;
-    public const int HealthbarLoading = 67;
-    public const int MaxHealth = 68;
-    public const int ProccessingDeath = 69;
-    public const int Team = 70;
-    public const int AttackPressed = 71;
-    public const int AxisInput = 72;
-    public const int DashPressed = 73;
-    public const int Input = 74;
-    public const int LookInput = 75;
-    public const int MouseCollision = 76;
-    public const int MouseInHover = 77;
-    public const int MousePosition = 78;
-    public const int InteractBehaviour = 79;
-    public const int LifeTime = 80;
-    public const int LifeTimeTimeElapsed = 81;
-    public const int LifeSteal = 82;
-    public const int LifeStealModifier = 83;
-    public const int Modifiable = 84;
-    public const int Modifier = 85;
-    public const int ModifierTypeId = 86;
-    public const int ModifierValue = 87;
-    public const int RicochetHitCount = 88;
-    public const int DashCooldown = 89;
-    public const int DashDuration = 90;
-    public const int Dashing = 91;
-    public const int Direction = 92;
-    public const int FaceToDirection = 93;
-    public const int ForwardMovement = 94;
-    public const int LookDirection = 95;
-    public const int MovementSpeed = 96;
-    public const int RequestDash = 97;
-    public const int RigidbodyMovement = 98;
-    public const int TransformMovement = 99;
-    public const int ZigZagMovement = 100;
-    public const int Projectile = 101;
-    public const int ProjectileTypeId = 102;
-    public const int RoundTime = 103;
-    public const int StatsChange = 104;
-    public const int StatsValue = 105;
-    public const int Depleted = 106;
-    public const int Fire = 107;
-    public const int Freeze = 108;
-    public const int Poison = 109;
-    public const int Status = 110;
-    public const int StatusTypeId = 111;
-    public const int StatusValue = 112;
-    public const int ProccessedTargets = 113;
-    public const int SphereCast = 114;
-    public const int SphereCastRadius = 115;
-    public const int TargetBuffer = 116;
-    public const int TargetLayer = 117;
-    public const int TargetsInSight = 118;
-    public const int Vision = 119;
-    public const int VisionInterval = 120;
-    public const int VisionLayer = 121;
-    public const int VisionRadius = 122;
-    public const int VisionTimer = 123;
-    public const int AmmoCapacity = 124;
-    public const int AmmoIndex = 125;
-    public const int Bullet = 126;
-    public const int BulletChangeRequest = 127;
-    public const int BulletIndex = 128;
-    public const int BulletTypeId = 129;
-    public const int FireRate = 130;
-    public const int HasReloadWidget = 131;
-    public const int MaxAmmoCapacity = 132;
-    public const int Pierce = 133;
-    public const int PiercedAmount = 134;
-    public const int Ready = 135;
-    public const int Recovering = 136;
-    public const int Reloading = 137;
-    public const int ReloadTime = 138;
-    public const int ReloadWidget = 139;
-    public const int Shot = 140;
-    public const int Spread = 141;
-    public const int WeaponAnimator = 142;
-    public const int Weapon = 143;
-    public const int WeaponPivot = 144;
-    public const int WeaponTypeId = 145;
-    public const int Player = 146;
-    public const int PlayerInTrigger = 147;
+    public const int DamageEffect = 48;
+    public const int EffectApplication = 49;
+    public const int EffectDealt = 50;
+    public const int EffectReceived = 51;
+    public const int EffectSetups = 52;
+    public const int EffectTypeId = 53;
+    public const int EffectValue = 54;
+    public const int Enemy = 55;
+    public const int Wave = 56;
+    public const int Experience = 57;
+    public const int ExperienceTypeId = 58;
+    public const int Level = 59;
+    public const int LevelUp = 60;
+    public const int MaxExperience = 61;
+    public const int PickedUp = 62;
+    public const int PickupRadius = 63;
+    public const int Alive = 64;
+    public const int Dead = 65;
+    public const int HasHealthbar = 66;
+    public const int Health = 67;
+    public const int Healthbar = 68;
+    public const int HealthbarLoading = 69;
+    public const int MaxHealth = 70;
+    public const int ProccessingDeath = 71;
+    public const int Team = 72;
+    public const int AttackPressed = 73;
+    public const int AxisInput = 74;
+    public const int DashPressed = 75;
+    public const int Input = 76;
+    public const int LookInput = 77;
+    public const int MouseCollision = 78;
+    public const int MouseInHover = 79;
+    public const int MousePosition = 80;
+    public const int InteractBehaviour = 81;
+    public const int LifeTime = 82;
+    public const int LifeTimeTimeElapsed = 83;
+    public const int LifeSteal = 84;
+    public const int LifeStealModifier = 85;
+    public const int Modifiable = 86;
+    public const int Modifier = 87;
+    public const int ModifierTypeId = 88;
+    public const int ModifierValue = 89;
+    public const int RicochetHitCount = 90;
+    public const int DashCooldown = 91;
+    public const int DashDuration = 92;
+    public const int Dashing = 93;
+    public const int Direction = 94;
+    public const int FaceToDirection = 95;
+    public const int ForwardMovement = 96;
+    public const int LookDirection = 97;
+    public const int MovementSpeed = 98;
+    public const int RequestDash = 99;
+    public const int RigidbodyMovement = 100;
+    public const int TransformMovement = 101;
+    public const int ZigZagMovement = 102;
+    public const int Projectile = 103;
+    public const int ProjectileTypeId = 104;
+    public const int RoundTime = 105;
+    public const int StatsChange = 106;
+    public const int StatsValue = 107;
+    public const int Depleted = 108;
+    public const int Fire = 109;
+    public const int Freeze = 110;
+    public const int Poison = 111;
+    public const int Status = 112;
+    public const int StatusTypeId = 113;
+    public const int StatusValue = 114;
+    public const int ProccessedTargets = 115;
+    public const int SphereCast = 116;
+    public const int SphereCastRadius = 117;
+    public const int TargetBuffer = 118;
+    public const int TargetLayer = 119;
+    public const int TargetsInSight = 120;
+    public const int Vision = 121;
+    public const int VisionInterval = 122;
+    public const int VisionLayer = 123;
+    public const int VisionRadius = 124;
+    public const int VisionTimer = 125;
+    public const int AmmoCapacity = 126;
+    public const int AmmoIndex = 127;
+    public const int Bullet = 128;
+    public const int BulletChangeRequest = 129;
+    public const int BulletIndex = 130;
+    public const int BulletTypeId = 131;
+    public const int FireRate = 132;
+    public const int HasReloadWidget = 133;
+    public const int MaxAmmoCapacity = 134;
+    public const int Pierce = 135;
+    public const int PiercedAmount = 136;
+    public const int Ready = 137;
+    public const int Recovering = 138;
+    public const int Reloading = 139;
+    public const int ReloadTime = 140;
+    public const int ReloadWidget = 141;
+    public const int Shot = 142;
+    public const int Spread = 143;
+    public const int WeaponAnimator = 144;
+    public const int Weapon = 145;
+    public const int WeaponPivot = 146;
+    public const int WeaponTypeId = 147;
+    public const int Player = 148;
+    public const int PlayerInTrigger = 149;
 
-    public const int TotalComponents = 148;
+    public const int TotalComponents = 150;
 
     public static readonly string[] componentNames = {
         "AssetReference",
@@ -208,11 +210,13 @@ public static class GameComponentsLookup {
         "FollowTargetId",
         "Chest",
         "Attacking",
-        "Damage",
-        "DamageDealt",
-        "DamageReceived",
-        "DamageRequest",
-        "EffectViewPath",
+        "DamageEffect",
+        "EffectApplication",
+        "EffectDealt",
+        "EffectReceived",
+        "EffectSetups",
+        "EffectTypeId",
+        "EffectValue",
         "Enemy",
         "Wave",
         "Experience",
@@ -359,11 +363,13 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Camera.FollowTargetId),
         typeof(AbilityMadness.Code.Gameplay.Chest.Chest),
         typeof(AbilityMadness.Code.Gameplay.Combat.Attacking),
-        typeof(AbilityMadness.Code.Gameplay.DamageApplication.Damage),
-        typeof(AbilityMadness.Code.Gameplay.DamageApplication.DamageDealt),
-        typeof(AbilityMadness.Code.Gameplay.DamageApplication.DamageReceived),
-        typeof(AbilityMadness.Code.Gameplay.DamageApplication.DamageRequest),
-        typeof(AbilityMadness.Code.Gameplay.EffectApplication.EffectViewPath),
+        typeof(AbilityMadness.Code.Gameplay.EffectApplication.DamageEffect),
+        typeof(AbilityMadness.Code.Gameplay.EffectApplication.EffectApplication),
+        typeof(AbilityMadness.Code.Gameplay.EffectApplication.EffectDealt),
+        typeof(AbilityMadness.Code.Gameplay.EffectApplication.EffectReceived),
+        typeof(AbilityMadness.Code.Gameplay.EffectApplication.EffectSetups),
+        typeof(AbilityMadness.Code.Gameplay.EffectApplication.EffectTypeIdComponent),
+        typeof(AbilityMadness.Code.Gameplay.EffectApplication.EffectValue),
         typeof(AbilityMadness.Code.Gameplay.Enemy.Enemy),
         typeof(AbilityMadness.Code.Gameplay.Enemy.Waves.Wave),
         typeof(AbilityMadness.Code.Gameplay.Experience.Experience),

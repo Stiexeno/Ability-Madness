@@ -1,7 +1,6 @@
 ﻿using AbilityMadness.Code.Common.Factory;
 using AbilityMadness.Code.Gameplay.Camera.Factory;
 using AbilityMadness.Code.Gameplay.Chest.Factory;
-using AbilityMadness.Code.Gameplay.DamageApplication.Factory;
 using AbilityMadness.Code.Gameplay.EffectApplication.Factory;
 using AbilityMadness.Code.Gameplay.Enemy.Factory;
 using AbilityMadness.Code.Gameplay.Enemy.Waves.Factory;
@@ -65,7 +64,7 @@ namespace AbilityMadness
 
         private void BindFactories()
         {
-            Container.BindInterfacesTo<VFXFactory>()
+            Container.BindInterfacesTo<EffectFactory>()
                 .AsSingle();
 
             Container.BindInterfacesTo<ProjectileFactory>()
@@ -105,9 +104,6 @@ namespace AbilityMadness
                 .AsSingle();
 
             Container.BindInterfacesTo<StatusFactory>()
-                .AsSingle();
-
-            Container.BindInterfacesTo<DamageFactory>()
                 .AsSingle();
         }
 

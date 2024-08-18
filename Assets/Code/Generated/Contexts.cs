@@ -58,12 +58,24 @@ public partial class Contexts : Entitas.IContexts {
 //------------------------------------------------------------------------------
 public partial class Contexts {
 
+    public const string EffectDealt = "EffectDealt";
+    public const string EffectReceived = "EffectReceived";
     public const string Id = "Id";
     public const string OwnerId = "OwnerId";
     public const string TargetId = "TargetId";
 
     [Entitas.CodeGeneration.Attributes.PostConstructor]
     public void InitializeEntityIndices() {
+        game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, int>(
+            EffectDealt,
+            game.GetGroup(GameMatcher.EffectDealt),
+            (e, c) => ((AbilityMadness.Code.Gameplay.EffectApplication.EffectDealt)c).Value));
+
+        game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, int>(
+            EffectReceived,
+            game.GetGroup(GameMatcher.EffectReceived),
+            (e, c) => ((AbilityMadness.Code.Gameplay.EffectApplication.EffectReceived)c).Value));
+
         game.AddEntityIndex(new Entitas.PrimaryEntityIndex<GameEntity, int>(
             Id,
             game.GetGroup(GameMatcher.Id),
@@ -82,6 +94,14 @@ public partial class Contexts {
 }
 
 public static class ContextsExtensions {
+
+    public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithEffectDealt(this GameContext context, int Value) {
+        return ((Entitas.EntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.EffectDealt)).GetEntities(Value);
+    }
+
+    public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithEffectReceived(this GameContext context, int Value) {
+        return ((Entitas.EntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.EffectReceived)).GetEntities(Value);
+    }
 
     public static GameEntity GetEntityWithId(this GameContext context, int Value) {
         return ((Entitas.PrimaryEntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.Id)).GetEntity(Value);

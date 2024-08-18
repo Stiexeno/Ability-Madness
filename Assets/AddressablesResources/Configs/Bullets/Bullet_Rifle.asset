@@ -22,10 +22,12 @@ MonoBehaviour:
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   projectileSetup:
-    damage: 30
     movementSpeed: 35
     spawnCount: 0
     lifeTime: 5
     spread: 0
     pierce: 3
     ricochet: 0
+    effectSetups:
+    - type: 1
+      value: 10

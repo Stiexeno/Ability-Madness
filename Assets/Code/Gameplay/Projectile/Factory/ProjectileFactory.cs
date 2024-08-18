@@ -64,11 +64,10 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
                 .AddViewReference(request.assetRef)
                 .AddProducerId(request.producerId)
                 .AddOwnerId(request.ownerId)
-                .AddDamage(setup.damage)
+                .AddEffectSetups(setup.effectSetups)
                 .AddTeam(request.team)
                 .AddWorldPosition(request.position)
                 .AddDirection(direction)
-                .AddEffectViewPath(Constants.Prefabs.Effects.BulletHitEffect)
 
                 .With(x => x.isAlive = true)
                 .With(x => x.isTransformMovement = true)

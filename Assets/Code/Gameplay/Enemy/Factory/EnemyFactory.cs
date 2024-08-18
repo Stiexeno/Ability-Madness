@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Extensions;
+using AbilityMadness.Code.Gameplay.EffectApplication;
+using AbilityMadness.Code.Gameplay.EffectApplication.Factory;
 using AbilityMadness.Code.Gameplay.Experience;
 using AbilityMadness.Code.Gameplay.Health;
 using AbilityMadness.Code.Gameplay.Movement;
@@ -25,6 +27,12 @@ namespace AbilityMadness.Code.Gameplay.Enemy.Factory
 
         public GameEntity CreateRobot(Vector3 position)
         {
+            var effectSetup = new EffectSetup
+            {
+                type = EffectTypeId.Damage,
+                value = 3
+            };
+
             return CreateEntity.Empty()
                 .AddId(_identifierService.Next())
                 .With(x => x.isEnemy = true)
@@ -33,7 +41,7 @@ namespace AbilityMadness.Code.Gameplay.Enemy.Factory
                 .With(x => x.isAlive = true)
                 .AddHealth(30)
                 .AddMaxHealth(30)
-                .AddDamage(3)
+                .AddEffectSetups(new List<EffectSetup>{effectSetup})
 
                 .AddExperienceTypeId(ExperienceTypeId.Green)
                 .CollectTargetsWithSphereCast(0.3f)

@@ -1,4 +1,5 @@
-﻿using AbilityMadness.Code.Gameplay.Gears.Configs;
+﻿using System.Collections.Generic;
+using AbilityMadness.Code.Gameplay.EffectApplication.Factory;
 using AbilityMadness.Code.Gameplay.Projectile.Factory;
 using AbilityMadness.Code.Gameplay.Upgrades.Configs;
 using UnityEngine;

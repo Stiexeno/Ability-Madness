@@ -9,26 +9,38 @@ namespace AbilityMadness.Code.Gameplay.Player.Systems
         private IGroup<GameEntity> _players;
         private IShakeService _shakeService;
         private IUIService _uiService;
+        private IGroup<GameEntity> _entities;
+        private GameContext _gameContext;
 
         public ShakeCameraOnPlayerGetHitSystem(GameContext gameContext, IShakeService shakeService, IUIService uiService)
         {
+            _gameContext = gameContext;
             _uiService = uiService;
             _shakeService = shakeService;
+
             _players = gameContext.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Player,
-                    GameMatcher.DamageReceived,
                     GameMatcher.Transform));
+
+            _entities = gameContext.GetGroup(GameMatcher
+                .AllOf(
+                    GameMatcher.EffectReceived));
         }
 
         public void Execute()
         {
-            foreach (var player in _players)
+            foreach (var entity in _entities)
             {
-                _shakeService.Shake(Constants.Configs.ShakePlayerHit, 100f).Forget();
+                var player = _gameContext.GetEntityWithId(entity.TargetId);
 
-                var hudWindow = _uiService.Get<HudWindow>();
-                hudWindow.DamageFlash();
+                if (_players.ContainsEntity(player))
+                {
+                    _shakeService.Shake(Constants.Configs.ShakePlayerHit, 100f).Forget();
+
+                    var hudWindow = _uiService.Get<HudWindow>();
+                    hudWindow.DamageFlash();
+                }
             }
         }
     }

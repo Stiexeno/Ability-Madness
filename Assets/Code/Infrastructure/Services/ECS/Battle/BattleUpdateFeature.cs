@@ -6,6 +6,7 @@ using AbilityMadness.Code.Gameplay.Animator;
 using AbilityMadness.Code.Gameplay.Camera;
 using AbilityMadness.Code.Gameplay.Chest;
 using AbilityMadness.Code.Gameplay.DamageApplication;
+using AbilityMadness.Code.Gameplay.EffectApplication;
 using AbilityMadness.Code.Gameplay.Enemy;
 using AbilityMadness.Code.Gameplay.Enemy.Waves;
 using AbilityMadness.Code.Gameplay.Experience;
@@ -35,6 +36,7 @@ namespace AbilityMadness.Code.Infrastructure.Services.ECS
             Add(systemFactory.Create<ViewFeature>());
 
             Add(systemFactory.Create<TargetCollectionFeature>());
+            Add(systemFactory.Create<EffectApplicationFeature>());
             Add(systemFactory.Create<DamageFeature>());
             Add(systemFactory.Create<HealthFeature>());
             Add(systemFactory.Create<StatusFeature>());
