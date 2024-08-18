@@ -7,6 +7,8 @@ namespace AbilityMadness.Code.Gameplay.Status
     {
         public StatusFeature(ISystemFactory systemFactory)
         {
+            Add(systemFactory.Create<StatusDurationSystem>());
+
             Add(systemFactory.Create<CleanupDepletedStatusesSystem>());
         }
     }

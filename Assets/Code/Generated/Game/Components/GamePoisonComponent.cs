@@ -8,18 +8,18 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly AbilityMadness.Code.Gameplay.Status.Posion posionComponent = new AbilityMadness.Code.Gameplay.Status.Posion();
+    static readonly AbilityMadness.Code.Gameplay.Status.Poison poisonComponent = new AbilityMadness.Code.Gameplay.Status.Poison();
 
-    public bool isPosion {
-        get { return HasComponent(GameComponentsLookup.Posion); }
+    public bool isPoison {
+        get { return HasComponent(GameComponentsLookup.Poison); }
         set {
-            if (value != isPosion) {
-                var index = GameComponentsLookup.Posion;
+            if (value != isPoison) {
+                var index = GameComponentsLookup.Poison;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : posionComponent;
+                            : poisonComponent;
 
                     AddComponent(index, component);
                 } else {
@@ -40,17 +40,17 @@ public partial class GameEntity {
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherPosion;
+    static Entitas.IMatcher<GameEntity> _matcherPoison;
 
-    public static Entitas.IMatcher<GameEntity> Posion {
+    public static Entitas.IMatcher<GameEntity> Poison {
         get {
-            if (_matcherPosion == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Posion);
+            if (_matcherPoison == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Poison);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherPosion = matcher;
+                _matcherPoison = matcher;
             }
 
-            return _matcherPosion;
+            return _matcherPoison;
         }
     }
 }

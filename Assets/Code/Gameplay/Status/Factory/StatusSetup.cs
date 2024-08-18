@@ -3,7 +3,7 @@
 namespace AbilityMadness.Code.Gameplay.Status.Factory
 {
     [Serializable]
-    public class StatusScheme
+    public class StatusSetup
     {
         public StatusTypeId type;
         public float duration;

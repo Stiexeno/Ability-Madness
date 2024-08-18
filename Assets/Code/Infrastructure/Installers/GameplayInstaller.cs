@@ -1,6 +1,7 @@
 ﻿using AbilityMadness.Code.Common.Factory;
 using AbilityMadness.Code.Gameplay.Camera.Factory;
 using AbilityMadness.Code.Gameplay.Chest.Factory;
+using AbilityMadness.Code.Gameplay.DamageApplication.Factory;
 using AbilityMadness.Code.Gameplay.EffectApplication.Factory;
 using AbilityMadness.Code.Gameplay.Enemy.Factory;
 using AbilityMadness.Code.Gameplay.Enemy.Waves.Factory;
@@ -8,6 +9,7 @@ using AbilityMadness.Code.Gameplay.Experience.Factory;
 using AbilityMadness.Code.Gameplay.Projectile.Factory;
 using AbilityMadness.Code.Gameplay.Round.Factory;
 using AbilityMadness.Code.Gameplay.Stats.Factory;
+using AbilityMadness.Code.Gameplay.Status.Factory;
 using AbilityMadness.Code.Gameplay.Upgrades.Services;
 using AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Factory;
@@ -100,6 +102,12 @@ namespace AbilityMadness
                 .AsSingle();
 
             Container.BindInterfacesTo<ViewFactory>()
+                .AsSingle();
+
+            Container.BindInterfacesTo<StatusFactory>()
+                .AsSingle();
+
+            Container.BindInterfacesTo<DamageFactory>()
                 .AsSingle();
         }
 

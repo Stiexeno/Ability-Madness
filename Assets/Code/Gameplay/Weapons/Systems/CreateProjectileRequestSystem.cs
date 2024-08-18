@@ -38,7 +38,6 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Systems
                     GameMatcher.BulletTypeId,
                     GameMatcher.BulletIndex,
                     GameMatcher.TargetId,
-                    GameMatcher.Damage,
                     GameMatcher.AssetReference));
         }
 
@@ -55,30 +54,37 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Systems
 
                     foreach (var bullet in bullets)
                     {
+                        if (_bullets.ContainsEntity(bullet) == false)
+                            continue;
+
                         if (bullet.BulletIndex == weapon.AmmoIndex)
                         {
-                            var spawnCount = weapon.SpawnAmount + bullet.SpawnAmount;
-
-                            for (int i = 0; i < spawnCount; i++)
-                            {
-                                var direction = VectorExtensions.GetArcDirection(weapon.Direction, spawnCount, i);
-                                var projectileScheme = new ProjectileRequest
-                                {
-                                    type = bullet.BulletTypeId,
-                                    ownerId = owner.Id,
-                                    producerId = weapon.Id,
-                                    assetRef = bullet.AssetReference,
-                                    position = weapon.WeaponPivot.position,
-                                    direction = direction,
-                                    team = weapon.Team
-                                };
-
-                                _projectileFactory.CreateProjectile(projectileScheme);
-                            }
-
+                            CreateProjectile(weapon, bullet, owner);
                         }
                     }
                 }
+            }
+        }
+
+        private void CreateProjectile(GameEntity weapon, GameEntity bullet, GameEntity owner)
+        {
+            var spawnCount = weapon.SpawnAmount + bullet.SpawnAmount;
+
+            for (int i = 0; i < spawnCount; i++)
+            {
+                var direction = VectorExtensions.GetArcDirection(weapon.Direction, spawnCount, i);
+                var projectileScheme = new ProjectileRequest
+                {
+                    type = bullet.BulletTypeId,
+                    ownerId = owner.Id,
+                    producerId = weapon.Id,
+                    assetRef = bullet.AssetReference,
+                    position = weapon.WeaponPivot.position,
+                    direction = direction,
+                    team = weapon.Team
+                };
+
+                _projectileFactory.CreateProjectile(projectileScheme);
             }
         }
     }

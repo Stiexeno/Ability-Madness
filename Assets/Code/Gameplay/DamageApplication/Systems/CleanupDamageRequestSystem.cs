@@ -3,16 +3,16 @@ using Entitas;
 
 namespace AbilityMadness.Code.Gameplay.DamageApplication.Systems
 {
-    public class CleanupDamageReceivedSystem : ICleanupSystem
+    public class CleanupDamageRequestSystem : ICleanupSystem
     {
         private readonly List<GameEntity> _buffer = new(32);
         private IGroup<GameEntity> _entities;
 
-        public CleanupDamageReceivedSystem(GameContext gameContext)
+        public CleanupDamageRequestSystem(GameContext gameContext)
         {
             _entities = gameContext.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.DamageReceived));
+                    GameMatcher.DamageRequest));
         }
 
         public void Cleanup()

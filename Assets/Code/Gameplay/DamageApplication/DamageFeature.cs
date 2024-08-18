@@ -9,15 +9,25 @@ namespace AbilityMadness.Code.Gameplay.DamageApplication
     {
         public DamageFeature(ISystemFactory systemFactory)
         {
-            Add(systemFactory.Create<ApplyDamageToTargetBufferSystem>());
+            Add(systemFactory.Create<CreateDamageRequestOnTargetBufferSystem>());
+
+            // Apply Damage Modifiers Here
+            //...
+
+            // Apply Damage
+            Add(systemFactory.Create<ApplyDamageWithRequestSystem>());
+
+            // On Damage Received and Damage Dealt
             Add(systemFactory.Create<HealOnDamageDealtSystem>());
 
             Add(systemFactory.Create<PlayDamageAnimatorSystem>());
-            Add(systemFactory.Create<ApplyDamageVFXSystem>());
+           // Add(systemFactory.Create<ApplyDamageVFXSystem>());
             Add(systemFactory.Create<ShowDamageTextSystem>());
 
+            // Cleanup
             Add(systemFactory.Create<CleanupDamageReceivedSystem>());
             Add(systemFactory.Create<CleanupDamageDealtSystem>());
+            Add(systemFactory.Create<CleanupDamageRequestSystem>());
         }
     }
 }

@@ -6,24 +6,36 @@ namespace AbilityMadness.Code.Gameplay.DamageApplication.Systems.View
 {
     public class ShowDamageTextSystem : IExecuteSystem
     {
-        private IGroup<GameEntity> _damagedEntities;
+        private IGroup<GameEntity> _damageReceivedEvents;
         private IUIFactory _uiFactory;
+        private IGroup<GameEntity> _targets;
+        private GameContext _gameContext;
 
         public ShowDamageTextSystem(GameContext gameContext, IUIFactory uiFactory)
         {
+            _gameContext = gameContext;
             _uiFactory = uiFactory;
-            _damagedEntities = gameContext.GetGroup(GameMatcher
+            _damageReceivedEvents = gameContext.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.DamageReceived,
+                    GameMatcher.TargetId));
+
+            _targets = gameContext.GetGroup(GameMatcher
+                .AllOf(
                     GameMatcher.WorldPosition,
                     GameMatcher.Alive));
         }
 
         public void Execute()
         {
-            foreach (var damagedEntity in _damagedEntities)
+            foreach (var damageReceivedEvent in _damageReceivedEvents)
             {
-                _uiFactory.CreateDamageText(damagedEntity.WorldPosition, damagedEntity.DamageReceived).Forget();
+                var target = _gameContext.GetEntityWithId(damageReceivedEvent.TargetId);
+
+                if (_targets.ContainsEntity(target))
+                {
+                    _uiFactory.CreateDamageText(target.WorldPosition, damageReceivedEvent.Damage).Forget();
+                }
             }
         }
     }

@@ -1,15 +1,18 @@
+using AbilityMadness.Code.Gameplay.DamageApplication.Factory;
 using Entitas;
 
 namespace AbilityMadness.Code.Gameplay.DamageApplication.Systems
 {
-    public class ApplyDamageToTargetBufferSystem : IExecuteSystem
+    public class CreateDamageRequestOnTargetBufferSystem : IExecuteSystem
     {
         private IGroup<GameEntity> _damageApplicators;
         private GameContext _gameContext;
         private IGroup<GameEntity> _targets;
+        private IDamageFactory _damageFactory;
 
-        public ApplyDamageToTargetBufferSystem(GameContext gameContext)
+        public CreateDamageRequestOnTargetBufferSystem(GameContext gameContext, IDamageFactory damageFactory)
         {
+            _damageFactory = damageFactory;
             _gameContext = gameContext;
             _damageApplicators = gameContext.GetGroup(GameMatcher
                 .AllOf(
@@ -34,9 +37,8 @@ namespace AbilityMadness.Code.Gameplay.DamageApplication.Systems
 
                 if (_targets.ContainsEntity(entity) && entity.Team != damageApplicator.Team)
                 {
-                    entity.Health -= damageApplicator.Damage;
-                    entity.ReplaceDamageReceived(damageApplicator.Damage);
-                    damageApplicator.isDamageDealt = true;
+                    var id = damageApplicator.hasProducerId ? damageApplicator.ProducerId : damageApplicator.Id;
+                    _damageFactory.CreateDamageRequest(id, targetId, damageApplicator.Damage);
                 }
             }
         }

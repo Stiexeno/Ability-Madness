@@ -19,7 +19,7 @@ namespace AbilityMadness.Code.Gameplay.DamageApplication.Systems
         {
             foreach (var entity in _entities.GetEntities(_buffer))
             {
-                entity.isDamageDealt = false;
+                entity.isDestructed = true;
             }
         }
     }

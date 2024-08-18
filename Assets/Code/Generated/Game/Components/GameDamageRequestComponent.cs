@@ -8,18 +8,18 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly AbilityMadness.Code.Gameplay.DamageApplication.DamageReceived damageReceivedComponent = new AbilityMadness.Code.Gameplay.DamageApplication.DamageReceived();
+    static readonly AbilityMadness.Code.Gameplay.DamageApplication.DamageRequest damageRequestComponent = new AbilityMadness.Code.Gameplay.DamageApplication.DamageRequest();
 
-    public bool isDamageReceived {
-        get { return HasComponent(GameComponentsLookup.DamageReceived); }
+    public bool isDamageRequest {
+        get { return HasComponent(GameComponentsLookup.DamageRequest); }
         set {
-            if (value != isDamageReceived) {
-                var index = GameComponentsLookup.DamageReceived;
+            if (value != isDamageRequest) {
+                var index = GameComponentsLookup.DamageRequest;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : damageReceivedComponent;
+                            : damageRequestComponent;
 
                     AddComponent(index, component);
                 } else {
@@ -40,17 +40,17 @@ public partial class GameEntity {
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherDamageReceived;
+    static Entitas.IMatcher<GameEntity> _matcherDamageRequest;
 
-    public static Entitas.IMatcher<GameEntity> DamageReceived {
+    public static Entitas.IMatcher<GameEntity> DamageRequest {
         get {
-            if (_matcherDamageReceived == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.DamageReceived);
+            if (_matcherDamageRequest == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.DamageRequest);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherDamageReceived = matcher;
+                _matcherDamageRequest = matcher;
             }
 
-            return _matcherDamageReceived;
+            return _matcherDamageRequest;
         }
     }
 }
