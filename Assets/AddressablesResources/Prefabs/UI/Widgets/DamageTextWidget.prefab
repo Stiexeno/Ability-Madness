@@ -187,3 +187,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageText: {fileID: 348999319563640124}
+  flatColor: {r: 1, g: 1, b: 1, a: 1}
+  fireColor: {r: 1, g: 0.38975385, b: 0, a: 1}

@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using AbilityMadness.Code.Gameplay.DamageApplication;
 using AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory;
 using AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection;
 using AbilityMadness.Code.Infrastructure.Services.Camera;
@@ -36,12 +37,12 @@ namespace AbilityMadness.Infrastructure.Factories.UI
             _assets.LoadAsync<GameObject>(Constants.Prefabs.Widgets.BulletDragWidget).Forget();
         }
 
-        public async UniTask<DamageTextWidget> CreateDamageText(Vector3 position, int damage)
+        public async UniTask<DamageTextWidget> CreateDamageText(Vector3 position, DamageTypeId damageTypeId, int damage)
         {
             var damageText = await _uiPool.Take<DamageTextWidget>(Constants.Prefabs.Widgets.DamageTextWidget, _worldUiRootParent);
             damageText.transform.position = position;
             damageText.gameObject.SetActive(true);
-            damageText.Show(damage);
+            damageText.Show(damage, damageTypeId);
 
             return damageText;
         }

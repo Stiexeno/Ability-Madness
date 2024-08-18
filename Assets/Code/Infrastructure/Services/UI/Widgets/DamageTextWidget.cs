@@ -1,7 +1,10 @@
+using System;
+using AbilityMadness.Code.Gameplay.DamageApplication;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using Zenject;
+using Random = UnityEngine.Random;
 using SF = UnityEngine.SerializeField;
 
 namespace AbilityMadness.Code.Infrastructure.Services.UI.Widgets
@@ -9,6 +12,9 @@ namespace AbilityMadness.Code.Infrastructure.Services.UI.Widgets
     public class DamageTextWidget : MonoBehaviour
     {
         [SF] private TMP_Text damageText;
+
+        [SF] private Color flatColor;
+        [SF] private Color fireColor;
 
         private IUIPool _uiPool;
 
@@ -18,10 +24,11 @@ namespace AbilityMadness.Code.Infrastructure.Services.UI.Widgets
             _uiPool = uiPool;
         }
 
-        public void Show(int damage)
+        public void Show(int damage, DamageTypeId damageTypeId)
         {
             damageText.text = damage.ToString();
-
+            ChangeColorToDamageType(damageTypeId);
+            
             const float OFFSET = 0.25f;
             var randomX = Random.Range(-OFFSET, OFFSET);
             var randomY = Random.Range(-OFFSET, OFFSET);
@@ -37,6 +44,16 @@ namespace AbilityMadness.Code.Infrastructure.Services.UI.Widgets
                 });
 
             transform.DOPunchRotation(Vector3.forward * Random.Range(-35f, 35f), 0.15f);
+        }
+
+        private void ChangeColorToDamageType(DamageTypeId type)
+        {
+            damageText.color = type switch
+            {
+                DamageTypeId.Flat => flatColor,
+                DamageTypeId.Fire => fireColor,
+                _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
+            };
         }
     }
 }

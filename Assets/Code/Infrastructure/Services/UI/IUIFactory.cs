@@ -1,3 +1,4 @@
+using AbilityMadness.Code.Gameplay.DamageApplication;
 using AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory;
 using AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection;
 using AbilityMadness.Code.Infrastructure.Services.UI.Widgets;
@@ -10,7 +11,7 @@ namespace AbilityMadness.Infrastructure.Factories.UI
 	{
 		T CreateWindow<T>() where T : Window;
 		UniTask CreateUIRoot();
-        UniTask<DamageTextWidget> CreateDamageText(Vector3 position, int damage);
+        UniTask<DamageTextWidget> CreateDamageText(Vector3 position, DamageTypeId entityDamageTypeId, int damage);
         UniTask<SmallBulletWidget> CreateSmallBulletWidget(Transform parent);
         UniTask Load();
         UniTask<BulletWidget> CreateBulletWidget(Transform parent);

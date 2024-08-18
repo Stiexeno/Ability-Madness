@@ -1,6 +1,7 @@
 using System;
 using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Extensions;
+using AbilityMadness.Code.Gameplay.DamageApplication;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
 
 namespace AbilityMadness.Code.Gameplay.EffectApplication.Factory
@@ -25,7 +26,7 @@ namespace AbilityMadness.Code.Gameplay.EffectApplication.Factory
             }
         }
 
-        public GameEntity CreateEffectReceived(EffectTypeId type, int producerId, int targetId, float value)
+        public GameEntity CreateEffectReceived(EffectTypeId type, DamageTypeId damageTypeId, int producerId, int targetId, float value)
         {
             return CreateEntity.Empty()
                 .AddId(_identifierService.Next())
@@ -35,10 +36,11 @@ namespace AbilityMadness.Code.Gameplay.EffectApplication.Factory
                 .AddEffectValue(value)
 
                 .AddProducerId(producerId)
-                .AddTargetId(targetId);
+                .AddTargetId(targetId)
+                .AddDamageTypeId(damageTypeId);
         }
 
-        public GameEntity CreateEffectDealt(EffectTypeId type, int producerId, int targetId, float value)
+        public GameEntity CreateEffectDealt(EffectTypeId type, DamageTypeId damageTypeId, int producerId, int targetId, float value)
         {
             return CreateEntity.Empty()
                 .AddId(_identifierService.Next())
@@ -48,7 +50,8 @@ namespace AbilityMadness.Code.Gameplay.EffectApplication.Factory
                 .AddEffectValue(value)
 
                 .AddProducerId(producerId)
-                .AddTargetId(targetId);
+                .AddTargetId(targetId)
+                .AddDamageTypeId(damageTypeId);
         }
 
         private GameEntity CreateEmptyEffect(EffectSetup setup, int producerId, int targetId)
@@ -62,7 +65,9 @@ namespace AbilityMadness.Code.Gameplay.EffectApplication.Factory
                 .AddEffectTypeId(setup.type)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
-                .AddEffectValue(setup.value);
+                .AddEffectValue(setup.value)
+
+                .AddDamageTypeId(setup.damageType);
         }
     }
 }

@@ -20,7 +20,8 @@ namespace AbilityMadness.Code.Gameplay.Status.Systems
                     GameMatcher.TimeSinceLastTick,
                     GameMatcher.EffectValue,
                     GameMatcher.ProducerId,
-                    GameMatcher.TargetId));
+                    GameMatcher.TargetId,
+                    GameMatcher.DamageTypeId));
         }
 
         public void Execute()
@@ -38,7 +39,8 @@ namespace AbilityMadness.Code.Gameplay.Status.Systems
                     var damageEffect = new EffectSetup
                     {
                         type = EffectTypeId.Damage,
-                        value = status.EffectValue
+                        value = status.EffectValue,
+                        damageType =    status.DamageTypeId
                     };
 
                     _effectFactory.CreateEffect(damageEffect, status.ProducerId, status.TargetId);

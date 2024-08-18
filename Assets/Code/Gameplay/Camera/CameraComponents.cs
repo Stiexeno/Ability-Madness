@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Camera
 {
-    public class Camera : IComponent { }
-    public class FollowTargetId : IComponent { public int Value; }
-    public class CameraOffset : IComponent { public Vector2 Value; }
+    [Game]public class Camera : IComponent { }
+    [Game]public class FollowTargetId : IComponent { public int Value; }
+    [Game]public class CameraOffset : IComponent { public Vector2 Value; }
 
-    public class CameraSmooth : IComponent { public float Value; }
+    [Game]public class CameraSmooth : IComponent { public float Value; }
 }

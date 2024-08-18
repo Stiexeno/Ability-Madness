@@ -20,7 +20,8 @@ namespace AbilityMadness.Code.Gameplay.DamageApplication.Systems.View
                     GameMatcher.EffectReceived,
                     GameMatcher.DamageEffect,
                     GameMatcher.EffectValue,
-                    GameMatcher.TargetId));
+                    GameMatcher.TargetId,
+                    GameMatcher.DamageTypeId));
 
             _targets = gameContext.GetGroup(GameMatcher
                 .AllOf(
@@ -36,7 +37,7 @@ namespace AbilityMadness.Code.Gameplay.DamageApplication.Systems.View
 
                 if (_targets.ContainsEntity(target))
                 {
-                    _uiFactory.CreateDamageText(target.WorldPosition, (int)entity.EffectValue).Forget();
+                    _uiFactory.CreateDamageText(target.WorldPosition, entity.DamageTypeId, (int)entity.EffectValue).Forget();
                 }
             }
         }

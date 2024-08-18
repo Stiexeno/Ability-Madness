@@ -23,7 +23,8 @@ namespace AbilityMadness.Code.Gameplay.EffectProccesing.Systems
                     GameMatcher.DamageEffect,
                     GameMatcher.EffectValue,
                     GameMatcher.ProducerId,
-                    GameMatcher.TargetId));
+                    GameMatcher.TargetId,
+                    GameMatcher.DamageTypeId));
 
             _targets = gameContext.GetGroup(GameMatcher
                 .AllOf(
@@ -48,11 +49,11 @@ namespace AbilityMadness.Code.Gameplay.EffectProccesing.Systems
                 var damage = Mathf.RoundToInt(damageRequest.EffectValue);
                 target.Health -= damage;
 
-                _effectFactory.CreateEffectReceived(EffectTypeId.Damage, damageRequest.ProducerId, target.Id, damage);
+                _effectFactory.CreateEffectReceived(EffectTypeId.Damage, damageRequest.DamageTypeId, damageRequest.ProducerId, target.Id, damage);
 
                 if (_producers.ContainsEntity(producer))
                 {
-                    _effectFactory.CreateEffectDealt(EffectTypeId.Damage, producer.Id, target.Id, damage);
+                    _effectFactory.CreateEffectDealt(EffectTypeId.Damage, damageRequest.DamageTypeId, producer.Id, target.Id, damage);
                 }
             }
         }

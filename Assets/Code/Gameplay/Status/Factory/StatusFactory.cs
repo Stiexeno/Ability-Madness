@@ -37,6 +37,7 @@ namespace AbilityMadness.Code.Gameplay.Status.Factory
                 .AddStatusTypeId(setup.type)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
+                .AddDamageTypeId(setup.damageType)
 
                 .AddEffectValue(setup.value)
 

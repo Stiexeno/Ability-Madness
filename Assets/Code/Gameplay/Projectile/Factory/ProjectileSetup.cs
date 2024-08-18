@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using AbilityMadness.Code.Gameplay.EffectApplication.Factory;
 using AbilityMadness.Code.Gameplay.Status.Factory;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Projectile.Factory
@@ -9,12 +10,12 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
     [Serializable]
     public class ProjectileSetup
     {
-        public float movementSpeed = 0.15f;
+        [Unit(Units.KilometersPerHour)] public float movementSpeed = 0.15f;
 
         [Space(10)]
         public int spawnCount = 1;
-        public float lifeTime = 5;
-        public float spread = 0;
+        [Unit(Units.Second)] public float lifeTime = 5;
+        [Unit(Units.Degree)] public float spread = 0;
 
         [Space(10)]
         public int pierce = 0;
