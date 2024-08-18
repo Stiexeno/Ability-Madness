@@ -70,6 +70,7 @@ namespace AbilityMadness
             public const string WeaponConfigLabel = "config_weapon";
             public const string BulletConfigLabel = "config_bullet";
             public const string GearConfigLabel = "config_gear";
+            public const string EnemyConfigLabel = "config_enemy";
 
             public const string ShakePlayerHit = "Configs/Shake/Shake_Player_Hit";
             public const string ShakeShoot = "Configs/Shake/Shake_Shoot";

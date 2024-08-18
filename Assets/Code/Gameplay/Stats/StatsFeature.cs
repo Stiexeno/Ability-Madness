@@ -7,9 +7,11 @@ namespace AbilityMadness.Code.Gameplay.Stats
     {
         public StatsFeature(ISystemFactory systemFactory)
         {
-            Add(systemFactory.Create<ChangeHealthStatsSystem>());
+            Add(systemFactory.Create<ResetStatsModifiersSystem>());
+            Add(systemFactory.Create<ApplyStatsModifiersSystem>());
 
-            Add(systemFactory.Create<CleanupStatsChangeSystem>());
+            Add(systemFactory.Create<MovementSpeedStatsSystem>());
+            Add(systemFactory.Create<MaxHealthStatsSystem>());
         }
     }
 }

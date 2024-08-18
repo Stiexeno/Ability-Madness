@@ -20,6 +20,7 @@ namespace AbilityMadness.Code.Gameplay.Status.Factory
             {
                 StatusTypeId.Fire => CreateFireStatus(setup, producerId, targetId),
                 StatusTypeId.Poison => CreatePoisonStatus(setup, producerId, targetId),
+                StatusTypeId.Freeze => CreateFreezeStatus(setup, producerId, targetId),
                 _ => throw new ArgumentOutOfRangeException()
             };
         }
@@ -34,6 +35,12 @@ namespace AbilityMadness.Code.Gameplay.Status.Factory
         {
             return CreateEmptyStatus(setup, producerId, targetId)
                 .With(x => x.isPoison = true);
+        }
+
+        public GameEntity CreateFreezeStatus(StatusSetup setup, int producerId, int targetId)
+        {
+            return CreateEmptyStatus(setup, producerId, targetId)
+                .With(x => x.isFreeze = true);
         }
 
         private GameEntity CreateEmptyStatus(StatusSetup setup, int producerId, int targetId)

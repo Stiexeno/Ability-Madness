@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using AbilityMadness.Code.Gameplay.Enemy;
+using AbilityMadness.Code.Gameplay.Enemy.Configs;
 using AbilityMadness.Code.Gameplay.Gears.Configs;
 using AbilityMadness.Code.Gameplay.Upgrades.Configs;
 using AbilityMadness.Code.Gameplay.Weapons;
@@ -21,6 +23,7 @@ namespace AbilityMadness.Infrastructure.Services.Configs
         public WeaponConfig[] WeaponConfigs { get; private set; }
         public BulletConfig[] BulletConfigs { get; private set; }
         public GearConfig[] GearConfig { get; private set; }
+        public EnemyConfig[] EnemyConfigs { get; private set; }
 
 		public ConfigsService(IAssets assets)
 		{
@@ -34,12 +37,27 @@ namespace AbilityMadness.Infrastructure.Services.Configs
             WeaponConfigs = _assets.GetAssetsByLabel<WeaponConfig>(Constants.Configs.WeaponConfigLabel);
             BulletConfigs = _assets.GetAssetsByLabel<BulletConfig>(Constants.Configs.BulletConfigLabel);
             GearConfig = _assets.GetAssetsByLabel<GearConfig>(Constants.Configs.GearConfigLabel);
+            EnemyConfigs = _assets.GetAssetsByLabel<EnemyConfig>(Constants.Configs.EnemyConfigLabel);
 		}
 
         public async UniTask<CursorConfig> GetCursor(CursorType type)
         {
             var cursorConfig = await _assets.LoadAsync<CursorConfig>(Constants.Configs.CursorConfig);
             return cursorConfig;
+        }
+
+        public EnemyConfig GetEnemyConfig(EnemyTypeId type)
+        {
+            foreach (var enemyConfig in EnemyConfigs)
+            {
+                if (enemyConfig.type == type)
+                {
+                    return enemyConfig;
+                }
+            }
+
+            Debug.LogError($"EnemyConfig with type {type} not found");
+            return null;
         }
 
         public WeaponConfig GetWeaponConfig(WeaponTypeId type)

@@ -12,7 +12,7 @@ namespace AbilityMadness.Factory
 {
     public class PlayerFactory : IPlayerFactory
     {
-        private const string PlayerPath = "Character_Player";
+        private const string PLAYER_PATH = "Character_Player";
 
         private IIdentifierService _identifierService;
         private IAssets _assets;
@@ -29,7 +29,7 @@ namespace AbilityMadness.Factory
 
         private void Warmup()
         {
-            _assets.LoadAsync<GameObject>(PlayerPath);
+            _assets.LoadAsync<GameObject>(PLAYER_PATH);
         }
 
         public GameEntity CreatePlayer(Vector3 position)
@@ -37,7 +37,7 @@ namespace AbilityMadness.Factory
             return CreateEntity.Empty()
                 .AddId(_identifierService.Next())
                 .With(x => x.isPlayer = true)
-                .AddViewPath(PlayerPath)
+                .AddViewPath(PLAYER_PATH)
                 .AddTeam(Team.Player)
                 .With(x => x.isAlive = true)
 

@@ -11,6 +11,7 @@ namespace AbilityMadness.Code.Gameplay.Status
 
    [Game] public class Period : IComponent { public float Value; }
    [Game] public class TimeSinceLastTick : IComponent { public float Value;}
+   [Game] public class Applied : IComponent {  }
    [Game] public class Depleted : IComponent {  }
 
    [Game] public class Fire : IComponent {  }

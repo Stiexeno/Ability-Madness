@@ -117,54 +117,57 @@ public static class GameComponentsLookup {
     public const int Projectile = 106;
     public const int ProjectileTypeId = 107;
     public const int RoundTime = 108;
-    public const int StatsChange = 109;
-    public const int StatsValue = 110;
-    public const int Depleted = 111;
-    public const int Fire = 112;
-    public const int Freeze = 113;
-    public const int Period = 114;
-    public const int Poison = 115;
-    public const int Status = 116;
-    public const int StatusSetups = 117;
-    public const int StatusTypeId = 118;
-    public const int TimeSinceLastTick = 119;
-    public const int ProccessedTargets = 120;
-    public const int SphereCast = 121;
-    public const int SphereCastRadius = 122;
-    public const int TargetBuffer = 123;
-    public const int TargetLayer = 124;
-    public const int TargetsInSight = 125;
-    public const int Vision = 126;
-    public const int VisionInterval = 127;
-    public const int VisionLayer = 128;
-    public const int VisionRadius = 129;
-    public const int VisionTimer = 130;
-    public const int AmmoCapacity = 131;
-    public const int AmmoIndex = 132;
-    public const int Bullet = 133;
-    public const int BulletChangeRequest = 134;
-    public const int BulletIndex = 135;
-    public const int BulletTypeId = 136;
-    public const int FireRate = 137;
-    public const int HasReloadWidget = 138;
-    public const int MaxAmmoCapacity = 139;
-    public const int Pierce = 140;
-    public const int PiercedAmount = 141;
-    public const int Ready = 142;
-    public const int Recovering = 143;
-    public const int Reloading = 144;
-    public const int ReloadTime = 145;
-    public const int ReloadWidget = 146;
-    public const int Shot = 147;
-    public const int Spread = 148;
-    public const int WeaponAnimator = 149;
-    public const int Weapon = 150;
-    public const int WeaponPivot = 151;
-    public const int WeaponTypeId = 152;
-    public const int Player = 153;
-    public const int PlayerInTrigger = 154;
+    public const int BaseStats = 109;
+    public const int StatsChange = 110;
+    public const int StatsModifiers = 111;
+    public const int StatsValue = 112;
+    public const int Applied = 113;
+    public const int Depleted = 114;
+    public const int Fire = 115;
+    public const int Freeze = 116;
+    public const int Period = 117;
+    public const int Poison = 118;
+    public const int Status = 119;
+    public const int StatusSetups = 120;
+    public const int StatusTypeId = 121;
+    public const int TimeSinceLastTick = 122;
+    public const int ProccessedTargets = 123;
+    public const int SphereCast = 124;
+    public const int SphereCastRadius = 125;
+    public const int TargetBuffer = 126;
+    public const int TargetLayer = 127;
+    public const int TargetsInSight = 128;
+    public const int Vision = 129;
+    public const int VisionInterval = 130;
+    public const int VisionLayer = 131;
+    public const int VisionRadius = 132;
+    public const int VisionTimer = 133;
+    public const int AmmoCapacity = 134;
+    public const int AmmoIndex = 135;
+    public const int Bullet = 136;
+    public const int BulletChangeRequest = 137;
+    public const int BulletIndex = 138;
+    public const int BulletTypeId = 139;
+    public const int FireRate = 140;
+    public const int HasReloadWidget = 141;
+    public const int MaxAmmoCapacity = 142;
+    public const int Pierce = 143;
+    public const int PiercedAmount = 144;
+    public const int Ready = 145;
+    public const int Recovering = 146;
+    public const int Reloading = 147;
+    public const int ReloadTime = 148;
+    public const int ReloadWidget = 149;
+    public const int Shot = 150;
+    public const int Spread = 151;
+    public const int WeaponAnimator = 152;
+    public const int Weapon = 153;
+    public const int WeaponPivot = 154;
+    public const int WeaponTypeId = 155;
+    public const int Player = 156;
+    public const int PlayerInTrigger = 157;
 
-    public const int TotalComponents = 155;
+    public const int TotalComponents = 158;
 
     public static readonly string[] componentNames = {
         "AssetReference",
@@ -276,8 +279,11 @@ public static class GameComponentsLookup {
         "Projectile",
         "ProjectileTypeId",
         "RoundTime",
+        "BaseStats",
         "StatsChange",
+        "StatsModifiers",
         "StatsValue",
+        "Applied",
         "Depleted",
         "Fire",
         "Freeze",
@@ -434,8 +440,11 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Projectile.Projectile),
         typeof(AbilityMadness.Code.Gameplay.Projectile.ProjectileTypeIdComponent),
         typeof(AbilityMadness.Code.Gameplay.Round.RoundTime),
+        typeof(AbilityMadness.Code.Gameplay.Stats.BaseStats),
         typeof(AbilityMadness.Code.Gameplay.Stats.StatsChange),
+        typeof(AbilityMadness.Code.Gameplay.Stats.StatsModifiers),
         typeof(AbilityMadness.Code.Gameplay.Stats.StatsValue),
+        typeof(AbilityMadness.Code.Gameplay.Status.Applied),
         typeof(AbilityMadness.Code.Gameplay.Status.Depleted),
         typeof(AbilityMadness.Code.Gameplay.Status.Fire),
         typeof(AbilityMadness.Code.Gameplay.Status.Freeze),

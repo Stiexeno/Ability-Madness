@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using AbilityMadness.Code.Gameplay.Enemy;
+using AbilityMadness.Code.Gameplay.Enemy.Configs;
 using AbilityMadness.Code.Gameplay.Gears.Configs;
 using AbilityMadness.Code.Gameplay.Upgrades.Configs;
 using AbilityMadness.Code.Gameplay.Weapons;
@@ -19,5 +21,6 @@ namespace AbilityMadness.Infrastructure.Services.Configs
         WeaponConfig GetWeaponConfig(WeaponTypeId type);
         BulletConfig GetBulletConfig(BulletTypeId type);
         List<ItemConfig> GetItemConfigs();
+        EnemyConfig GetEnemyConfig(EnemyTypeId type);
     }
 }

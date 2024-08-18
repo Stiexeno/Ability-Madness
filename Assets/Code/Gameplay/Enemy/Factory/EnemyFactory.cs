@@ -6,10 +6,12 @@ using AbilityMadness.Code.Gameplay.EffectApplication.Factory;
 using AbilityMadness.Code.Gameplay.Experience;
 using AbilityMadness.Code.Gameplay.Health;
 using AbilityMadness.Code.Gameplay.Movement;
+using AbilityMadness.Code.Gameplay.Stats;
 using AbilityMadness.Code.Gameplay.TargetCollection;
 using AbilityMadness.Code.Gameplay.Vision;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
 using AbilityMadness.Infrastructure.Services.Assets;
+using AbilityMadness.Infrastructure.Services.Configs;
 using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Enemy.Factory
@@ -18,20 +20,19 @@ namespace AbilityMadness.Code.Gameplay.Enemy.Factory
     {
         private IIdentifierService _identifierService;
         private IAssets _assets;
+        private IConfigsService _configsService;
 
-        public EnemyFactory(IIdentifierService identifierService, IAssets assets)
+        public EnemyFactory(IIdentifierService identifierService, IAssets assets, IConfigsService configsService)
         {
+            _configsService = configsService;
             _assets = assets;
             _identifierService = identifierService;
         }
 
         public GameEntity CreateRobot(Vector3 position)
         {
-            var effectSetup = new EffectSetup
-            {
-                type = EffectTypeId.Damage,
-                value = 3
-            };
+            var enemyConfig = _configsService.GetEnemyConfig(EnemyTypeId.Robot);
+            var baseStats = enemyConfig.baseStats;
 
             return CreateEntity.Empty()
                 .AddId(_identifierService.Next())
@@ -39,21 +40,20 @@ namespace AbilityMadness.Code.Gameplay.Enemy.Factory
                 .AddViewPath(Constants.Prefabs.Enemies.Robot)
                 .AddTeam(Team.Enemy)
                 .With(x => x.isAlive = true)
-                .AddHealth(30)
-                .AddMaxHealth(30)
-                .AddEffectSetups(new List<EffectSetup>{effectSetup})
+                .AddHealth(baseStats.maxHealth)
+                .AddMaxHealth(baseStats.maxHealth)
+                .AddEffectSetups(enemyConfig.effectSetups)
+                .AddBaseStats(new StatsData(baseStats))
+                .AddStatsModifiers(new StatsData())
 
                 .AddExperienceTypeId(ExperienceTypeId.Green)
                 .CollectTargetsWithSphereCast(0.3f)
 
                 // .AddTargetsInSight(new List<int>(1))
 
-                //.With(x => x.isTransformMovement = true)
-                //.With(x => x.isForwardMovement = true)
-                .SetRigidbodyMovement(1.5f)
+                .SetRigidbodyMovement(baseStats.movementSpeed)
                 .AddWorldPosition(position)
                 .AddLookDirection(Vector2.zero);
-            //.AddDirection(Vector2.zero)
             // .SetVision(8f, 1f, Constants.Layers.Player);
 
         }
