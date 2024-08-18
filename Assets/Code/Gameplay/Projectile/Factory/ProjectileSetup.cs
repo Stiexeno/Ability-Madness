@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using AbilityMadness.Code.Gameplay.EffectApplication.Factory;
+using AbilityMadness.Code.Gameplay.Status.Factory;
 using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Projectile.Factory
@@ -20,5 +21,6 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
         public int ricochet = 0;
 
         public List<EffectSetup> effectSetups;
+        public List<StatusSetup> statusSetups;
     }
 }

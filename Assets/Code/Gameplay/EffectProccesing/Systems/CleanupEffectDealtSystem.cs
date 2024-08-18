@@ -1,18 +1,18 @@
 using System.Collections.Generic;
 using Entitas;
 
-namespace AbilityMadness.Code.Gameplay.DamageApplication.Systems
+namespace AbilityMadness.Code.Gameplay.EffectProccesing.Systems
 {
-    public class CleanupEffectReceivedSystem : ICleanupSystem
+    public class CleanupEffectDealtSystem : ICleanupSystem
     {
         private readonly List<GameEntity> _buffer = new(32);
         private IGroup<GameEntity> _entities;
 
-        public CleanupEffectReceivedSystem(GameContext gameContext)
+        public CleanupEffectDealtSystem(GameContext gameContext)
         {
             _entities = gameContext.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.EffectReceived));
+                    GameMatcher.EffectDealt));
         }
 
         public void Cleanup()

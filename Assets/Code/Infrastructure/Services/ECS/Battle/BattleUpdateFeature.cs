@@ -7,6 +7,7 @@ using AbilityMadness.Code.Gameplay.Camera;
 using AbilityMadness.Code.Gameplay.Chest;
 using AbilityMadness.Code.Gameplay.DamageApplication;
 using AbilityMadness.Code.Gameplay.EffectApplication;
+using AbilityMadness.Code.Gameplay.EffectProccesing;
 using AbilityMadness.Code.Gameplay.Enemy;
 using AbilityMadness.Code.Gameplay.Enemy.Waves;
 using AbilityMadness.Code.Gameplay.Experience;
@@ -37,10 +38,12 @@ namespace AbilityMadness.Code.Infrastructure.Services.ECS
 
             Add(systemFactory.Create<TargetCollectionFeature>());
             Add(systemFactory.Create<EffectApplicationFeature>());
+            Add(systemFactory.Create<StatusFeature>());
+            Add(systemFactory.Create<EffectProccesingFeature>());
             Add(systemFactory.Create<DamageFeature>());
             Add(systemFactory.Create<HealthFeature>());
-            Add(systemFactory.Create<StatusFeature>());
             Add(systemFactory.Create<StatsFeature>());
+            Add(systemFactory.Create<ModifierFeature>());
 
             Add(systemFactory.Create<PlayerFeature>());
             Add(systemFactory.Create<CommonFeature>());
@@ -59,7 +62,6 @@ namespace AbilityMadness.Code.Infrastructure.Services.ECS
             Add(systemFactory.Create<GearFeature>());
             Add(systemFactory.Create<UpgradeFeature>());
 
-            Add(systemFactory.Create<ModifierFeature>());
             Add(systemFactory.Create<ProjectileFeature>());
             Add(systemFactory.Create<WeaponFeature>());
 

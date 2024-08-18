@@ -7,6 +7,7 @@ namespace AbilityMadness.Code.Gameplay.TargetCollection.Systems
     {
         private IGroup<GameEntity> _targetCollectors;
         private IPhysicsService _physicsService;
+        private IGroup<GameEntity> _targets;
 
         public CollectTargetsWithSphereCastSystem(Contexts contexts, IPhysicsService physicsService)
         {
@@ -18,6 +19,11 @@ namespace AbilityMadness.Code.Gameplay.TargetCollection.Systems
                     GameMatcher.WorldPosition,
                     GameMatcher.SphereCast,
                     GameMatcher.SphereCastRadius,
+                    GameMatcher.Team));
+
+            _targets = contexts.game.GetGroup(GameMatcher
+                .AllOf(
+                    GameMatcher.Id,
                     GameMatcher.Team));
         }
 
@@ -32,7 +38,7 @@ namespace AbilityMadness.Code.Gameplay.TargetCollection.Systems
 
                foreach (var hit in hits)
                {
-                   if (hit.hasId && targetCollector.ProccessedTargets.Contains(hit.Id) == false)
+                   if (_targets.ContainsEntity(hit) && targetCollector.ProccessedTargets.Contains(hit.Id) == false)
                    {
                        targetCollector.TargetBuffer.Add(hit.Id);
                        targetCollector.ProccessedTargets.Add(hit.Id);

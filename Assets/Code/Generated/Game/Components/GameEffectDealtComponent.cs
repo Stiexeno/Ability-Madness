@@ -8,13 +8,13 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    private AbilityMadness.Code.Gameplay.EffectApplication.EffectDealt effectDealt { get { return (AbilityMadness.Code.Gameplay.EffectApplication.EffectDealt)GetComponent(GameComponentsLookup.EffectDealt); } }
+    private AbilityMadness.Code.Gameplay.EffectProccesing.EffectDealt effectDealt { get { return (AbilityMadness.Code.Gameplay.EffectProccesing.EffectDealt)GetComponent(GameComponentsLookup.EffectDealt); } }
     public int EffectDealt { get { return effectDealt.Value; } set { effectDealt.Value = value; }}
     public bool hasEffectDealt { get { return HasComponent(GameComponentsLookup.EffectDealt); } }
 
     public GameEntity AddEffectDealt(int newValue) {
         var index = GameComponentsLookup.EffectDealt;
-        var component = (AbilityMadness.Code.Gameplay.EffectApplication.EffectDealt)CreateComponent(index, typeof(AbilityMadness.Code.Gameplay.EffectApplication.EffectDealt));
+        var component = (AbilityMadness.Code.Gameplay.EffectProccesing.EffectDealt)CreateComponent(index, typeof(AbilityMadness.Code.Gameplay.EffectProccesing.EffectDealt));
         component.Value = newValue;
         AddComponent(index, component);
 
@@ -23,7 +23,7 @@ public partial class GameEntity {
 
     public GameEntity ReactiveReplaceEffectDealt(int newValue) {
         var index = GameComponentsLookup.EffectDealt;
-        var component = (AbilityMadness.Code.Gameplay.EffectApplication.EffectDealt)CreateComponent(index, typeof(AbilityMadness.Code.Gameplay.EffectApplication.EffectDealt));
+        var component = (AbilityMadness.Code.Gameplay.EffectProccesing.EffectDealt)CreateComponent(index, typeof(AbilityMadness.Code.Gameplay.EffectProccesing.EffectDealt));
         component.Value = newValue;
         ReplaceComponent(index, component);
 

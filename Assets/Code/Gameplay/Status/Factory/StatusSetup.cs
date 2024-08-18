@@ -7,6 +7,7 @@ namespace AbilityMadness.Code.Gameplay.Status.Factory
     {
         public StatusTypeId type;
         public float duration;
+        public float period;
         public float value;
     }
 }

@@ -31,3 +31,8 @@ MonoBehaviour:
     effectSetups:
     - type: 1
       value: 10
+    statusSetups:
+    - type: 1
+      duration: 3
+      period: 0.5
+      value: 2

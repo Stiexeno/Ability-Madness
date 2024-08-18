@@ -31,3 +31,4 @@ MonoBehaviour:
     effectSetups:
     - type: 1
       value: 10
+    statusSetups: []

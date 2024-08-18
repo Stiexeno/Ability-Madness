@@ -7,8 +7,7 @@ namespace AbilityMadness.Code.Gameplay.Modifiers
     {
         public ModifierFeature(ISystemFactory systemFactory)
         {
-            // Movements
-
+            Add(systemFactory.Create<ApplyFireStatusSystem>());
             Add(systemFactory.Create<ProjectileRicochetSystem>());
         }
     }

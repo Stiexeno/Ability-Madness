@@ -38,9 +38,13 @@ namespace AbilityMadness.Code.Gameplay.Status.Factory
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
 
-                .AddStatusValue(setup.value)
-                .AddDuration(setup.duration)
-                .AddTimeLeft(setup.duration);
+                .AddEffectValue(setup.value)
+
+                .With(x => x.AddDuration(setup.duration), when: setup.duration > 0)
+                .With(x => x.AddTimeLeft(setup.duration), when: setup.duration > 0)
+
+                .With(x => x.AddPeriod(setup.period), when: setup.period > 0)
+                .With(x => x.AddTimeSinceLastTick(0), when: setup.period > 0);
         }
     }
 }

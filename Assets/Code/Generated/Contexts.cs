@@ -69,12 +69,12 @@ public partial class Contexts {
         game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, int>(
             EffectDealt,
             game.GetGroup(GameMatcher.EffectDealt),
-            (e, c) => ((AbilityMadness.Code.Gameplay.EffectApplication.EffectDealt)c).Value));
+            (e, c) => ((AbilityMadness.Code.Gameplay.EffectProccesing.EffectDealt)c).Value));
 
         game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, int>(
             EffectReceived,
             game.GetGroup(GameMatcher.EffectReceived),
-            (e, c) => ((AbilityMadness.Code.Gameplay.EffectApplication.EffectReceived)c).Value));
+            (e, c) => ((AbilityMadness.Code.Gameplay.EffectProccesing.EffectReceived)c).Value));
 
         game.AddEntityIndex(new Entitas.PrimaryEntityIndex<GameEntity, int>(
             Id,

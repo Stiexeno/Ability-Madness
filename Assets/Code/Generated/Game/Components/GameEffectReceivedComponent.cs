@@ -8,13 +8,13 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    private AbilityMadness.Code.Gameplay.EffectApplication.EffectReceived effectReceived { get { return (AbilityMadness.Code.Gameplay.EffectApplication.EffectReceived)GetComponent(GameComponentsLookup.EffectReceived); } }
+    private AbilityMadness.Code.Gameplay.EffectProccesing.EffectReceived effectReceived { get { return (AbilityMadness.Code.Gameplay.EffectProccesing.EffectReceived)GetComponent(GameComponentsLookup.EffectReceived); } }
     public int EffectReceived { get { return effectReceived.Value; } set { effectReceived.Value = value; }}
     public bool hasEffectReceived { get { return HasComponent(GameComponentsLookup.EffectReceived); } }
 
     public GameEntity AddEffectReceived(int newValue) {
         var index = GameComponentsLookup.EffectReceived;
-        var component = (AbilityMadness.Code.Gameplay.EffectApplication.EffectReceived)CreateComponent(index, typeof(AbilityMadness.Code.Gameplay.EffectApplication.EffectReceived));
+        var component = (AbilityMadness.Code.Gameplay.EffectProccesing.EffectReceived)CreateComponent(index, typeof(AbilityMadness.Code.Gameplay.EffectProccesing.EffectReceived));
         component.Value = newValue;
         AddComponent(index, component);
 
@@ -23,7 +23,7 @@ public partial class GameEntity {
 
     public GameEntity ReactiveReplaceEffectReceived(int newValue) {
         var index = GameComponentsLookup.EffectReceived;
-        var component = (AbilityMadness.Code.Gameplay.EffectApplication.EffectReceived)CreateComponent(index, typeof(AbilityMadness.Code.Gameplay.EffectApplication.EffectReceived));
+        var component = (AbilityMadness.Code.Gameplay.EffectProccesing.EffectReceived)CreateComponent(index, typeof(AbilityMadness.Code.Gameplay.EffectProccesing.EffectReceived));
         component.Value = newValue;
         ReplaceComponent(index, component);
 

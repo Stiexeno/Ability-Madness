@@ -1,8 +1,9 @@
+using AbilityMadness.Code.Gameplay.EffectApplication;
 using AbilityMadness.Code.Gameplay.EffectApplication.Factory;
 using Entitas;
 using UnityEngine;
 
-namespace AbilityMadness.Code.Gameplay.EffectApplication.Systems
+namespace AbilityMadness.Code.Gameplay.EffectProccesing.Systems
 {
     public class ApplyDamageEffectSystem : IExecuteSystem
     {
@@ -10,6 +11,7 @@ namespace AbilityMadness.Code.Gameplay.EffectApplication.Systems
         private IGroup<GameEntity> _targets;
         private GameContext _gameContext;
         private IEffectFactory _effectFactory;
+        private IGroup<GameEntity> _producers;
 
         public ApplyDamageEffectSystem(GameContext gameContext, IEffectFactory effectFactory)
         {
@@ -28,6 +30,12 @@ namespace AbilityMadness.Code.Gameplay.EffectApplication.Systems
                     GameMatcher.Team,
                     GameMatcher.Health,
                     GameMatcher.Alive));
+
+            _producers = gameContext.GetGroup(GameMatcher
+                .AllOf(
+                    GameMatcher.Id,
+                    GameMatcher.Team,
+                    GameMatcher.Alive));
         }
 
         public void Execute()
@@ -37,13 +45,14 @@ namespace AbilityMadness.Code.Gameplay.EffectApplication.Systems
                 var target = _gameContext.GetEntityWithId(damageRequest.TargetId);
                 var producer = _gameContext.GetEntityWithId(damageRequest.ProducerId);
 
-                if (_targets.ContainsEntity(target) && target.Team != producer.Team)
-                {
-                    var damage = Mathf.RoundToInt(damageRequest.EffectValue);
-                    target.Health -= damage;
+                var damage = Mathf.RoundToInt(damageRequest.EffectValue);
+                target.Health -= damage;
 
-                    _effectFactory.CreateEffectReceived(EffectTypeId.Damage, damageRequest.ProducerId, target.Id, damage);
-                    _effectFactory.CreateEffectDealt(EffectTypeId.Damage, producer.Id, producer.Id, damage);
+                _effectFactory.CreateEffectReceived(EffectTypeId.Damage, damageRequest.ProducerId, target.Id, damage);
+
+                if (_producers.ContainsEntity(producer))
+                {
+                    _effectFactory.CreateEffectDealt(EffectTypeId.Damage, producer.Id, target.Id, damage);
                 }
             }
         }

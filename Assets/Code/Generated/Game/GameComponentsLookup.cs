@@ -58,11 +58,11 @@ public static class GameComponentsLookup {
     public const int Attacking = 47;
     public const int DamageEffect = 48;
     public const int EffectApplication = 49;
-    public const int EffectDealt = 50;
-    public const int EffectReceived = 51;
-    public const int EffectSetups = 52;
-    public const int EffectTypeId = 53;
-    public const int EffectValue = 54;
+    public const int EffectSetups = 50;
+    public const int EffectTypeId = 51;
+    public const int EffectValue = 52;
+    public const int EffectDealt = 53;
+    public const int EffectReceived = 54;
     public const int Enemy = 55;
     public const int Wave = 56;
     public const int Experience = 57;
@@ -92,74 +92,78 @@ public static class GameComponentsLookup {
     public const int InteractBehaviour = 81;
     public const int LifeTime = 82;
     public const int LifeTimeTimeElapsed = 83;
-    public const int LifeSteal = 84;
-    public const int LifeStealModifier = 85;
-    public const int Modifiable = 86;
-    public const int Modifier = 87;
-    public const int ModifierTypeId = 88;
-    public const int ModifierValue = 89;
-    public const int RicochetHitCount = 90;
-    public const int DashCooldown = 91;
-    public const int DashDuration = 92;
-    public const int Dashing = 93;
-    public const int Direction = 94;
-    public const int FaceToDirection = 95;
-    public const int ForwardMovement = 96;
-    public const int LookDirection = 97;
-    public const int MovementSpeed = 98;
-    public const int RequestDash = 99;
-    public const int RigidbodyMovement = 100;
-    public const int TransformMovement = 101;
-    public const int ZigZagMovement = 102;
-    public const int Projectile = 103;
-    public const int ProjectileTypeId = 104;
-    public const int RoundTime = 105;
-    public const int StatsChange = 106;
-    public const int StatsValue = 107;
-    public const int Depleted = 108;
-    public const int Fire = 109;
-    public const int Freeze = 110;
-    public const int Poison = 111;
-    public const int Status = 112;
-    public const int StatusTypeId = 113;
-    public const int StatusValue = 114;
-    public const int ProccessedTargets = 115;
-    public const int SphereCast = 116;
-    public const int SphereCastRadius = 117;
-    public const int TargetBuffer = 118;
-    public const int TargetLayer = 119;
-    public const int TargetsInSight = 120;
-    public const int Vision = 121;
-    public const int VisionInterval = 122;
-    public const int VisionLayer = 123;
-    public const int VisionRadius = 124;
-    public const int VisionTimer = 125;
-    public const int AmmoCapacity = 126;
-    public const int AmmoIndex = 127;
-    public const int Bullet = 128;
-    public const int BulletChangeRequest = 129;
-    public const int BulletIndex = 130;
-    public const int BulletTypeId = 131;
-    public const int FireRate = 132;
-    public const int HasReloadWidget = 133;
-    public const int MaxAmmoCapacity = 134;
-    public const int Pierce = 135;
-    public const int PiercedAmount = 136;
-    public const int Ready = 137;
-    public const int Recovering = 138;
-    public const int Reloading = 139;
-    public const int ReloadTime = 140;
-    public const int ReloadWidget = 141;
-    public const int Shot = 142;
-    public const int Spread = 143;
-    public const int WeaponAnimator = 144;
-    public const int Weapon = 145;
-    public const int WeaponPivot = 146;
-    public const int WeaponTypeId = 147;
-    public const int Player = 148;
-    public const int PlayerInTrigger = 149;
+    public const int FireModifier = 84;
+    public const int FireValue = 85;
+    public const int LifeSteal = 86;
+    public const int LifeStealModifier = 87;
+    public const int Modifiable = 88;
+    public const int Modifier = 89;
+    public const int ModifierTypeId = 90;
+    public const int ModifierValue = 91;
+    public const int RicochetHitCount = 92;
+    public const int DashCooldown = 93;
+    public const int DashDuration = 94;
+    public const int Dashing = 95;
+    public const int Direction = 96;
+    public const int FaceToDirection = 97;
+    public const int ForwardMovement = 98;
+    public const int LookDirection = 99;
+    public const int MovementSpeed = 100;
+    public const int RequestDash = 101;
+    public const int RigidbodyMovement = 102;
+    public const int TransformMovement = 103;
+    public const int ZigZagMovement = 104;
+    public const int Projectile = 105;
+    public const int ProjectileTypeId = 106;
+    public const int RoundTime = 107;
+    public const int StatsChange = 108;
+    public const int StatsValue = 109;
+    public const int Depleted = 110;
+    public const int Fire = 111;
+    public const int Freeze = 112;
+    public const int Period = 113;
+    public const int Poison = 114;
+    public const int Status = 115;
+    public const int StatusSetups = 116;
+    public const int StatusTypeId = 117;
+    public const int TimeSinceLastTick = 118;
+    public const int ProccessedTargets = 119;
+    public const int SphereCast = 120;
+    public const int SphereCastRadius = 121;
+    public const int TargetBuffer = 122;
+    public const int TargetLayer = 123;
+    public const int TargetsInSight = 124;
+    public const int Vision = 125;
+    public const int VisionInterval = 126;
+    public const int VisionLayer = 127;
+    public const int VisionRadius = 128;
+    public const int VisionTimer = 129;
+    public const int AmmoCapacity = 130;
+    public const int AmmoIndex = 131;
+    public const int Bullet = 132;
+    public const int BulletChangeRequest = 133;
+    public const int BulletIndex = 134;
+    public const int BulletTypeId = 135;
+    public const int FireRate = 136;
+    public const int HasReloadWidget = 137;
+    public const int MaxAmmoCapacity = 138;
+    public const int Pierce = 139;
+    public const int PiercedAmount = 140;
+    public const int Ready = 141;
+    public const int Recovering = 142;
+    public const int Reloading = 143;
+    public const int ReloadTime = 144;
+    public const int ReloadWidget = 145;
+    public const int Shot = 146;
+    public const int Spread = 147;
+    public const int WeaponAnimator = 148;
+    public const int Weapon = 149;
+    public const int WeaponPivot = 150;
+    public const int WeaponTypeId = 151;
+    public const int Player = 152;
+    public const int PlayerInTrigger = 153;
 
-    public const int TotalComponents = 150;
+    public const int TotalComponents = 154;
 
     public static readonly string[] componentNames = {
         "AssetReference",
@@ -212,11 +216,11 @@ public static class GameComponentsLookup {
         "Attacking",
         "DamageEffect",
         "EffectApplication",
-        "EffectDealt",
-        "EffectReceived",
         "EffectSetups",
         "EffectTypeId",
         "EffectValue",
+        "EffectDealt",
+        "EffectReceived",
         "Enemy",
         "Wave",
         "Experience",
@@ -246,6 +250,8 @@ public static class GameComponentsLookup {
         "InteractBehaviour",
         "LifeTime",
         "LifeTimeTimeElapsed",
+        "FireModifier",
+        "FireValue",
         "LifeSteal",
         "LifeStealModifier",
         "Modifiable",
@@ -273,10 +279,12 @@ public static class GameComponentsLookup {
         "Depleted",
         "Fire",
         "Freeze",
+        "Period",
         "Poison",
         "Status",
+        "StatusSetups",
         "StatusTypeId",
-        "StatusValue",
+        "TimeSinceLastTick",
         "ProccessedTargets",
         "SphereCast",
         "SphereCastRadius",
@@ -365,11 +373,11 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Combat.Attacking),
         typeof(AbilityMadness.Code.Gameplay.EffectApplication.DamageEffect),
         typeof(AbilityMadness.Code.Gameplay.EffectApplication.EffectApplication),
-        typeof(AbilityMadness.Code.Gameplay.EffectApplication.EffectDealt),
-        typeof(AbilityMadness.Code.Gameplay.EffectApplication.EffectReceived),
         typeof(AbilityMadness.Code.Gameplay.EffectApplication.EffectSetups),
         typeof(AbilityMadness.Code.Gameplay.EffectApplication.EffectTypeIdComponent),
         typeof(AbilityMadness.Code.Gameplay.EffectApplication.EffectValue),
+        typeof(AbilityMadness.Code.Gameplay.EffectProccesing.EffectDealt),
+        typeof(AbilityMadness.Code.Gameplay.EffectProccesing.EffectReceived),
         typeof(AbilityMadness.Code.Gameplay.Enemy.Enemy),
         typeof(AbilityMadness.Code.Gameplay.Enemy.Waves.Wave),
         typeof(AbilityMadness.Code.Gameplay.Experience.Experience),
@@ -399,6 +407,8 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Interaction.InteractBehaviourComponent),
         typeof(AbilityMadness.Code.Gameplay.Lifetime.LifeTime),
         typeof(AbilityMadness.Code.Gameplay.Lifetime.LifeTimeTimeElapsed),
+        typeof(AbilityMadness.Code.Gameplay.Modifiers.FireModifier),
+        typeof(AbilityMadness.Code.Gameplay.Modifiers.FireValue),
         typeof(AbilityMadness.Code.Gameplay.Modifiers.LifeSteal),
         typeof(AbilityMadness.Code.Gameplay.Modifiers.LifeStealModifier),
         typeof(AbilityMadness.Code.Gameplay.Modifiers.Modifiable),
@@ -426,10 +436,12 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Status.Depleted),
         typeof(AbilityMadness.Code.Gameplay.Status.Fire),
         typeof(AbilityMadness.Code.Gameplay.Status.Freeze),
+        typeof(AbilityMadness.Code.Gameplay.Status.Period),
         typeof(AbilityMadness.Code.Gameplay.Status.Poison),
         typeof(AbilityMadness.Code.Gameplay.Status.Status),
+        typeof(AbilityMadness.Code.Gameplay.Status.StatusSetups),
         typeof(AbilityMadness.Code.Gameplay.Status.StatusTypeIdComponent),
-        typeof(AbilityMadness.Code.Gameplay.Status.StatusValue),
+        typeof(AbilityMadness.Code.Gameplay.Status.TimeSinceLastTick),
         typeof(AbilityMadness.Code.Gameplay.TargetCollection.ProccessedTargets),
         typeof(AbilityMadness.Code.Gameplay.TargetCollection.SphereCast),
         typeof(AbilityMadness.Code.Gameplay.TargetCollection.SphereCastRadius),

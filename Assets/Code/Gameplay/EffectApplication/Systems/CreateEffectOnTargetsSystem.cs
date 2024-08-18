@@ -39,7 +39,7 @@ namespace AbilityMadness.Code.Gameplay.DamageApplication.Systems
                 {
                     foreach (var effectSetup in damageApplicator.EffectSetups)
                     {
-                        _effectFactory.CreateEffect(effectSetup,damageApplicator.Id, targetId);
+                        _effectFactory.CreateEffect(effectSetup, damageApplicator.Id, targetId);
                     }
                 }
             }
