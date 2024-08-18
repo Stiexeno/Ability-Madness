@@ -49,6 +49,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1a011643be24e1a458bc0f7b3084e151, type: 2}
   - {fileID: 11400000, guid: 11f42b34099a611488e0ffbc648366c0, type: 2}
   - {fileID: 11400000, guid: d511670c482a05b4fa7856396d36762c, type: 2}
+  - {fileID: 11400000, guid: c33276daa75b6a443868688e8fd40bce, type: 2}
   - {fileID: 11400000, guid: 7176ec3f0b3a0b74a8b7db250b0229b8, type: 2}
   - {fileID: 11400000, guid: 71f175d6b0e0a0e40baae62e1e46201d, type: 2}
   - {fileID: 11400000, guid: 5abdb56faa687c848ae1e15e5f1e383a, type: 2}
@@ -109,6 +110,7 @@ MonoBehaviour:
     - config_gear
     - config_bullet
     - config_enemy
+    - config_wave
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: acc3aa47f944f9f46a715273a7230e94, type: 2}

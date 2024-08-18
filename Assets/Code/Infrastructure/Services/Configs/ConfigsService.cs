@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using AbilityMadness.Code.Gameplay.Enemy;
 using AbilityMadness.Code.Gameplay.Enemy.Configs;
+using AbilityMadness.Code.Gameplay.Enemy.Waves.Configs;
 using AbilityMadness.Code.Gameplay.Gears.Configs;
 using AbilityMadness.Code.Gameplay.Upgrades.Configs;
 using AbilityMadness.Code.Gameplay.Weapons;
@@ -24,6 +25,7 @@ namespace AbilityMadness.Infrastructure.Services.Configs
         public BulletConfig[] BulletConfigs { get; private set; }
         public GearConfig[] GearConfig { get; private set; }
         public EnemyConfig[] EnemyConfigs { get; private set; }
+        public WaveConfig[] WaveConfigs { get; private set; }
 
 		public ConfigsService(IAssets assets)
 		{
@@ -38,6 +40,7 @@ namespace AbilityMadness.Infrastructure.Services.Configs
             BulletConfigs = _assets.GetAssetsByLabel<BulletConfig>(Constants.Configs.BulletConfigLabel);
             GearConfig = _assets.GetAssetsByLabel<GearConfig>(Constants.Configs.GearConfigLabel);
             EnemyConfigs = _assets.GetAssetsByLabel<EnemyConfig>(Constants.Configs.EnemyConfigLabel);
+            WaveConfigs = _assets.GetAssetsByLabel<WaveConfig>(Constants.Configs.WaveConfigLabel);
 		}
 
         public async UniTask<CursorConfig> GetCursor(CursorType type)

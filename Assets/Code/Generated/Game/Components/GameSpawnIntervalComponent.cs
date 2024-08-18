@@ -8,13 +8,13 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    private AbilityMadness.Code.Common.SpawnInterval spawnInterval { get { return (AbilityMadness.Code.Common.SpawnInterval)GetComponent(GameComponentsLookup.SpawnInterval); } }
+    private AbilityMadness.Code.Gameplay.Enemy.Waves.SpawnInterval spawnInterval { get { return (AbilityMadness.Code.Gameplay.Enemy.Waves.SpawnInterval)GetComponent(GameComponentsLookup.SpawnInterval); } }
     public float SpawnInterval { get { return spawnInterval.Value; } set { spawnInterval.Value = value; }}
     public bool hasSpawnInterval { get { return HasComponent(GameComponentsLookup.SpawnInterval); } }
 
     public GameEntity AddSpawnInterval(float newValue) {
         var index = GameComponentsLookup.SpawnInterval;
-        var component = (AbilityMadness.Code.Common.SpawnInterval)CreateComponent(index, typeof(AbilityMadness.Code.Common.SpawnInterval));
+        var component = (AbilityMadness.Code.Gameplay.Enemy.Waves.SpawnInterval)CreateComponent(index, typeof(AbilityMadness.Code.Gameplay.Enemy.Waves.SpawnInterval));
         component.Value = newValue;
         AddComponent(index, component);
 
@@ -23,7 +23,7 @@ public partial class GameEntity {
 
     public GameEntity ReactiveReplaceSpawnInterval(float newValue) {
         var index = GameComponentsLookup.SpawnInterval;
-        var component = (AbilityMadness.Code.Common.SpawnInterval)CreateComponent(index, typeof(AbilityMadness.Code.Common.SpawnInterval));
+        var component = (AbilityMadness.Code.Gameplay.Enemy.Waves.SpawnInterval)CreateComponent(index, typeof(AbilityMadness.Code.Gameplay.Enemy.Waves.SpawnInterval));
         component.Value = newValue;
         ReplaceComponent(index, component);
 

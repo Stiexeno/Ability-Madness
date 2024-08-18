@@ -110,7 +110,7 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 
             _weaponFactory.CreateWeapon(player, WeaponTypeId.Revolver);
 
-            _waveFactory.CreateWave();
+            _waveFactory.CreateWaves();
             _roundFactory.CreateRound(20 * 60);
 
             _upgradeService.Load();

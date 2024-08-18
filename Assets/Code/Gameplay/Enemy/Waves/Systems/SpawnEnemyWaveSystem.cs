@@ -1,6 +1,5 @@
 using AbilityMadness.Code.Extensions;
 using AbilityMadness.Code.Gameplay.Enemy.Factory;
-using AbilityMadness.Code.Gameplay.Weapons.Factory;
 using Entitas;
 
 namespace AbilityMadness.Code.Gameplay.Enemy.Waves.Systems
@@ -9,35 +8,51 @@ namespace AbilityMadness.Code.Gameplay.Enemy.Waves.Systems
     {
         private IGroup<GameEntity> _waves;
         private IEnemyFactory _enemyFactory;
-        private IWeaponFactory _weaponFactory;
+        private IGroup<GameEntity> _rounds;
 
         public SpawnEnemyWaveSystem(
             GameContext gameContext,
-            IEnemyFactory enemyFactory,
-            IWeaponFactory weaponFactory)
+            IEnemyFactory enemyFactory)
         {
-            _weaponFactory = weaponFactory;
             _enemyFactory = enemyFactory;
             _waves = gameContext.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Wave,
                     GameMatcher.TimeElapsed,
-                    GameMatcher.Interval));
+                    GameMatcher.SpawnInterval,
+                    GameMatcher.StartTime,
+                    GameMatcher.EndTime,
+                    GameMatcher.SpawnAmount,
+                    GameMatcher.MaxSpawnedEnemies,
+                    GameMatcher.SpawnedEnemies));
+
+            _rounds = gameContext.GetGroup(GameMatcher
+                .AllOf(
+                    GameMatcher.RoundTime,
+                    GameMatcher.TimeElapsed));
         }
 
         public void Execute()
         {
             foreach (var wave in _waves)
             {
-                if (wave.TimeElapsed <= wave.Interval)
-                    continue;
-
-                wave.TimeElapsed = 0;
-
-                for (int i = 0; i < 3; i++)
+                foreach (var round in _rounds)
                 {
-                    var position = CameraExtensions.GetRandomPositionOutsideScreen(5f);
-                    var enemy = _enemyFactory.CreateRobot(position);
+                    if (wave.StartTime >= round.TimeElapsed ||
+                        wave.EndTime < round.TimeElapsed ||
+                        wave.SpawnedEnemies >= wave.MaxSpawnedEnemies ||
+                        wave.TimeElapsed <= wave.SpawnInterval)
+                        continue;
+
+                    wave.TimeElapsed = 0;
+
+                    for (int i = 0; i < wave.SpawnAmount; i++)
+                    {
+                        var position = CameraExtensions.GetRandomPositionOutsideScreen(5f);
+                        _enemyFactory.CreateRobot(position);
+
+                        wave.SpawnedEnemies++;
+                    }
                 }
             }
         }
