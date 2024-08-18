@@ -3,8 +3,8 @@
     public enum StatusTypeId
     {
         Unknown = 0,
-        Fire,
-        Freeze,
-        Posion
+        Fire = 1,
+        Freeze = 2,
+        Poison = 3,
     }
 }

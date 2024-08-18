@@ -38,8 +38,8 @@ namespace AbilityMadness.Code.Infrastructure.Services.ECS
 
             Add(systemFactory.Create<TargetCollectionFeature>());
             Add(systemFactory.Create<EffectApplicationFeature>());
-            Add(systemFactory.Create<StatusFeature>());
             Add(systemFactory.Create<EffectProccesingFeature>());
+            Add(systemFactory.Create<StatusFeature>());
             Add(systemFactory.Create<DamageFeature>());
             Add(systemFactory.Create<HealthFeature>());
             Add(systemFactory.Create<StatsFeature>());

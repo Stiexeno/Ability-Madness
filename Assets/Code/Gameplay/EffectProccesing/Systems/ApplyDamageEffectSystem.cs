@@ -55,6 +55,8 @@ namespace AbilityMadness.Code.Gameplay.EffectProccesing.Systems
                 {
                     _effectFactory.CreateEffectDealt(EffectTypeId.Damage, damageRequest.DamageTypeId, producer.Id, target.Id, damage);
                 }
+
+                damageRequest.isDestructed = true;
             }
         }
     }

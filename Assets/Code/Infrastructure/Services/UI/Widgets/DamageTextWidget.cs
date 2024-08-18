@@ -15,6 +15,7 @@ namespace AbilityMadness.Code.Infrastructure.Services.UI.Widgets
 
         [SF] private Color flatColor;
         [SF] private Color fireColor;
+        [SF] private Color posionColor;
 
         private IUIPool _uiPool;
 
@@ -28,7 +29,7 @@ namespace AbilityMadness.Code.Infrastructure.Services.UI.Widgets
         {
             damageText.text = damage.ToString();
             ChangeColorToDamageType(damageTypeId);
-            
+
             const float OFFSET = 0.25f;
             var randomX = Random.Range(-OFFSET, OFFSET);
             var randomY = Random.Range(-OFFSET, OFFSET);
@@ -52,6 +53,7 @@ namespace AbilityMadness.Code.Infrastructure.Services.UI.Widgets
             {
                 DamageTypeId.Flat => flatColor,
                 DamageTypeId.Fire => fireColor,
+                DamageTypeId.Poison => posionColor,
                 _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
             };
         }

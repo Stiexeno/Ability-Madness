@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using AbilityMadness.Code.Gameplay.EffectApplication.Factory;
 using Entitas;
-using Entitas.CodeGeneration.Attributes;
 
 namespace AbilityMadness.Code.Gameplay.EffectApplication
 {

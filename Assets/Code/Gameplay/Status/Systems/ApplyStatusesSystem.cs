@@ -1,10 +1,9 @@
-using AbilityMadness.Code.Gameplay.Status;
 using AbilityMadness.Code.Gameplay.Status.Factory;
 using Entitas;
 
 namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation.Ricochet
 {
-    public class ApplyFireStatusSystem : IExecuteSystem
+    public class ApplyStatusesSystem : IExecuteSystem
     {
         private IGroup<GameEntity> _entities;
         private IGroup<GameEntity> _owners;
@@ -12,7 +11,7 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation.Ricochet
         private IGroup<GameEntity> _targets;
         private IStatusFactory _statusFactory;
 
-        public ApplyFireStatusSystem(GameContext gameContext, IStatusFactory statusFactory)
+        public ApplyStatusesSystem(GameContext gameContext, IStatusFactory statusFactory)
         {
             _statusFactory = statusFactory;
             _gameContext = gameContext;
@@ -42,10 +41,7 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation.Ricochet
                 {
                     foreach (var statusSetup in owner.StatusSetups)
                     {
-                        if (statusSetup.type == StatusTypeId.Fire)
-                        {
-                            _statusFactory.CreateStatus(statusSetup, owner.Id, target.Id);
-                        }
+                        _statusFactory.CreateStatus(statusSetup, owner.Id, target.Id);
                     }
                 }
             }
