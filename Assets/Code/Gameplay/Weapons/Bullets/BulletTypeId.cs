@@ -14,6 +14,11 @@
         Firework = 9,
         Lava = 10,
         Rocket = 11,
-        Tesla = 12
+        Tesla = 12,
+        Flashbang = 13,
+        Sword = 14,
+        Meteor = 15,
+        Star = 16,
+        Fear = 17,
     }
 }
