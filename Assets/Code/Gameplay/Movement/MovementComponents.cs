@@ -18,4 +18,5 @@ namespace AbilityMadness.Code.Gameplay.Movement
     [Game] public class TransformMovement : IComponent {  }
     [Game] public class ForwardMovement : IComponent {  }
     [Game] public class ZigZagMovement : IComponent {  }
+    [Game] public class FollowMovement : IComponent {  }
 }

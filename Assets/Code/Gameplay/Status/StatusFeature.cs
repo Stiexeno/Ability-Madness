@@ -1,7 +1,6 @@
-using AbilityMadness.Code.Gameplay.EffectProccesing.Systems;
-using AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation.Ricochet;
 using AbilityMadness.Code.Gameplay.Status.Systems;
 using AbilityMadness.Code.Gameplay.Status.Systems.Implementations;
+using AbilityMadness.Code.Gameplay.Status.Systems.View;
 using AbilityMadness.Code.Infrastructure.Services.ECS;
 
 namespace AbilityMadness.Code.Gameplay.Status
@@ -16,7 +15,11 @@ namespace AbilityMadness.Code.Gameplay.Status
 
             Add(systemFactory.Create<ApplyFreezeStatusSystem>());
 
+            Add(systemFactory.Create<ApplyStatusViewSystem>());
+
             Add(systemFactory.Create<UnapplyStatusesOnTargetDeathSystem>());
+
+            Add(systemFactory.Create<UnapplyStatusViewSystem>());
 
             Add(systemFactory.Create<CleanupDepletedStatsChangesSystem>());
             Add(systemFactory.Create<CleanupDepletedStatusesSystem>());

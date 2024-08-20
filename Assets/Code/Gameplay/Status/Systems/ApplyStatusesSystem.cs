@@ -1,8 +1,7 @@
 using AbilityMadness.Code.Gameplay.Status.Factory;
 using Entitas;
-using UnityEngine;
 
-namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation.Ricochet
+namespace AbilityMadness.Code.Gameplay.Status.Systems
 {
     public class ApplyStatusesSystem : IExecuteSystem
     {

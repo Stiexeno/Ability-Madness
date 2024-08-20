@@ -17,4 +17,7 @@ namespace AbilityMadness.Code.Gameplay.Status
    [Game] public class Fire : IComponent {  }
    [Game] public class Freeze : IComponent {  }
    [Game] public class Poison : IComponent {  }
+
+   [Game] public class StatusView : IComponent {  }
+   [Game] public class StatusViewApplied : IComponent {  }
 }

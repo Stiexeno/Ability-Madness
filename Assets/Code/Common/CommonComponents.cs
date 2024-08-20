@@ -6,7 +6,7 @@ namespace AbilityMadness.Code.Common
 {
     [Game] public class Id : IComponent { [PrimaryEntityIndex] public int Value; }
     [Game] public class OwnerId : IComponent { [EntityIndex] public int Value; }
-    [Game] public class ProducerId : IComponent { public int Value; }
+    [Game] public class ProducerId : IComponent { [EntityIndex] public int Value; }
     [Game] public class TargetId : IComponent { [EntityIndex] public int Value; }
 
     [Game] public class WorldPosition : IComponent { public Vector3 Value; }

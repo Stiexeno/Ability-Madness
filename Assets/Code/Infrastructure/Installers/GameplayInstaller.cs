@@ -105,6 +105,9 @@ namespace AbilityMadness
 
             Container.BindInterfacesTo<StatusFactory>()
                 .AsSingle();
+
+            Container.BindInterfacesTo<StatusViewFactory>()
+                .AsSingle();
         }
 
         private void BindSetters()

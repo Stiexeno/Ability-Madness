@@ -35,8 +35,7 @@ namespace AbilityMadness
 
             public static class Effects
             {
-                public const string FireballHitEffect = "Prefabs/Effects/Effect_Fireball_Hit";
-                public const string BulletHitEffect = "Prefabs/Projectiles/Bullet/Effect_Bullet_Hit";
+                public const string FireStatus = "Prefabs/Effects/VFX_Fire_01";
             }
 
             public static class Enemies

@@ -62,6 +62,7 @@ public partial class Contexts {
     public const string EffectReceived = "EffectReceived";
     public const string Id = "Id";
     public const string OwnerId = "OwnerId";
+    public const string ProducerId = "ProducerId";
     public const string TargetId = "TargetId";
 
     [Entitas.CodeGeneration.Attributes.PostConstructor]
@@ -87,6 +88,11 @@ public partial class Contexts {
             (e, c) => ((AbilityMadness.Code.Common.OwnerId)c).Value));
 
         game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, int>(
+            ProducerId,
+            game.GetGroup(GameMatcher.ProducerId),
+            (e, c) => ((AbilityMadness.Code.Common.ProducerId)c).Value));
+
+        game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, int>(
             TargetId,
             game.GetGroup(GameMatcher.TargetId),
             (e, c) => ((AbilityMadness.Code.Common.TargetId)c).Value));
@@ -109,6 +115,10 @@ public static class ContextsExtensions {
 
     public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithOwnerId(this GameContext context, int Value) {
         return ((Entitas.EntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.OwnerId)).GetEntities(Value);
+    }
+
+    public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithProducerId(this GameContext context, int Value) {
+        return ((Entitas.EntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.ProducerId)).GetEntities(Value);
     }
 
     public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithTargetId(this GameContext context, int Value) {

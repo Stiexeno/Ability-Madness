@@ -111,67 +111,70 @@ public static class GameComponentsLookup {
     public const int Dashing = 100;
     public const int Direction = 101;
     public const int FaceToDirection = 102;
-    public const int ForwardMovement = 103;
-    public const int LookDirection = 104;
-    public const int MovementSpeed = 105;
-    public const int RequestDash = 106;
-    public const int RigidbodyMovement = 107;
-    public const int TransformMovement = 108;
-    public const int ZigZagMovement = 109;
-    public const int Projectile = 110;
-    public const int ProjectileTypeId = 111;
-    public const int RoundTime = 112;
-    public const int BaseStats = 113;
-    public const int StatsChange = 114;
-    public const int StatsModifiers = 115;
-    public const int StatsValue = 116;
-    public const int Applied = 117;
-    public const int Depleted = 118;
-    public const int Fire = 119;
-    public const int Freeze = 120;
-    public const int Period = 121;
-    public const int Poison = 122;
-    public const int Status = 123;
-    public const int StatusSetups = 124;
-    public const int StatusTypeId = 125;
-    public const int TimeSinceLastTick = 126;
-    public const int ProccessedTargets = 127;
-    public const int SphereCast = 128;
-    public const int SphereCastRadius = 129;
-    public const int TargetBuffer = 130;
-    public const int TargetLayer = 131;
-    public const int TargetsInSight = 132;
-    public const int Vision = 133;
-    public const int VisionInterval = 134;
-    public const int VisionLayer = 135;
-    public const int VisionRadius = 136;
-    public const int VisionTimer = 137;
-    public const int AmmoCapacity = 138;
-    public const int AmmoIndex = 139;
-    public const int Bullet = 140;
-    public const int BulletChangeRequest = 141;
-    public const int BulletIndex = 142;
-    public const int BulletTypeId = 143;
-    public const int FireRate = 144;
-    public const int HasReloadWidget = 145;
-    public const int MaxAmmoCapacity = 146;
-    public const int Pierce = 147;
-    public const int PiercedAmount = 148;
-    public const int Ready = 149;
-    public const int Recovering = 150;
-    public const int Reloading = 151;
-    public const int ReloadTime = 152;
-    public const int ReloadWidget = 153;
-    public const int Shot = 154;
-    public const int Spread = 155;
-    public const int WeaponAnimator = 156;
-    public const int Weapon = 157;
-    public const int WeaponPivot = 158;
-    public const int WeaponTypeId = 159;
-    public const int Player = 160;
-    public const int PlayerInTrigger = 161;
+    public const int FollowMovement = 103;
+    public const int ForwardMovement = 104;
+    public const int LookDirection = 105;
+    public const int MovementSpeed = 106;
+    public const int RequestDash = 107;
+    public const int RigidbodyMovement = 108;
+    public const int TransformMovement = 109;
+    public const int ZigZagMovement = 110;
+    public const int Projectile = 111;
+    public const int ProjectileTypeId = 112;
+    public const int RoundTime = 113;
+    public const int BaseStats = 114;
+    public const int StatsChange = 115;
+    public const int StatsModifiers = 116;
+    public const int StatsValue = 117;
+    public const int Applied = 118;
+    public const int Depleted = 119;
+    public const int Fire = 120;
+    public const int Freeze = 121;
+    public const int Period = 122;
+    public const int Poison = 123;
+    public const int Status = 124;
+    public const int StatusSetups = 125;
+    public const int StatusTypeId = 126;
+    public const int StatusView = 127;
+    public const int StatusViewApplied = 128;
+    public const int TimeSinceLastTick = 129;
+    public const int ProccessedTargets = 130;
+    public const int SphereCast = 131;
+    public const int SphereCastRadius = 132;
+    public const int TargetBuffer = 133;
+    public const int TargetLayer = 134;
+    public const int TargetsInSight = 135;
+    public const int Vision = 136;
+    public const int VisionInterval = 137;
+    public const int VisionLayer = 138;
+    public const int VisionRadius = 139;
+    public const int VisionTimer = 140;
+    public const int AmmoCapacity = 141;
+    public const int AmmoIndex = 142;
+    public const int Bullet = 143;
+    public const int BulletChangeRequest = 144;
+    public const int BulletIndex = 145;
+    public const int BulletTypeId = 146;
+    public const int FireRate = 147;
+    public const int HasReloadWidget = 148;
+    public const int MaxAmmoCapacity = 149;
+    public const int Pierce = 150;
+    public const int PiercedAmount = 151;
+    public const int Ready = 152;
+    public const int Recovering = 153;
+    public const int Reloading = 154;
+    public const int ReloadTime = 155;
+    public const int ReloadWidget = 156;
+    public const int Shot = 157;
+    public const int Spread = 158;
+    public const int WeaponAnimator = 159;
+    public const int Weapon = 160;
+    public const int WeaponPivot = 161;
+    public const int WeaponTypeId = 162;
+    public const int Player = 163;
+    public const int PlayerInTrigger = 164;
 
-    public const int TotalComponents = 162;
+    public const int TotalComponents = 165;
 
     public static readonly string[] componentNames = {
         "AssetReference",
@@ -277,6 +280,7 @@ public static class GameComponentsLookup {
         "Dashing",
         "Direction",
         "FaceToDirection",
+        "FollowMovement",
         "ForwardMovement",
         "LookDirection",
         "MovementSpeed",
@@ -300,6 +304,8 @@ public static class GameComponentsLookup {
         "Status",
         "StatusSetups",
         "StatusTypeId",
+        "StatusView",
+        "StatusViewApplied",
         "TimeSinceLastTick",
         "ProccessedTargets",
         "SphereCast",
@@ -442,6 +448,7 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Movement.Dashing),
         typeof(AbilityMadness.Code.Gameplay.Movement.Direction),
         typeof(AbilityMadness.Code.Gameplay.Movement.FaceToDirection),
+        typeof(AbilityMadness.Code.Gameplay.Movement.FollowMovement),
         typeof(AbilityMadness.Code.Gameplay.Movement.ForwardMovement),
         typeof(AbilityMadness.Code.Gameplay.Movement.LookDirection),
         typeof(AbilityMadness.Code.Gameplay.Movement.MovementSpeed),
@@ -465,6 +472,8 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Status.Status),
         typeof(AbilityMadness.Code.Gameplay.Status.StatusSetups),
         typeof(AbilityMadness.Code.Gameplay.Status.StatusTypeIdComponent),
+        typeof(AbilityMadness.Code.Gameplay.Status.StatusView),
+        typeof(AbilityMadness.Code.Gameplay.Status.StatusViewApplied),
         typeof(AbilityMadness.Code.Gameplay.Status.TimeSinceLastTick),
         typeof(AbilityMadness.Code.Gameplay.TargetCollection.ProccessedTargets),
         typeof(AbilityMadness.Code.Gameplay.TargetCollection.SphereCast),

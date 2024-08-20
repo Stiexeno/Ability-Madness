@@ -17,7 +17,7 @@ MonoBehaviour:
   chance: 15
   type: 6
   projectileRef:
-    m_AssetGUID: b931ba43c5be3394bad80ed48de0d176
+    m_AssetGUID: 7864c22f7fc87ee42bbc01537b98ab09
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
@@ -26,7 +26,7 @@ MonoBehaviour:
     spawnCount: 1
     lifeTime: 5
     spread: 0
-    pierce: 0
+    pierce: 3
     ricochet: 0
     effectSetups:
     - type: 1
@@ -35,6 +35,6 @@ MonoBehaviour:
     statusSetups:
     - type: 1
       duration: 3
-      period: 0.5
-      value: 2
+      period: 0.25
+      value: 1
       damageType: 2

@@ -17,12 +17,12 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: d76224f9189698a4c9eeec99d8ce890f
   m_SerializeEntries:
-  - m_GUID: 436e92c307b091c469ed085d358eade8
-    m_Address: Prefabs/Effects/Effect_Fireball_Hit
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 58cfe0f160c2bfd4bac44625e144616e
     m_Address: Prefabs/Projectiles/Bullet/Effect_Bullet_Hit
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ce1846268bdd5dc4ea4a0bb2eb9528bf
+    m_Address: Prefabs/Effects/VFX_Fire_01
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

@@ -1,7 +1,6 @@
-using System;
 using Entitas;
 
-namespace AbilityMadness.Code.Gameplay.EffectProccesing.Systems
+namespace AbilityMadness.Code.Gameplay.Status.Systems
 {
     public class UnapplyStatusesOnTargetDeathSystem : IExecuteSystem
     {

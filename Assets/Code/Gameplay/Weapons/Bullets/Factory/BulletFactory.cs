@@ -3,7 +3,10 @@ using AbilityMadness.Code.Extensions;
 using AbilityMadness.Code.Gameplay.Health;
 using AbilityMadness.Code.Gameplay.Weapons.Configs;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
+using AbilityMadness.Infrastructure.Services.Assets;
 using AbilityMadness.Infrastructure.Services.Configs;
+using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Weapons.Bullets.Factory
 {
@@ -11,9 +14,11 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Bullets.Factory
     {
         private IIdentifierService _identifierService;
         private IConfigsService _configsService;
+        private IAssets _assets;
 
-        public BulletFactory(IIdentifierService identifierService, IConfigsService configsService)
+        public BulletFactory(IIdentifierService identifierService, IConfigsService configsService, IAssets assets)
         {
+            _assets = assets;
             _configsService = configsService;
             _identifierService = identifierService;
         }
@@ -52,6 +57,7 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Bullets.Factory
         private GameEntity CreateEmptyBullet(BulletTypeId bulletTypeId, int targetId, int index, Team team)
         {
             var config = _configsService.GetBulletConfig(bulletTypeId);
+            _assets.LoadAsync<GameObject>(config.projectileRef).Forget();
 
             var bullet =  CreateEntity.Empty()
                 .AddId(_identifierService.Next())
