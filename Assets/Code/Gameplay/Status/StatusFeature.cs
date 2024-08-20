@@ -19,8 +19,6 @@ namespace AbilityMadness.Code.Gameplay.Status
 
             Add(systemFactory.Create<UnapplyStatusesOnTargetDeathSystem>());
 
-            Add(systemFactory.Create<UnapplyStatusViewSystem>());
-
             Add(systemFactory.Create<CleanupDepletedStatsChangesSystem>());
             Add(systemFactory.Create<CleanupDepletedStatusesSystem>());
         }

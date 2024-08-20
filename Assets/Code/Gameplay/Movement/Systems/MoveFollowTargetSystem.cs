@@ -1,4 +1,3 @@
-using System;
 using Entitas;
 
 namespace AbilityMadness.Code.Gameplay.Movement.Systems
@@ -25,7 +24,10 @@ namespace AbilityMadness.Code.Gameplay.Movement.Systems
             {
                 var target = _gameContext.GetEntityWithId(mover.TargetId);
 
-                mover.Transform.position = target.Transform.position;
+                if (target != null)
+                {
+                    mover.Transform.position = target.Transform.position;
+                }
             }
         }
     }

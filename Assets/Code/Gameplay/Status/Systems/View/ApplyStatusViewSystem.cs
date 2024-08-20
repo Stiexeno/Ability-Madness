@@ -30,7 +30,7 @@ namespace AbilityMadness.Code.Gameplay.Status.Systems.View
         {
             foreach (var status in _statuses.GetEntities(_buffer))
             {
-                _statusViewFactory.CreateStatus(status.StatusTypeId, status.Id, status.TargetId);
+                _statusViewFactory.CreateStatusView(status.StatusTypeId, status.Id, status.TargetId);
                 status.isStatusViewApplied = true;
             }
         }

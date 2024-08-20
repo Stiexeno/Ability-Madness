@@ -25,6 +25,14 @@ MonoBehaviour:
     m_Address: Prefabs/Effects/VFX_Fire_01
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 46d774e2dbf92a1488868c63fa4b23df
+    m_Address: Prefabs/Effects/VFX_Poison_01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: efc853fca6f183449906cfbd941b2789
+    m_Address: Prefabs/Effects/VFX_Freeze_01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9f75c775787da8a4c8e7e94698c9d5b8, type: 2}
   m_SchemaSet:

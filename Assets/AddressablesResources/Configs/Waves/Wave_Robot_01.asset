@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wave_Robot_01
   m_EditorClassIdentifier: 
   enemyType: 1
-  maxSpawnedEnemies: 20
+  maxSpawnedEnemies: 30
   spawnAmount: 4
   spawnInterval: 3
   startTime: 0

@@ -36,6 +36,8 @@ namespace AbilityMadness
             public static class Effects
             {
                 public const string FireStatus = "Prefabs/Effects/VFX_Fire_01";
+                public const string PoisonStatus = "Prefabs/Effects/VFX_Poison_01";
+                public const string FreezeStatus = "Prefabs/Effects/VFX_Freeze_01";
             }
 
             public static class Enemies

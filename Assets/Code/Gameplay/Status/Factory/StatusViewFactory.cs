@@ -1,4 +1,3 @@
-using System;
 using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Extensions;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
@@ -14,25 +13,51 @@ namespace AbilityMadness.Code.Gameplay.Status.Factory
             _identifierService = identifierService;
         }
 
-        public GameEntity CreateStatus(StatusTypeId type, int producerId, int targetId)
+        public GameEntity CreateStatusView(StatusTypeId type, int producerId, int targetId)
         {
             return type switch
             {
-                StatusTypeId.Fire => CreateFireStatus(producerId, targetId),
-                _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
+                StatusTypeId.Fire => CreateFireStatusView(producerId, targetId),
+                StatusTypeId.Poison => CreatePoisonStatusView(producerId, targetId),
+                StatusTypeId.Freeze => CreateFreezeStatusView(producerId, targetId),
+                _ => CreateEmptyStatusView(producerId, targetId)
             };
         }
 
-        private GameEntity CreateFireStatus(int producerId, int targetId)
+        private GameEntity CreateFireStatusView(int producerId, int targetId)
+        {
+            return CreateEmptyStatusView(producerId, targetId)
+                .With(x => x.isEmitting = true)
+                .AddViewPath(Constants.Prefabs.Effects.FireStatus)
+                .With(x => x.isFollowMovement = true)
+                .With(x => x.isTransformMovement = true);
+        }
+
+        private GameEntity CreatePoisonStatusView(int producerId, int targetId)
+        {
+            return CreateEmptyStatusView(producerId, targetId)
+                .With(x => x.isEmitting = true)
+                .AddViewPath(Constants.Prefabs.Effects.PoisonStatus)
+                .With(x => x.isFollowMovement = true)
+                .With(x => x.isTransformMovement = true);
+        }
+
+        private GameEntity CreateFreezeStatusView(int producerId, int targetId)
+        {
+            return CreateEmptyStatusView(producerId, targetId)
+                .With(x => x.isEmitting = true)
+                .AddViewPath(Constants.Prefabs.Effects.FreezeStatus)
+                .With(x => x.isFollowMovement = true)
+                .With(x => x.isTransformMovement = true);
+        }
+
+        private GameEntity CreateEmptyStatusView(int producerId, int targetId)
         {
             return CreateEntity.Empty()
                 .AddId(_identifierService.Next())
                 .With(x => x.isStatusView = true)
-                .AddViewPath(Constants.Prefabs.Effects.FireStatus)
                 .AddTargetId(targetId)
-                .AddProducerId(producerId)
-                .With(x => x.isFollowMovement = true)
-                .With(x => x.isTransformMovement = true);
+                .AddProducerId(producerId);
         }
     }
 }

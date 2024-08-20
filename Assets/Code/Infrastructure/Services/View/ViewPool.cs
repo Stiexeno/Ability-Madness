@@ -91,6 +91,7 @@ namespace AbilityMadness.Code.Infrastructure.Services.View
 
             _pooledViews[path].Add(viewInstance);
 
+            viewInstance.gameObject.SetActive(false);
             viewInstance.transform.SetParent(_viewsParent);
 
             return viewInstance;
