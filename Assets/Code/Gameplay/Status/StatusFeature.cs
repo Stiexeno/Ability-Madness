@@ -1,3 +1,4 @@
+using AbilityMadness.Code.Gameplay.EffectProccesing.Systems;
 using AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation.Ricochet;
 using AbilityMadness.Code.Gameplay.Status.Systems;
 using AbilityMadness.Code.Gameplay.Status.Systems.Implementations;
@@ -14,6 +15,8 @@ namespace AbilityMadness.Code.Gameplay.Status
             Add(systemFactory.Create<PeriodicDamageStatusSystem>());
 
             Add(systemFactory.Create<ApplyFreezeStatusSystem>());
+
+            Add(systemFactory.Create<UnapplyStatusesOnTargetDeathSystem>());
 
             Add(systemFactory.Create<CleanupDepletedStatsChangesSystem>());
             Add(systemFactory.Create<CleanupDepletedStatusesSystem>());

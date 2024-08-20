@@ -19,7 +19,7 @@ namespace AbilityMadness.Code.Gameplay.EffectProccesing.Systems
         {
             foreach (var entity in _entities.GetEntities(_buffer))
             {
-                entity.isDestructed = true;
+                entity.Destroy();
             }
         }
     }

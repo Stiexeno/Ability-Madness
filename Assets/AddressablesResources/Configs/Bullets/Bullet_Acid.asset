@@ -17,7 +17,7 @@ MonoBehaviour:
   chance: 15
   type: 5
   projectileRef:
-    m_AssetGUID: b931ba43c5be3394bad80ed48de0d176
+    m_AssetGUID: 8ac3d966b39431c4a919a178af285af7
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0

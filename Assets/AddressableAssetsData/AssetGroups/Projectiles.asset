@@ -42,6 +42,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - projectile
+  - m_GUID: 8ac3d966b39431c4a919a178af285af7
+    m_Address: Projectile_Poison
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - projectile
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9f75c775787da8a4c8e7e94698c9d5b8, type: 2}
   m_SchemaSet:

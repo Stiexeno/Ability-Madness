@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using AbilityMadness.Code.Gameplay.EffectApplication;
 using AbilityMadness.Code.Gameplay.EffectApplication.Factory;
 using Entitas;
@@ -7,6 +8,7 @@ namespace AbilityMadness.Code.Gameplay.EffectProccesing.Systems
 {
     public class ApplyDamageEffectSystem : IExecuteSystem
     {
+        private readonly List<GameEntity> _buffer = new(32);
         private IGroup<GameEntity> _effectRequests;
         private IGroup<GameEntity> _targets;
         private GameContext _gameContext;
@@ -41,7 +43,7 @@ namespace AbilityMadness.Code.Gameplay.EffectProccesing.Systems
 
         public void Execute()
         {
-            foreach (var damageRequest in _effectRequests)
+            foreach (var damageRequest in _effectRequests.GetEntities(_buffer))
             {
                 var target = _gameContext.GetEntityWithId(damageRequest.TargetId);
                 var producer = _gameContext.GetEntityWithId(damageRequest.ProducerId);
@@ -56,7 +58,7 @@ namespace AbilityMadness.Code.Gameplay.EffectProccesing.Systems
                     _effectFactory.CreateEffectDealt(EffectTypeId.Damage, damageRequest.DamageTypeId, producer.Id, target.Id, damage);
                 }
 
-                damageRequest.isDestructed = true;
+                damageRequest.Destroy();
             }
         }
     }

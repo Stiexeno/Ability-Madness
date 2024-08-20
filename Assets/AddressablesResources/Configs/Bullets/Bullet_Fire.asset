@@ -26,7 +26,7 @@ MonoBehaviour:
     spawnCount: 1
     lifeTime: 5
     spread: 0
-    pierce: 3
+    pierce: 0
     ricochet: 0
     effectSetups:
     - type: 1

@@ -1,5 +1,6 @@
 using AbilityMadness.Code.Gameplay.Status.Factory;
 using Entitas;
+using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation.Ricochet
 {
@@ -18,7 +19,8 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation.Ricochet
             _entities = gameContext.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.EffectDealt,
-                    GameMatcher.ProducerId));
+                    GameMatcher.ProducerId,
+                    GameMatcher.TargetId));
 
             _owners = gameContext.GetGroup(GameMatcher
                 .AllOf(
@@ -42,6 +44,7 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation.Ricochet
                     foreach (var statusSetup in owner.StatusSetups)
                     {
                         _statusFactory.CreateStatus(statusSetup, owner.Id, target.Id);
+                        Debug.LogError("Creates");
                     }
                 }
             }

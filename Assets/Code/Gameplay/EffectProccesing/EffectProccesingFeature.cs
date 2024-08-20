@@ -9,8 +9,6 @@ namespace AbilityMadness.Code.Gameplay.EffectProccesing
         {
             Add(systemFactory.Create<ApplyDamageEffectSystem>());
 
-            Add(systemFactory.Create<UnapplyStatusesOnTargetDeathSystem>());
-
             Add(systemFactory.Create<CleanupEffectReceivedSystem>());
             Add(systemFactory.Create<CleanupEffectDealtSystem>());
         }
