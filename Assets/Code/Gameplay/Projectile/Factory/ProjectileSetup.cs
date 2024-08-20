@@ -14,12 +14,12 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
 
         [Space(10)]
         public int spawnCount = 1;
-        [Unit(Units.Second)] public float lifeTime = 5;
         [Unit(Units.Degree)] public float spread = 0;
 
         [Space(10)]
         public int pierce = 0;
         public int ricochet = 0;
+        [Unit(Units.Meter)] public float range;
 
         public List<EffectSetup> effectSetups;
         public List<StatusSetup> statusSetups;

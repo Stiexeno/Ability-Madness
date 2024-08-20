@@ -73,8 +73,10 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
 
                 .With(x => x.isAlive = true)
                 .With(x => x.isTransformMovement = true)
-                .SetLifetime(setup.lifeTime)
                 .AddMovementSpeed(setup.movementSpeed)
+                .AddDistanceTraveled(0f)
+                .AddLastPosition(request.position)
+                .AddRange(setup.range)
 
                 .With(x => x.AddPierce(setup.pierce), when: setup.pierce > 0)
                 .With(x => x.AddPiercedAmount(0), when: setup.pierce > 0)

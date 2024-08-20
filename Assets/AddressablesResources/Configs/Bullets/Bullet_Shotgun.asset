@@ -24,10 +24,10 @@ MonoBehaviour:
   projectileSetup:
     movementSpeed: 25
     spawnCount: 4
-    lifeTime: 5
     spread: 0
     pierce: 1
     ricochet: 0
+    range: 4
     effectSetups:
     - type: 1
       value: 5

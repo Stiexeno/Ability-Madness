@@ -19,4 +19,8 @@ namespace AbilityMadness.Code.Gameplay.Movement
     [Game] public class ForwardMovement : IComponent {  }
     [Game] public class ZigZagMovement : IComponent {  }
     [Game] public class FollowMovement : IComponent {  }
+
+    [Game] public class DistanceTraveled : IComponent { public float Value; }
+    [Game] public class LastPosition : IComponent { public Vector3 Value; }
+
 }

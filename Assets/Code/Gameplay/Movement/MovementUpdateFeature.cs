@@ -19,6 +19,8 @@ namespace AbilityMadness.Code.Gameplay.Movement
 
             Add(systemFactory.Create<MoveFollowTargetSystem>());
 
+            Add(systemFactory.Create<IncreaseDistanceTraveledSystem>());
+
             Add(systemFactory.Create<StartDashSystem>());
             Add(systemFactory.Create<DashingCooldownSystem>());
             Add(systemFactory.Create<RigidbodyDashSystem>());
