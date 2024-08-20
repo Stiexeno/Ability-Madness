@@ -43,7 +43,7 @@ namespace AbilityMadness.Code.Gameplay.Status.Systems
                         damageType =    status.DamageTypeId
                     };
 
-                    _effectFactory.CreateEffect(damageEffect, status.ProducerId, status.TargetId);
+                    _effectFactory.CreateEffect(damageEffect, status.Id, status.TargetId);
                 }
             }
         }

@@ -44,7 +44,6 @@ namespace AbilityMadness.Code.Gameplay.Modifiers.Systems.Implemenation.Ricochet
                     foreach (var statusSetup in owner.StatusSetups)
                     {
                         _statusFactory.CreateStatus(statusSetup, owner.Id, target.Id);
-                        Debug.LogError("Creates");
                     }
                 }
             }
