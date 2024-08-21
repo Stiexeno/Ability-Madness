@@ -15,29 +15,27 @@ namespace AbilityMadness
 
         public static class Prefabs
         {
-            public const string UIRootPath = "Prefabs/UI/UIRoot";
-            public const string WorldUIRootPath = "Prefabs/UI/WorldUIRoot";
+            public const string UIRootPath = "UIRoot";
+            public const string WorldUIRootPath = "WorldUIRoot";
 
             public const string WindowLabel = "window";
 
-            public const string ProjectileLabel = "projectile";
-
             public static class Widgets
             {
-                public const string DamageTextWidget = "Prefabs/UI/Widgets/DamageTextWidget";
-                public const string HealthbarWidget = "Prefabs/UI/Widgets/HealthbarWidget";
-                public const string ReloadWidget = "Prefabs/UI/Widgets/ReloadWidget";
-                public const string SmallBulletWidget = "Prefabs/UI/Widgets/SmallBulletWidget";
-                public const string BulletWidget = "Prefabs/UI/Widgets/BulletWidget";
-                public const string BulletSelectionWidget = "Prefabs/UI/Widgets/BulletSelectionWidget";
-                public const string BulletDragWidget = "Prefabs/UI/Widgets/BulletDragWidget";
+                public const string DamageTextWidget = "DamageTextWidget";
+                public const string HealthbarWidget = "HealthbarWidget";
+                public const string ReloadWidget = "ReloadWidget";
+                public const string SmallBulletWidget = "SmallBulletWidget";
+                public const string BulletWidget = "BulletWidget";
+                public const string BulletSelectionWidget = "BulletSelectionWidget";
+                public const string BulletDragWidget = "BulletDragWidget";
             }
 
             public static class Effects
             {
-                public const string FireStatus = "Prefabs/Effects/VFX_Fire_01";
-                public const string PoisonStatus = "Prefabs/Effects/VFX_Poison_01";
-                public const string FreezeStatus = "Prefabs/Effects/VFX_Freeze_01";
+                public const string FireStatus = "VFX_Fire_01";
+                public const string PoisonStatus = "VFX_Poison_01";
+                public const string FreezeStatus = "VFX_Freeze_01";
             }
 
             public static class Enemies
@@ -47,7 +45,7 @@ namespace AbilityMadness
 
             public static class Experiences
             {
-                public const string Green = "Prefabs/Experience/Experience_Green";
+                public const string Green = "Experience_Green";
             }
         }
 

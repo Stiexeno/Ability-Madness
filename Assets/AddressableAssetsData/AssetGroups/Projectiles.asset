@@ -17,35 +17,30 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 6bb64ced1250d9c428c104dca65d3fff
   m_SerializeEntries:
-  - m_GUID: 7864c22f7fc87ee42bbc01537b98ab09
-    m_Address: Assets/AddressablesResources/Prefabs/Projectiles/Fire/Projectile_Fire.prefab
+  - m_GUID: 6710e59f8b16c9f47b7c040606775c02
+    m_Address: Posion
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 0919512cebcc86d48ab1fdecbbf1ec54
-    m_Address: Projectile_Bullet_Ricochet
+  - m_GUID: be2d6b146c914c44090f1bffdbc39a17
+    m_Address: Freeze
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - projectile
-  - m_GUID: b931ba43c5be3394bad80ed48de0d176
-    m_Address: Projectile_Bullet_Rifle
+    m_SerializedLabels: []
+  - m_GUID: 94af8f80ab529b94191c3c55e7637b2f
+    m_Address: Ricochet
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - projectile
-  - m_GUID: 51ee2c1654720e548a0ddd9a1a4d7012
-    m_Address: Projectile_Bullet
+    m_SerializedLabels: []
+  - m_GUID: cfef525162fe47843be4e659e57c3fda
+    m_Address: Fire
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - projectile
-  - m_GUID: 5a5b828834d7d3e48abfa1e5bb45b340
-    m_Address: Projectile_Freeze
+    m_SerializedLabels: []
+  - m_GUID: a2314fd3cbd82474f939899f767077f6
+    m_Address: Bullet
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - projectile
-  - m_GUID: 8ac3d966b39431c4a919a178af285af7
-    m_Address: Projectile_Poison
+    m_SerializedLabels: []
+  - m_GUID: e86774f0ab4d57942983c57c787d00d7
+    m_Address: Rifle
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - projectile
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9f75c775787da8a4c8e7e94698c9d5b8, type: 2}
   m_SchemaSet:

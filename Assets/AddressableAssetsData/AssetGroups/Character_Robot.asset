@@ -21,8 +21,8 @@ MonoBehaviour:
     m_Address: Character_Robot
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: cf66b893dc5fc9c4d84833b36f5147e0
-    m_Address: Assets/AddressablesResources/Prefabs/Characters/Robot/Character_Robot_Walk.png
+  - m_GUID: da86f02a6df9b5b4181593fe40f0d4bf
+    m_Address: Robot
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

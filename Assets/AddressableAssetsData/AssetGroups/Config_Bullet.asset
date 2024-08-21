@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: 4fe5d68c19bde5e4f9405aea6333860d
   m_SerializeEntries:
   - m_GUID: a321044c41746db4ab331999d4e87cd8
-    m_Address: Assets/AddressablesResources/Configs/Bullets
+    m_Address: Bullets
     m_ReadOnly: 0
     m_SerializedLabels:
     - config_bullet

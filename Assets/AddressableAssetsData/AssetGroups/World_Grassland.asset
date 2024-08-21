@@ -18,15 +18,15 @@ MonoBehaviour:
   m_GUID: ae0f37f2b7fe4eb4b9b149862e80f7db
   m_SerializeEntries:
   - m_GUID: a26a7492e680d754e889c80e003224ec
-    m_Address: Assets/AddressablesResources/Worlds/Grassland/Textures
+    m_Address: Textures
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: aa192ec8a958bb0418ddc09063151c88
-    m_Address: Assets/AddressablesResources/Worlds/Grassland/Tiles
+    m_Address: Tiles
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: d5ebda35a2f26ae468d4e0d9cff4d31a
-    m_Address: Worlds/Grassland/World_Grassland
+    m_Address: World_Grassland
     m_ReadOnly: 0
     m_SerializedLabels:
     - config_world

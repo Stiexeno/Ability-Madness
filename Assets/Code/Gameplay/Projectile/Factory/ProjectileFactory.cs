@@ -28,11 +28,6 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
             _identifierService = identifierService;
         }
 
-        public async UniTask Load()
-        {
-            _assets.GetAssetsByLabelAsync<GameObject>(Constants.Prefabs.ProjectileLabel);
-        }
-
         public GameEntity CreateProjectile(ProjectileRequest request)
         {
             var bulletConfig = _configsService.GetBulletConfig(request.type);

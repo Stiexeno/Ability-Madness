@@ -18,31 +18,31 @@ MonoBehaviour:
   m_GUID: 835ba661793d13f4bb77857c2bf70d73
   m_SerializeEntries:
   - m_GUID: 90745cc6cfeb74b4ca0d7e2ec8b2ffcf
-    m_Address: Prefabs/UI/Widgets/DamageTextWidget
+    m_Address: DamageTextWidget
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 95fc662d742578940b4cf82fb3b0293b
-    m_Address: Prefabs/UI/Widgets/HealthbarWidget
+    m_Address: HealthbarWidget
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 34c11567121002e419e9d281ce02d4b2
-    m_Address: Prefabs/UI/Widgets/ReloadWidget
+    m_Address: ReloadWidget
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: d197656a6a4a73e46a9a4adf6e350cc0
-    m_Address: Prefabs/UI/Widgets/SmallBulletWidget
+    m_Address: SmallBulletWidget
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: dbc6883fafef69144b960cb31f2e9298
-    m_Address: Prefabs/UI/Widgets/BulletWidget
+    m_Address: BulletWidget
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 42cfda387dfafc942bfe9ed8ccca2c70
-    m_Address: Prefabs/UI/Widgets/BulletSelectionWidget
+    m_Address: BulletSelectionWidget
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: e118344189c70e64da26cab4a3ae1275
-    m_Address: Prefabs/UI/Widgets/BulletDragWidget
+    m_Address: BulletDragWidget
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

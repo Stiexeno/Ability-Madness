@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: a14d956f0913d744fb641321e8209cf6
   m_SerializeEntries:
   - m_GUID: e170d85bca11d494393e33f96af25a77
-    m_Address: Prefabs/Experience/Experience_Green
+    m_Address: Experience_Green
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

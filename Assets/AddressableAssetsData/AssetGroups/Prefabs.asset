@@ -18,11 +18,11 @@ MonoBehaviour:
   m_GUID: b30ebae38356bd64399d0b3afde27ac9
   m_SerializeEntries:
   - m_GUID: aa3485160e74df44a9122378897e1c60
-    m_Address: Prefabs/UI/UIRoot
+    m_Address: UIRoot
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: cde94b72f2df49540b26ca662a356370
-    m_Address: Prefabs/UI/WorldUIRoot
+    m_Address: WorldUIRoot
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

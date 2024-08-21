@@ -83,7 +83,6 @@ namespace AbilityMadness.Code.Infrastructure.StateMachine.Application
 
         private async UniTask LoadAssets()
         {
-            await _projectileFactory.Load();
         }
 
 		private async UniTask SetupUI()
