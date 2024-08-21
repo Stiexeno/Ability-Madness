@@ -1,5 +1,5 @@
 ﻿using System;
-using AbilityMadness.Code.Infrastructure.Services.Cursors;
+using AbilityMadness.Code.Infrastructure.Cursors;
 using Entitas;
 
 namespace AbilityMadness.Code.Gameplay.Chest.Systems

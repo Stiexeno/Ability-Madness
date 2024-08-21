@@ -1,8 +1,8 @@
 ﻿using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Extensions;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Factory;
+using AbilityMadness.Code.Infrastructure.Configs;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
-using AbilityMadness.Infrastructure.Services.Configs;
 using UnityEngine;
 using Zenject;
 

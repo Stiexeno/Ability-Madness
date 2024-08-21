@@ -1,8 +1,8 @@
-﻿using AbilityMadness.Infrastructure.Services.Configs;
+﻿using AbilityMadness.Code.Infrastructure.Configs;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace AbilityMadness.Code.Infrastructure.Services.Cursors
+namespace AbilityMadness.Code.Infrastructure.Cursors
 {
     public enum CursorType { Unknown, Default, Select, Interact, Talk }
 

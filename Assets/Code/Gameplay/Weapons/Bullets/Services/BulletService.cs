@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Configs;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Factory;
-using AbilityMadness.Infrastructure.Services.Configs;
+using AbilityMadness.Code.Infrastructure.Configs;
 
 namespace AbilityMadness.Code.Gameplay.Weapons.Bullets.Services
 {

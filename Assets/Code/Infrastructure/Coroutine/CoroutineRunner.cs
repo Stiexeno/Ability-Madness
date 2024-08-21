@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace AbilityMadness.Infrastructure.Services.Coroutine
+namespace AbilityMadness.Code.Infrastructure.Coroutine
 {
 	public class CoroutineRunner : MonoBehaviour, ICoroutineRunner
 	{

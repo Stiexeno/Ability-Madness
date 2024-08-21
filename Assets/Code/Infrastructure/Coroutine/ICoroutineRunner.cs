@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace AbilityMadness.Infrastructure.Services
+namespace AbilityMadness.Code.Infrastructure.Coroutine
 {
 	public interface ICoroutineRunner
 	{

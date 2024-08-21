@@ -1,6 +1,6 @@
 using Cysharp.Threading.Tasks;
 
-namespace AbilityMadness.Code.Infrastructure.Services.Cursors
+namespace AbilityMadness.Code.Infrastructure.Cursors
 {
     public interface ICursorService
     {

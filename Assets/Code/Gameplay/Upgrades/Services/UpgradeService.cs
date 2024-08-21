@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using AbilityMadness.Code.Gameplay.Upgrades.Configs;
 using AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection;
-using AbilityMadness.Infrastructure.Services.Configs;
+using AbilityMadness.Code.Infrastructure.Configs;
 using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Upgrades.Services

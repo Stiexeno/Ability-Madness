@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using AbilityMadness.Code.Infrastructure.Assets;
+using AbilityMadness.Code.Infrastructure.Configs;
 using AbilityMadness.Code.Infrastructure.Services.WorldBuilder.Configs;
-using AbilityMadness.Infrastructure.Services.Configs;
 using Cysharp.Threading.Tasks;
 using Unity.Mathematics;
 using UnityEngine;

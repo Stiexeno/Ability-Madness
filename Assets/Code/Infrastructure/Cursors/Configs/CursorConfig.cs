@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace AbilityMadness.Code.Infrastructure.Services.Cursors.Configs
+namespace AbilityMadness.Code.Infrastructure.Cursors.Configs
 {
     [CreateAssetMenu(fileName = "CursorConfig", menuName = Constants.Root + "/Cursors/CursorConfig")]
     public class CursorConfig : ScriptableObject

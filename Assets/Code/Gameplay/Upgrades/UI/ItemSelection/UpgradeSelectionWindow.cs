@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using AbilityMadness.Code.Gameplay.Gears.Configs;
 using AbilityMadness.Code.Gameplay.Upgrades.Configs;
 using AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory;
-using AbilityMadness.Code.Infrastructure.Services.Cursors;
+using AbilityMadness.Code.Infrastructure.Cursors;
 using AbilityMadness.Code.Infrastructure.Services.TimeService;
 using AbilityMadness.Code.Infrastructure.Services.UI;
 using AbilityMadness.Infrastructure.Factories.UI;
