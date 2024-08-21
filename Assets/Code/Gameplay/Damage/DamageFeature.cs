@@ -7,11 +7,7 @@ namespace AbilityMadness.Code.Gameplay.DamageApplication
     {
         public DamageFeature(ISystemFactory systemFactory)
         {
-            // Apply Damage Modifiers Here
-            //...
-
             Add(systemFactory.Create<PlayDamageAnimatorSystem>());
-           // Add(systemFactory.Create<ApplyDamageVFXSystem>());
             Add(systemFactory.Create<ShowDamageTextSystem>());
         }
     }

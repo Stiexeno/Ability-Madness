@@ -1,7 +1,6 @@
 using System.Collections;
 using AbilityMadness.Code.Gameplay.Animator.Registrars;
 using AbilityMadness.Code.Infrastructure.View;
-using DG.Tweening;
 using UnityEngine;
 using SF = UnityEngine.SerializeField;
 
@@ -14,9 +13,9 @@ namespace AbilityMadness.Code.Common.Behaviours
 
         private Renderer _renderer;
         private MaterialPropertyBlock _materialPropertyBlock;
+        private Coroutine _flashCoroutine;
 
         private static readonly int flashProperty = Shader.PropertyToID("_FlashAmount");
-        private Coroutine _flashCoroutine;
 
         private void Awake()
         {

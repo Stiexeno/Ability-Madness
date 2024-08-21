@@ -6,9 +6,9 @@ namespace AbilityMadness.Code.Gameplay.Animator.Systems
     {
         private IGroup<GameEntity> _entities;
 
-        public AnimateMovementSystem(Contexts contexts)
+        public AnimateMovementSystem(GameContext gameContext)
         {
-            _entities = contexts.game.GetGroup(GameMatcher
+            _entities = gameContext.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.MovementAnimator,
                     GameMatcher.LookDirection,

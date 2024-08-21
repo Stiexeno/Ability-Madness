@@ -1,4 +1,5 @@
-﻿using AbilityMadness.Code.Infrastructure.View;
+﻿using AbilityMadness.Code.Common.Behaviours;
+using AbilityMadness.Code.Infrastructure.View;
 using SF = UnityEngine.SerializeField;
 
 namespace AbilityMadness.Code.Gameplay.Animator.Registrars
@@ -6,7 +7,7 @@ namespace AbilityMadness.Code.Gameplay.Animator.Registrars
     [EntityTag("Registrars")]
     public class MovementAnimatorRegistrar : EntityComponentRegistrar
     {
-        [SF] private Common.Behaviours.MovementAnimator movementAnimator;
+        [SF] private MovementAnimator movementAnimator;
 
         public override void RegisterComponents(GameEntity entity)
         {

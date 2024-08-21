@@ -16,8 +16,6 @@ namespace AbilityMadness.Code.Gameplay.Weapons
             Add(systemFactory.Create<WeaponManualAttackReadySystem>());
             Add(systemFactory.Create<SetWeaponShotOnReadySystem>());
 
-            //Add(systemFactory.Create<WeaponReadySystem>());
-            //Add(systemFactory.Create<WeaponTargetSystem>());
             Add(systemFactory.Create<CreateProjectileRequestSystem>());
 
             Add(systemFactory.Create<ShakeOnShootSystem>());

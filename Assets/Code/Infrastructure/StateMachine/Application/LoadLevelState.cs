@@ -2,6 +2,7 @@
 using AbilityMadness.Code.Gameplay.Projectile.Factory;
 using AbilityMadness.Code.Gameplay.Round.Factory;
 using AbilityMadness.Code.Gameplay.UI.Hud;
+using AbilityMadness.Code.Gameplay.UI.LoadingCurtain;
 using AbilityMadness.Code.Gameplay.Upgrades.Services;
 using AbilityMadness.Code.Gameplay.Upgrades.UI;
 using AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory;

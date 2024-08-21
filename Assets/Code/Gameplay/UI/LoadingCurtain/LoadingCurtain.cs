@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace AbilityMadness
+namespace AbilityMadness.Code.Gameplay.UI.LoadingCurtain
 {
     public class LoadingCurtain : MonoBehaviour, ILoadingCurtain
     {

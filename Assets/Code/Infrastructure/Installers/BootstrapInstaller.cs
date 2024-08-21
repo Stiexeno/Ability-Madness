@@ -1,4 +1,5 @@
 using AbilityMadness.Code.Gameplay.Experience.Services;
+using AbilityMadness.Code.Gameplay.UI.LoadingCurtain;
 using AbilityMadness.Code.Infrastructure.Assets;
 using AbilityMadness.Code.Infrastructure.Camera;
 using AbilityMadness.Code.Infrastructure.Configs;

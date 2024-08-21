@@ -8,17 +8,18 @@ namespace AbilityMadness.Code.Gameplay.Camera.Systems
         private readonly IGroup<GameEntity> _cameras;
         private IGroup<GameEntity> _players;
 
-        public InitializeCameraSystem(Contexts contexts, ICameraFactory cameraFactory)
+        public InitializeCameraSystem(GameContext gameContext, ICameraFactory cameraFactory)
         {
             cameraFactory.CreateCamera();
 
-            _cameras = contexts.game.GetGroup(GameMatcher
+            _cameras = gameContext.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Camera,
                     GameMatcher.FollowTargetId));
 
-            _players = contexts.game.GetGroup(GameMatcher
-                .AllOf(GameMatcher.Player));
+            _players = gameContext.GetGroup(GameMatcher
+                .AllOf(
+                    GameMatcher.Player));
         }
 
         public void Initialize()

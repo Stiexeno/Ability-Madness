@@ -1,4 +1,4 @@
-namespace AbilityMadness
+namespace AbilityMadness.Code.Gameplay.UI.LoadingCurtain
 {
     public interface ILoadingCurtain
     {

@@ -1,4 +1,5 @@
-﻿using AbilityMadness.Code.Infrastructure.Assets;
+﻿using AbilityMadness.Code.Gameplay.UI.LoadingCurtain;
+using AbilityMadness.Code.Infrastructure.Assets;
 using AbilityMadness.Code.Infrastructure.Scene;
 using Cysharp.Threading.Tasks;
 using UnityEngine.SceneManagement;
