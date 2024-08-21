@@ -4,7 +4,7 @@ using AbilityMadness.Code.Gameplay.Health;
 using AbilityMadness.Code.Gameplay.Weapons.Configs;
 using AbilityMadness.Code.Infrastructure.Assets;
 using AbilityMadness.Code.Infrastructure.Configs;
-using AbilityMadness.Code.Infrastructure.Services.Identifiers;
+using AbilityMadness.Code.Infrastructure.Identifiers;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 

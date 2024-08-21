@@ -1,5 +1,5 @@
 using AbilityMadness.Code.Common;
-using AbilityMadness.Code.Infrastructure.Services.Identifiers;
+using AbilityMadness.Code.Infrastructure.Identifiers;
 
 namespace AbilityMadness.Code.Gameplay.Stats.Factory
 {

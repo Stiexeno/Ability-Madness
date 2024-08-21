@@ -1,4 +1,4 @@
-﻿using AbilityMadness.Infrastructure.Services.Instantiator;
+﻿using AbilityMadness.Code.Infrastructure.Instantiator;
 using Entitas;
 using Zenject;
 

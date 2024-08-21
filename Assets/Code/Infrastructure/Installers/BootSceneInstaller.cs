@@ -1,5 +1,5 @@
 using AbilityMadness.Code.Infrastructure.Camera;
-using AbilityMadness.Infrastructure.Services.Instantiator;
+using AbilityMadness.Code.Infrastructure.Instantiator;
 using UnityEngine;
 using Zenject;
 using SF = UnityEngine.SerializeField;

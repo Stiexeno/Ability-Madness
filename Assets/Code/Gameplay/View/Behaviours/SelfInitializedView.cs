@@ -1,4 +1,4 @@
-using AbilityMadness.Code.Infrastructure.Services.Identifiers;
+using AbilityMadness.Code.Infrastructure.Identifiers;
 using AbilityMadness.Code.Infrastructure.View;
 using Zenject;
 

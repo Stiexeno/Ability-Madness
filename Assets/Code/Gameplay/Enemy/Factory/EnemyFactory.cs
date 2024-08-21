@@ -11,7 +11,7 @@ using AbilityMadness.Code.Gameplay.TargetCollection;
 using AbilityMadness.Code.Gameplay.Vision;
 using AbilityMadness.Code.Infrastructure.Assets;
 using AbilityMadness.Code.Infrastructure.Configs;
-using AbilityMadness.Code.Infrastructure.Services.Identifiers;
+using AbilityMadness.Code.Infrastructure.Identifiers;
 using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Enemy.Factory

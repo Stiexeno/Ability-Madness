@@ -1,6 +1,6 @@
 ﻿using Zenject;
 
-namespace AbilityMadness.Infrastructure.Services.Instantiator
+namespace AbilityMadness.Code.Infrastructure.Instantiator
 {
 	public class InstantiatorProvider
 	{

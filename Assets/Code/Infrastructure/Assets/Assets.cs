@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using AbilityMadness.Infrastructure.Services.Instantiator;
+using AbilityMadness.Code.Infrastructure.Instantiator;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;

@@ -1,4 +1,4 @@
-namespace AbilityMadness.Code.Infrastructure.Services.Identifiers
+namespace AbilityMadness.Code.Infrastructure.Identifiers
 {
     public interface IIdentifierService
     {

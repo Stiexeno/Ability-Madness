@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AbilityMadness.Code.Infrastructure.Services.Identifiers
+namespace AbilityMadness.Code.Infrastructure.Identifiers
 {
     public enum Identity{ General }
     public class IdentifierService : IIdentifierService
