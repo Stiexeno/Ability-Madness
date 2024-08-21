@@ -1,4 +1,4 @@
-namespace AbilityMadness.Infrastructure.Services.Updatable
+namespace AbilityMadness.Code.Infrastructure.Updatable
 {
 	public interface IUpdateService
 	{

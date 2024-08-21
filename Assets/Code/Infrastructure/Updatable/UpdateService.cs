@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Zenject;
 
-namespace AbilityMadness.Infrastructure.Services.Updatable
+namespace AbilityMadness.Code.Infrastructure.Updatable
 {
 	public class UpdateService : IUpdateService, ITickable
 	{

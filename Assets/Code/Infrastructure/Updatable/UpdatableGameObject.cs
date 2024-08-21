@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Zenject;
 
-namespace AbilityMadness.Infrastructure.Services.Updatable
+namespace AbilityMadness.Code.Infrastructure.Updatable
 {
 	public class UpdatableGameObject : MonoBehaviour
 	{

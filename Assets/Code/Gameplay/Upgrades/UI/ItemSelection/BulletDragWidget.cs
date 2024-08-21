@@ -2,7 +2,7 @@ using System;
 using AbilityMadness.Code.Extensions;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Configs;
 using AbilityMadness.Code.Infrastructure.Services.UI;
-using AbilityMadness.Infrastructure.Services.Updatable;
+using AbilityMadness.Code.Infrastructure.Updatable;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
