@@ -1,4 +1,4 @@
-namespace AbilityMadness.Code.Infrastructure.Services.WorldBuilder.Configs
+namespace AbilityMadness.Code.Infrastructure.WorldBuilder.Configs
 {
     public enum WorldType
     {

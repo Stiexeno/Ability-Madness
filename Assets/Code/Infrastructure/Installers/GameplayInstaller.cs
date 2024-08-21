@@ -18,7 +18,7 @@ using AbilityMadness.Code.Infrastructure.Camera;
 using AbilityMadness.Code.Infrastructure.Camera.Shake;
 using AbilityMadness.Code.Infrastructure.Instantiator;
 using AbilityMadness.Code.Infrastructure.Services.View;
-using AbilityMadness.Code.Infrastructure.Services.WorldBuilder.Services;
+using AbilityMadness.Code.Infrastructure.WorldBuilder.Services;
 using AbilityMadness.Factory;
 using UnityEngine;
 using UnityEngine.Tilemaps;

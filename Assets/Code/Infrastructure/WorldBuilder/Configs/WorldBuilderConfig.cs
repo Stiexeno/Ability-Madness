@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Tilemaps;
 
-namespace AbilityMadness.Code.Infrastructure.Services.WorldBuilder.Configs
+namespace AbilityMadness.Code.Infrastructure.WorldBuilder.Configs
 {
     [CreateAssetMenu(fileName = nameof(WorldBuilderConfig), menuName = Constants.Root + "/Configs/WorldBuilderConfig")]
     public class WorldBuilderConfig : ScriptableObject

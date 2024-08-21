@@ -8,7 +8,7 @@ using AbilityMadness.Code.Gameplay.Weapons.Bullets.Configs;
 using AbilityMadness.Code.Gameplay.Weapons.Configs;
 using AbilityMadness.Code.Infrastructure.Cursors;
 using AbilityMadness.Code.Infrastructure.Cursors.Configs;
-using AbilityMadness.Code.Infrastructure.Services.WorldBuilder.Configs;
+using AbilityMadness.Code.Infrastructure.WorldBuilder.Configs;
 using Cysharp.Threading.Tasks;
 
 namespace AbilityMadness.Code.Infrastructure.Configs

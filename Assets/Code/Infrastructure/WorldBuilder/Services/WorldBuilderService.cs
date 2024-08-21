@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using AbilityMadness.Code.Infrastructure.Assets;
 using AbilityMadness.Code.Infrastructure.Configs;
-using AbilityMadness.Code.Infrastructure.Services.WorldBuilder.Configs;
+using AbilityMadness.Code.Infrastructure.WorldBuilder.Configs;
 using Cysharp.Threading.Tasks;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace AbilityMadness.Code.Infrastructure.Services.WorldBuilder.Services
+namespace AbilityMadness.Code.Infrastructure.WorldBuilder.Services
 {
     public class WorldBuilderService : IWorldBuilderService
     {
