@@ -1,8 +1,7 @@
-using AbilityMadness.Code.Infrastructure.View;
 using Cysharp.Threading.Tasks;
 using UnityEngine.AddressableAssets;
 
-namespace AbilityMadness.Code.Infrastructure.Services.View
+namespace AbilityMadness.Code.Infrastructure.View
 {
     public interface IViewPool
     {

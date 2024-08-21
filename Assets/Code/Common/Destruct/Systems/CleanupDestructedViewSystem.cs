@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using AbilityMadness.Code.Infrastructure.Services.View;
+using AbilityMadness.Code.Infrastructure.View;
 using Entitas;
 
 namespace AbilityMadness.Code.Common.Destruct.Systems

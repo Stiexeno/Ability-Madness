@@ -1,4 +1,4 @@
-using AbilityMadness.Code.Infrastructure.Services.View;
+using AbilityMadness.Code.Infrastructure.View;
 using Cysharp.Threading.Tasks;
 using UnityEngine.AddressableAssets;
 

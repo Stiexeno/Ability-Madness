@@ -1,4 +1,4 @@
-namespace AbilityMadness.Code.Infrastructure.Services.TimeService
+namespace AbilityMadness.Code.Infrastructure.TimeService
 {
     public interface ITimeService
     {

@@ -1,7 +1,6 @@
-﻿using AbilityMadness.Code.Infrastructure.View;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace AbilityMadness.Code.Infrastructure.Services.View
+namespace AbilityMadness.Code.Infrastructure.View
 {
     public static class ViewExtensions
     {
