@@ -1,5 +1,5 @@
 using AbilityMadness.Code.Gameplay.Movement;
-using AbilityMadness.Code.Infrastructure.Services.Physics;
+using AbilityMadness.Code.Infrastructure.Physics;
 using Entitas;
 
 namespace AbilityMadness.Code.Gameplay.Player.Systems

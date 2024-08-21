@@ -2,7 +2,7 @@
 using AbilityMadness.Code.Editor;
 using UnityEngine;
 
-namespace AbilityMadness.Code.Infrastructure.Services.Physics
+namespace AbilityMadness.Code.Infrastructure.Physics
 {
     public class PhysicsService : IPhysicsService
     {

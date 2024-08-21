@@ -1,4 +1,4 @@
-using AbilityMadness.Code.Infrastructure.Services.Physics;
+using AbilityMadness.Code.Infrastructure.Physics;
 using AbilityMadness.Code.Infrastructure.View;
 using UnityEngine;
 using Zenject;

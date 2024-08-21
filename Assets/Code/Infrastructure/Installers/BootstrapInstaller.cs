@@ -7,7 +7,7 @@ using AbilityMadness.Code.Infrastructure.Coroutine;
 using AbilityMadness.Code.Infrastructure.Cursors;
 using AbilityMadness.Code.Infrastructure.Identifiers;
 using AbilityMadness.Code.Infrastructure.Instantiator;
-using AbilityMadness.Code.Infrastructure.Services.Physics;
+using AbilityMadness.Code.Infrastructure.Physics;
 using AbilityMadness.Code.Infrastructure.Services.TimeService;
 using AbilityMadness.Code.Infrastructure.Services.UI;
 using AbilityMadness.Infrastructure.Factories.UI;

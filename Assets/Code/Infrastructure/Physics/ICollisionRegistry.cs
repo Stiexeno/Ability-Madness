@@ -1,6 +1,6 @@
 using Entitas;
 
-namespace AbilityMadness.Code.Infrastructure.Services.Physics
+namespace AbilityMadness.Code.Infrastructure.Physics
 {
     public interface ICollisionRegistry
     {

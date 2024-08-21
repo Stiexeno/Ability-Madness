@@ -1,5 +1,5 @@
 using System;
-using AbilityMadness.Code.Infrastructure.Services.Physics;
+using AbilityMadness.Code.Infrastructure.Physics;
 using UnityEngine;
 using Zenject;
 

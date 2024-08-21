@@ -1,4 +1,4 @@
-using AbilityMadness.Code.Infrastructure.Services.Physics;
+using AbilityMadness.Code.Infrastructure.Physics;
 using Entitas;
 using UnityEngine;
 
