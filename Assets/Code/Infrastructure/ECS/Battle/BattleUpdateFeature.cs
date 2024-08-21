@@ -27,7 +27,7 @@ using AbilityMadness.Code.Gameplay.Upgrades;
 using AbilityMadness.Code.Gameplay.Vision;
 using AbilityMadness.Code.Gameplay.Weapons;
 
-namespace AbilityMadness.Code.Infrastructure.Services.ECS
+namespace AbilityMadness.Code.Infrastructure.ECS.Battle
 {
     public class BattleUpdateFeature : Feature
     {

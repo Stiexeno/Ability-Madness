@@ -1,5 +1,5 @@
 using AbilityMadness.Code.Gameplay.Player.Systems;
-using AbilityMadness.Code.Infrastructure.Services.ECS;
+using AbilityMadness.Code.Infrastructure.ECS;
 
 namespace AbilityMadness
 {

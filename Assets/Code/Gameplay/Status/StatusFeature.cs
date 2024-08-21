@@ -1,7 +1,7 @@
 using AbilityMadness.Code.Gameplay.Status.Systems;
 using AbilityMadness.Code.Gameplay.Status.Systems.Implementations;
 using AbilityMadness.Code.Gameplay.Status.Systems.View;
-using AbilityMadness.Code.Infrastructure.Services.ECS;
+using AbilityMadness.Code.Infrastructure.ECS;
 
 namespace AbilityMadness.Code.Gameplay.Status
 {

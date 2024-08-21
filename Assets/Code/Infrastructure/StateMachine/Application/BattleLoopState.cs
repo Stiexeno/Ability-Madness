@@ -1,8 +1,9 @@
 ﻿using System;
-using AbilityMadness.Code.Infrastructure.Services.ECS;
+using AbilityMadness.Code.Infrastructure.ECS;
+using AbilityMadness.Code.Infrastructure.ECS.Battle;
 using UnityEngine;
 
-namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
+namespace AbilityMadness.Code.Infrastructure.StateMachine.Application
 {
     public class BattleLoopState : EndOfFrameExitState
     {

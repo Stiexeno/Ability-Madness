@@ -1,4 +1,4 @@
-using AbilityMadness.Code.Infrastructure.Services.ECS;
+using AbilityMadness.Code.Infrastructure.ECS;
 
 namespace AbilityMadness.Code.Gameplay.Interaction
 {

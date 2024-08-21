@@ -1,11 +1,10 @@
 ﻿using AbilityMadness.Code.Infrastructure.Assets;
 using AbilityMadness.Code.Infrastructure.Scene;
 using Cysharp.Threading.Tasks;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
 
-namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
+namespace AbilityMadness.Code.Infrastructure.StateMachine.Application
 {
 	public class BootstrapState : IState, IEnter
 	{
@@ -39,7 +38,7 @@ namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
 
 		private static void SetTargetFrameRate()
 		{
-			Application.targetFrameRate = TARGET_FRAME_RATE;
+			UnityEngine.Application.targetFrameRate = TARGET_FRAME_RATE;
 		}
 
 		private void EnterLoadedScene()

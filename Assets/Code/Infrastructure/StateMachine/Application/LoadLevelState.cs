@@ -14,10 +14,9 @@ using AbilityMadness.Factory;
 using AbilityMadness.Infrastructure.Factories.UI;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Zenject;
 
-namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
+namespace AbilityMadness.Code.Infrastructure.StateMachine.Application
 {
 	public class LoadLevelState : IState, IPayloadedEnter<string>
 	{

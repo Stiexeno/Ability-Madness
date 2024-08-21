@@ -1,7 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
 using Zenject;
 
-namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
+namespace AbilityMadness.Code.Infrastructure.StateMachine.Application
 {
     public abstract class EndOfFrameExitState : IState, IEnter, ITickable, IFixedTickable, ILateTickable, IExit
     {

@@ -2,7 +2,7 @@
 using Entitas;
 using Zenject;
 
-namespace AbilityMadness.Code.Infrastructure.Services.ECS
+namespace AbilityMadness.Code.Infrastructure.ECS
 {
     public class SystemFactory : ISystemFactory
     {

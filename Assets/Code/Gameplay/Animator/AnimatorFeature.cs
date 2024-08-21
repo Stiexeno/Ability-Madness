@@ -1,5 +1,5 @@
 ﻿using AbilityMadness.Code.Gameplay.Animator.Systems;
-using AbilityMadness.Code.Infrastructure.Services.ECS;
+using AbilityMadness.Code.Infrastructure.ECS;
 
 namespace AbilityMadness.Code.Gameplay.Animator
 {

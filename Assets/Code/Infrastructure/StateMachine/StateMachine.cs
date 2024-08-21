@@ -2,7 +2,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace AbilityMadness.Infrastructure.Services.StateMachine
+namespace AbilityMadness.Code.Infrastructure.StateMachine
 {
 	public abstract class StateMachine : IStateMachine, IInitializable, ITickable, IFixedTickable, ILateTickable
 	{

@@ -1,4 +1,5 @@
-using AbilityMadness.Code.Infrastructure.Services.ECS;
+using AbilityMadness.Code.Infrastructure.ECS;
+using AbilityMadness.Code.Infrastructure.ECS.Battle;
 using Zenject;
 
 namespace AbilityMadness

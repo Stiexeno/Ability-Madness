@@ -1,4 +1,4 @@
-namespace AbilityMadness.Infrastructure.Services.StateMachine
+namespace AbilityMadness.Code.Infrastructure.StateMachine
 {
 	public interface IStatesFactory
 	{

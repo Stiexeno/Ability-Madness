@@ -2,7 +2,7 @@
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Systems;
 using AbilityMadness.Code.Gameplay.Weapons.Systems;
 using AbilityMadness.Code.Gameplay.Weapons.Systems.View;
-using AbilityMadness.Code.Infrastructure.Services.ECS;
+using AbilityMadness.Code.Infrastructure.ECS;
 
 namespace AbilityMadness.Code.Gameplay.Weapons
 {

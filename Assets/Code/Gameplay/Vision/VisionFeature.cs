@@ -1,5 +1,5 @@
 ﻿using AbilityMadness.Code.Gameplay.Vision.Systems;
-using AbilityMadness.Code.Infrastructure.Services.ECS;
+using AbilityMadness.Code.Infrastructure.ECS;
 
 namespace AbilityMadness.Code.Gameplay.Vision
 {

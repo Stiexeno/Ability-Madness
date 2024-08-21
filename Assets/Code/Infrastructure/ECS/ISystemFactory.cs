@@ -1,6 +1,6 @@
 using Entitas;
 
-namespace AbilityMadness.Code.Infrastructure.Services.ECS
+namespace AbilityMadness.Code.Infrastructure.ECS
 {
     public interface ISystemFactory
     {

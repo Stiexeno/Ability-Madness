@@ -1,4 +1,4 @@
-﻿namespace AbilityMadness.Infrastructure.Services.StateMachine.Implementations
+﻿namespace AbilityMadness.Code.Infrastructure.StateMachine.Application
 {
 	public class ApplicationStateMachine : StateMachine, IApplicationStateMachine
 	{

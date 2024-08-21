@@ -1,5 +1,5 @@
 using AbilityMadness.Code.Gameplay.Upgrades.Systems;
-using AbilityMadness.Code.Infrastructure.Services.ECS;
+using AbilityMadness.Code.Infrastructure.ECS;
 
 namespace AbilityMadness.Code.Gameplay.Upgrades
 {

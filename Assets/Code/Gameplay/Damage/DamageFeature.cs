@@ -1,5 +1,5 @@
 using AbilityMadness.Code.Gameplay.DamageApplication.Systems.View;
-using AbilityMadness.Code.Infrastructure.Services.ECS;
+using AbilityMadness.Code.Infrastructure.ECS;
 
 namespace AbilityMadness.Code.Gameplay.DamageApplication
 {
