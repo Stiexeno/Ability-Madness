@@ -1,4 +1,4 @@
-﻿using AbilityMadness.Code.Infrastructure.Services.Camera.Shake;
+﻿using AbilityMadness.Code.Infrastructure.Camera.Shake;
 using Entitas;
 using UnityEngine;
 

@@ -3,7 +3,7 @@ using AbilityMadness.Code.Gameplay.DamageApplication;
 using AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory;
 using AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection;
 using AbilityMadness.Code.Infrastructure.Assets;
-using AbilityMadness.Code.Infrastructure.Services.Camera;
+using AbilityMadness.Code.Infrastructure.Camera;
 using AbilityMadness.Code.Infrastructure.Services.UI;
 using AbilityMadness.Code.Infrastructure.Services.UI.Widgets;
 using Cysharp.Threading.Tasks;

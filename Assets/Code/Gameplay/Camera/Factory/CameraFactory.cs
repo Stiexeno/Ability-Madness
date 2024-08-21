@@ -1,6 +1,6 @@
 ﻿using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Extensions;
-using AbilityMadness.Code.Infrastructure.Services.Camera;
+using AbilityMadness.Code.Infrastructure.Camera;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
 using UnityEngine;
 

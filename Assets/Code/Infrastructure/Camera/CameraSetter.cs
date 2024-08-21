@@ -1,6 +1,6 @@
 ﻿using Zenject;
 
-namespace AbilityMadness.Code.Infrastructure.Services.Camera
+namespace AbilityMadness.Code.Infrastructure.Camera
 {
     public class CameraSetter : IInitializable
     {

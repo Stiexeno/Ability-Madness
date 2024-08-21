@@ -1,4 +1,4 @@
-using AbilityMadness.Code.Infrastructure.Services.Camera;
+using AbilityMadness.Code.Infrastructure.Camera;
 using AbilityMadness.Infrastructure.Services.Instantiator;
 using UnityEngine;
 using Zenject;

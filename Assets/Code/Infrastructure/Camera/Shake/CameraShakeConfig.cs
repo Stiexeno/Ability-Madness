@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AbilityMadness.Code.Infrastructure.Services.Camera.Shake
+namespace AbilityMadness.Code.Infrastructure.Camera.Shake
 {
 	[CreateAssetMenu(fileName = nameof(CameraShakeConfig), menuName = Constants.Root + "/Camera/CameraShakeConfig")]
     public class CameraShakeConfig : ScriptableObject

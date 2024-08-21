@@ -1,7 +1,7 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace AbilityMadness.Code.Infrastructure.Services.Camera.Shake
+namespace AbilityMadness.Code.Infrastructure.Camera.Shake
 {
 	public interface IShakeService
 	{

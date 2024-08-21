@@ -5,7 +5,7 @@ using UnityEngine.Scripting;
 using UnityEngine.Serialization;
 using Zenject;
 
-namespace AbilityMadness.Code.Infrastructure.Services.Camera.Shake
+namespace AbilityMadness.Code.Infrastructure.Camera.Shake
 {
 	/// <summary>
 	/// Use it to shake camera with a-synchronized query or from an animation event.
