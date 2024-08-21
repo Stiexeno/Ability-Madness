@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AbilityMadness.Code.Infrastructure.UI.Factory;
 
 namespace AbilityMadness.Infrastructure.UI
 {

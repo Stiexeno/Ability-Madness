@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Services;
 using AbilityMadness.Code.Infrastructure.Services.UI;
+using AbilityMadness.Code.Infrastructure.UI.Factory;
 using AbilityMadness.Infrastructure.UI;
 using Cysharp.Threading.Tasks;
 using UnityEngine;

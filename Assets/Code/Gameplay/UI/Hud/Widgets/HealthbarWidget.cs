@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using SF = UnityEngine.SerializeField;
 
-namespace AbilityMadness.Code.Infrastructure.Services.UI.Widgets
+namespace AbilityMadness.Code.Gameplay.UI.Hud.Widgets
 {
     public class HealthbarWidget : MonoBehaviour
     {

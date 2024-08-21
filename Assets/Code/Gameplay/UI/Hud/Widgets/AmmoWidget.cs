@@ -1,10 +1,10 @@
-﻿using AbilityMadness.Infrastructure.UI;
+﻿using AbilityMadness.Code.Infrastructure.UI.Factory;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;
 using SF = UnityEngine.SerializeField;
 
-namespace AbilityMadness.Code.Infrastructure.Services.UI.Widgets
+namespace AbilityMadness.Code.Gameplay.UI.Hud.Widgets
 {
     public class AmmoWidget : MonoBehaviour
     {

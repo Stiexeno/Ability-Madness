@@ -1,5 +1,4 @@
 using AbilityMadness.Code.Gameplay.Experience.Services;
-using AbilityMadness.Code.Gameplay.UI.Factory;
 using AbilityMadness.Code.Infrastructure.Assets;
 using AbilityMadness.Code.Infrastructure.Camera;
 using AbilityMadness.Code.Infrastructure.Configs;
@@ -13,6 +12,7 @@ using AbilityMadness.Code.Infrastructure.Services.UI;
 using AbilityMadness.Code.Infrastructure.StateMachine;
 using AbilityMadness.Code.Infrastructure.StateMachine.Application;
 using AbilityMadness.Code.Infrastructure.TimeService;
+using AbilityMadness.Code.Infrastructure.UI.Factory;
 using AbilityMadness.Code.Infrastructure.Updatable;
 using AbilityMadness.Infrastructure.UI;
 using Cysharp.Threading.Tasks;

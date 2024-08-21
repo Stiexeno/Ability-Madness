@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using AbilityMadness.Code.Gameplay.UI.Factory;
+using AbilityMadness.Code.Infrastructure.UI.Factory;
 using AbilityMadness.Infrastructure.UI;
 using Entitas;
 

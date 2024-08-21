@@ -2,7 +2,7 @@ using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Extensions;
 using UnityEngine;
 
-namespace AbilityMadness.Code.Gameplay.UI.Factory
+namespace AbilityMadness.Code.Infrastructure.UI.Factory
 {
     public class UIEntityFactory : IUIEntityFactory
     {

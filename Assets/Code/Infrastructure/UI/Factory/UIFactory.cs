@@ -1,15 +1,17 @@
 ﻿using System.Linq;
 using AbilityMadness.Code.Gameplay.DamageApplication;
+using AbilityMadness.Code.Gameplay.UI.Hud.Widgets;
 using AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory;
 using AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection;
 using AbilityMadness.Code.Infrastructure.Assets;
 using AbilityMadness.Code.Infrastructure.Camera;
 using AbilityMadness.Code.Infrastructure.Services.UI;
 using AbilityMadness.Code.Infrastructure.Services.UI.Widgets;
+using AbilityMadness.Infrastructure.UI;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace AbilityMadness.Infrastructure.UI
+namespace AbilityMadness.Code.Infrastructure.UI.Factory
 {
     public class UIFactory : IUIFactory
     {

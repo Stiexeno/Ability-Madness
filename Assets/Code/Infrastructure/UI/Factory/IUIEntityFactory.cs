@@ -1,4 +1,4 @@
-namespace AbilityMadness.Code.Gameplay.UI.Factory
+namespace AbilityMadness.Code.Infrastructure.UI.Factory
 {
     public interface IUIEntityFactory
     {

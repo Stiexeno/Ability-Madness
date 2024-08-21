@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using SF = UnityEngine.SerializeField;
 
-namespace AbilityMadness.Code.Infrastructure.Services.UI.Widgets
+namespace AbilityMadness.Code.Gameplay.UI.Hud.Widgets
 {
     public class DamageFlashWidget : MonoBehaviour
     {
