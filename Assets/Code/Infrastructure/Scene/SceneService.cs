@@ -1,15 +1,13 @@
 using System;
 using System.Collections;
 using AbilityMadness.Code.Infrastructure.Coroutine;
-using AbilityMadness.Infrastructure.Services;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace AbilityMadness
+namespace AbilityMadness.Code.Infrastructure.Scene
 {
 	public class SceneService : ISceneService
 	{
-		private Coroutine _loading;
+		private UnityEngine.Coroutine _loading;
 
 		private ICoroutineRunner _coroutineRunner;
 

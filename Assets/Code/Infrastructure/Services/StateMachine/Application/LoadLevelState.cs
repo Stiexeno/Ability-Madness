@@ -7,6 +7,7 @@ using AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory;
 using AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection;
 using AbilityMadness.Code.Gameplay.Weapons;
 using AbilityMadness.Code.Gameplay.Weapons.Factory;
+using AbilityMadness.Code.Infrastructure.Scene;
 using AbilityMadness.Code.Infrastructure.Services.WorldBuilder.Configs;
 using AbilityMadness.Code.Infrastructure.Services.WorldBuilder.Services;
 using AbilityMadness.Factory;

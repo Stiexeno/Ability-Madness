@@ -1,6 +1,6 @@
 using System;
 
-namespace AbilityMadness
+namespace AbilityMadness.Code.Infrastructure.Scene
 {
 	public interface ISceneService
 	{
