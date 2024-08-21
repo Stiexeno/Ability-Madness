@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly AbilityMadness.Code.Common.Destructed destructedComponent = new AbilityMadness.Code.Common.Destructed();
+    static readonly AbilityMadness.Code.Common.Destruct.Destructed destructedComponent = new AbilityMadness.Code.Common.Destruct.Destructed();
 
     public bool isDestructed {
         get { return HasComponent(GameComponentsLookup.Destructed); }

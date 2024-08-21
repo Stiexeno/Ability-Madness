@@ -22,25 +22,25 @@ public static class GameComponentsLookup {
     public const int Cooldown = 11;
     public const int CooldownLeft = 12;
     public const int CooldownUp = 13;
-    public const int Destructed = 14;
-    public const int Disabled = 15;
-    public const int Duration = 16;
-    public const int Enabled = 17;
-    public const int Head = 18;
-    public const int Id = 19;
-    public const int Interval = 20;
-    public const int Loading = 21;
-    public const int Offset = 22;
-    public const int OwnerId = 23;
-    public const int Emitting = 24;
-    public const int ParticleSystem = 25;
-    public const int ProducerId = 26;
-    public const int Rigidbody2D = 27;
-    public const int Rotation = 28;
-    public const int SpawnAmount = 29;
-    public const int TargetId = 30;
-    public const int TimeElapsed = 31;
-    public const int TimeLeft = 32;
+    public const int Duration = 14;
+    public const int TimeLeft = 15;
+    public const int Destructed = 16;
+    public const int Disabled = 17;
+    public const int Enabled = 18;
+    public const int Head = 19;
+    public const int Id = 20;
+    public const int Interval = 21;
+    public const int Loading = 22;
+    public const int Offset = 23;
+    public const int OwnerId = 24;
+    public const int Emitting = 25;
+    public const int ParticleSystem = 26;
+    public const int ProducerId = 27;
+    public const int Rigidbody2D = 28;
+    public const int Rotation = 29;
+    public const int SpawnAmount = 30;
+    public const int TargetId = 31;
+    public const int TimeElapsed = 32;
     public const int Transform = 33;
     public const int Velocity = 34;
     public const int View = 35;
@@ -196,9 +196,10 @@ public static class GameComponentsLookup {
         "Cooldown",
         "CooldownLeft",
         "CooldownUp",
+        "Duration",
+        "TimeLeft",
         "Destructed",
         "Disabled",
-        "Duration",
         "Enabled",
         "Head",
         "Id",
@@ -214,7 +215,6 @@ public static class GameComponentsLookup {
         "SpawnAmount",
         "TargetId",
         "TimeElapsed",
-        "TimeLeft",
         "Transform",
         "Velocity",
         "View",
@@ -366,12 +366,13 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Common.Collision.TriggerEnter),
         typeof(AbilityMadness.Code.Common.Collision.TriggerExit),
         typeof(AbilityMadness.Code.Common.Collision.TriggerStay),
-        typeof(AbilityMadness.Code.Common.CooldownComponent),
-        typeof(AbilityMadness.Code.Common.CooldownLeft),
-        typeof(AbilityMadness.Code.Common.CooldownUp),
-        typeof(AbilityMadness.Code.Common.Destructed),
+        typeof(AbilityMadness.Code.Common.Cooldown.CooldownComponent),
+        typeof(AbilityMadness.Code.Common.Cooldown.CooldownLeft),
+        typeof(AbilityMadness.Code.Common.Cooldown.CooldownUp),
+        typeof(AbilityMadness.Code.Common.Cooldown.Duration),
+        typeof(AbilityMadness.Code.Common.Cooldown.TimeLeft),
+        typeof(AbilityMadness.Code.Common.Destruct.Destructed),
         typeof(AbilityMadness.Code.Common.Disabled),
-        typeof(AbilityMadness.Code.Common.Duration),
         typeof(AbilityMadness.Code.Common.Enabled),
         typeof(AbilityMadness.Code.Common.HeadComponent),
         typeof(AbilityMadness.Code.Common.Id),
@@ -387,7 +388,6 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Common.SpawnAmount),
         typeof(AbilityMadness.Code.Common.TargetId),
         typeof(AbilityMadness.Code.Common.TimeElapsed),
-        typeof(AbilityMadness.Code.Common.TimeLeft),
         typeof(AbilityMadness.Code.Common.TransformComponent),
         typeof(AbilityMadness.Code.Common.Velocity),
         typeof(AbilityMadness.Code.Common.View),

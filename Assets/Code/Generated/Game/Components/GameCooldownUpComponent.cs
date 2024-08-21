@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly AbilityMadness.Code.Common.CooldownUp cooldownUpComponent = new AbilityMadness.Code.Common.CooldownUp();
+    static readonly AbilityMadness.Code.Common.Cooldown.CooldownUp cooldownUpComponent = new AbilityMadness.Code.Common.Cooldown.CooldownUp();
 
     public bool isCooldownUp {
         get { return HasComponent(GameComponentsLookup.CooldownUp); }

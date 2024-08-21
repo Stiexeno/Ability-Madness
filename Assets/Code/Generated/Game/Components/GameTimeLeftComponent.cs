@@ -8,13 +8,13 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    private AbilityMadness.Code.Common.TimeLeft timeLeft { get { return (AbilityMadness.Code.Common.TimeLeft)GetComponent(GameComponentsLookup.TimeLeft); } }
+    private AbilityMadness.Code.Common.Cooldown.TimeLeft timeLeft { get { return (AbilityMadness.Code.Common.Cooldown.TimeLeft)GetComponent(GameComponentsLookup.TimeLeft); } }
     public float TimeLeft { get { return timeLeft.Value; } set { timeLeft.Value = value; }}
     public bool hasTimeLeft { get { return HasComponent(GameComponentsLookup.TimeLeft); } }
 
     public GameEntity AddTimeLeft(float newValue) {
         var index = GameComponentsLookup.TimeLeft;
-        var component = (AbilityMadness.Code.Common.TimeLeft)CreateComponent(index, typeof(AbilityMadness.Code.Common.TimeLeft));
+        var component = (AbilityMadness.Code.Common.Cooldown.TimeLeft)CreateComponent(index, typeof(AbilityMadness.Code.Common.Cooldown.TimeLeft));
         component.Value = newValue;
         AddComponent(index, component);
 
@@ -23,7 +23,7 @@ public partial class GameEntity {
 
     public GameEntity ReactiveReplaceTimeLeft(float newValue) {
         var index = GameComponentsLookup.TimeLeft;
-        var component = (AbilityMadness.Code.Common.TimeLeft)CreateComponent(index, typeof(AbilityMadness.Code.Common.TimeLeft));
+        var component = (AbilityMadness.Code.Common.Cooldown.TimeLeft)CreateComponent(index, typeof(AbilityMadness.Code.Common.Cooldown.TimeLeft));
         component.Value = newValue;
         ReplaceComponent(index, component);
 

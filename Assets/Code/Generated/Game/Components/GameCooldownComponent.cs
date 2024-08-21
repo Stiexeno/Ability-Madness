@@ -8,13 +8,13 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    private AbilityMadness.Code.Common.CooldownComponent cooldown { get { return (AbilityMadness.Code.Common.CooldownComponent)GetComponent(GameComponentsLookup.Cooldown); } }
+    private AbilityMadness.Code.Common.Cooldown.CooldownComponent cooldown { get { return (AbilityMadness.Code.Common.Cooldown.CooldownComponent)GetComponent(GameComponentsLookup.Cooldown); } }
     public float Cooldown { get { return cooldown.Value; } set { cooldown.Value = value; }}
     public bool hasCooldown { get { return HasComponent(GameComponentsLookup.Cooldown); } }
 
     public GameEntity AddCooldown(float newValue) {
         var index = GameComponentsLookup.Cooldown;
-        var component = (AbilityMadness.Code.Common.CooldownComponent)CreateComponent(index, typeof(AbilityMadness.Code.Common.CooldownComponent));
+        var component = (AbilityMadness.Code.Common.Cooldown.CooldownComponent)CreateComponent(index, typeof(AbilityMadness.Code.Common.Cooldown.CooldownComponent));
         component.Value = newValue;
         AddComponent(index, component);
 
@@ -23,7 +23,7 @@ public partial class GameEntity {
 
     public GameEntity ReactiveReplaceCooldown(float newValue) {
         var index = GameComponentsLookup.Cooldown;
-        var component = (AbilityMadness.Code.Common.CooldownComponent)CreateComponent(index, typeof(AbilityMadness.Code.Common.CooldownComponent));
+        var component = (AbilityMadness.Code.Common.Cooldown.CooldownComponent)CreateComponent(index, typeof(AbilityMadness.Code.Common.Cooldown.CooldownComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
 
