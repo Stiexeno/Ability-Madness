@@ -11,7 +11,7 @@ using AbilityMadness.Code.Infrastructure.Scene;
 using AbilityMadness.Code.Infrastructure.WorldBuilder.Configs;
 using AbilityMadness.Code.Infrastructure.WorldBuilder.Services;
 using AbilityMadness.Factory;
-using AbilityMadness.Infrastructure.Factories.UI;
+using AbilityMadness.Infrastructure.UI;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;

@@ -1,4 +1,4 @@
-namespace AbilityMadness
+namespace AbilityMadness.Infrastructure.UI
 {
 	public interface IUIService
 	{

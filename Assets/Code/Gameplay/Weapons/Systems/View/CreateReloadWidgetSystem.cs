@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using AbilityMadness.Code.Gameplay.UI.Factory;
-using AbilityMadness.Infrastructure.Factories.UI;
+using AbilityMadness.Infrastructure.UI;
 using Entitas;
 
 namespace AbilityMadness.Code.Gameplay.Weapons.Systems.View

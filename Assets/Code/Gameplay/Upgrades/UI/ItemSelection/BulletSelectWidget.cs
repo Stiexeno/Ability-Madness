@@ -1,6 +1,6 @@
-using AbilityMadness.Code.Gameplay.Gears.Configs;
 using AbilityMadness.Code.Gameplay.Upgrades.Configs;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Configs;
+using AbilityMadness.Infrastructure.UI;
 using UnityEngine.UI;
 using Zenject;
 using SF = UnityEngine.SerializeField;

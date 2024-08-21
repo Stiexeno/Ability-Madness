@@ -1,4 +1,4 @@
-﻿using AbilityMadness.Infrastructure.Factories.UI;
+﻿using AbilityMadness.Infrastructure.UI;
 using Cysharp.Threading.Tasks;
 using Entitas;
 

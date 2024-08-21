@@ -1,4 +1,5 @@
-﻿using Entitas;
+﻿using AbilityMadness.Infrastructure.UI;
+using Entitas;
 
 namespace AbilityMadness.Code.Gameplay.Weapons.Systems.View
 {

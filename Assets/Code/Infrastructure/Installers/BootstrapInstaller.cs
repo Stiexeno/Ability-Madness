@@ -14,7 +14,7 @@ using AbilityMadness.Code.Infrastructure.StateMachine;
 using AbilityMadness.Code.Infrastructure.StateMachine.Application;
 using AbilityMadness.Code.Infrastructure.TimeService;
 using AbilityMadness.Code.Infrastructure.Updatable;
-using AbilityMadness.Infrastructure.Factories.UI;
+using AbilityMadness.Infrastructure.UI;
 using Cysharp.Threading.Tasks;
 using UnityEngine.InputSystem;
 using Zenject;

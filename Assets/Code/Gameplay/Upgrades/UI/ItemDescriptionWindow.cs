@@ -1,4 +1,5 @@
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Configs;
+using AbilityMadness.Infrastructure.UI;
 using TMPro;
 using UnityEngine.UI;
 using SF = UnityEngine.SerializeField;

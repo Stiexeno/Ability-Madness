@@ -1,11 +1,10 @@
 using System.Collections.Generic;
-using AbilityMadness.Code.Gameplay.Gears.Configs;
 using AbilityMadness.Code.Gameplay.Upgrades.Configs;
 using AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory;
 using AbilityMadness.Code.Infrastructure.Cursors;
 using AbilityMadness.Code.Infrastructure.Services.UI;
 using AbilityMadness.Code.Infrastructure.TimeService;
-using AbilityMadness.Infrastructure.Factories.UI;
+using AbilityMadness.Infrastructure.UI;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;

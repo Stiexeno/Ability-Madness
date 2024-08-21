@@ -1,7 +1,7 @@
 using UnityEngine;
 using SF = UnityEngine.SerializeField;
 
-namespace AbilityMadness
+namespace AbilityMadness.Infrastructure.UI
 {
     public abstract class Window : MonoBehaviour
     {

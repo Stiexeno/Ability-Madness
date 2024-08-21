@@ -2,9 +2,8 @@ using AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Configs;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Services;
 using AbilityMadness.Code.Infrastructure.Services.UI;
-using AbilityMadness.Infrastructure.Factories.UI;
+using AbilityMadness.Infrastructure.UI;
 using Cysharp.Threading.Tasks;
-using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
 

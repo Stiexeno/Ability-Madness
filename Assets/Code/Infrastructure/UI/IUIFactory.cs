@@ -5,7 +5,7 @@ using AbilityMadness.Code.Infrastructure.Services.UI.Widgets;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace AbilityMadness.Infrastructure.Factories.UI
+namespace AbilityMadness.Infrastructure.UI
 {
 	public interface IUIFactory
 	{

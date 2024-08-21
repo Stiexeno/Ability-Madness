@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using AbilityMadness.Infrastructure.Factories.UI;
 
-namespace AbilityMadness
+namespace AbilityMadness.Infrastructure.UI
 {
 	public class UIService : IUIService
 	{

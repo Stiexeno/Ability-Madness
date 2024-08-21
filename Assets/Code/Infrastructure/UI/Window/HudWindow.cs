@@ -1,7 +1,7 @@
 using AbilityMadness.Code.Infrastructure.Services.UI.Widgets;
 using SF = UnityEngine.SerializeField;
 
-namespace AbilityMadness
+namespace AbilityMadness.Infrastructure.UI
 {
     public class HudWindow : Window
     {
