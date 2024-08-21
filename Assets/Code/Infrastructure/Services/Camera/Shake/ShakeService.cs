@@ -1,4 +1,4 @@
-using AbilityMadness.Infrastructure.Services.Assets;
+using AbilityMadness.Code.Infrastructure.Assets;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;

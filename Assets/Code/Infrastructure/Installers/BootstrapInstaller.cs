@@ -1,5 +1,6 @@
 using AbilityMadness.Code.Gameplay.Experience.Services;
 using AbilityMadness.Code.Gameplay.UI.Factory;
+using AbilityMadness.Code.Infrastructure.Assets;
 using AbilityMadness.Code.Infrastructure.Services.Camera;
 using AbilityMadness.Code.Infrastructure.Services.Cursors;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
@@ -7,7 +8,6 @@ using AbilityMadness.Code.Infrastructure.Services.Physics;
 using AbilityMadness.Code.Infrastructure.Services.TimeService;
 using AbilityMadness.Code.Infrastructure.Services.UI;
 using AbilityMadness.Infrastructure.Factories.UI;
-using AbilityMadness.Infrastructure.Services.Assets;
 using AbilityMadness.Infrastructure.Services.Configs;
 using AbilityMadness.Infrastructure.Services.Coroutine;
 using AbilityMadness.Infrastructure.Services.Instantiator;

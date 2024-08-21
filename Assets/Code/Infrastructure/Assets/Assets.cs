@@ -7,7 +7,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceLocations;
 
-namespace AbilityMadness.Infrastructure.Services.Assets
+namespace AbilityMadness.Code.Infrastructure.Assets
 {
 	public class Assets : IAssets, IDisposable
 	{

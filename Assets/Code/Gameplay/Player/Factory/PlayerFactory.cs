@@ -4,8 +4,8 @@ using AbilityMadness.Code.Gameplay.Experience.Services;
 using AbilityMadness.Code.Gameplay.Health;
 using AbilityMadness.Code.Gameplay.Movement;
 using AbilityMadness.Code.Gameplay.Vision;
+using AbilityMadness.Code.Infrastructure.Assets;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
-using AbilityMadness.Infrastructure.Services.Assets;
 using UnityEngine;
 
 namespace AbilityMadness.Factory

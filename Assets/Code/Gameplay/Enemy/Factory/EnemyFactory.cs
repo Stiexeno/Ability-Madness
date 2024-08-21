@@ -9,8 +9,8 @@ using AbilityMadness.Code.Gameplay.Movement;
 using AbilityMadness.Code.Gameplay.Stats;
 using AbilityMadness.Code.Gameplay.TargetCollection;
 using AbilityMadness.Code.Gameplay.Vision;
+using AbilityMadness.Code.Infrastructure.Assets;
 using AbilityMadness.Code.Infrastructure.Services.Identifiers;
-using AbilityMadness.Infrastructure.Services.Assets;
 using AbilityMadness.Infrastructure.Services.Configs;
 using UnityEngine;
 
