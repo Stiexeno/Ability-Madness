@@ -9,6 +9,9 @@ namespace AbilityMadness.Code.Gameplay.Status
     {
         public StatusFeature(ISystemFactory systemFactory)
         {
+            Add(systemFactory.Create<ResetExistingStatusDurationSystem>());
+            Add(systemFactory.Create<ApplyStatusOnEffectDealtSystem>());
+
             Add(systemFactory.Create<ApplyStatusesSystem>());
             Add(systemFactory.Create<StatusDurationSystem>());
             Add(systemFactory.Create<PeriodicDamageStatusSystem>());
@@ -21,6 +24,7 @@ namespace AbilityMadness.Code.Gameplay.Status
 
             Add(systemFactory.Create<CleanupDepletedStatsChangesSystem>());
             Add(systemFactory.Create<CleanupDepletedStatusesSystem>());
+            //Add(systemFactory.Create<CleanupStatusRequestsSystem>());
         }
     }
 }

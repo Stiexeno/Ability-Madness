@@ -1,5 +1,6 @@
 using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Extensions;
+using AbilityMadness.Code.Gameplay.Trails;
 using AbilityMadness.Code.Infrastructure.Configs;
 using AbilityMadness.Code.Infrastructure.Identifiers;
 
@@ -20,6 +21,7 @@ namespace AbilityMadness.Code.Gameplay.Gears.Factory
         {
             return type switch
             {
+                GearTypeId.FireBoots => CreateFireBoots(producerId, targetId),
                 _ => CreateEmptyGear(type, producerId, targetId)
             };
         }
@@ -29,6 +31,12 @@ namespace AbilityMadness.Code.Gameplay.Gears.Factory
             return CreateEntity.Empty()
                 .With(x => x.isGearRequest = true)
                 .AddGearTypeId(type);
+        }
+
+        private GameEntity CreateFireBoots(int producerId, int targetId)
+        {
+            return CreateEmptyGear(GearTypeId.FireBoots, producerId, targetId)
+                .AddTrailTypeId(TrailTypeId.Fire);
         }
 
         private GameEntity CreateEmptyGear(GearTypeId type, int producerId, int targetId)

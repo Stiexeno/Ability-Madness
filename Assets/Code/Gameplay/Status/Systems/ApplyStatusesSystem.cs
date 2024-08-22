@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using AbilityMadness.Code.Gameplay.Status.Factory;
 using Entitas;
 
@@ -5,68 +6,43 @@ namespace AbilityMadness.Code.Gameplay.Status.Systems
 {
     public class ApplyStatusesSystem : IExecuteSystem
     {
-        private IGroup<GameEntity> _entities;
-        private IGroup<GameEntity> _owners;
+        private readonly List<GameEntity> _buffer = new(32);
         private GameContext _gameContext;
+
         private IGroup<GameEntity> _targets;
-        private IStatusFactory _statusFactory;
         private IGroup<GameEntity> _existingStatuses;
+        private IGroup<GameEntity> _requests;
+
+        private IStatusFactory _statusFactory;
 
         public ApplyStatusesSystem(GameContext gameContext, IStatusFactory statusFactory)
         {
             _statusFactory = statusFactory;
             _gameContext = gameContext;
-            _entities = gameContext.GetGroup(GameMatcher
-                .AllOf(
-                    GameMatcher.EffectDealt,
-                    GameMatcher.ProducerId,
-                    GameMatcher.TargetId));
 
-            _owners = gameContext.GetGroup(GameMatcher
-                .AllOf(
-                    GameMatcher.StatusSetups));
+           _requests = gameContext.GetGroup(GameMatcher
+               .AllOf(
+                   GameMatcher.StatusRequest,
+                   GameMatcher.TargetId,
+                   GameMatcher.ProducerId,
+                   GameMatcher.StatusSetup));
 
             _targets = gameContext.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Id,
                     GameMatcher.Alive));
-
-            _existingStatuses = gameContext.GetGroup(GameMatcher
-                .AllOf(
-                    GameMatcher.Status,
-                    GameMatcher.TargetId,
-                    GameMatcher.StatusTypeId,
-                    GameMatcher.Duration,
-                    GameMatcher.TimeLeft,
-                    GameMatcher.Id));
         }
 
         public void Execute()
         {
-            foreach (var entity in _entities)
+            foreach (var request in _requests.GetEntities(_buffer))
             {
-                var owner = _gameContext.GetEntityWithId(entity.ProducerId);
-                var target = _gameContext.GetEntityWithId(entity.TargetId);
+                var target = _gameContext.GetEntityWithId(request.TargetId);
 
-                if (_owners.ContainsEntity(owner) && _targets.ContainsEntity(target))
+                if (_targets.ContainsEntity(target))
                 {
-                    foreach (var statusSetup in owner.StatusSetups)
-                    {
-                        var statusExists = false;
-                        foreach (var existingStatus in _existingStatuses)
-                        {
-                            if (existingStatus.StatusTypeId == statusSetup.type && existingStatus.TargetId == target.Id)
-                            {
-                                existingStatus.TimeLeft = existingStatus.Duration;
-                                statusExists = true;
-                            }
-                        }
-
-                        if (statusExists == false)
-                        {
-                            _statusFactory.CreateStatus(statusSetup, owner.Id, target.Id);
-                        }
-                    }
+                    _statusFactory.CreateStatus(request.StatusSetup, request.ProducerId, target.Id);
+                    request.Destroy();
                 }
             }
         }

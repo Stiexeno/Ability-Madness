@@ -1,10 +1,12 @@
 using System;
+using AbilityMadness.Code.Common.Transform.Registrars;
 using AbilityMadness.Code.Infrastructure.Physics;
 using UnityEngine;
 using Zenject;
 
 namespace AbilityMadness.Code.Infrastructure.View
 {
+    [RequireComponent(typeof(TransformRegistrar))]
     public class EntityView : MonoBehaviour
     {
         private EntityComponentRegistrar[] _registrars = Array.Empty<EntityComponentRegistrar>();

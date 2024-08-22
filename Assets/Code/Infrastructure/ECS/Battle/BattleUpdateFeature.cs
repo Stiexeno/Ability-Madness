@@ -3,6 +3,7 @@ using AbilityMadness.Code.Common.Collision;
 using AbilityMadness.Code.Common.Cooldown;
 using AbilityMadness.Code.Common.Destruct;
 using AbilityMadness.Code.Gameplay.Animator;
+using AbilityMadness.Code.Gameplay.Area;
 using AbilityMadness.Code.Gameplay.Camera;
 using AbilityMadness.Code.Gameplay.Chest;
 using AbilityMadness.Code.Gameplay.DamageApplication;
@@ -23,6 +24,7 @@ using AbilityMadness.Code.Gameplay.Round;
 using AbilityMadness.Code.Gameplay.Stats;
 using AbilityMadness.Code.Gameplay.Status;
 using AbilityMadness.Code.Gameplay.TargetCollection;
+using AbilityMadness.Code.Gameplay.Trails;
 using AbilityMadness.Code.Gameplay.Upgrades;
 using AbilityMadness.Code.Gameplay.Vision;
 using AbilityMadness.Code.Gameplay.Weapons;
@@ -41,9 +43,11 @@ namespace AbilityMadness.Code.Infrastructure.ECS.Battle
             Add(systemFactory.Create<EffectProccesingFeature>());
             Add(systemFactory.Create<StatusFeature>());
             Add(systemFactory.Create<DamageFeature>());
+            Add(systemFactory.Create<AreaFeature>());
             Add(systemFactory.Create<HealthFeature>());
             Add(systemFactory.Create<StatsFeature>());
             Add(systemFactory.Create<ModifierFeature>());
+            Add(systemFactory.Create<TrailFeature>());
 
             Add(systemFactory.Create<PlayerFeature>());
             Add(systemFactory.Create<CommonFeature>());

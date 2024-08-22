@@ -35,5 +35,10 @@ namespace AbilityMadness
         {
             public const string Green = "Experience_Green";
         }
+
+        public static class Areas
+        {
+            public const string Fire = "Area_Fire";
+        }
     }
 }

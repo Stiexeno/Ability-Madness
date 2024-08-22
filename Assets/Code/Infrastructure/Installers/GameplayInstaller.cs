@@ -1,4 +1,5 @@
 ﻿using AbilityMadness.Code.Common.Factory;
+using AbilityMadness.Code.Gameplay.Area.Factory;
 using AbilityMadness.Code.Gameplay.Camera.Factory;
 using AbilityMadness.Code.Gameplay.Chest.Factory;
 using AbilityMadness.Code.Gameplay.EffectApplication.Factory;
@@ -10,6 +11,7 @@ using AbilityMadness.Code.Gameplay.Projectile.Factory;
 using AbilityMadness.Code.Gameplay.Round.Factory;
 using AbilityMadness.Code.Gameplay.Stats.Factory;
 using AbilityMadness.Code.Gameplay.Status.Factory;
+using AbilityMadness.Code.Gameplay.Status.Services;
 using AbilityMadness.Code.Gameplay.Trails.Factory;
 using AbilityMadness.Code.Gameplay.Upgrades.Services;
 using AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection;
@@ -61,6 +63,9 @@ namespace AbilityMadness
                 .AsSingle();
 
             Container.BindInterfacesTo<UpgradeSelectModel>()
+                .AsSingle();
+
+            Container.BindInterfacesTo<StatusService>()
                 .AsSingle();
         }
 
@@ -115,6 +120,9 @@ namespace AbilityMadness
                 .AsSingle();
 
             Container.BindInterfacesTo<TrailFactory>()
+                .AsSingle();
+
+            Container.BindInterfacesTo<AreaFactory>()
                 .AsSingle();
         }
 

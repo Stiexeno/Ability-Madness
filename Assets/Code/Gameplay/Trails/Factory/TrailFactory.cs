@@ -1,7 +1,8 @@
-using System;
 using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Extensions;
+using AbilityMadness.Code.Gameplay.Area;
 using AbilityMadness.Code.Infrastructure.Identifiers;
+using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Trails.Factory
 {
@@ -18,8 +19,15 @@ namespace AbilityMadness.Code.Gameplay.Trails.Factory
         {
             return type switch
             {
+                TrailTypeId.Fire => CreateFireTrail(producerId, targetId),
                 _ => CreateEmptyTrail(type, producerId, targetId)
             };
+        }
+
+        private GameEntity CreateFireTrail(int producerId, int targetId)
+        {
+            return CreateEmptyTrail(TrailTypeId.Fire, producerId, targetId)
+                .AddAreaTypeId(AreaTypeId.Fire);
         }
 
         private GameEntity CreateEmptyTrail(TrailTypeId type, int producerId, int targetId)
@@ -30,7 +38,10 @@ namespace AbilityMadness.Code.Gameplay.Trails.Factory
                 .AddTrailTypeId(type)
 
                 .AddProducerId(producerId)
-                .AddTargetId(targetId);
+                .AddTargetId(targetId)
+                .AddDistanceThreshold(0.7f)
+                .AddDistanceTraveled(0)
+                .AddLastPosition(Vector3.zero);
         }
     }
 }

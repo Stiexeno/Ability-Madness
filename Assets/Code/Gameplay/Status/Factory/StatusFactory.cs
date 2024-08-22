@@ -1,6 +1,7 @@
 ﻿using System;
 using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Extensions;
+using AbilityMadness.Code.Gameplay.DamageApplication;
 using AbilityMadness.Code.Infrastructure.Identifiers;
 
 namespace AbilityMadness.Code.Gameplay.Status.Factory
@@ -25,16 +26,28 @@ namespace AbilityMadness.Code.Gameplay.Status.Factory
             };
         }
 
+        public GameEntity CreateStatusRequest(StatusSetup setup, int producerId, int targetId)
+        {
+            return CreateEntity.Empty()
+                .AddId(_identifierService.Next())
+                .With(x => x.isStatusRequest = true)
+                .AddStatusSetup(setup)
+                .AddProducerId(producerId)
+                .AddTargetId(targetId);
+        }
+
         private GameEntity CreateFireStatus(StatusSetup setup, int producerId, int targetId)
         {
             return CreateEmptyStatus(setup, producerId, targetId)
-                .With(x => x.isFire = true);
+                .With(x => x.isFire = true)
+                .AddDamageTypeId(DamageTypeId.Fire);
         }
 
         private GameEntity CreatePoisonStatus(StatusSetup setup, int producerId, int targetId)
         {
             return CreateEmptyStatus(setup, producerId, targetId)
-                .With(x => x.isPoison = true);
+                .With(x => x.isPoison = true)
+                .AddDamageTypeId(DamageTypeId.Poison);
         }
 
         public GameEntity CreateFreezeStatus(StatusSetup setup, int producerId, int targetId)
@@ -51,7 +64,6 @@ namespace AbilityMadness.Code.Gameplay.Status.Factory
                 .AddStatusTypeId(setup.type)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
-                .AddDamageTypeId(setup.damageType)
 
                 .AddEffectValue(setup.value)
 

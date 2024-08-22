@@ -8,6 +8,8 @@ namespace AbilityMadness.Code.Gameplay.Status
 
    [Game] public class StatusTypeIdComponent : IComponent { public StatusTypeId Value;  }
    [Game] public class StatusSetups : IComponent { public List<StatusSetup> Value;  }
+   [Game] public class StatusSetupComponent : IComponent { public StatusSetup Value;  }
+   [Game] public class StatusRequest : IComponent {  }
 
    [Game] public class Period : IComponent { public float Value; }
    [Game] public class TimeSinceLastTick : IComponent { public float Value;}

@@ -29,8 +29,6 @@ namespace AbilityMadness.Code.Gameplay.Gears.Systems
                 {
                     _statsFactory.CreateStatsChange(statsSetup.type, gear.Id, gear.TargetId, statsSetup.value);
                 }
-
-                gear.isNotApplied = false;
             }
         }
     }

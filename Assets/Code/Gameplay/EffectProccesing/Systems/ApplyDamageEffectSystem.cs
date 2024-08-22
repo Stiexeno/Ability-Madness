@@ -48,6 +48,9 @@ namespace AbilityMadness.Code.Gameplay.EffectProccesing.Systems
                 var target = _gameContext.GetEntityWithId(damageRequest.TargetId);
                 var producer = _gameContext.GetEntityWithId(damageRequest.ProducerId);
 
+                if (target == null)
+                    continue;
+
                 var damage = Mathf.RoundToInt(damageRequest.EffectValue);
                 target.Health -= damage;
 
