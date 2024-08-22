@@ -15,6 +15,7 @@ namespace AbilityMadness
             public const string SmallBulletWidget = "SmallBulletWidget";
             public const string BulletWidget = "BulletWidget";
             public const string BulletSelectionWidget = "BulletSelectionWidget";
+            public const string GearSelectWidget = "GearSelectWidget";
             public const string BulletDragWidget = "BulletDragWidget";
         }
 

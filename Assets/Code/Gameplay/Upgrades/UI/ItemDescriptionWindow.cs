@@ -1,3 +1,4 @@
+using AbilityMadness.Code.Gameplay.Gears.Configs;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Configs;
 using AbilityMadness.Infrastructure.UI;
 using TMPro;
@@ -15,6 +16,12 @@ namespace AbilityMadness.Code.Gameplay.Upgrades.UI
         {
             nameText.text = bulletConfig.name;
             icon.sprite = bulletConfig.icon;
+        }
+
+        public void Setup(GearConfig gearConfig)
+        {
+            nameText.text = gearConfig.name;
+            icon.sprite = gearConfig.icon;
         }
     }
 }

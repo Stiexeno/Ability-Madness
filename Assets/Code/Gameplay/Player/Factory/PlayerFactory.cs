@@ -3,6 +3,7 @@ using AbilityMadness.Code.Extensions;
 using AbilityMadness.Code.Gameplay.Experience.Services;
 using AbilityMadness.Code.Gameplay.Health;
 using AbilityMadness.Code.Gameplay.Movement;
+using AbilityMadness.Code.Gameplay.Stats;
 using AbilityMadness.Code.Gameplay.Vision;
 using AbilityMadness.Code.Infrastructure.Assets;
 using AbilityMadness.Code.Infrastructure.Identifiers;
@@ -53,7 +54,19 @@ namespace AbilityMadness.Factory
                 .AddHealth(1000)
                 .AddMaxHealth(1000)
 
-                .SetVision(8f, 0.15f, Layers.Enemy);
+                .SetVision(8f, 0.15f, Layers.Enemy)
+
+                .AddBaseStats(new StatsData(CreateBaseStats()))
+                .AddStatsModifiers(new StatsData());
         }
+
+        private Stats CreateBaseStats() =>
+            new()
+            {
+                maxHealth = 1000,
+                movementSpeed = 3f,
+                movementSpeedMultiplier = 1f,
+                damageMultiplier = 1f
+            };
     }
 }

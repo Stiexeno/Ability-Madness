@@ -10,9 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5ff066e382440d1bd105856ac05a3db, type: 3}
-  m_Name: Gear_Espresso
+  m_Name: Gear_Boots_Acid
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  name: Espresso
+  icon: {fileID: 21300000, guid: e37c8a86e564b43479415d3af4b7acd1, type: 3}
+  name: Acid Boots
   chance: 3
-  type: 1
+  type: 4
+  gearSetup:
+    fireTrail: 0
+    acidTrail: 0
+    frostTrail: 0
+  statsSetup:
+  - type: 2
+    value: 0.5

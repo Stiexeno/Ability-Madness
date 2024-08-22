@@ -1,6 +1,9 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using AbilityMadness.Code.Gameplay.Gears.Configs;
 using AbilityMadness.Code.Gameplay.Upgrades.Configs;
 using AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory;
+using AbilityMadness.Code.Gameplay.Weapons.Bullets.Configs;
 using AbilityMadness.Code.Infrastructure.Cursors;
 using AbilityMadness.Code.Infrastructure.Services.UI;
 using AbilityMadness.Code.Infrastructure.TimeService;
@@ -17,7 +20,7 @@ namespace AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection
     {
         [SF] private Transform content;
 
-        private List<BulletSelectWidget> _bulletSelectWidgets = new();
+        private List<UpgradeSelectWidget> _upgradeSelectWidgets = new();
 
         private IUIService _uiService;
         private ITimeService _timeService;
@@ -44,23 +47,43 @@ namespace AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection
         {
             foreach (var item in items)
             {
-                BulletSelectWidget bulletWidget = await _uiFactory.CreateBulletSelectWidget(content);
-                bulletWidget.Setup(item);
-
-                _bulletSelectWidgets.Add(bulletWidget);
+                if (item is BulletConfig bulletConfig)
+                {
+                    await CreateBulletWidget(bulletConfig);
+                }
+                else if (item is GearConfig gearConfig)
+                {
+                    await CreateGearWidget(gearConfig);
+                }
             }
 
             Open();
         }
 
+        private async Task CreateBulletWidget(BulletConfig config)
+        {
+            BulletSelectWidget bulletWidget = await _uiFactory.CreateBulletSelectWidget(content);
+            bulletWidget.Setup(config);
+
+            _upgradeSelectWidgets.Add(bulletWidget);
+        }
+
+        private async Task CreateGearWidget(GearConfig config)
+        {
+            GearSelectWidget gearWidget = await _uiFactory.CreateGearSelectWidget(content);
+            gearWidget.Setup(config);
+
+            _upgradeSelectWidgets.Add(gearWidget);
+        }
+
         private void Cleanup()
         {
-            foreach (var bulletSelectWidget in _bulletSelectWidgets)
+            foreach (var bulletSelectWidget in _upgradeSelectWidgets)
             {
                 _uiPool.Put(bulletSelectWidget);
             }
 
-            _bulletSelectWidgets.Clear();
+            _upgradeSelectWidgets.Clear();
         }
 
         protected override void OnBeforeOpen()

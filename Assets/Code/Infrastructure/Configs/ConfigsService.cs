@@ -2,6 +2,7 @@
 using AbilityMadness.Code.Gameplay.Enemy;
 using AbilityMadness.Code.Gameplay.Enemy.Configs;
 using AbilityMadness.Code.Gameplay.Enemy.Waves.Configs;
+using AbilityMadness.Code.Gameplay.Gears;
 using AbilityMadness.Code.Gameplay.Gears.Configs;
 using AbilityMadness.Code.Gameplay.Upgrades.Configs;
 using AbilityMadness.Code.Gameplay.Weapons;
@@ -91,6 +92,20 @@ namespace AbilityMadness.Code.Infrastructure.Configs
             return null;
         }
 
+        public GearConfig GetGearConfig(GearTypeId type)
+        {
+            foreach (var gearConfig in GearConfig)
+            {
+                if (gearConfig.type == type)
+                {
+                    return gearConfig;
+                }
+            }
+
+            Debug.LogError($"GearConfig with type {type} not found");
+            return null;
+        }
+
         public WorldBuilderConfig GetWorldBuilderConfig(WorldType worldTyp)
         {
             foreach (var worldBuilderConfig in WorldBuilderConfigs)
@@ -116,13 +131,13 @@ namespace AbilityMadness.Code.Infrastructure.Configs
                 }
             }
 
-            // foreach (var gearConfig in GearConfig)
-            // {
-            //     if (gearConfig is ItemConfig itemConfig)
-            //     {
-            //         itemConfigs.Add(itemConfig);
-            //     }
-            // }
+            foreach (var gearConfig in GearConfig)
+            {
+                if (gearConfig is ItemConfig itemConfig)
+                {
+                    itemConfigs.Add(itemConfig);
+                }
+            }
 
             return itemConfigs;
         }

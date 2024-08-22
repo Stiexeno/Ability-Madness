@@ -64,6 +64,11 @@ namespace AbilityMadness.Code.Infrastructure.UI.Factory
             return await _uiPool.Take<BulletSelectWidget>(Prefabs.Widgets.BulletSelectionWidget, parent);
         }
 
+        public async UniTask<GearSelectWidget> CreateGearSelectWidget(Transform parent)
+        {
+            return await _uiPool.Take<GearSelectWidget>(Prefabs.Widgets.GearSelectWidget, parent);
+        }
+
         public async UniTask<BulletDragWidget> CreateBulletDragWidget(Transform parent)
         {
             return await _uiPool.Take<BulletDragWidget>(Prefabs.Widgets.BulletDragWidget, parent);

@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using AbilityMadness.Code.Gameplay.Enemy;
 using AbilityMadness.Code.Gameplay.Enemy.Configs;
 using AbilityMadness.Code.Gameplay.Enemy.Waves.Configs;
+using AbilityMadness.Code.Gameplay.Gears;
+using AbilityMadness.Code.Gameplay.Gears.Configs;
 using AbilityMadness.Code.Gameplay.Upgrades.Configs;
 using AbilityMadness.Code.Gameplay.Weapons;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Configs;
@@ -22,5 +24,6 @@ namespace AbilityMadness.Code.Infrastructure.Configs
         List<ItemConfig> GetItemConfigs();
         EnemyConfig GetEnemyConfig(EnemyTypeId type);
         WaveConfig[] WaveConfigs { get; }
+        GearConfig GetGearConfig(GearTypeId type);
     }
 }
