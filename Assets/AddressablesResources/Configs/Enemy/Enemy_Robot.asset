@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   baseStats:
-    maxHealth: 30
+    maxHealth: 24
     movementSpeed: 1.5
     movementSpeedMultiplier: 1
     damageMultiplier: 1

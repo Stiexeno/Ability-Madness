@@ -153,38 +153,40 @@ public static class GameComponentsLookup {
     public const int SphereCastRadius = 142;
     public const int TargetBuffer = 143;
     public const int TargetLayer = 144;
-    public const int TargetsInSight = 145;
-    public const int Vision = 146;
-    public const int VisionInterval = 147;
-    public const int VisionLayer = 148;
-    public const int VisionRadius = 149;
-    public const int VisionTimer = 150;
-    public const int AmmoCapacity = 151;
-    public const int AmmoIndex = 152;
-    public const int Bullet = 153;
-    public const int BulletChangeRequest = 154;
-    public const int BulletIndex = 155;
-    public const int BulletTypeId = 156;
-    public const int FireRate = 157;
-    public const int HasReloadWidget = 158;
-    public const int MaxAmmoCapacity = 159;
-    public const int Pierce = 160;
-    public const int PiercedAmount = 161;
-    public const int Ready = 162;
-    public const int Recovering = 163;
-    public const int Reloading = 164;
-    public const int ReloadTime = 165;
-    public const int ReloadWidget = 166;
-    public const int Shot = 167;
-    public const int Spread = 168;
-    public const int WeaponAnimator = 169;
-    public const int Weapon = 170;
-    public const int WeaponPivot = 171;
-    public const int WeaponTypeId = 172;
-    public const int Player = 173;
-    public const int PlayerInTrigger = 174;
+    public const int Trail = 145;
+    public const int TrailTypeId = 146;
+    public const int TargetsInSight = 147;
+    public const int Vision = 148;
+    public const int VisionInterval = 149;
+    public const int VisionLayer = 150;
+    public const int VisionRadius = 151;
+    public const int VisionTimer = 152;
+    public const int AmmoCapacity = 153;
+    public const int AmmoIndex = 154;
+    public const int Bullet = 155;
+    public const int BulletChangeRequest = 156;
+    public const int BulletIndex = 157;
+    public const int BulletTypeId = 158;
+    public const int FireRate = 159;
+    public const int HasReloadWidget = 160;
+    public const int MaxAmmoCapacity = 161;
+    public const int Pierce = 162;
+    public const int PiercedAmount = 163;
+    public const int Ready = 164;
+    public const int Recovering = 165;
+    public const int Reloading = 166;
+    public const int ReloadTime = 167;
+    public const int ReloadWidget = 168;
+    public const int Shot = 169;
+    public const int Spread = 170;
+    public const int WeaponAnimator = 171;
+    public const int Weapon = 172;
+    public const int WeaponPivot = 173;
+    public const int WeaponTypeId = 174;
+    public const int Player = 175;
+    public const int PlayerInTrigger = 176;
 
-    public const int TotalComponents = 175;
+    public const int TotalComponents = 177;
 
     public static readonly string[] componentNames = {
         "AssetReference",
@@ -332,6 +334,8 @@ public static class GameComponentsLookup {
         "SphereCastRadius",
         "TargetBuffer",
         "TargetLayer",
+        "Trail",
+        "TrailTypeId",
         "TargetsInSight",
         "Vision",
         "VisionInterval",
@@ -510,6 +514,8 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.TargetCollection.SphereCastRadius),
         typeof(AbilityMadness.Code.Gameplay.TargetCollection.TargetBuffer),
         typeof(AbilityMadness.Code.Gameplay.TargetCollection.TargetLayer),
+        typeof(AbilityMadness.Code.Gameplay.Trails.Trail),
+        typeof(AbilityMadness.Code.Gameplay.Trails.TrailTypeIdComponent),
         typeof(AbilityMadness.Code.Gameplay.Vision.TargetsInSight),
         typeof(AbilityMadness.Code.Gameplay.Vision.Vision),
         typeof(AbilityMadness.Code.Gameplay.Vision.VisionInterval),

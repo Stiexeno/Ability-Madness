@@ -10,6 +10,7 @@ namespace AbilityMadness.Code.Gameplay.Status.Systems
         private GameContext _gameContext;
         private IGroup<GameEntity> _targets;
         private IStatusFactory _statusFactory;
+        private IGroup<GameEntity> _existingStatuses;
 
         public ApplyStatusesSystem(GameContext gameContext, IStatusFactory statusFactory)
         {
@@ -29,6 +30,15 @@ namespace AbilityMadness.Code.Gameplay.Status.Systems
                 .AllOf(
                     GameMatcher.Id,
                     GameMatcher.Alive));
+
+            _existingStatuses = gameContext.GetGroup(GameMatcher
+                .AllOf(
+                    GameMatcher.Status,
+                    GameMatcher.TargetId,
+                    GameMatcher.StatusTypeId,
+                    GameMatcher.Duration,
+                    GameMatcher.TimeLeft,
+                    GameMatcher.Id));
         }
 
         public void Execute()
@@ -42,7 +52,20 @@ namespace AbilityMadness.Code.Gameplay.Status.Systems
                 {
                     foreach (var statusSetup in owner.StatusSetups)
                     {
-                        _statusFactory.CreateStatus(statusSetup, owner.Id, target.Id);
+                        var statusExists = false;
+                        foreach (var existingStatus in _existingStatuses)
+                        {
+                            if (existingStatus.StatusTypeId == statusSetup.type && existingStatus.TargetId == target.Id)
+                            {
+                                existingStatus.TimeLeft = existingStatus.Duration;
+                                statusExists = true;
+                            }
+                        }
+
+                        if (statusExists == false)
+                        {
+                            _statusFactory.CreateStatus(statusSetup, owner.Id, target.Id);
+                        }
                     }
                 }
             }

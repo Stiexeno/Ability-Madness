@@ -10,6 +10,7 @@ using AbilityMadness.Code.Gameplay.Projectile.Factory;
 using AbilityMadness.Code.Gameplay.Round.Factory;
 using AbilityMadness.Code.Gameplay.Stats.Factory;
 using AbilityMadness.Code.Gameplay.Status.Factory;
+using AbilityMadness.Code.Gameplay.Trails.Factory;
 using AbilityMadness.Code.Gameplay.Upgrades.Services;
 using AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Factory;
@@ -111,6 +112,9 @@ namespace AbilityMadness
                 .AsSingle();
 
             Container.BindInterfacesTo<GearFactory>()
+                .AsSingle();
+
+            Container.BindInterfacesTo<TrailFactory>()
                 .AsSingle();
         }
 
