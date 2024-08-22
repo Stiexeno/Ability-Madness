@@ -34,7 +34,7 @@ namespace AbilityMadness.Code.Infrastructure.StateMachine.Application
 			SetTargetFrameRate();
 
 			_assets.Initialize();
-			_sceneService.Load(Constants.Scenes.BootSceneName, EnterLoadedScene);
+			_sceneService.Load(Scenes.BootSceneName, EnterLoadedScene);
 		}
 
 		private static void SetTargetFrameRate()
@@ -47,9 +47,9 @@ namespace AbilityMadness.Code.Infrastructure.StateMachine.Application
             _loadingCurtain.Show();
             var currentActiveScene = SceneManager.GetActiveScene().name;
 
-            if (currentActiveScene != Constants.Scenes.GameplaySceneName)
+            if (currentActiveScene != Scenes.GameplaySceneName)
             {
-                _sceneService.Load(Constants.Scenes.GameplaySceneName, onLoaded: OnSceneLoaded);
+                _sceneService.Load(Scenes.GameplaySceneName, onLoaded: OnSceneLoaded);
             }
             else
             {
@@ -59,7 +59,7 @@ namespace AbilityMadness.Code.Infrastructure.StateMachine.Application
 
         private void OnSceneLoaded()
         {
-            var sceneToLoad = Constants.Scenes.GameplaySceneName;
+            var sceneToLoad = Scenes.GameplaySceneName;
             _applicationStateMachine.Enter<LoadLevelState, string>(sceneToLoad).Forget();
         }
     }

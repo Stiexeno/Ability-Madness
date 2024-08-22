@@ -32,7 +32,7 @@ namespace AbilityMadness.Code.Gameplay.Experience.Factory
         {
             return CreateEntity.Empty()
                 .AddId(_identifierService.Next())
-                .AddViewPath(Constants.Prefabs.Experiences.Green)
+                .AddViewPath(Prefabs.Experiences.Green)
                 .AddExperienceTypeId(ExperienceTypeId.Green)
                 .AddExperience(1)
                 .AddMovementSpeed(20f)

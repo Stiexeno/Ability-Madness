@@ -28,7 +28,7 @@ namespace AbilityMadness.Code.Gameplay.Status.Factory
         {
             return CreateEmptyStatusView(producerId, targetId)
                 .With(x => x.isEmitting = true)
-                .AddViewPath(Constants.Prefabs.Effects.FireStatus)
+                .AddViewPath(Prefabs.Effects.FireStatus)
                 .With(x => x.isFollowMovement = true)
                 .With(x => x.isTransformMovement = true);
         }
@@ -37,7 +37,7 @@ namespace AbilityMadness.Code.Gameplay.Status.Factory
         {
             return CreateEmptyStatusView(producerId, targetId)
                 .With(x => x.isEmitting = true)
-                .AddViewPath(Constants.Prefabs.Effects.PoisonStatus)
+                .AddViewPath(Prefabs.Effects.PoisonStatus)
                 .With(x => x.isFollowMovement = true)
                 .With(x => x.isTransformMovement = true);
         }
@@ -46,7 +46,7 @@ namespace AbilityMadness.Code.Gameplay.Status.Factory
         {
             return CreateEmptyStatusView(producerId, targetId)
                 .With(x => x.isEmitting = true)
-                .AddViewPath(Constants.Prefabs.Effects.FreezeStatus)
+                .AddViewPath(Prefabs.Effects.FreezeStatus)
                 .With(x => x.isFollowMovement = true)
                 .With(x => x.isTransformMovement = true);
         }

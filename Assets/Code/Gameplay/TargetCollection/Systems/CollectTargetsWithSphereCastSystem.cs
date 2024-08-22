@@ -34,7 +34,7 @@ namespace AbilityMadness.Code.Gameplay.TargetCollection.Systems
                var hits =  _physicsService.CircleCast(
                    targetCollector.WorldPosition,
                    targetCollector.SphereCastRadius,
-                   1 << Constants.Layers.TeamToLayer[targetCollector.Team]);
+                   1 << Layers.TeamToLayer[targetCollector.Team]);
 
                foreach (var hit in hits)
                {

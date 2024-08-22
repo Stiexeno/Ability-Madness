@@ -9,7 +9,7 @@ namespace AbilityMadness.Code.Infrastructure.UI.Factory
         public GameEntity CreateHealthbar(GameEntity gameEntity)
         {
             return CreateEntity.Empty()
-                .AddViewPath(Constants.Prefabs.Widgets.HealthbarWidget)
+                .AddViewPath(Prefabs.Widgets.HealthbarWidget)
                 .AddTargetId(gameEntity.Id)
                 .AddWorldPosition(Vector2.one * 999)
                 .With(x => x.isTransformMovement = true);
@@ -18,7 +18,7 @@ namespace AbilityMadness.Code.Infrastructure.UI.Factory
         public GameEntity CreateReloadWidget(GameEntity gameEntity)
         {
             return CreateEntity.Empty()
-                .AddViewPath(Constants.Prefabs.Widgets.ReloadWidget)
+                .AddViewPath(Prefabs.Widgets.ReloadWidget)
                 .AddTargetId(gameEntity.Id)
                 .AddWorldPosition(Vector2.one * 999)
                 .With(x => x.isTransformMovement = true);

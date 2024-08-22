@@ -34,7 +34,7 @@ namespace AbilityMadness.Code.Gameplay.Player.Systems
                 var hits = _physicsService.CircleCast(
                     player.WorldPosition,
                     player.PickupRadius,
-                    1 << Constants.Layers.Loot);
+                    1 << Layers.Loot);
 
                 foreach (var hit in hits)
                 {

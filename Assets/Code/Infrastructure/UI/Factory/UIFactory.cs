@@ -34,14 +34,14 @@ namespace AbilityMadness.Code.Infrastructure.UI.Factory
 
         private void Warmup()
         {
-            _assets.LoadAsync<GameObject>(Constants.Prefabs.Widgets.DamageTextWidget).Forget();
-            _assets.LoadAsync<GameObject>(Constants.Prefabs.Widgets.HealthbarWidget).Forget();
-            _assets.LoadAsync<GameObject>(Constants.Prefabs.Widgets.BulletDragWidget).Forget();
+            _assets.LoadAsync<GameObject>(Prefabs.Widgets.DamageTextWidget).Forget();
+            _assets.LoadAsync<GameObject>(Prefabs.Widgets.HealthbarWidget).Forget();
+            _assets.LoadAsync<GameObject>(Prefabs.Widgets.BulletDragWidget).Forget();
         }
 
         public async UniTask<DamageTextWidget> CreateDamageText(Vector3 position, DamageTypeId damageTypeId, int damage)
         {
-            var damageText = await _uiPool.Take<DamageTextWidget>(Constants.Prefabs.Widgets.DamageTextWidget, _worldUiRootParent);
+            var damageText = await _uiPool.Take<DamageTextWidget>(Prefabs.Widgets.DamageTextWidget, _worldUiRootParent);
             damageText.transform.position = position;
             damageText.gameObject.SetActive(true);
             damageText.Show(damage, damageTypeId);
@@ -51,22 +51,22 @@ namespace AbilityMadness.Code.Infrastructure.UI.Factory
 
         public async UniTask<SmallBulletWidget> CreateSmallBulletWidget(Transform parent)
         {
-            return await _uiPool.Take<SmallBulletWidget>(Constants.Prefabs.Widgets.SmallBulletWidget, parent);
+            return await _uiPool.Take<SmallBulletWidget>(Prefabs.Widgets.SmallBulletWidget, parent);
         }
 
         public async UniTask<BulletWidget> CreateBulletWidget(Transform parent)
         {
-            return await _uiPool.Take<BulletWidget>(Constants.Prefabs.Widgets.BulletWidget, parent);
+            return await _uiPool.Take<BulletWidget>(Prefabs.Widgets.BulletWidget, parent);
         }
 
         public async UniTask<BulletSelectWidget> CreateBulletSelectWidget(Transform parent)
         {
-            return await _uiPool.Take<BulletSelectWidget>(Constants.Prefabs.Widgets.BulletSelectionWidget, parent);
+            return await _uiPool.Take<BulletSelectWidget>(Prefabs.Widgets.BulletSelectionWidget, parent);
         }
 
         public async UniTask<BulletDragWidget> CreateBulletDragWidget(Transform parent)
         {
-            return await _uiPool.Take<BulletDragWidget>(Constants.Prefabs.Widgets.BulletDragWidget, parent);
+            return await _uiPool.Take<BulletDragWidget>(Prefabs.Widgets.BulletDragWidget, parent);
         }
 
         #region Factory
@@ -78,14 +78,14 @@ namespace AbilityMadness.Code.Infrastructure.UI.Factory
 
         private async UniTask LoadWindowPrefabs()
         {
-            var windowGameObjects = await _assets.GetAssetsByLabelAsync<GameObject>(Constants.Prefabs.WindowLabel);
+            var windowGameObjects = await _assets.GetAssetsByLabelAsync<GameObject>(Prefabs.WindowLabel);
             _windowPrefabs = windowGameObjects.Select(x => x.GetComponent<Window>()).ToArray();
         }
 
         public async UniTask CreateUIRoot()
         {
-            _uiRoot = await _assets.LoadAsync<GameObject>(Constants.Prefabs.UIRootPath);
-            var worlduiRoot = await _assets.LoadAsync<GameObject>(Constants.Prefabs.WorldUIRootPath);
+            _uiRoot = await _assets.LoadAsync<GameObject>(Prefabs.UIRootPath);
+            var worlduiRoot = await _assets.LoadAsync<GameObject>(Prefabs.WorldUIRootPath);
 
             _uiRootParent = _assets.Instantiate(_uiRoot, Vector3.zero, Vector3.zero).transform;
             _worldUiRootParent = _assets.Instantiate(worlduiRoot, Vector3.zero, Vector3.zero).transform;

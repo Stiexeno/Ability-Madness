@@ -53,7 +53,7 @@ namespace AbilityMadness.Factory
                 .AddHealth(1000)
                 .AddMaxHealth(1000)
 
-                .SetVision(8f, 0.15f, Constants.Layers.Enemy);
+                .SetVision(8f, 0.15f, Layers.Enemy);
         }
     }
 }

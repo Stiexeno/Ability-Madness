@@ -37,7 +37,7 @@ namespace AbilityMadness.Code.Gameplay.Enemy.Factory
             return CreateEntity.Empty()
                 .AddId(_identifierService.Next())
                 .With(x => x.isEnemy = true)
-                .AddViewPath(Constants.Prefabs.Enemies.Robot)
+                .AddViewPath(Prefabs.Enemies.Robot)
                 .AddTeam(Team.Enemy)
                 .With(x => x.isAlive = true)
                 .AddHealth(baseStats.maxHealth)
