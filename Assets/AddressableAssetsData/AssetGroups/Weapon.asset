@@ -17,12 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 6758862397497624a9e6a02c4b8ded25
   m_SerializeEntries:
-  - m_GUID: cbe2e82bcea25b846b60fde82232bc78
-    m_Address: Weapon_Revolver
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 81eaaa924a0b0184d83214045cca99a0
-    m_Address: Weapon_Winchester
+    m_Address: Weapon_Revolver
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

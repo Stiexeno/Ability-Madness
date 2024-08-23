@@ -9,10 +9,12 @@ namespace AbilityMadness.Code.Gameplay.Health.Behaviours
     public class Healthbar : EntityComponent
     {
         [SF] private Progressbar progressbar;
+        [SF] private Progressbar ghostProgressbar;
 
         public void SetHealth(float health)
         {
             progressbar.SetProgress(health);
+            ghostProgressbar.SetProgress(health, 0.1f, 0.1f);
         }
     }
 }

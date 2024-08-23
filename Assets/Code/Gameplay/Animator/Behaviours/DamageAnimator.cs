@@ -16,6 +16,7 @@ namespace AbilityMadness.Code.Common.Behaviours
         private Coroutine _flashCoroutine;
 
         private static readonly int flashProperty = Shader.PropertyToID("_FlashAmount");
+        private WaitForSeconds _waitForSeconds = new WaitForSeconds(0.1f);
 
         private void Awake()
         {
@@ -40,7 +41,7 @@ namespace AbilityMadness.Code.Common.Behaviours
             _materialPropertyBlock.SetFloat(flashProperty, 1);
             _renderer.SetPropertyBlock(_materialPropertyBlock);
 
-            yield return new WaitForSeconds(0.15f);
+            yield return _waitForSeconds;
 
             _materialPropertyBlock.SetFloat(flashProperty, 0);
             _renderer.SetPropertyBlock(_materialPropertyBlock);
