@@ -9,5 +9,6 @@ namespace AbilityMadness.Code.Gameplay.Upgrades.Configs
         public new string name;
 
         [Unit(Units.Percent)] public float chance;
+        public bool unique;
     }
 }

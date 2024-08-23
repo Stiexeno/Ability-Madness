@@ -37,12 +37,12 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Behaviours
 
         public void Shoot()
         {
-            weaponAnimancer.Play(shootClip, 0f, mode: FadeMode.FromStart);
+           weaponAnimancer.Play(shootClip, 0f, mode: FadeMode.FromStart);
         }
 
         public void Reload(float duration)
         {
-            StartCoroutine(ReloadCoroutine(duration));
+            //StartCoroutine(ReloadCoroutine(duration));
         }
 
         private IEnumerator ReloadCoroutine(float duration)

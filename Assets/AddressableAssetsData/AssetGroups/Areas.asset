@@ -21,6 +21,14 @@ MonoBehaviour:
     m_Address: Area_Fire
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: e651ad5f45d91be44b9eaf5282421449
+    m_Address: Area_Freeze
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 453329f0ee054b944aea844b68f0b186
+    m_Address: Area_Poison
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9f75c775787da8a4c8e7e94698c9d5b8, type: 2}
   m_SchemaSet:

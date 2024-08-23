@@ -12,7 +12,7 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Factory
 {
     public class WeaponFactory : IWeaponFactory
     {
-        private const string WeaponPrefabPath = "Weapon_Winchester";
+        private const string WEAPON_PREFAB_PATH = "Weapon_Revolver";
 
         private IIdentifierService _identifierService;
         private IConfigsService _configsService;
@@ -46,7 +46,7 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Factory
                 .AddId(id)
                 .With(x => x.isWeapon = true)
                 .AddWeaponTypeId(weaponType)
-                .AddViewPath(WeaponPrefabPath)
+                .AddViewPath(WEAPON_PREFAB_PATH)
                 .AddOwnerId(gameEntity.Id)
                 .AddTeam(gameEntity.Team)
 

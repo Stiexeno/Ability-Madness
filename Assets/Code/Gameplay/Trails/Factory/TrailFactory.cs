@@ -20,6 +20,8 @@ namespace AbilityMadness.Code.Gameplay.Trails.Factory
             return type switch
             {
                 TrailTypeId.Fire => CreateFireTrail(producerId, targetId),
+                TrailTypeId.Poison => CreatePoisonTrail(producerId, targetId),
+                TrailTypeId.Freeze => CreateFreezeTrail(producerId, targetId),
                 _ => CreateEmptyTrail(type, producerId, targetId)
             };
         }
@@ -28,6 +30,18 @@ namespace AbilityMadness.Code.Gameplay.Trails.Factory
         {
             return CreateEmptyTrail(TrailTypeId.Fire, producerId, targetId)
                 .AddAreaTypeId(AreaTypeId.Fire);
+        }
+
+        private GameEntity CreatePoisonTrail(int producerId, int targetId)
+        {
+            return CreateEmptyTrail(TrailTypeId.Poison, producerId, targetId)
+                .AddAreaTypeId(AreaTypeId.Poison);
+        }
+
+        private GameEntity CreateFreezeTrail(int producerId, int targetId)
+        {
+            return CreateEmptyTrail(TrailTypeId.Freeze, producerId, targetId)
+                .AddAreaTypeId(AreaTypeId.Freeze);
         }
 
         private GameEntity CreateEmptyTrail(TrailTypeId type, int producerId, int targetId)

@@ -1,3 +1,4 @@
+using AbilityMadness.Code.Gameplay.Upgrades.Services;
 using AbilityMadness.Code.Gameplay.Upgrades.UI.Inventory;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Configs;
 using AbilityMadness.Code.Gameplay.Weapons.Bullets.Services;
@@ -24,14 +25,17 @@ namespace AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection
         private IUIFactory _uiFactory;
         private IUIPool _uiPool;
         private IBulletService _bulletService;
+        private IUpgradeService _upgradeService;
 
         public UpgradeSelectModel(
             IUIService uiService,
             IUIFactory uiFactory,
             PlayerInput playerInput,
             IUIPool uiPool,
-            IBulletService bulletService)
+            IBulletService bulletService,
+            IUpgradeService upgradeService)
         {
+            _upgradeService = upgradeService;
             _bulletService = bulletService;
             _rightClickAction = playerInput.actions[Constants.Input.RightClick];
 
@@ -67,6 +71,11 @@ namespace AbilityMadness.Code.Gameplay.Upgrades.UI.ItemSelection
             {
                 bulletWidget.Setup(_bulletConfig, index);
                 _bulletService.ChangeTo(_bulletConfig.type, index);
+
+                if (_bulletConfig.unique)
+                {
+                    _upgradeService.RemoveFromPool(_bulletConfig);
+                }
 
                 Cleanup();
                 _uiService.Close<UpgradeSelectionWindow>();

@@ -15,6 +15,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 964f5649aacf26c42b98d3636f896eb2, type: 3}
   name: Rifle Bullet
   chance: 15
+  unique: 0
   type: 2
   projectileRef:
     m_AssetGUID: b931ba43c5be3394bad80ed48de0d176
@@ -30,6 +31,6 @@ MonoBehaviour:
     range: 8
     effectSetups:
     - type: 1
-      value: 10
+      value: 30
       damageType: 1
     statusSetups: []

@@ -18,7 +18,7 @@ namespace AbilityMadness.Code.Gameplay.UI.Hud
 
         public void SetHealth(int health, int maxHealth)
         {
-            healthbarWidget.SetHealth(health, maxHealth);
+            healthbarWidget.SetHealth(health, maxHealth).Forget();
         }
 
         public void SetExperience(int experience, int maxExperience)

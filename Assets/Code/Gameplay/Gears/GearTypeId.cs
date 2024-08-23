@@ -5,8 +5,9 @@ namespace AbilityMadness.Code.Gameplay.Gears
         Unknown = 0,
         Boots = 1,
         FireBoots = 2,
-        FrostBoots = 3,
-        AcidBoots = 4,
+        FreezeBoots = 3,
+        PoisonBoots = 4,
         IronBoots = 5,
+        Heart = 6,
     }
 }

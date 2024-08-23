@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 4d085d0d3f1b8064ea87d959aa5893a1, type: 3}
   name: Regular Bullet
-  chance: 15
+  chance: 0
+  unique: 0
   type: 1
   projectileRef:
     m_AssetGUID: 51ee2c1654720e548a0ddd9a1a4d7012

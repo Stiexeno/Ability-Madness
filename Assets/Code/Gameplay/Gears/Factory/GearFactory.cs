@@ -22,6 +22,8 @@ namespace AbilityMadness.Code.Gameplay.Gears.Factory
             return type switch
             {
                 GearTypeId.FireBoots => CreateFireBoots(producerId, targetId),
+                GearTypeId.FreezeBoots => CreateFreezeBoots(producerId, targetId),
+                GearTypeId.PoisonBoots => CreatePoisonBoots(producerId, targetId),
                 _ => CreateEmptyGear(type, producerId, targetId)
             };
         }
@@ -37,6 +39,18 @@ namespace AbilityMadness.Code.Gameplay.Gears.Factory
         {
             return CreateEmptyGear(GearTypeId.FireBoots, producerId, targetId)
                 .AddTrailTypeId(TrailTypeId.Fire);
+        }
+
+        private GameEntity CreateFreezeBoots(int producerId, int targetId)
+        {
+            return CreateEmptyGear(GearTypeId.FreezeBoots, producerId, targetId)
+                .AddTrailTypeId(TrailTypeId.Freeze);
+        }
+
+        private GameEntity CreatePoisonBoots(int producerId, int targetId)
+        {
+            return CreateEmptyGear(GearTypeId.PoisonBoots, producerId, targetId)
+                .AddTrailTypeId(TrailTypeId.Poison);
         }
 
         private GameEntity CreateEmptyGear(GearTypeId type, int producerId, int targetId)

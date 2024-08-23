@@ -49,6 +49,11 @@ namespace AbilityMadness.Code.Infrastructure.UI.Factory
             return damageText;
         }
 
+        public async UniTask<HeartWidget> CreateHeartWidget(Transform parent)
+        {
+            return await _uiPool.Take<HeartWidget>(Prefabs.Widgets.HeartWidget, parent);
+        }
+
         public async UniTask<SmallBulletWidget> CreateSmallBulletWidget(Transform parent)
         {
             return await _uiPool.Take<SmallBulletWidget>(Prefabs.Widgets.SmallBulletWidget, parent);

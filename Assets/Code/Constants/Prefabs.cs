@@ -17,6 +17,7 @@ namespace AbilityMadness
             public const string BulletSelectionWidget = "BulletSelectionWidget";
             public const string GearSelectWidget = "GearSelectWidget";
             public const string BulletDragWidget = "BulletDragWidget";
+            public const string HeartWidget = "HeartWidget";
         }
 
         public static class Effects
@@ -39,6 +40,8 @@ namespace AbilityMadness
         public static class Areas
         {
             public const string Fire = "Area_Fire";
+            public const string Poison = "Area_Poison";
+            public const string Freeze = "Area_Freeze";
         }
     }
 }

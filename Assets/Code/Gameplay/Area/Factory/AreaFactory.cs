@@ -24,6 +24,8 @@ namespace AbilityMadness.Code.Gameplay.Area.Factory
             return type switch
             {
                 AreaTypeId.Fire => CreateFireArea(producerId, position, team),
+                AreaTypeId.Poison => CreatePoisonArea(producerId, position, team),
+                AreaTypeId.Freeze => CreateFreezeArea(producerId, position, team),
                 _ => CreateFireArea(producerId, position, team)
             };
         }
@@ -44,6 +46,45 @@ namespace AbilityMadness.Code.Gameplay.Area.Factory
                         duration = 3,
                         period = 0.5f,
                         value = 1
+                    }
+                });
+        }
+
+        private GameEntity CreatePoisonArea(int producerId, Vector3 position, Team team)
+        {
+            return CreateEmptyArea(AreaTypeId.Fire, producerId, position, team)
+                .AddViewPath(Prefabs.Areas.Poison)
+                .AddDuration(3)
+                .AddTimeLeft(3)
+
+                .CollectTargetsWithSphereCast(0.3f)
+                .AddStatusSetups(new List<StatusSetup>
+                {
+                    new StatusSetup
+                    {
+                        type = StatusTypeId.Poison,
+                        duration = 3,
+                        period = 0.5f,
+                        value = 1
+                    }
+                });
+        }
+
+        private GameEntity CreateFreezeArea(int producerId, Vector3 position, Team team)
+        {
+            return CreateEmptyArea(AreaTypeId.Freeze, producerId, position, team)
+                .AddViewPath(Prefabs.Areas.Freeze)
+                .AddDuration(3)
+                .AddTimeLeft(3)
+
+                .CollectTargetsWithSphereCast(0.3f)
+                .AddStatusSetups(new List<StatusSetup>
+                {
+                    new StatusSetup
+                    {
+                        type = StatusTypeId.Freeze,
+                        duration = 3,
+                        value = -0.8f
                     }
                 });
         }

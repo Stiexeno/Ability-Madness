@@ -4,7 +4,7 @@ namespace AbilityMadness.Code.Gameplay.Trails
     {
         Unkonwn = 0,
         Fire = 1,
-        Frost = 2,
+        Freeze = 2,
         Poison = 3,
     }
 }

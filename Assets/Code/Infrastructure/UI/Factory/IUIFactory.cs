@@ -20,5 +20,6 @@ namespace AbilityMadness.Code.Infrastructure.UI.Factory
         UniTask<BulletSelectWidget> CreateBulletSelectWidget(Transform parent);
         UniTask<BulletDragWidget> CreateBulletDragWidget(Transform parent);
         UniTask<GearSelectWidget> CreateGearSelectWidget(Transform parent);
+        UniTask<HeartWidget> CreateHeartWidget(Transform parent);
     }
 }

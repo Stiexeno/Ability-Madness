@@ -41,7 +41,6 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Systems
                     GameMatcher.AssetReference));
         }
 
-
         public void Execute()
         {
             foreach (var weapon in _weapons)

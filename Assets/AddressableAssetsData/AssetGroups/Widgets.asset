@@ -49,6 +49,10 @@ MonoBehaviour:
     m_Address: GearSelectWidget
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 0e26e0afa20b49d4eaceeba72a00aa8b
+    m_Address: HeartWidget
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9f75c775787da8a4c8e7e94698c9d5b8, type: 2}
   m_SchemaSet:

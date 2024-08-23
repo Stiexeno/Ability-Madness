@@ -51,8 +51,8 @@ namespace AbilityMadness.Factory
                 .AddMaxExperience(_experienceCalculatorService.CalculateMaxExperience(1))
                 .AddLevel(1)
 
-                .AddHealth(1000)
-                .AddMaxHealth(1000)
+                .AddHealth(6)
+                .AddMaxHealth(6)
 
                 .SetVision(8f, 0.15f, Layers.Enemy)
 
@@ -63,7 +63,7 @@ namespace AbilityMadness.Factory
         private Stats CreateBaseStats() =>
             new()
             {
-                maxHealth = 1000,
+                maxHealth = 6,
                 movementSpeed = 3f,
                 movementSpeedMultiplier = 1f,
                 damageMultiplier = 1f

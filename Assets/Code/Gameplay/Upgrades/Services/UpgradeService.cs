@@ -35,6 +35,11 @@ namespace AbilityMadness.Code.Gameplay.Upgrades.Services
             itemSelectWindow.Setup(GetRandomItems()).Forget();
         }
 
+        public void RemoveFromPool(ItemConfig item)
+        {
+            _itemPool.Remove(item);
+        }
+
         private ItemConfig[] GetRandomItems()
         {
             var itemPool = new List<ItemConfig>(_itemPool);
