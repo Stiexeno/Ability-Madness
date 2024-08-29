@@ -66,9 +66,10 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Bullets.Factory
 
                 .With(x => x.isBullet = true)
                 .AddBulletTypeId(bulletTypeId)
+                .AddProjectileTypeId(config.projectileType)
                 .AddTeam(team)
 
-                .AddSpawnAmount(config.projectileSetup.spawnCount)
+                .AddSpawnAmount(config.spawnCount)
                 .AddBulletIndex(index);
 
             return bullet;

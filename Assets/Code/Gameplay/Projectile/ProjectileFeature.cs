@@ -1,4 +1,5 @@
-using AbilityMadness.Code.Gameplay.Projectile.Systems;
+using AbilityMadness.Code.Gameplay.Projectile.Directional;
+using AbilityMadness.Code.Gameplay.Projectile.Throwable;
 using AbilityMadness.Code.Infrastructure.ECS;
 
 namespace AbilityMadness.Code.Gameplay.Projectile
@@ -7,12 +8,8 @@ namespace AbilityMadness.Code.Gameplay.Projectile
     {
         public ProjectileFeature(ISystemFactory systemFactory)
         {
-            Add(systemFactory.Create<FaceProjectileToDirectionSystem>());
-
-            Add(systemFactory.Create<SlowdownProjectileSystem>());
-
-            Add(systemFactory.Create<IncreaseProjectilePierceOnDamageDealtSystem>());
-            Add(systemFactory.Create<DestructProjectileOnPierceSystem>());
+            Add(systemFactory.Create<DirectionalFeature>());
+            Add(systemFactory.Create<ThrowableFeature>());
         }
     }
 }

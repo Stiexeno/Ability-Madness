@@ -1,34 +1,27 @@
 ﻿using AbilityMadness.Code.Common;
 using AbilityMadness.Code.Extensions;
-using AbilityMadness.Code.Gameplay.Lifetime;
 using AbilityMadness.Code.Gameplay.Movement;
 using AbilityMadness.Code.Gameplay.TargetCollection;
 using AbilityMadness.Code.Gameplay.Weapons;
-using AbilityMadness.Code.Infrastructure.Assets;
 using AbilityMadness.Code.Infrastructure.Configs;
 using AbilityMadness.Code.Infrastructure.Identifiers;
-using Cysharp.Threading.Tasks;
-using UnityEngine;
 
 namespace AbilityMadness.Code.Gameplay.Projectile.Factory
 {
-    public class ProjectileFactory : IProjectileFactory
+    public class DirectionalFactory : IDirectionalFactory
     {
         private IIdentifierService _identifierService;
         private IConfigsService _configsService;
-        private IAssets _assets;
 
-        public ProjectileFactory(
+        public DirectionalFactory(
             IIdentifierService identifierService,
-            IConfigsService configsService,
-            IAssets assets)
+            IConfigsService configsService)
         {
-            _assets = assets;
             _configsService = configsService;
             _identifierService = identifierService;
         }
 
-        public GameEntity CreateProjectile(ProjectileRequest request)
+        public GameEntity CreateDirectional(DirectionalRequest request)
         {
             var bulletConfig = _configsService.GetBulletConfig(request.type);
             return request.type switch
@@ -39,15 +32,16 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
 
         // Implementations
 
-        private GameEntity CreateDefaultProjectile(ProjectileRequest request, ProjectileSetup setup)
+        private GameEntity CreateDefaultProjectile(DirectionalRequest request, ProjectileSetup setup)
         {
-            return CreateEmptyProjectile(request, setup)
+            return CreateEmptyDirectional(request, setup)
+                .AddMovementSpeed(setup.movementSpeed)
                 .CollectTargetsWithSphereCast(0.3f)
                 .With(x => x.isFaceToDirection = true)
                 .SetForwardMovement();
         }
 
-        private GameEntity CreateEmptyProjectile(ProjectileRequest request, ProjectileSetup setup)
+        private GameEntity CreateEmptyDirectional(DirectionalRequest request, ProjectileSetup setup)
         {
             var direction = ProjectileExtensions.CalculateSpreadDirection(
                 request.spread + setup.spread,
@@ -68,7 +62,6 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
 
                 .With(x => x.isAlive = true)
                 .With(x => x.isTransformMovement = true)
-                .AddMovementSpeed(setup.movementSpeed)
                 .AddDistanceTraveled(0f)
                 .AddLastPosition(request.position)
                 .AddRange(setup.range)

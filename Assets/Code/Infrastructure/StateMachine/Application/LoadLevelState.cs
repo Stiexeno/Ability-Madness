@@ -33,7 +33,7 @@ namespace AbilityMadness.Code.Infrastructure.StateMachine.Application
         private IWeaponFactory _weaponFactory;
         private IWorldBuilderService _worldBuilderService;
         private IRoundFactory _roundFactory;
-        private IProjectileFactory _projectileFactory;
+        private IDirectionalFactory _directionalFactory;
         private IUpgradeService _upgradeService;
 
         [Inject]
@@ -48,11 +48,11 @@ namespace AbilityMadness.Code.Infrastructure.StateMachine.Application
             IWeaponFactory weaponFactory,
             IWorldBuilderService worldBuilderService,
             IRoundFactory roundFactory,
-            IProjectileFactory projectileFactory,
+            IDirectionalFactory directionalFactory,
             IUpgradeService upgradeService)
 		{
             _upgradeService = upgradeService;
-            _projectileFactory = projectileFactory;
+            _directionalFactory = directionalFactory;
             _roundFactory = roundFactory;
             _worldBuilderService = worldBuilderService;
             _weaponFactory = weaponFactory;

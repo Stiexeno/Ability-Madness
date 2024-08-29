@@ -12,11 +12,11 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Systems
         private readonly IGroup<GameEntity> _owners;
         private GameContext _gameContext;
 
-        private IProjectileFactory _projectileFactory;
+        private IDirectionalFactory _directionalFactory;
 
-        public WeaponTargetSystem(GameContext gameContext, IProjectileFactory projectileFactory)
+        public WeaponTargetSystem(GameContext gameContext, IDirectionalFactory directionalFactory)
         {
-            _projectileFactory = projectileFactory;
+            _directionalFactory = directionalFactory;
             _gameContext = gameContext;
             _weapons = gameContext.GetGroup(GameMatcher
                 .AllOf(

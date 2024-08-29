@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b5d8935fe24058a2acccb386274f61, type: 3}
+  m_Name: Bullet_Grenade
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 4d085d0d3f1b8064ea87d959aa5893a1, type: 3}
+  name: Regular Bullet
+  chance: 0
+  unique: 0
+  type: 18
+  projectileRef:
+    m_AssetGUID: a162ee89dde82a148b224f1b20b66b12
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  spawnCount: 3
+  projectileType: 2
+  projectileSetup:
+    movementSpeed: 15
+    spread: 0
+    pierce: 1
+    ricochet: 0
+    range: 15
+    effectSetups:
+    - type: 1
+      value: 10
+      damageType: 1
+    statusSetups: []
+  throwableSetup:
+    spawnCount: 1
+    maxHeight: 5
+    movementSpeed: 15
+    range: 15
+    effectSetups:
+    - type: 1
+      value: 10
+      damageType: 1

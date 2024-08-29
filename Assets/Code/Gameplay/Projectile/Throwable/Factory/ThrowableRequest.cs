@@ -5,7 +5,7 @@ using UnityEngine.AddressableAssets;
 
 namespace AbilityMadness.Code.Gameplay.Projectile.Factory
 {
-    public struct ProjectileRequest
+    public struct ThrowableRequest
     {
         public BulletTypeId type;
         public int ownerId;
@@ -13,9 +13,8 @@ namespace AbilityMadness.Code.Gameplay.Projectile.Factory
         public AssetReferenceGameObject assetRef;
 
         public Vector3 position;
-        public Vector2 direction;
-        public Team team;
 
-        public float spread;
+        public Vector3 targetPosition;
+        public Team team;
     }
 }

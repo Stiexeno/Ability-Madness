@@ -15,12 +15,14 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 341bee286df51834796ddc7797b77de1, type: 3}
   name: Fire Bullet
   chance: 15
+  unique: 0
   type: 6
   projectileRef:
     m_AssetGUID: 7864c22f7fc87ee42bbc01537b98ab09
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  projectileType: 1
   projectileSetup:
     movementSpeed: 25
     spawnCount: 1
@@ -37,4 +39,3 @@ MonoBehaviour:
       duration: 3
       period: 0.25
       value: 1
-      damageType: 2

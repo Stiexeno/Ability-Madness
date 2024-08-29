@@ -7,6 +7,7 @@ using AbilityMadness.Code.Gameplay.Enemy.Factory;
 using AbilityMadness.Code.Gameplay.Enemy.Waves.Factory;
 using AbilityMadness.Code.Gameplay.Experience.Factory;
 using AbilityMadness.Code.Gameplay.Gears.Factory;
+using AbilityMadness.Code.Gameplay.Projectile;
 using AbilityMadness.Code.Gameplay.Projectile.Factory;
 using AbilityMadness.Code.Gameplay.Round.Factory;
 using AbilityMadness.Code.Gameplay.Stats.Factory;
@@ -74,7 +75,13 @@ namespace AbilityMadness
             Container.BindInterfacesTo<EffectFactory>()
                 .AsSingle();
 
+            Container.BindInterfacesTo<DirectionalFactory>()
+                .AsSingle();
+
             Container.BindInterfacesTo<ProjectileFactory>()
+                .AsSingle();
+
+            Container.BindInterfacesTo<ThrowableFactory>()
                 .AsSingle();
 
             Container.BindInterfacesTo<ChestFactory>()

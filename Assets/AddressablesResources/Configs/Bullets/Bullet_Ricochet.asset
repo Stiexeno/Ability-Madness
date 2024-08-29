@@ -15,12 +15,14 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: a6d98f869a832a348b729d023d58177d, type: 3}
   name: Tenis Bullet
   chance: 5
+  unique: 0
   type: 4
   projectileRef:
     m_AssetGUID: 0919512cebcc86d48ab1fdecbbf1ec54
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  projectileType: 1
   projectileSetup:
     movementSpeed: 25
     spawnCount: 1

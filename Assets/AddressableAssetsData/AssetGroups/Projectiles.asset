@@ -41,6 +41,10 @@ MonoBehaviour:
     m_Address: Rifle
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: a162ee89dde82a148b224f1b20b66b12
+    m_Address: Projectile_Grenade
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9f75c775787da8a4c8e7e94698c9d5b8, type: 2}
   m_SchemaSet:

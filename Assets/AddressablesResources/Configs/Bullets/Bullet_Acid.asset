@@ -15,12 +15,14 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 3d744306df9db134882d2d01dd05c067, type: 3}
   name: Acid Bullet
   chance: 15
+  unique: 0
   type: 5
   projectileRef:
     m_AssetGUID: 8ac3d966b39431c4a919a178af285af7
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  projectileType: 1
   projectileSetup:
     movementSpeed: 25
     spawnCount: 1
@@ -37,4 +39,3 @@ MonoBehaviour:
       duration: 3
       period: 0.5
       value: 3
-      damageType: 3

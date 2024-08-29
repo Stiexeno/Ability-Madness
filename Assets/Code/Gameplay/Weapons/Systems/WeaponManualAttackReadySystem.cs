@@ -7,20 +7,26 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Systems
         private IGroup<GameEntity> _weapons;
         private GameContext _gameContext;
         private readonly IGroup<GameEntity> _owners;
+        private IGroup<GameEntity> _inputs;
 
-        public WeaponManualAttackReadySystem(GameContext gameGameContext)
+        public WeaponManualAttackReadySystem(GameContext gameContext)
         {
-            _gameContext = gameGameContext;
+            _gameContext = gameContext;
 
-            _weapons = gameGameContext.GetGroup(GameMatcher
+            _weapons = gameContext.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Weapon,
                     GameMatcher.OwnerId));
 
-            _owners = gameGameContext.GetGroup(GameMatcher
+            _owners = gameContext.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.WorldPosition,
                     GameMatcher.LookDirection));
+
+            _inputs = gameContext.GetGroup(GameMatcher
+                .AllOf(
+                    GameMatcher.Input,
+                    GameMatcher.MousePosition));
         }
 
         public void Execute()
@@ -36,6 +42,11 @@ namespace AbilityMadness.Code.Gameplay.Abilities.Systems
                                      weapon.isRecovering == false;
 
                     weapon.Direction = owner.LookDirection;
+
+                    foreach (var input in _inputs)
+                    {
+                        weapon.TargetPosition = input.MousePosition;
+                    }
                 }
             }
         }

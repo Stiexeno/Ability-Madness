@@ -3,7 +3,9 @@ namespace AbilityMadness.Code.Gameplay.Projectile
     public enum ProjectileTypeId
     {
         Unknown = 0,
-        Fireball = 1,
-        Tornado = 2
+        Directional = 1,
+        Throwable = 2,
+        Beam = 3,
+        Spawning = 4,
     }
 }

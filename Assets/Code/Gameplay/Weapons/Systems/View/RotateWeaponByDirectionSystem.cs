@@ -1,6 +1,4 @@
-﻿using System;
-using AbilityMadness.Code.Gameplay.Vision;
-using Entitas;
+﻿using Entitas;
 
 namespace AbilityMadness.Code.Gameplay.Weapons.Systems
 {

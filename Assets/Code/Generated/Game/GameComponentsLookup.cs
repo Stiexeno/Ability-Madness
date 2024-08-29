@@ -129,69 +129,75 @@ public static class GameComponentsLookup {
     public const int RigidbodyMovement = 118;
     public const int TransformMovement = 119;
     public const int ZigZagMovement = 120;
-    public const int Projectile = 121;
-    public const int ProjectileTypeId = 122;
-    public const int Range = 123;
-    public const int RoundTime = 124;
-    public const int BaseStats = 125;
-    public const int StatsChange = 126;
-    public const int StatsModifiers = 127;
-    public const int StatsSetups = 128;
-    public const int StatsValue = 129;
-    public const int Applied = 130;
-    public const int Depleted = 131;
-    public const int Fire = 132;
-    public const int Freeze = 133;
-    public const int Period = 134;
-    public const int Poison = 135;
-    public const int Status = 136;
-    public const int StatusRequest = 137;
-    public const int StatusSetup = 138;
-    public const int StatusSetups = 139;
-    public const int StatusTypeId = 140;
-    public const int StatusView = 141;
-    public const int StatusViewApplied = 142;
-    public const int TimeSinceLastTick = 143;
-    public const int ProccessedTargets = 144;
-    public const int SphereCast = 145;
-    public const int SphereCastRadius = 146;
-    public const int TargetBuffer = 147;
-    public const int TargetLayer = 148;
-    public const int DistanceThreshold = 149;
-    public const int Trail = 150;
-    public const int TrailTypeId = 151;
-    public const int TargetsInSight = 152;
-    public const int Vision = 153;
-    public const int VisionInterval = 154;
-    public const int VisionLayer = 155;
-    public const int VisionRadius = 156;
-    public const int VisionTimer = 157;
-    public const int AmmoCapacity = 158;
-    public const int AmmoIndex = 159;
-    public const int Bullet = 160;
-    public const int BulletChangeRequest = 161;
-    public const int BulletIndex = 162;
-    public const int BulletTypeId = 163;
-    public const int FireRate = 164;
-    public const int HasReloadWidget = 165;
-    public const int MaxAmmoCapacity = 166;
-    public const int Pierce = 167;
-    public const int PiercedAmount = 168;
-    public const int Ready = 169;
-    public const int Recovering = 170;
-    public const int Reloading = 171;
-    public const int ReloadTime = 172;
-    public const int ReloadWidget = 173;
-    public const int Shot = 174;
-    public const int Spread = 175;
-    public const int WeaponAnimator = 176;
-    public const int Weapon = 177;
-    public const int WeaponPivot = 178;
-    public const int WeaponTypeId = 179;
-    public const int Player = 180;
-    public const int PlayerInTrigger = 181;
+    public const int Directional = 121;
+    public const int Projectile = 122;
+    public const int ProjectileTypeId = 123;
+    public const int Range = 124;
+    public const int MaxHeight = 125;
+    public const int StartPosition = 126;
+    public const int TargetPosition = 127;
+    public const int Throwable = 128;
+    public const int ThrowableAnimator = 129;
+    public const int RoundTime = 130;
+    public const int BaseStats = 131;
+    public const int StatsChange = 132;
+    public const int StatsModifiers = 133;
+    public const int StatsSetups = 134;
+    public const int StatsValue = 135;
+    public const int Applied = 136;
+    public const int Depleted = 137;
+    public const int Fire = 138;
+    public const int Freeze = 139;
+    public const int Period = 140;
+    public const int Poison = 141;
+    public const int Status = 142;
+    public const int StatusRequest = 143;
+    public const int StatusSetup = 144;
+    public const int StatusSetups = 145;
+    public const int StatusTypeId = 146;
+    public const int StatusView = 147;
+    public const int StatusViewApplied = 148;
+    public const int TimeSinceLastTick = 149;
+    public const int ProccessedTargets = 150;
+    public const int SphereCast = 151;
+    public const int SphereCastRadius = 152;
+    public const int TargetBuffer = 153;
+    public const int TargetLayer = 154;
+    public const int DistanceThreshold = 155;
+    public const int Trail = 156;
+    public const int TrailTypeId = 157;
+    public const int TargetsInSight = 158;
+    public const int Vision = 159;
+    public const int VisionInterval = 160;
+    public const int VisionLayer = 161;
+    public const int VisionRadius = 162;
+    public const int VisionTimer = 163;
+    public const int AmmoCapacity = 164;
+    public const int AmmoIndex = 165;
+    public const int Bullet = 166;
+    public const int BulletChangeRequest = 167;
+    public const int BulletIndex = 168;
+    public const int BulletTypeId = 169;
+    public const int FireRate = 170;
+    public const int HasReloadWidget = 171;
+    public const int MaxAmmoCapacity = 172;
+    public const int Pierce = 173;
+    public const int PiercedAmount = 174;
+    public const int Ready = 175;
+    public const int Recovering = 176;
+    public const int Reloading = 177;
+    public const int ReloadTime = 178;
+    public const int ReloadWidget = 179;
+    public const int Shot = 180;
+    public const int Spread = 181;
+    public const int WeaponAnimator = 182;
+    public const int Weapon = 183;
+    public const int WeaponPivot = 184;
+    public const int WeaponTypeId = 185;
+    public const int Player = 186;
+    public const int PlayerInTrigger = 187;
 
-    public const int TotalComponents = 182;
+    public const int TotalComponents = 188;
 
     public static readonly string[] componentNames = {
         "AssetReference",
@@ -315,9 +321,15 @@ public static class GameComponentsLookup {
         "RigidbodyMovement",
         "TransformMovement",
         "ZigZagMovement",
+        "Directional",
         "Projectile",
         "ProjectileTypeId",
         "Range",
+        "MaxHeight",
+        "StartPosition",
+        "TargetPosition",
+        "Throwable",
+        "ThrowableAnimator",
         "RoundTime",
         "BaseStats",
         "StatsChange",
@@ -500,9 +512,15 @@ public static class GameComponentsLookup {
         typeof(AbilityMadness.Code.Gameplay.Movement.RigidbodyMovement),
         typeof(AbilityMadness.Code.Gameplay.Movement.TransformMovement),
         typeof(AbilityMadness.Code.Gameplay.Movement.ZigZagMovement),
+        typeof(AbilityMadness.Code.Gameplay.Projectile.Directional.Directional),
         typeof(AbilityMadness.Code.Gameplay.Projectile.Projectile),
         typeof(AbilityMadness.Code.Gameplay.Projectile.ProjectileTypeIdComponent),
         typeof(AbilityMadness.Code.Gameplay.Projectile.Range),
+        typeof(AbilityMadness.Code.Gameplay.Projectile.Throwable.MaxHeight),
+        typeof(AbilityMadness.Code.Gameplay.Projectile.Throwable.StartPosition),
+        typeof(AbilityMadness.Code.Gameplay.Projectile.Throwable.TargetPosition),
+        typeof(AbilityMadness.Code.Gameplay.Projectile.Throwable.Throwable),
+        typeof(AbilityMadness.Code.Gameplay.Projectile.Throwable.ThrowableAnimatorComponent),
         typeof(AbilityMadness.Code.Gameplay.Round.RoundTime),
         typeof(AbilityMadness.Code.Gameplay.Stats.BaseStats),
         typeof(AbilityMadness.Code.Gameplay.Stats.StatsChange),

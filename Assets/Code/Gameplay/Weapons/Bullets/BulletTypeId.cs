@@ -20,5 +20,6 @@
         Meteor = 15,
         Star = 16,
         Fear = 17,
+        Grenade = 18,
     }
 }

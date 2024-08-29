@@ -15,12 +15,14 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 586b2c62d25ea1942a5ccbe69a6ba9e4, type: 3}
   name: Shotgun Shell
   chance: 15
+  unique: 0
   type: 3
   projectileRef:
     m_AssetGUID: b931ba43c5be3394bad80ed48de0d176
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  projectileType: 1
   projectileSetup:
     movementSpeed: 25
     spawnCount: 4

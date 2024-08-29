@@ -54,6 +54,7 @@ namespace AbilityMadness.Code.Gameplay.Weapons.Factory
                 .AddOffset(Vector3.up * 0.2f)
                 .AddWorldPosition(Vector3.zero)
                 .AddDirection(Vector2.zero)
+                .AddTargetPosition(Vector3.zero)
 
                 .AddReloadTime(config.reloadTime)
                 .AddFireRate(config.fireRate)
